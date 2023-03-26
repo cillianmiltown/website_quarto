@@ -6,7 +6,6 @@ project:
     - "*.md"
     - "!README.md"
     - "!LICENSE.md"
-    - "!myresources/"
     - "!certificate*"
   resources:
     - "files/"
@@ -18,7 +17,7 @@ execute:
   # Re-render only when source changes
   freeze: auto
 
-description-meta: "Andreas Handel's personal website."
+description-meta: "Cillian McHugh's personal website."
 
 website:
   title: "Cillian McHugh"
@@ -26,7 +25,7 @@ website:
   repo-url: https://github.com/andreashandel/andreashandelwebsite
   description: "Homepage for Cillian McHugh"
   favicon: /files/icon1.png 
-  #google-analytics: "UA-48442618-4"
+  google-analytics: "G-HN11FG1NGL"
   twitter-card: 
     creator: "@cillianmacaodh"
   cookie-consent: true    
