@@ -1,9 +1,10 @@
 .quarto-title-block .quarto-title-banner {
   background-image: url(../../img/album_just_sky.jpg);
-  background-size: 13%;
+  background-size: 250px;
   background-position: left;
   background-repeat: no-repeat;
   padding-left: 12px;
   background-origin: content-box;
+  text-align: center;
   height: 200px;
 }
