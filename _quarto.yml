@@ -52,9 +52,7 @@ website:
       
       # - text: "Subscribe"
       #   file: subscribe.qmd
-    right: 
-        - icon: twitter
-          href: https://twitter.com/cillianmacaodh
+   
   
 
 
@@ -67,7 +65,7 @@ website:
     right: |
       Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)<br>
       Inspiration and code snippets taken from [this site.](https://github.com/andreashandel/andreashandelwebsite)<br>
-      [Source at {{< fa brands github >}} GitHub](https://github.com/andreashandel/andreashandelwebsite)
+      [Source at {{< fa brands github >}} GitHub](https://github.com/cillianmiltown/website_quarto)
 
 
 format:

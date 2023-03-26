@@ -94,7 +94,7 @@ Moral Judgment as Categorization (MJAC): presentation to IMP seminar series 31st
 <br>
 <a href="https://orcid.org/0000-0002-9701-3232"><i class="ai ai-orcid ai-2x"></i></a>
 <a href="http://mchugh.socialpsychology.org/"><i class="ai ai-scirate ai-2x"></i></a>
-<a href="CV link"><i class="ai ai-cv ai-2x"></i></a>
+<a href="https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/files/CV.pdf"><i class="ai ai-cv ai-2x"></i></a>
 
 </p>
 ```
