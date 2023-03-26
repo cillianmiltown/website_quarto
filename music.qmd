@@ -9,8 +9,8 @@ listing:
     categories: true
     sort-ui: true
     filter-ui: true
-  - id: other
-    contents: music/other
+  - id: other_music
+    contents: music/other_music
     sort: "date desc"
     type: default
     categories: true
@@ -54,6 +54,6 @@ I have released 2 albums to date: [*Back to the Drawing Board*](https://www.cill
 
 ## Other
 
-:::{#other}
+:::{#other_music}
 :::
 

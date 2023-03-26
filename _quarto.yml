@@ -15,7 +15,7 @@ project:
 
 execute:
   # Re-render only when source changes
-  freeze: auto
+  freeze: false
 
 description-meta: "Cillian McHugh's personal website."
 

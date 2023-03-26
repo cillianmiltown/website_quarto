@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-other .list');
+    const listingTargetEl = window.document.querySelector('#listing-other_music .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -111,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-other'] = new List('listing-other', options);
+    window['quarto-listings']['listing-other_music'] = new List('listing-other_music', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -409,11 +409,11 @@ No matching items
 </section>
 <section id="other" class="level2">
 <h2 class="anchored" data-anchor-id="other">Other</h2>
-<div id="listing-other" class="quarto-listing quarto-listing-container-default">
+<div id="listing-other_music" class="quarto-listing quarto-listing-container-default">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-other-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-other'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+     <select id="listing-other_music-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-other_music'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
        <option value="" disabled="" selected="" hidden="">Order By</option>
        <option value="index" data-direction="asc">Default</option>
          <option value="listing-title" data-direction="asc">
@@ -438,10 +438,10 @@ No matching items
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-listing-date-sort="1639267200000" data-listing-file-modified-sort="1679785698669" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./music/other/videos/index.html"> <img src="./music/other/videos/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="./music/other_music/videos/index.html"> <img src="./music/other_music/videos/featured.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
-<a href="./music/other/videos/index.html">
+<a href="./music/other_music/videos/index.html">
 <h3 class="no-anchor listing-title">
 Videos
 </h3>
@@ -449,12 +449,12 @@ Videos
 
 </div>
 <div class="listing-description">
-In addition to the studio albums I also have some home video recordings available here.
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./music/other/videos/index.html">
+<a href="./music/other_music/videos/index.html">
 <div class="listing-date">
 Dec 12, 2021
 </div>
@@ -466,10 +466,10 @@ Cillian McHugh
 </div>
 <div class="quarto-post image-right" data-index="1" data-listing-date-sort="1555023600000" data-listing-file-modified-sort="1679785806254" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./music/other/launch-gig-photos/index.html"> <img src="./music/other/launch-gig-photos/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="./music/other_music/launch-gig-photos/index.html"> <img src="./music/other_music/launch-gig-photos/featured.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
-<a href="./music/other/launch-gig-photos/index.html">
+<a href="./music/other_music/launch-gig-photos/index.html">
 <h3 class="no-anchor listing-title">
 Launch Gig (photos and videos)
 </h3>
@@ -477,12 +477,12 @@ Launch Gig (photos and videos)
 
 </div>
 <div class="listing-description">
-A collection of photos from the official launch of <em>It will pass…</em> in The Commercial on the 12th of April. Many thanks to Mags (and others) for her photography skills.
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./music/other/launch-gig-photos/index.html">
+<a href="./music/other_music/launch-gig-photos/index.html">
 <div class="listing-date">
 Apr 12, 2019
 </div>
