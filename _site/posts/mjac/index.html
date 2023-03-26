@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.287">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Cillian McHugh">
+<meta name="dcterms.date" content="2020-08-02">
+<meta name="description" content="Andreas Handel’s personal website.">
+
+<title>Cillian McHugh - Moral Judgment as Categorization (MJAC) - Explanation and Development</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../..//files/icon1.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="../../customstyle.css">
+<meta name="twitter:title" content="Cillian McHugh - Moral Judgment as Categorization (MJAC) - Explanation and Development">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="www.cillianmchugh.com/img/suitcase.jpg">
+<meta name="twitter:creator" content="@cillianmacaodh">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Cillian McHugh</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
+ <span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html" rel="" target="">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../music.html" rel="" target="">
+ <span class="menu-text">Music</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../other.html" rel="" target="">
+ <span class="menu-text">Other</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../rblog.html" rel="" target="">
+ <span class="menu-text">R Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/cillianmacaodh" rel="" target=""><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#moral-categorization" id="toc-moral-categorization" class="nav-link" data-scroll-target="#moral-categorization">Moral Categorization</a>
+  <ul class="collapse">
+  <li><a href="#premises" id="toc-premises" class="nav-link" data-scroll-target="#premises">Premises</a></li>
+  <li><a href="#core-predictions" id="toc-core-predictions" class="nav-link" data-scroll-target="#core-predictions">Core Predictions</a></li>
+  </ul></li>
+  <li><a href="#understanding-mjac" id="toc-understanding-mjac" class="nav-link" data-scroll-target="#understanding-mjac">Understanding MJAC</a>
+  <ul class="collapse">
+  <li><a href="#things-to-pack-into-a-suitcase" id="toc-things-to-pack-into-a-suitcase" class="nav-link" data-scroll-target="#things-to-pack-into-a-suitcase">Things to Pack Into a Suitcase</a></li>
+  <li><a href="#fruit" id="toc-fruit" class="nav-link" data-scroll-target="#fruit">Fruit</a></li>
+  <li><a href="#applying-mjac" id="toc-applying-mjac" class="nav-link" data-scroll-target="#applying-mjac">Applying MJAC</a>
+  <ul class="collapse">
+  <li><a href="#moral-dumbfounding" id="toc-moral-dumbfounding" class="nav-link" data-scroll-target="#moral-dumbfounding">Moral Dumbfounding</a></li>
+  <li><a href="#categorizing-people-versus-categorizing-actions" id="toc-categorizing-people-versus-categorizing-actions" class="nav-link" data-scroll-target="#categorizing-people-versus-categorizing-actions">Categorizing people versus categorizing actions</a></li>
+  </ul></li>
+  <li><a href="#contrasting-mjac-with-existing-approaches" id="toc-contrasting-mjac-with-existing-approaches" class="nav-link" data-scroll-target="#contrasting-mjac-with-existing-approaches">Contrasting MJAC with Existing Approaches</a></li>
+  </ul></li>
+  <li><a href="#developing-and-publishing-mjac" id="toc-developing-and-publishing-mjac" class="nav-link" data-scroll-target="#developing-and-publishing-mjac">Developing and Publishing MJAC</a>
+  <ul class="collapse">
+  <li><a href="#rejections" id="toc-rejections" class="nav-link" data-scroll-target="#rejections">Rejections</a></li>
+  <li><a href="#revisions" id="toc-revisions" class="nav-link" data-scroll-target="#revisions">Revisions</a>
+  <ul class="collapse">
+  <li><a href="#key-points-in-the-revisions" id="toc-key-points-in-the-revisions" class="nav-link" data-scroll-target="#key-points-in-the-revisions">Key Points in the Revisions</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Moral Judgment as Categorization (MJAC) - Explanation and Development</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cillian McHugh </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 2, 2020</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<p>In what follows I will attempt to provide an overview of my <a href="https://journals.sagepub.com/doi/full/10.1177/1745691621990636">recently published theoretical work</a>, covering the main ideas behind the theory, while also describing the process of its development, from initial conception to final publication.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VZahP87TCqE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p><br> (presentation to IMP seminar series 31st May 2021)</p>
+<p><br></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RmloHLgPlfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p><br> (Poster presentation to SPSP 2022)</p>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>I never intended to develop a new theory of moral judgement, it just sort of happened. When I started my PhD I wanted to understand <strong><em>how</em></strong> people make moral judgements, and when I studied the available approaches they didn’t quite provide the answers I was looking for. For example <span class="citation" data-cites="prinz_passionate_2005">Prinz (<a href="#ref-prinz_passionate_2005" role="doc-biblioref">2005</a>)</span> over-stated the role of emotion in moral judgements: <em>‘Emotions, I will suggest are perceptions of our bodily states. To recognise the moral value of an event is, thus, to perceive the perturbation that it causes’</em> <span class="citation" data-cites="prinz_passionate_2005">(<a href="#ref-prinz_passionate_2005" role="doc-biblioref">Prinz 2005, 99</a>)</span>. <span class="citation" data-cites="haidt_emotional_2001">Haidt (<a href="#ref-haidt_emotional_2001" role="doc-biblioref">2001</a>)</span> draws on analogy rather than providing an account for the underlying cognitive mechanisms, e.g., describing intuitions as phonemes <span class="citation" data-cites="haidt_emotional_2001">(<a href="#ref-haidt_emotional_2001" role="doc-biblioref">Haidt 2001, 827</a>)</span>, <em>‘brain has a kind of gauge’</em>, a <em>‘like-ometer’</em> <span class="citation" data-cites="haidt_social_2008">(<a href="#ref-haidt_social_2008" role="doc-biblioref">Haidt and Björklund 2008, 187</a>)</span>. <span class="citation" data-cites="greene_secret_2008">Greene (<a href="#ref-greene_secret_2008" role="doc-biblioref">2008</a>)</span> distinguishes between <em>cognition</em> and <em>emotion</em>, though these are not well defined. The Theory of Dyadic Morality <span class="citation" data-cites="gray_mind_2012 schein_theory_2018">(<a href="#ref-gray_mind_2012" role="doc-biblioref">Gray, Young, and Waytz 2012</a>; <a href="#ref-schein_theory_2018" role="doc-biblioref">Schein and Gray 2018</a>)</span> provides an account that is based on the content of moral judgements, rather than the underlying cognitive mechanisms.</p>
+<p>So having failed to find the answers I was looking for in the morality literature, I broadened my reading, looking at the emotion literature, and research on learning and knowledge acquisition. This led me to the works of Lisa Feldman Barrett, and Lawrence Barsalou <span class="citation" data-cites="barrett_psychological_2014 barsalou_situated_2003">(<a href="#ref-barrett_psychological_2014" role="doc-biblioref">Barrett, Wilson-Mendenhall, and Barsalou 2014</a>; <a href="#ref-barsalou_situated_2003" role="doc-biblioref">Barsalou 2003</a>)</span>. Initially I thought this provided a potential framework for understanding the role of emotions in moral judgement, however when I attempted to apply this framework, it became apparent that it also provided a framework for understanding moral judgment more generally. This realization came from an extensive survey of both the categorization and morality literatures. <span class="citation" data-cites="barsalou_situated_2003">Barsalou (<a href="#ref-barsalou_situated_2003" role="doc-biblioref">2003</a>)</span> defended his theory of categorization by highlighting the dynamic and context dependent nature of categorization, the same kinds of variability and context dependency were present in the morality literature, these parallels are shown in Table 1.</p>
+<table class="table">
+<caption>Table 1: Parallels between Morality and Categorization<br> <em>Note:</em><br> *At the time of development we had only hypothesized that typicality in moral judgments would be observed, but more recent work has confirmed this hypothesis <span class="citation" data-cites="gray_impure_2015 schein_theory_2018">(<a href="#ref-gray_impure_2015" role="doc-biblioref">Gray and Keeney 2015</a>; <a href="#ref-schein_theory_2018" role="doc-biblioref">Schein and Gray 2018</a>)</span>.<br> ** While not directly referred to as <em>dumbfounding</em>, a similiar phenomenon has been observed in non-moral contexts <span class="citation" data-cites="boyd_what_1989 boyd_realism_1991 keil_concepts_1989 keil_what_2004">(<a href="#ref-boyd_what_1989" role="doc-biblioref">Boyd 1989</a>, <a href="#ref-boyd_realism_1991" role="doc-biblioref">1991</a>; <a href="#ref-keil_concepts_1989" role="doc-biblioref">Keil 1989</a>; <a href="#ref-keil_what_2004" role="doc-biblioref">Keil, Rozenblit, and Mills 2004</a>)</span>.</caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 22%">
+<col style="width: 28%">
+<col style="width: 27%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Phenomenon</strong></td>
+<td></td>
+<td style="text-align: center;"><strong>Categorization</strong></td>
+<td style="text-align: center;"><strong>Morality</strong></td>
+</tr>
+<tr class="even">
+<td>Variability</td>
+<td>Interpersonal</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Intrapersonal</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr class="even">
+<td>Context</td>
+<td>Culture</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Social</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Development</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Emotion</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Framing</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Order/recency</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr class="even">
+<td>Other</td>
+<td>Skill</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Typicality</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓*</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Dumbfounding</td>
+<td style="text-align: center;">✓**</td>
+<td style="text-align: center;">✓</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="moral-categorization" class="level1">
+<h1>Moral Categorization</h1>
+<p>The idea behind Moral Judgement as Categorization (MJAC - pronounced <em>em</em>-jack), is that making moral judgements involves the same cognitive processes as categorization more generally. There are three core premises and two core predictions of the approach as follows:</p>
+<section id="premises" class="level3">
+<h3 class="anchored" data-anchor-id="premises">Premises</h3>
+<ul>
+<li><p>Making of a moral judgment is a process of <strong><em>categorizing</em></strong> something as <em>morally right</em> or <em>morally wrong</em> (or indeed <em>not morally relevant</em>).</p></li>
+<li><p>The process of categorization involved in the making of a moral judgment is a domain-general one (not unique or specific to the moral domain).</p></li>
+<li><p>Moral categorization occurs as part of ongoing goal-directed behavior and thus is highly dynamic and sensitive to a range of contextual influences.</p></li>
+</ul>
+</section>
+<section id="core-predictions" class="level3">
+<h3 class="anchored" data-anchor-id="core-predictions">Core Predictions</h3>
+<ul>
+<li><p><em>Stability</em> emerges through continued and consistent repetition and rehearsal</p></li>
+<li><p><em>Robustness</em> emerges through consistency across multiple contexts</p></li>
+</ul>
+<p>According to MJAC, what others describe as moral ‘intuitions’ <span class="citation" data-cites="haidt_emotional_2001">(e.g., <a href="#ref-haidt_emotional_2001" role="doc-biblioref">Haidt 2001</a>)</span> are categorizations that have become highly skilled or automatic, through practice.</p>
+</section>
+</section>
+<section id="understanding-mjac" class="level1">
+<h1>Understanding MJAC</h1>
+<p>There are two examples that help to illustrate the assumptions of the categorization processes that MJAC is grounded in.</p>
+<section id="things-to-pack-into-a-suitcase" class="level3">
+<h3 class="anchored" data-anchor-id="things-to-pack-into-a-suitcase">Things to Pack Into a Suitcase</h3>
+<p>Consider the formation of the category <em>Things to Pack Into a Suitcase</em> <span class="citation" data-cites="barsalou_deriving_1991">(<a href="#ref-barsalou_deriving_1991" role="doc-biblioref">Barsalou 1991</a>)</span>. Items that fall into this category (toothbrush, spare clothes, etc.) are not generally categorized as such on a day-to-day basis. The category emerges as required: when a person needs to pack things into a suitcase. A person who travels frequently will be able to form the category things to pack into a suitcase more readily because of repetition and the emerging skill. <span class="citation" data-cites="barsalou_situated_2003">Barsalou (<a href="#ref-barsalou_situated_2003" role="doc-biblioref">2003</a>)</span> argued that categorization more generally occurs through the same process. What we think of as <em>‘Stable’</em> categories, are categorizations that have become habitualized or skilled, as part of goal-directed activity.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../img/suitcase.jpg" class="quarto-discovered-preview-image img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 1: <em>Things to Pack Into a Suitcase</em></figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="fruit" class="level3">
+<h3 class="anchored" data-anchor-id="fruit">Fruit</h3>
+<p>To illustrate how our every-day categorizations are shaped by goal-directed activity, consider the category <em>Fruit</em>. Typical members of the category include items such as <em>apples</em>, and <em>oranges</em>. <em>Fruit</em> is defined as <em>containing the seeds</em>, and by this definition, items such as <em>tomato</em> also fall into this category. However, we do not generally interact with tomatoes in the same way as we interact with other <em>Fruit</em>, so while it is defined as <em>Fruit</em>, we generally don’t think of it as <em>Fruit</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../img/fruit.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 2: <em>Fruit</em></figcaption><p></p>
+</figure>
+</div>
+<p>We extend this basic process to moral categories. When people encounter a behavior in certain circumstances, they may learn that it is <em>morally wrong</em>, and this behavior becomes associated with the category <em>morally wrong</em>. Each subsequent time this behavior is encountered in a context in which its moral value is relevant or it is identified as a member of the category <em>morally wrong</em> (either explicitly or implicitly), the person’s skill in deploying this category is strengthened. This same process holds for <em>morally right</em>. With the increasing frequency of such categorizations, they become increasingly habitual and automatic <span class="citation" data-cites="barsalou_situated_2003">(see <a href="#ref-barsalou_situated_2003" role="doc-biblioref">Barsalou 2003</a>)</span>.</p>
+</section>
+<section id="applying-mjac" class="level2">
+<h2 class="anchored" data-anchor-id="applying-mjac">Applying MJAC</h2>
+<p>This approach to understanding moral judgements provides a novel perspective on how we understand particular moral phenomena.</p>
+<section id="moral-dumbfounding" class="level3">
+<h3 class="anchored" data-anchor-id="moral-dumbfounding">Moral Dumbfounding</h3>
+<p>Moral dumbfounding occurs when people defend a moral judgment even though they cannot provide a reason to support it <span class="citation" data-cites="haidt_moral_2000 haidt_emotional_2001 mchugh_searching_2017a mchugh_reasons_2020">(<a href="#ref-haidt_moral_2000" role="doc-biblioref">Haidt, Björklund, and Murphy 2000</a>; <a href="#ref-haidt_emotional_2001" role="doc-biblioref">Haidt 2001</a>; <a href="#ref-mchugh_searching_2017a" role="doc-biblioref">McHugh et al. 2017</a>, <a href="#ref-mchugh_reasons_2020" role="doc-biblioref">2020</a>)</span>. Moral dumbfounding is most frequently obeserved for harmless taboo behaviors (consensual incest, cannibalism involving a body that is already dead). The taboo nature of these topics means that they are consistently identified as <em>morally wrong</em> without much discussion [the Scottish public petitions committee notably dismissed a call to legalize incest with no discussion at all; see <span class="citation" data-cites="sim_msps_2016">Sim (<a href="#ref-sim_msps_2016" role="doc-biblioref">2016</a>)</span>]. This leads to a high degree of <em>stability</em> in categorizing them as <em>wrong.</em> However, the taboo nature of these behaviors prevents them from being discussed. This means that a typical encounter with such behavior involves little more than identifying it as <em>wrong</em>, possibly with an expression of disgust, and changing the subject. Because of this combination of <em>stability</em> and This process logically leads to moral dumbfounding.</p>
+</section>
+<section id="categorizing-people-versus-categorizing-actions" class="level3">
+<h3 class="anchored" data-anchor-id="categorizing-people-versus-categorizing-actions">Categorizing people versus categorizing actions</h3>
+<p>MJAC predicts people’s judgements will focus on the <em>actor</em> or on the <em>action</em> depending on the situation. Consider the following two scenarios:</p>
+<blockquote class="blockquote">
+<ol type="1">
+<li>You find out that a colleague has been fired for stealing from your employer—they have been bringing home office equipment for their own personal use, and they have been exaggerating their expense claims.</li>
+</ol>
+</blockquote>
+<blockquote class="blockquote">
+<ol start="2" type="1">
+<li>A close friend of yours reveals to you that they have been stealing from their employer—they have been bringing home office equipment for their own personal use, and they have been exaggerating their expense claims.</li>
+</ol>
+</blockquote>
+<p>MJAC predicts that people will be more lenient in their judgments of the person in the second scenario than the in first scenario. Indeed this is consistent with what is found in the literature <span class="citation" data-cites="heiphetz_dehumanization_2020 forbes_when_2018 lee_he_2020 hofmann_morality_2014 weidman_punish_2020">(<a href="#ref-heiphetz_dehumanization_2020" role="doc-biblioref">Heiphetz and Craig 2020</a>; <a href="#ref-forbes_when_2018" role="doc-biblioref">Forbes 2018</a>; <a href="#ref-lee_he_2020" role="doc-biblioref">Lee and Holyoak 2020</a>; <a href="#ref-hofmann_morality_2014" role="doc-biblioref">Hofmann et al. 2014</a>; <a href="#ref-weidman_punish_2020" role="doc-biblioref">Weidman et al. 2020</a>)</span>.</p>
+<p>A further prediction is that for the second scenario, people will focus on the <em>action</em> rather than the <em>actor</em>. People are motivated to see close others positively <span class="citation" data-cites="forbes_when_2018 murray_benefits_1996 murray_selffulfilling_1996">(<a href="#ref-forbes_when_2018" role="doc-biblioref">Forbes 2018</a>; <a href="#ref-murray_benefits_1996" role="doc-biblioref">Murray, Holmes, and Griffin 1996a</a>, <a href="#ref-murray_selffulfilling_1996" role="doc-biblioref">1996b</a>)</span>. If faced with a situation in which a close other did something wrong, people would try to avoid making a negative judgment of the person <span class="citation" data-cites="ditto_motivated_2009 murray_benefits_1996 murray_selffulfilling_1996">(<a href="#ref-ditto_motivated_2009" role="doc-biblioref">Ditto, Pizarro, and Tannenbaum 2009</a>; <a href="#ref-murray_benefits_1996" role="doc-biblioref">Murray, Holmes, and Griffin 1996a</a>, <a href="#ref-murray_selffulfilling_1996" role="doc-biblioref">1996b</a>)</span>. One way to avoid this is to focus on the <em>action</em> rather than the <em>actor</em>. Relatedly, for favorable judgments, we expect the opposite effect. If a close other does something praiseworthy, people are likely to focus on the <em>actor</em> rather than the <em>action</em>, helping to maintain a positive view of the close other <span class="citation" data-cites="forbes_when_2018 murray_benefits_1996 murray_selffulfilling_1996">(<a href="#ref-forbes_when_2018" role="doc-biblioref">Forbes 2018</a>; <a href="#ref-murray_benefits_1996" role="doc-biblioref">Murray, Holmes, and Griffin 1996a</a>, <a href="#ref-murray_selffulfilling_1996" role="doc-biblioref">1996b</a>)</span>.</p>
+<p>A key goal of moral categorization is to distinguish <em>‘good’</em> people from <em>‘bad’</em> people, to help us navigate the social world, and effectively guide our social interactions. Learning about people’s moral character or moral ‘essence’, enables us to establish relationships with <em>‘good’</em> people, and to limit our interactions with <em>‘bad’</em> people (or at least treat interactions with <em>‘bad’</em> people with caution). This means that for strangers, we are likely to show a bias for categorizing the <em>actor</em> rather than the <em>action</em> <span class="citation" data-cites="uhlmann_personcentered_2015 dunlea_children_2020 siegel_inferences_2017 siegel_beliefs_2018">(<a href="#ref-uhlmann_personcentered_2015" role="doc-biblioref">Uhlmann, Pizarro, and Diermeier 2015</a>; <a href="#ref-dunlea_children_2020" role="doc-biblioref">Dunlea and Heiphetz 2020</a>; <a href="#ref-siegel_inferences_2017" role="doc-biblioref">Siegel, Crockett, and Dolan 2017</a>; <a href="#ref-siegel_beliefs_2018" role="doc-biblioref">Siegel et al. 2018</a>)</span>.</p>
+</section>
+</section>
+<section id="contrasting-mjac-with-existing-approaches" class="level2">
+<h2 class="anchored" data-anchor-id="contrasting-mjac-with-existing-approaches">Contrasting MJAC with Existing Approaches</h2>
+<p>Perhaps the most important difference between MJAC and existing approaches is that the focus of MJAC is on the <em>cognitive</em> <em>processes</em>, rather than on the <em>content</em> of moral judgements. According to the dominant dual-process approaches, different types of moral judgements are grounded in different types of cognitive processes. <em>Deontological</em> (principled or rule based) moral judgements are grounded in intuitive/automatic/emotional/model-free processes, while <em>utilitarian</em> or <em>consequentialist</em> judgements (where the aim is to maximise positive outcomes), are grounded in deliberative/controlled/cognitive/model-based processes. These different processes mean that our judgements are susceptible to specific kinds of contexual influences, e.g., how persona/impersonal an action is <span class="citation" data-cites="greene_secret_2008 greene_why_2016">(<a href="#ref-greene_secret_2008" role="doc-biblioref">Greene 2008</a>, <a href="#ref-greene_why_2016" role="doc-biblioref">2016</a>)</span>, the relative amount of emotionality <span class="citation" data-cites="byrd_not_2019 conway_sacrificial_2018 conway_deontological_2013 goldstein-greenwood_how_2020">(<a href="#ref-byrd_not_2019" role="doc-biblioref">Byrd and Conway 2019</a>; <a href="#ref-conway_sacrificial_2018" role="doc-biblioref">Conway et al. 2018</a>; <a href="#ref-conway_deontological_2013" role="doc-biblioref">Conway and Gawronski 2013</a>; <a href="#ref-goldstein-greenwood_how_2020" role="doc-biblioref">Goldstein-Greenwood et al. 2020</a>)</span>, or whether the focus is on the <em>action</em> or the <em>outcome</em> <span class="citation" data-cites="cushman_action_2013 crockett_models_2013">(<a href="#ref-cushman_action_2013" role="doc-biblioref">Cushman 2013</a>; <a href="#ref-crockett_models_2013" role="doc-biblioref">Crockett 2013</a>)</span>. An overview of these approaches is displayed in Figure 3. Despite these important insights, there are a range of other context effects known to influence moral judgements that are not accounted for by these models. These <em>other</em> context effects are detailed in the green boxes in Figure 3.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../img/context7.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 3: <em>A sketch of dual-process approaches (contextual influences not directly addressed by these approaches highlighted in green)</em></figcaption><p></p>
+</figure>
+</div>
+<p>MJAC does not make assumptions based on the <em>content</em> of moral judgements. However, MJAC predicts a distinction between <em>habitual</em> (or skilled, or <em>intuitive</em>) responses, and <em>deliberative</em> (or controlled) responses. This distinction does not make assumptions about specific content of moral judgments. However, thinking about the contexts in which deontological vs utilitarian judgements are generally made, it makes sense that deontological rules might become more habitual (think <em>It’s wrong to hurt people</em>, <em>Thou shalt not kill</em>, <em>You shouldn’t hit your sister</em>), while utilitarian judgements may require more deliberation (e.g., <em>how should we divide these resources in the fairest manner?</em>). MJAC therefore integrates the insights of dual-process accounts, while also allowing for greater variability, and a more diverse range of context effects. Figure 4 outlines the various influences on moral judgement according to MJAC.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../img/mjac13.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 4: <em>Influences on moral judgements according to MJAC</em></figcaption><p></p>
+</figure>
+</div>
+<p>These differences in assumptions between MJAC and other approaches lead to differences in explanations and predictions. Above I have outlined moral dumbfounding as an example of such an explanation. The differences in assumptions and explanations are listed in Table 2. To avoid making this post too long and drawn out, I will not go into detail on these differences, however I point you to the <a href="https://journals.sagepub.com/doi/full/10.1177/1745691621990636#_i11">relevant section</a> in the main article for more detailed discussion on this.</p>
+<table class="table">
+<caption>Table 2: Contrasting MJAC with other approaches</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Greene’s Dual-process theory</th>
+<th>“Soft” dual-process theory</th>
+<th>Model-based accounts</th>
+<th>TDM</th>
+<th>MJAC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Assumptions</strong>:</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><em>Content</em></td>
+<td>Deontology-utilitarianism / personal-impersonal</td>
+<td>Deontology-utilitarianism</td>
+<td>Action-outcome</td>
+<td>Harm-based, dyadic</td>
+<td>Dynamical Context-dependent Goal-directed</td>
+</tr>
+<tr class="odd">
+<td><em>Moral “Essence”</em></td>
+<td>(Implicit)</td>
+<td>(Not discussed)</td>
+<td>(Implicit)</td>
+<td>Explicit</td>
+<td>Rejected</td>
+</tr>
+<tr class="even">
+<td><em>Processes</em></td>
+<td>Dual-processes</td>
+<td>Dual-processes</td>
+<td>Dual-processes</td>
+<td>(implicitly dual-process)</td>
+<td>Continuum</td>
+</tr>
+<tr class="odd">
+<td><em>Mechanisms</em></td>
+<td>Intuition (emotion) / cognition</td>
+<td>Emotion / cognition</td>
+<td>Model-based / model-free</td>
+<td>Categorization (unspecified)</td>
+<td>Type-token interpretation</td>
+</tr>
+<tr class="even">
+<td><strong>Phenomena Explained</strong>:</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><em>Dumbfounding (harmless wrongs)</em></td>
+<td>(Not discussed)</td>
+<td>(Not discussed)</td>
+<td>Explained</td>
+<td>Denied</td>
+<td>Explained: learning history</td>
+</tr>
+<tr class="even">
+<td><em>Wrongless harms</em></td>
+<td>(Not discussed)</td>
+<td>(Not discussed)</td>
+<td>(Not discussed)</td>
+<td>Denied</td>
+<td>Explained: learning history</td>
+</tr>
+<tr class="odd">
+<td><em>Typicality</em></td>
+<td>(Not discussed)</td>
+<td>(Not discussed)</td>
+<td>(Not discussed)</td>
+<td>Matching of “prototype”</td>
+<td>Context-dependent</td>
+</tr>
+<tr class="even">
+<td><em>Contextual influences</em></td>
+<td>Specific: Personal-impersonal</td>
+<td>Specific: Emotion / cognition</td>
+<td></td>
+<td>Specific: Action-outcome</td>
+<td>Specific: Harm-based</td>
+</tr>
+</tbody>
+</table>
+<p>In the opening sections I outlined two general predictions of MJAC. We have also identified various specific predictions (e.g., the categorizing of <em>actors</em> vs <em>actions</em> described above). For brevity I do not go into detail on these specific predictions, but point you to the main article for this more detailed discussion (<a href="https://journals.sagepub.com/doi/full/10.1177/1745691621990636#_i24">here is probably a good place to start</a>).</p>
+</section>
+</section>
+<section id="developing-and-publishing-mjac" class="level1">
+<h1>Developing and Publishing MJAC</h1>
+<p>The road from initial conception, to publication of MJAC was quite long. The initial idea was formed by the Autumn of 2014. I presented this at my upgrade panel for my PhD in the Spring of 2015, and at a morality Summer School in Rotterdam in August 2015. It soon became apparent that the ideas behind MJAC were too broad to form the basis of a PhD, so it was shelved for a while, in favour of something more concrete. My PhD thesis ended up focusing on Moral Dumbfounding (though I was able to include an overview of MJAC in a final Epilogue chapter). I graduated from my PhD in 2018, and that winter I revisited MJAC to try and get it published.</p>
+<section id="rejections" class="level2">
+<h2 class="anchored" data-anchor-id="rejections">Rejections</h2>
+<p>By July 2019 it was ready for submission. It received a fairly quick desk reject from the first outlet.</p>
+<p>It went to review in the second journal we tried. I’ve had some difficult rejections, and rejections that I disagreed with, but this one was really rough. Reviewer 1 <em>really</em> did not like the idea. The review from Reviewer 1 contained some of the harshest review comments I have seen. A few excerpts from the (very long) review are below.</p>
+<blockquote class="blockquote">
+<p>The authors compile a great deal of research findings. They argue that moral judgment is about categorization, a position that flies in the face of and does not account for the decades of research on moral judgment in developmental and educational psychology. <br><br> The paper is incoherent in narrative, inadequate and misleading in explanation, and overall does not advance the field. <br><br> The paper seems to bounce from one thing to another without a clear, coherent story. Perhaps their thin version of moral judgment is a type of categorization, one based on perceiver making the other into a dead object. But so what? What does it buy the field? How does it contribute to scholarship?</p>
+</blockquote>
+<blockquote class="twitter-tweet blockquote" data-theme="dark">
+<p lang="en" dir="ltr">
+…. And rejected…some good constructive feedback, and some fairly harsh words… Skin is getting thicker with each paper <a href="https://twitter.com/hashtag/AcademicTwitter?src=hash&amp;ref_src=twsrc%5Etfw">#AcademicTwitter</a> <a href="https://twitter.com/hashtag/rejected?src=hash&amp;ref_src=twsrc%5Etfw">#rejected</a> … I guess I'll try again tomorrow, for now I'm going to watch The Deuce <a href="https://twitter.com/hashtag/thedeuce?src=hash&amp;ref_src=twsrc%5Etfw">#thedeuce</a> <a href="https://t.co/VDKDwORhev">https://t.co/VDKDwORhev</a> <a href="https://t.co/I6wGjajslL">pic.twitter.com/I6wGjajslL</a>
+</p>
+— Cillian McHugh (<span class="citation" data-cites="CillianMacAodh">(<a href="#ref-CillianMacAodh" role="doc-biblioref"><strong>CillianMacAodh?</strong></a>)</span>) <a href="https://twitter.com/CillianMacAodh/status/1192560032799428613?ref_src=twsrc%5Etfw">November 7, 2019</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>The experience with Reviewer 1 was a bit of a blow to the confidence. We brought it to our lab and made some fairly minor changes before sending it out again. Just before the Christmas break in 2019 I submitted it to <em>Perspectives on Psychological Science</em> (fully expecting to receive another reject). In February 2020 I went to SPSP in New Orleans, where I also was due to present MJAC as a poster at the Justice and Morality pre-conference. Upon landing I checked my email, and was very surprised to have received an R&amp;R.</p>
+</section>
+<section id="revisions" class="level2">
+<h2 class="anchored" data-anchor-id="revisions">Revisions</h2>
+<p>The reviews were really fair, but extensive. The original framing relied heavily on the parallels provided in Table 1 above. The reviewers were not convinced by this argument. We were encouraged to clearly differentiate MJAC from existing approaches, with instructions to identify and better engage with specific dual-process accounts, and with the Theory of Dyadic Morality <span class="citation" data-cites="schein_theory_2018">(<a href="#ref-schein_theory_2018" role="doc-biblioref">Schein and Gray 2018</a>)</span>.</p>
+<p>So the revisions were really quite tough. I approached them systematically, addressing each comment as well as was possible, and documenting <em>how</em> the changes made addressed each comment. Many of the comments addressed fairly deep conceptual questions, requiring extensive reading before I could begin attempting to address them. And, naturally, I shared my progress on social media:</p>
+<blockquote class="twitter-tweet blockquote" data-theme="dark">
+<p lang="en" dir="ltr">
+Yup! Starting to see progress!<br>Green is done ✅ <br>lighter green is done, but not sure if it's good enough 🤷‍♂️ <br>Blue means there was nothing to be done 👌🏼 <br>red…. well there's still time 😬🙈 <a href="https://t.co/zPehbIWlYr">https://t.co/zPehbIWlYr</a> <a href="https://t.co/YVNVtonRfW">pic.twitter.com/YVNVtonRfW</a>
+</p>
+— Cillian McHugh (<span class="citation" data-cites="CillianMacAodh">(<a href="#ref-CillianMacAodh" role="doc-biblioref"><strong>CillianMacAodh?</strong></a>)</span>) <a href="https://twitter.com/CillianMacAodh/status/1260377657063211012?ref_src=twsrc%5Etfw">May 13, 2020</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>I was also able to call on social media for help in addressing specific issues that came up while doing the revisions. The replies came in quickly, and really provided excellent resources to help with the revisions.</p>
+<blockquote class="twitter-tweet blockquote" data-theme="dark">
+<p lang="en" dir="ltr">
+Simpson et al.&nbsp;(2016) look at third-party observers who witnessed a transgression between two targets who share a relationship, and Hofmann et al.&nbsp;(2018) look at social closeness and differences in desire to punish (2/2)
+</p>
+— Rachel Forbes (<span class="citation" data-cites="rc_forbes">(<a href="#ref-rc_forbes" role="doc-biblioref"><strong>rc_forbes?</strong></a>)</span>) <a href="https://twitter.com/rc_forbes/status/1259272376719638531?ref_src=twsrc%5Etfw">May 10, 2020</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Following weeks of work, we had finally addressed all the reviewer comments. I was sick of it at this stage, and ready to submit. Unfortunately, the extent of the revisions meant that the manuscript was too long to submit. I noted that there is technically no word limit for submissions at <em>Perspectives on Psychological Science</em>, but my co-authors wisely convinced me to ask for an extension so we could cut down the words to something more manageable.</p>
+<blockquote class="twitter-tweet blockquote" data-theme="dark">
+<p lang="en" dir="ltr">
+So working on major revisions of a manuscript, all comments are pretty much addressed…<br>but now we're facing the problem of length…<br>Original submission between 8,000 and 9,000 words<br>Current version is 20,000 words…<br>Aaaaaah <br> 😫😖<a href="https://twitter.com/hashtag/AcademicTwitter?src=hash&amp;ref_src=twsrc%5Etfw">#AcademicTwitter</a> <a href="https://twitter.com/hashtag/AcademicChatter?src=hash&amp;ref_src=twsrc%5Etfw">#AcademicChatter</a><br>✂️🤔
+</p>
+— Cillian McHugh (<span class="citation" data-cites="CillianMacAodh">(<a href="#ref-CillianMacAodh" role="doc-biblioref"><strong>CillianMacAodh?</strong></a>)</span>) <a href="https://twitter.com/CillianMacAodh/status/1263108737839046659?ref_src=twsrc%5Etfw">May 20, 2020</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>So we spent another few weeks cutting words, and restructuring sections to be more streamlined (huge credit to coauthors in this endeavour). And eventually we submitted the revised manuscript. It was unrecognisable from the original submission.</p>
+<blockquote class="twitter-tweet blockquote" data-theme="dark">
+<p lang="en" dir="ltr">
+And revised manuscript submitted! 12,037 in the end!<br><br>That was exhausting! 😂 <a href="https://t.co/c56NeW51Cr">https://t.co/c56NeW51Cr</a>
+</p>
+— Cillian McHugh (<span class="citation" data-cites="CillianMacAodh">(<a href="#ref-CillianMacAodh" role="doc-biblioref"><strong>CillianMacAodh?</strong></a>)</span>) <a href="https://twitter.com/CillianMacAodh/status/1275153113691889665?ref_src=twsrc%5Etfw">June 22, 2020</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>We submitted the revised version in June 2020, and received a decision of Conditional Accept (with minor revisions) in September. It was fully accepted in November 2020, and published online in July 2021 (almost 7 years after the original idea was formed)</p>
+<section id="key-points-in-the-revisions" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-in-the-revisions">Key Points in the Revisions</h3>
+<p>I think one of the most important changes that came from the review process was the clarity in the argument. The original submission simply presented the approach, but we didn’t articulate a clear <em>problem</em> the approach was solving. This was a tough question to address. The range of existing approaches available means that trying to go into detail on the relative strengths and weaknesses is not feasible. In contrast, a more general approach risks over-generalizing and potentially mis-representing some approaches. As the revisions progressed this core argument presented itself. We identified the variability and context dependency of moral judgements as a challenge that is not well addressed in the existing literature. Because dynamism and context dependency are core assumptions of MJAC, this means that MJAC is well positioned to address this challenge.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../img/buffy.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption"><span class="citation" data-cites="whedon_lie_1997">(<a href="#ref-whedon_lie_1997" role="doc-biblioref">Whedon 1997</a>)</span></figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+
+<style> 
+
+.references {
+  padding-left: 42px ;
+  text-indent: -42px ;
+  font-size: 10pt    ;
+} 
+
+</style>
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.0/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: '#3f51b5',
+  textColor: '#fff'
+})</script>
+
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-barrett_psychological_2014" class="csl-entry" role="listitem">
+Barrett, Lisa Feldman, Christine D. Wilson-Mendenhall, and Lawrence W. Barsalou. 2014. <span>“A <span>Psychological Construction Account</span> of <span>Emotion Regulation</span> and <span>Dysregulation</span>: <span>The Role</span> of <span>Situated Conceptualizations</span>.”</span> In <em>Handbook of <span>Emotion Regulation</span></em>, edited by James J. Gross, 447–65. <span>New York</span>: <span>Guilford Press</span>.
+</div>
+<div id="ref-barsalou_deriving_1991" class="csl-entry" role="listitem">
+Barsalou, Lawrence W. 1991. <span>“Deriving Categories to Achieve Goals.”</span> In <em>The Psychology of Learning and Motivation: <span>Advances</span> in Research and Theory</em>, edited by Gordon H. Bower, 27:76–121. <span>San Diego</span>: <span>Academic Press</span>.
+</div>
+<div id="ref-barsalou_situated_2003" class="csl-entry" role="listitem">
+———. 2003. <span>“Situated Simulation in the Human Conceptual System.”</span> <em>Language and Cognitive Processes</em> 18 (5-6): 513–62. <a href="https://doi.org/10.1080/01690960344000026">https://doi.org/10.1080/01690960344000026</a>.
+</div>
+<div id="ref-boyd_what_1989" class="csl-entry" role="listitem">
+Boyd, Richard. 1989. <span>“What <span>Realism Implies</span> and <span>What</span> It <span>Does Not</span>.”</span> <em>Dialectica</em> 43 (1-2): 5–29. <a href="https://doi.org/10.1111/j.1746-8361.1989.tb00928.x">https://doi.org/10.1111/j.1746-8361.1989.tb00928.x</a>.
+</div>
+<div id="ref-boyd_realism_1991" class="csl-entry" role="listitem">
+———. 1991. <span>“Realism, Anti-Foundationalism and the Enthusiasm for Natural Kinds.”</span> <em>Philosophical Studies</em> 61 (1-2): 127–48. <a href="https://doi.org/10.1007/BF00385837">https://doi.org/10.1007/BF00385837</a>.
+</div>
+<div id="ref-byrd_not_2019" class="csl-entry" role="listitem">
+Byrd, Nick, and Paul Conway. 2019. <span>“Not All Who Ponder Count Costs: <span>Arithmetic</span> Reflection Predicts Utilitarian Tendencies, but Logical Reflection Predicts Both Deontological and Utilitarian Tendencies.”</span> <em>Cognition</em> 192 (November): 103995. <a href="https://doi.org/10.1016/j.cognition.2019.06.007">https://doi.org/10.1016/j.cognition.2019.06.007</a>.
+</div>
+<div id="ref-cameron_morality_2013" class="csl-entry" role="listitem">
+Cameron, C. Daryl, B. Keith Payne, and John M. Doris. 2013. <span>“Morality in High Definition: <span>Emotion</span> Differentiation Calibrates the Influence of Incidental Disgust on Moral Judgments.”</span> <em>Journal of Experimental Social Psychology</em> 49 (4): 719–25. <a href="https://doi.org/10.1016/j.jesp.2013.02.014">https://doi.org/10.1016/j.jesp.2013.02.014</a>.
+</div>
+<div id="ref-christensen_moral_2014" class="csl-entry" role="listitem">
+Christensen, Julia F., Albert Flexas, Margareta Calabrese, Nadine K. Gut, and Antoni Gomila. 2014. <span>“Moral Judgment Reloaded: A Moral Dilemma Validation Study.”</span> <em>Frontiers in Psychology</em> 5: 1–18. <a href="https://doi.org/10.3389/fpsyg.2014.00607">https://doi.org/10.3389/fpsyg.2014.00607</a>.
+</div>
+<div id="ref-christensen_moral_2012" class="csl-entry" role="listitem">
+Christensen, Julia F., and A. Gomila. 2012. <span>“Moral Dilemmas in Cognitive Neuroscience of Moral Decision-Making: <span>A</span> Principled Review.”</span> <em>Neuroscience &amp; Biobehavioral Reviews</em> 36 (4): 1249–64. <a href="https://doi.org/10.1016/j.neubiorev.2012.02.008">https://doi.org/10.1016/j.neubiorev.2012.02.008</a>.
+</div>
+<div id="ref-conway_deontological_2013" class="csl-entry" role="listitem">
+Conway, Paul, and Bertram Gawronski. 2013. <span>“Deontological and Utilitarian Inclinations in Moral Decision Making: <span>A</span> Process Dissociation Approach.”</span> <em>Journal of Personality and Social Psychology</em> 104 (2): 216–35. <a href="https://doi.org/10.1037/a0031021">https://doi.org/10.1037/a0031021</a>.
+</div>
+<div id="ref-conway_sacrificial_2018" class="csl-entry" role="listitem">
+Conway, Paul, Jacob Goldstein-Greenwood, David Polacek, and Joshua D. Greene. 2018. <span>“Sacrificial Utilitarian Judgments Do Reflect Concern for the Greater Good: <span>Clarification</span> via Process Dissociation and the Judgments of Philosophers.”</span> <em>Cognition</em> 179 (October): 241–65. <a href="https://doi.org/10.1016/j.cognition.2018.04.018">https://doi.org/10.1016/j.cognition.2018.04.018</a>.
+</div>
+<div id="ref-crockett_models_2013" class="csl-entry" role="listitem">
+Crockett, Molly J. 2013. <span>“Models of Morality.”</span> <em>Trends in Cognitive Sciences</em> 17 (8): 363–66. <a href="https://doi.org/10.1016/j.tics.2013.06.005">https://doi.org/10.1016/j.tics.2013.06.005</a>.
+</div>
+<div id="ref-cushman_action_2013" class="csl-entry" role="listitem">
+Cushman, Fiery A. 2013. <span>“Action, <span>Outcome</span>, and <span>Value A Dual-System Framework</span> for <span>Morality</span>.”</span> <em>Personality and Social Psychology Review</em> 17 (3): 273–92. <a href="https://doi.org/10.1177/1088868313495594">https://doi.org/10.1177/1088868313495594</a>.
+</div>
+<div id="ref-ditto_motivated_2009" class="csl-entry" role="listitem">
+Ditto, Peter H., David A. Pizarro, and David Tannenbaum. 2009. <span>“Motivated <span>Moral Reasoning</span>.”</span> In <em>Psychology of <span>Learning</span> and <span>Motivation</span></em>, edited by Brian H. Ross, 50:307–38. <span>Academic Press</span>. <a href="https://doi.org/10.1016/S0079-7421(08)00410-6">https://doi.org/10.1016/S0079-7421(08)00410-6</a>.
+</div>
+<div id="ref-dunlea_children_2020" class="csl-entry" role="listitem">
+Dunlea, James P., and Larisa A. Heiphetz. 2020. <span>“Children’s and Adults’ Understanding of Punishment and the Criminal Justice System.”</span> <em>Journal of Experimental Social Psychology</em> 87 (March): 103913. <a href="https://doi.org/10.1016/j.jesp.2019.103913">https://doi.org/10.1016/j.jesp.2019.103913</a>.
+</div>
+<div id="ref-everett_costs_2018" class="csl-entry" role="listitem">
+Everett, Jim A. C., Nadira S. Faber, Julian Savulescu, and Molly J. Crockett. 2018. <span>“The Costs of Being Consequentialist: <span>Social</span> Inference from Instrumental Harm and Impartial Beneficence.”</span> <em>Journal of Experimental Social Psychology</em> 79 (November): 200–216. <a href="https://doi.org/10.1016/j.jesp.2018.07.004">https://doi.org/10.1016/j.jesp.2018.07.004</a>.
+</div>
+<div id="ref-everett_inference_2016" class="csl-entry" role="listitem">
+Everett, Jim A. C., David A. Pizarro, and Molly J. Crockett. 2016. <span>“Inference of Trustworthiness from Intuitive Moral Judgments.”</span> <em>Journal of Experimental Psychology: General</em> 145 (6): 772–87. <a href="https://doi.org/10.1037/xge0000165">https://doi.org/10.1037/xge0000165</a>.
+</div>
+<div id="ref-forbes_when_2018" class="csl-entry" role="listitem">
+Forbes, Rachel Chubak. 2018. <span>“When the <span>Ones We Love Misbehave</span>: <span>Exploring Moral Processes</span> in <span>Intimate Bonds</span>.”</span> Master of {{Arts}}, <span>Toronto</span>: University of Toronto.
+</div>
+<div id="ref-goldstein-greenwood_how_2020" class="csl-entry" role="listitem">
+Goldstein-Greenwood, Jacob, Paul Conway, Amy Summerville, and Brielle N. Johnson. 2020. <span>“(<span>How</span>) <span>Do You Regret Killing One</span> to <span>Save Five</span>? <span>Affective</span> and <span>Cognitive Regret Differ After Utilitarian</span> and <span>Deontological Decisions</span>.”</span> <em>Personality and Social Psychology Bulletin</em> 46 (9): 1303–17. <a href="https://doi.org/10.1177/0146167219897662">https://doi.org/10.1177/0146167219897662</a>.
+</div>
+<div id="ref-gray_impure_2015" class="csl-entry" role="listitem">
+Gray, Kurt James, and Jonathan E. Keeney. 2015. <span>“Impure or <span>Just Weird</span>? <span>Scenario Sampling Bias Raises Questions About</span> the <span>Foundation</span> of <span>Morality</span>.”</span> <em>Social Psychological and Personality Science</em> 6 (8): 859–68. <a href="https://doi.org/10.1177/1948550615592241">https://doi.org/10.1177/1948550615592241</a>.
+</div>
+<div id="ref-gray_mind_2012" class="csl-entry" role="listitem">
+Gray, Kurt James, Liane Young, and Adam Waytz. 2012. <span>“Mind <span>Perception Is</span> the <span>Essence</span> of <span>Morality</span>.”</span> <em>Psychological Inquiry</em> 23 (2): 101–24. <a href="https://doi.org/10.1080/1047840X.2012.651387">https://doi.org/10.1080/1047840X.2012.651387</a>.
+</div>
+<div id="ref-greene_secret_2008" class="csl-entry" role="listitem">
+Greene, Joshua David. 2008. <span>“The <span>Secret Joke</span> of <span>Kant</span>’s <span>Soul</span>.”</span> In <em>Moral <span>Psychology Volume</span> 3: <span>The</span> Neurosciences of Morality: Emotion, Brain Disorders, and Development</em>, 35–79. <span>Cambridge (Mass.)</span>: <span>the MIT press</span>.
+</div>
+<div id="ref-greene_why_2016" class="csl-entry" role="listitem">
+———. 2016. <span>“Why Cognitive (Neuro) Science Matters for Ethics.”</span> In <em>Moral <span>Brains</span>: <span>The Neuroscience</span> of <span>Morality</span></em>, edited by S. Matthew Liao, 119–49. <span>Oxford University Press</span>.
+</div>
+<div id="ref-greene_fmri_2001" class="csl-entry" role="listitem">
+Greene, Joshua David, R B Sommerville, L E Nystrom, J M Darley, and J D Cohen. 2001. <span>“An <span class="nocase">fMRI</span> Investigation of Emotional Engagement in Moral Judgment.”</span> <em>Science (New York, N.Y.)</em> 293 (5537): 2105–8. <a href="https://doi.org/10.1126/science.1062872">https://doi.org/10.1126/science.1062872</a>.
+</div>
+<div id="ref-haidt_emotional_2001" class="csl-entry" role="listitem">
+Haidt, Jonathan. 2001. <span>“The Emotional Dog and Its Rational Tail: <span>A</span> Social Intuitionist Approach to Moral Judgment.”</span> <em>Psychological Review</em> 108 (4): 814–34. <a href="https://doi.org/10.1037/0033-295X.108.4.814">https://doi.org/10.1037/0033-295X.108.4.814</a>.
+</div>
+<div id="ref-haidt_social_2008" class="csl-entry" role="listitem">
+Haidt, Jonathan, and Fredrik Björklund. 2008. <span>“Social <span>Intuitionists Answer Six Questions</span> about <span>Moral Psychology</span>.”</span> In <em>Moral Psychology <span>Volume</span> 2, <span>The</span> Cognitive Science of Morality: Intuition and Diversity</em>, edited by Walter Sinnott-Armstrong, 181–217. <span>London</span>: <span>MIT</span>.
+</div>
+<div id="ref-haidt_moral_2000" class="csl-entry" role="listitem">
+Haidt, Jonathan, Fredrik Björklund, and Scott Murphy. 2000. <span>“Moral Dumbfounding: <span>When</span> Intuition Finds No Reason.”</span> <em>Unpublished Manuscript, University of Virginia</em>.
+</div>
+<div id="ref-heiphetz_dehumanization_2020" class="csl-entry" role="listitem">
+Heiphetz, Larisa A., and Maureen A. Craig. 2020. <span>“Dehumanization and Perceptions of Immoral Intergroup Behavior.”</span> <em>Oxford Studies in Experimental Philosophy</em>. <a href="https://doi.org/10.7916/d8-em68-fp60">https://doi.org/10.7916/d8-em68-fp60</a>.
+</div>
+<div id="ref-hofmann_morality_2014" class="csl-entry" role="listitem">
+Hofmann, Wilhelm, Daniel C. Wisneski, Mark J. Brandt, and Linda J. Skitka. 2014. <span>“Morality in Everyday Life.”</span> <em>Science</em> 345 (6202): 1340–43. <a href="https://doi.org/10.1126/science.1251560">https://doi.org/10.1126/science.1251560</a>.
+</div>
+<div id="ref-keil_concepts_1989" class="csl-entry" role="listitem">
+Keil, Frank C. 1989. <em>Concepts, Kinds, and Cognitive Development</em>. Vol. xv. The <span>MIT Press</span> Series in Learning, Development, and Conceptual Change. <span>Cambridge, MA, US</span>: <span>The MIT Press</span>.
+</div>
+<div id="ref-keil_what_2004" class="csl-entry" role="listitem">
+Keil, Frank C., Leonid Rozenblit, and Candice Mills. 2004. <span>“What Lies Beneath? <span>Understanding</span> the Limits of Understanding.”</span> In <em>Thinking and Seeing: <span>Visual</span> Metacognition in Adults and Children</em>, edited by D. T. Levin, 227–49. <span>MIT Press</span>.
+</div>
+<div id="ref-lee_he_2020" class="csl-entry" role="listitem">
+Lee, Junho, and Keith J. Holyoak. 2020. <span>“<span>‘<span>But</span> He’s My Brother’</span>: <span>The</span> Impact of Family Obligation on Moral Judgments and Decisions.”</span> <em>Memory &amp; Cognition</em> 48 (1): 158–70. <a href="https://doi.org/10.3758/s13421-019-00969-7">https://doi.org/10.3758/s13421-019-00969-7</a>.
+</div>
+<div id="ref-mchugh_searching_2017a" class="csl-entry" role="listitem">
+McHugh, Cillian, Marek McGann, Eric R. Igou, and Elaine L. Kinsella. 2017. <span>“Searching for <span>Moral Dumbfounding</span>: <span>Identifying Measurable Indicators</span> of <span>Moral Dumbfounding</span>.”</span> <em>Collabra: Psychology</em> 3 (1): 1–24. <a href="https://doi.org/10.1525/collabra.79">https://doi.org/10.1525/collabra.79</a>.
+</div>
+<div id="ref-mchugh_reasons_2020" class="csl-entry" role="listitem">
+———. 2020. <span>“Reasons or Rationalizations: <span>The</span> Role of Principles in the Moral Dumbfounding Paradigm.”</span> <em>Journal of Behavioral Decision Making</em> 33 (3): 376–92. <a href="https://doi.org/10.1002/bdm.2167">https://doi.org/10.1002/bdm.2167</a>.
+</div>
+<div id="ref-mikhail_rawls_2000" class="csl-entry" role="listitem">
+Mikhail, John. 2000. <span>“Rawls’ <span>Linguistic Analogy</span>: <span>A Study</span> of the ’<span>Generative Grammar</span>’ <span>Model</span> of <span>Moral Theory Described</span> by <span>John Rawls</span> in ’<span>A Theory</span> of <span>Justice</span>.’ (<span>Phd Dissertation</span>, <span>Cornell University</span>, 2000).”</span> {{SSRN Scholarly Paper}}, <span>Rochester, NY</span>: Social Science Research Network.
+</div>
+<div id="ref-murray_benefits_1996" class="csl-entry" role="listitem">
+Murray, Sandra L, John G Holmes, and Dale W Griffin. 1996a. <span>“The <span>Benefits</span> of <span>Positive Illusions</span>: <span>Idealization</span> and the <span>Construction</span> of <span>Satisfaction</span> in <span>Close Relationships</span>.”</span> <em>Journal of Personality and Social Psychology</em> 70: 79–98.
+</div>
+<div id="ref-murray_selffulfilling_1996" class="csl-entry" role="listitem">
+———. 1996b. <span>“The <span>Self-Fulfilling Nature</span> of <span>Positive Illusions</span> in <span>Romantic Relationships</span>: <span>Love Is Not Blind</span>, but <span>Prescient</span>.”</span> <em>Journal of Personality and Social Psychology</em> 71 (6): 1155–80.
+</div>
+<div id="ref-prinz_passionate_2005" class="csl-entry" role="listitem">
+Prinz, Jesse J. 2005. <span>“Passionate <span>Thoughts</span>: <span>The Emotional Embodiment</span> of <span>Moral Concepts</span>.”</span> In <em>Grounding <span>Cognition</span>: <span>The Role</span> of <span>Perception</span> and <span>Action</span> in <span>Memory</span>, <span>Language</span>, and <span>Thinking</span></em>, edited by Diane Pecher and Rolf A. Zwaan, 93–114. <span>Cambridge University Press</span>.
+</div>
+<div id="ref-schein_theory_2018" class="csl-entry" role="listitem">
+Schein, Chelsea, and Kurt James Gray. 2018. <span>“The <span>Theory</span> of <span>Dyadic Morality</span>: <span>Reinventing Moral Judgment</span> by <span>Redefining Harm</span>.”</span> <em>Personality and Social Psychology Review</em> 22 (1): 32–70. <a href="https://doi.org/10.1177/1088868317698288">https://doi.org/10.1177/1088868317698288</a>.
+</div>
+<div id="ref-siegel_inferences_2017" class="csl-entry" role="listitem">
+Siegel, Jenifer Z., Molly J. Crockett, and Raymond J. Dolan. 2017. <span>“Inferences about Moral Character Moderate the Impact of Consequences on Blame and Praise.”</span> <em>Cognition</em>, Moral <span>Learning</span>, 167 (October): 201–11. <a href="https://doi.org/10.1016/j.cognition.2017.05.004">https://doi.org/10.1016/j.cognition.2017.05.004</a>.
+</div>
+<div id="ref-siegel_beliefs_2018" class="csl-entry" role="listitem">
+Siegel, Jenifer Z., Christoph Mathys, Robb B. Rutledge, and Molly J. Crockett. 2018. <span>“Beliefs about Bad People Are Volatile.”</span> <em>Nature Human Behaviour</em> 2 (10): 750–56. <a href="https://doi.org/10.1038/s41562-018-0425-1">https://doi.org/10.1038/s41562-018-0425-1</a>.
+</div>
+<div id="ref-sim_msps_2016" class="csl-entry" role="listitem">
+Sim, Philip. 2016. <span>“<span>MSPs</span> Throw Out Incest Petition.”</span> <em>BBC News</em>, January.
+</div>
+<div id="ref-uhlmann_personcentered_2015" class="csl-entry" role="listitem">
+Uhlmann, Eric Luis, David A. Pizarro, and Daniel Diermeier. 2015. <span>“A <span>Person-Centered Approach</span> to <span>Moral Judgment</span>.”</span> <em>Perspectives on Psychological Science</em> 10 (1): 72–81. <a href="https://doi.org/10.1177/1745691614556679">https://doi.org/10.1177/1745691614556679</a>.
+</div>
+<div id="ref-valdesolo_manipulations_2006" class="csl-entry" role="listitem">
+Valdesolo, Piercarlo, and David DeSteno. 2006. <span>“Manipulations of <span>Emotional Context Shape Moral Judgment</span>.”</span> <em>Psychological Science</em> 17 (6): 476–77. <a href="https://doi.org/10.1111/j.1467-9280.2006.01731.x">https://doi.org/10.1111/j.1467-9280.2006.01731.x</a>.
+</div>
+<div id="ref-weidman_punish_2020" class="csl-entry" role="listitem">
+Weidman, Aaron C., Walter J. Sowden, Martha K. Berg, and Ethan Kross. 2020. <span>“Punish or <span>Protect</span>? <span>How Close Relationships Shape Responses</span> to <span>Moral Violations</span>.”</span> <em>Personality and Social Psychology Bulletin</em> 46 (5): 693–708. <a href="https://doi.org/10.1177/0146167219873485">https://doi.org/10.1177/0146167219873485</a>.
+</div>
+<div id="ref-whedon_lie_1997" class="csl-entry" role="listitem">
+Whedon, Joss. 1997. <span>“Lie to <span>Me</span>.”</span> <em>Buffy the Vampire Slayer</em>. <span>United States</span>: <span>The WB</span>.
+</div>
+<div id="ref-wiegmann_order_2012" class="csl-entry" role="listitem">
+Wiegmann, Alex, Yasmina Okan, and Jonas Nagel. 2012. <span>“Order Effects in Moral Judgment.”</span> <em>Philosophical Psychology</em> 25 (6): 813–36. <a href="https://doi.org/10.1080/09515089.2011.631995">https://doi.org/10.1080/09515089.2011.631995</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The reader is referred to the wealth of literature examining such factors as emotional influences, <span class="citation" data-cites="cameron_morality_2013">Cameron, Payne, and Doris (<a href="#ref-cameron_morality_2013" role="doc-biblioref">2013</a>)</span>; intentionality, evitability, benefit recipient, <span class="citation" data-cites="christensen_moral_2014">Christensen et al. (<a href="#ref-christensen_moral_2014" role="doc-biblioref">2014</a>)</span>; <span class="citation" data-cites="christensen_moral_2012">Christensen and Gomila (<a href="#ref-christensen_moral_2012" role="doc-biblioref">2012</a>)</span>; action-outcome distinction <span class="citation" data-cites="crockett_models_2013">Crockett (<a href="#ref-crockett_models_2013" role="doc-biblioref">2013</a>)</span>; cushman_action_2013; trustworthiness and social evaluation <span class="citation" data-cites="everett_inference_2016">Everett, Pizarro, and Crockett (<a href="#ref-everett_inference_2016" role="doc-biblioref">2016</a>)</span>; <span class="citation" data-cites="everett_costs_2018">Everett et al. (<a href="#ref-everett_costs_2018" role="doc-biblioref">2018</a>)</span>; personal-impersonal distinction, <span class="citation" data-cites="greene_fmri_2001">Greene et al. (<a href="#ref-greene_fmri_2001" role="doc-biblioref">2001</a>)</span>; doctrine of double effect, <span class="citation" data-cites="mikhail_rawls_2000">Mikhail (<a href="#ref-mikhail_rawls_2000" role="doc-biblioref">2000</a>)</span>; level of physical contact, <span class="citation" data-cites="valdesolo_manipulations_2006">Valdesolo and DeSteno (<a href="#ref-valdesolo_manipulations_2006" role="doc-biblioref">2006</a>)</span>; order effects, <span class="citation" data-cites="wiegmann_order_2012">Wiegmann, Okan, and Nagel (<a href="#ref-wiegmann_order_2012" role="doc-biblioref">2012</a>)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><i class="fa-regular fa-copyright" aria-hidden="true"></i> Andreas Handel, 2022<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="../../posts/quarto-website-migration.html">these folks.</a><br> <a href="https://github.com/andreashandel/andreashandelwebsite">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>

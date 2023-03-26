@@ -1,0 +1,1070 @@
+---
+title: "Reasons or Rationalisations"
+author: "Cillian McHugh"
+date: "2020-07-28"
+aliases: 
+  - ../reasons-or-rationalisations
+bibliography      : ["../../bib/My Library.bib"]
+link-citations: true
+reading_time: true  # Show estimated reading time?
+share: true  # Show social sharing links?
+profile: false  # Show author profile?
+comments: false  # Show comments?
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+
+```{r setup, include = FALSE}
+#knitr::opts_chunk$set(comment = NA, eval = FALSE)
+knitr::opts_chunk$set(echo = FALSE, include = FALSE)
+```
+
+
+
+```{r load_libraries_cogload}
+rm(list = ls())
+
+
+library(viridis)
+
+library(citr)
+#install.packages("sjstats")
+library(plyr)
+library(foreign)
+library(car)
+library(desnum)
+library(ggplot2)
+library(extrafont)
+#devtools::install_github("crsh/papaja")
+library(papaja)
+#library("dplyr")
+library("afex")
+library("tibble")
+library(scales)
+#install.packages("metap")
+library(metap)
+library(pwr)
+library(lsr)
+#install.packages("sjstats")
+library(sjstats)
+library(DescTools)
+#inatall.packages("ggstatsplot")
+#library(ggstatsplot)
+library(VGAM)
+library(nnet)
+library(mlogit)
+library(reshape2)
+#install.packages("powerMediation")
+library("powerMediation")
+library(knitr)
+library(forestmangr)
+
+#source("load_all_data.R")
+
+devtools::install_github("benmarwick/wordcountaddin")
+library(wordcountaddin)
+#wordcountaddin::text_stats("cogload_1to5.Rmd")
+getwd()
+
+```
+
+
+```{r colors1}
+
+r_slidetot <- 82
+
+
+#Color Format
+colFmt = function(x,color){
+  outputFormat = knitr::opts_knit$get("rmarkdown.pandoc.to")
+  if(outputFormat == 'latex')
+    paste("\\textcolor{",color,"}{",x,"}",sep="")
+  else if(outputFormat == 'html')
+    paste("<font color='",color,"'>",x,"</font>",sep="")
+  else
+    x
+}
+
+#rgb(255, 0, 0);
+
+sentiment <- '#ff744e'
+rational1 <- '#2faace'
+rational <- '#248aa8'
+conflict1 <- '#7d0552'
+conflict <- '#2f8d2f'
+cogload <- '#a0522d'
+dual <- '#b93b8f'
+lightgrey <- '#c0c0c0'
+
+
+# \definecolor{sentiment}{RGB}{255, 115, 115} #ff7300 or #ff744e
+# 
+# % \definecolor{rational}{RGB}{47,170,206} #2faace
+# 
+# \definecolor{rational}{RGB}{36, 138, 168} #248aa8
+# 
+# % \definecolor{conflict}{RGB}{125, 5, 82} #7d0552
+# 
+# \definecolor{cogload}{RGB}{160, 82, 45} #a0522d
+# 
+# \definecolor{conflict}{RGB}{47,141,47} #2f8d2f
+# 
+# \definecolor{dual}{RGB}{185, 59, 143} #b93b8f
+# 
+# \definecolor{lightgrey}{RGB}{192,192,192} #c0c0c0
+
+
+# plotting:
+# red dumbfounded
+# yellow reasons
+# blue nothing wrong
+dumb_palette <- c('#ff3801','#ff4c1b','#ff6035','#ff744e','#ff8868','#ff9c81','#ffb09b','#ff744e') # https://www.colorhexa.com/ff744e
+reasons_palette <- c('#ffb701','#ffbf1b','#ffc635','#ffcd4e','#ffd468','#ffdb81','#ffe39b','#ffcd4e') #https://www.colorhexa.com/ffcd4e
+nothing_palette <- c('#0149ff','#1b5bff','#356eff','#4e80ff','#6892ff','#81a5ff','#9bb7ff','#4e80ff') # https://www.colorhexa.com/4e80ff
+
+
+
+
+```
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+```{r}
+
+#load(project_filepath("static/data/searching.RData"))
+#data(../../../static/data/searching.RData)
+load("../../data/searching.RData")
+#load("static/data/searching.RData")
+
+```
+
+
+This post provides a brief overview of a [paper](https://onlinelibrary.wiley.com/doi/full/10.1002/bdm.2167) where we tested alternative explanations of moral dumbfounding proposed by critics [@mchugh_reasons_2020].
+
+([full text available here](https://psyarxiv.com/pcsfj/))
+
+# Background
+
+I'm not sure how I ended up studying moral dumbfounding^[Moral dumbfounding occurs when people stubbornly maintain a moral judgement, even though they can provide no reason to support their judgements [@haidt_emotional_2001; @haidt_moral_2000; @prinz_passionate_2005; @mchugh_searching_2017a]. Dumbfounded responses may include: (a) an admission of not having a reason for a judgement, (b) the use of an unsupported declarations (“It’s just wrong!”) to defend a judgement.], but it has intrigued me since I first read about it in a chapter by @prinz_passionate_2005. I admit that the first time I read the scenarios, I found myself dumbfounded. This meant that I was puzzled by critics of the phenomenon arguing that dumbfounding might not be a real phenomenon.
+
+# Challenges to Moral Dumbfounding
+
+Arguments against the dumbfounding narrative include:
+
+- Failure to provide reasons does not mean there are no reasons [@sneddon_social_2007]
+
+- People implicitly perceive harm in ostensibly harmless scenarios [@gray_myth_2014]
+
+- People have do have reasons but are "beaten into submission" [@jacobson_moral_2012]
+
+- People base their judgements on harm based reasons or norm based reasons [@royzman_curious_2015]
+
+## Evidence for Judgements based on Principles or Reasons
+
+The strongest challenge to moral dumbfounding came from a set of studies by @royzman_curious_2015, which tested moral dumbfounding directly, using the *Julie and Mark* dilemma which reads:
+
+> Julie and Mark, who are brother and sister, are travelling together in France. They are both on summer vacation from college. One night they are staying alone in a cabin near the beach. They decide that it would be interesting and fun if they tried making love. At very least it would be a new experience for each of them. Julie was already taking birth control pills, but Mark uses a condom too, just to be safe. They both enjoy it, but they decide not to do it again. They keep that night as a special secret between them, which makes them feel even closer to each other.
+
+- Royzman et al. [-@royzman_curious_2015] identified two principles that appear to be guiding judgements
+  + The Harm Principle
+  + The Norm Principle
+- Participants who endorse either principle have a <font color="2FAACE">reason</font> to judge the behaviour of *Julie and Mark* as wrong (and therefore cannot be dumbfounded)
+
+
+### Exclusion of Participants
+
+Royzman et al. [-@royzman_curious_2015] excluded participants who `r colFmt("endorsed",dual)` either principle from analysis, and found that dumbfounding effectively disappeared.
+
+#### Harm-based reasons
+
+Participants were presented with the following two questions (emphasis added here):
+
+- “are you able to <u>**believe**</u> that Julie and Mark’s having sex with each other <u>**will not negatively affect**</u> the quality of their relationship or how they feel about each other later on?”
+- “are you able to <u>**believe**</u> that Julie and Mark’s having sex with each other <u>**will have no bad consequences**</u> for them personally and/or for those close to them?”
+
+If participants responded "no" to either question they were excluded from analysis.
+
+#### Norm-based reasons
+
+Participants were presented with the following two statements and asked to select the one they agrred with most (emphasis added here):
+
+1. “violating an established moral norm just for fun or personal enjoyment is wrong <u>**only in situations where someone is harmed as a result**</u>, but is <u>*acceptable otherwise*</u>.”
+2. “violating an established moral norm just for fun or personal enjoyment is <u>**inherently wrong**</u> <u>*even in situations where no one is harmed as a result*</u>.”
+
+Participants who selected the second statement were excluded from analysis.
+
+# Reasons or Rationalizations
+
+Royzman et al. [-@royzman_curious_2015] excluded participants based on their `r colFmt("endorsing",dual)` of either principle. We argue that `r colFmt("endorsing",dual)` provides a poor measure of the degree to which participants judgements can be attributed to a given principle. We propose that if a participant's judgement is based on a given principle, the participant should be able to <font color="A0522D">articulate</font> the principle independently of a prompt, and they should <font color="b45c33">apply</font> that principle across different contexts. We contcuted 3 studies to address this.
+
+## Three Exclusion Criteria
+
+We adopted the same method as Royzman et al. [-@royzman_curious_2015], and excluded participants whose judgements could be attributed to either the harm principle or the norm principle. However rather than relying on `r colFmt("endorsing",dual)` alone, we developed additional, and more rigorous, exclusion criteria. We compared rates of dumbfounding based on these different criteria. We also tested the relative accuracy of the exclusion criteria (based on false exclusions).
+
+First we assessed whether participants <font color="A0522D">articulated</font> either principle. We provided an open-ended response question and asked participants to provide reasons for their judgements. The reasons provided were coded for mention of either principle.
+
+Second we assessed whether participants <font color="b45c33">applied</font> the harm principle across different contexts. We asked participants 3 questions about their judgements of behaviours/activities that could potentially lead to harm^["How would you rate the behavior of two people who engage in an activity that could potentially result in harmful consequences for either of them?"; "Do you think boxing is wrong?"; "Do you think playing contact team sports (e.g. rugby; ice-hockey; American football) is wrong?"]
+
+Across three studies we assessed rates of dumbfounding based on these different exclusion criteria.
+
+- `r colFmt("Endorsing",dual)` [Royzman et al., -@royzman_curious_2015, all studies]
+- <font color="A0522D">Articulating</font> (all studies)
+- <font color="b45c33">Applying</font> (Studies 2 and 3)
+
+
+## Measuring Dumbfounding
+
+Dumbfounding was measured using the *critical slide* which read as follows:
+
+>"Julie and Mark’s actions did not harm anyone or negatively affect anyone.
+How can there be anything wrong with what they did?"<br/>
+1. There is nothing wrong<br/>
+2. It’s wrong but I can’t think of a reason<br/>
+3. It’s wrong and I can provide a valid reason
+
+
+(The selecting of option 2, the `r colFmt("admission of not having reasons",dumb_palette[3])`, was taken to be a `r colFmt("dumbfounded",dumb_palette[3])` response)
+
+# Study Overview
+
+- **Study 1**: <font color="A0522D">Articulating</font> either principle
+- **Study 2**:  <font color="A0522D">Articulating</font> the norm principle or <font color="A0522D">Articulating</font> ***and*** <font color="b45c33">Applying</font> the harm principle
+- **Study 3**: Replication of Study 2
+
+
+**Study 1 Participants**
+
+```{r reasons set up data Study 1, include=FALSE}
+
+load("../../data/one.RData")
+df3 <- study_1
+
+x <- df3
+
+
+
+# code for word numbers below (no hyphen possible using numbers2words function)
+# numbers2words_cap1(length(df1$gender))
+# numbers2words_cap1(length(df2$gender))
+
+```
+
+- `r length(x$gender)` (`r sum(x$gender=="Female")` female, `r sum(x$gender=="Male")` male, `r sum(x$gender=="Other")` other; *M*~age~ = `r round(mean(x$age,na.rm=TRUE),digits=2)`, min = `r min(x$age,na.rm=TRUE)`, max = `r max(x$age,na.rm=TRUE)`, *SD* = `r round(sd(x$age,na.rm=TRUE),digits=2)`)
+<font size=2.5> (University students/alumni: *N* = `r length(df2$gender)` (`r sum(df2$gender=="Female")` female, `r sum(df2$gender=="Male")` male; *M*~age~ = `r round(mean(df2$age,na.rm=TRUE),digits=2)`, min = `r min(df2$age,na.rm=TRUE)`, max = `r max(df2$age,na.rm=TRUE)`, *SD* = `r round(sd(df2$age,na.rm=TRUE),digits=2)`; MTurk: *N* = `r length(df2$gender)` (`r sum(df1$gender=="Female")` female, `r sum(df1$gender=="Male")` male, `r sum(df1$gender=="Other")` other; *M*~age~ = `r round(mean(df1$age,na.rm=TRUE),digits=2)`, min = `r min(df1$age,na.rm=TRUE)`, max = `r max(df1$age,na.rm=TRUE)`, *SD* = `r round(sd(df1$age,na.rm=TRUE),digits=2)`)</font>
+
+**Study 2 Participants:**
+
+```{r reasons set up data Study 2, include=FALSE}
+
+load("../../data/two.RData")
+df3 <- study_2
+
+x <- df3
+
+
+
+# code for word numbers below (no hyphen possible using numbers2words function)
+# numbers2words_cap1(length(df1$gender))
+# numbers2words_cap1(length(df2$gender))
+
+```
+
+- `r length(x$gender)` (`r sum(x$gender=="Female")` female, `r sum(x$gender=="Male")` male, `r sum(x$gender=="Other")` other; *M*~age~ = `r round(mean(x$age,na.rm=TRUE),digits=2)`, min = `r min(x$age,na.rm=TRUE)`, max = `r max(x$age,na.rm=TRUE)`, *SD* = `r round(sd(x$age,na.rm=TRUE),digits=2)`)
+<font size=2.5> (University students/alumni: *N* = `r length(df2$gender)` (`r sum(df2$gender=="Female")` female, `r sum(df2$gender=="Male")` male; *M*~age~ = `r round(mean(df2$age,na.rm=TRUE),digits=2)`, min = `r min(df2$age,na.rm=TRUE)`, max = `r max(df2$age,na.rm=TRUE)`, *SD* = `r round(sd(df2$age,na.rm=TRUE),digits=2)`; MTurk: *N* = `r length(df2$gender)` (`r sum(df1$gender=="Female")` female, `r sum(df1$gender=="Male")` male, `r sum(df1$gender=="Other")` other; *M*~age~ = `r round(mean(df1$age,na.rm=TRUE),digits=2)`, min = `r min(df1$age,na.rm=TRUE)`, max = `r max(df1$age,na.rm=TRUE)`, *SD* = `r round(sd(df1$age,na.rm=TRUE),digits=2)`)</font>
+
+**Study 3 Participants:**
+
+```{r reasons set up data Study 3, include=FALSE}
+
+load("../../data/three.RData")
+df3 <- study_3
+
+x <- df3
+
+
+
+# code for word numbers below (no hyphen possible using numbers2words function)
+# numbers2words_cap1(length(df1$gender))
+# numbers2words_cap1(length(df2$gender))
+
+```
+
+- `r length(x$gender)` (`r sum(x$gender=="Female")` female, `r sum(x$gender=="Male")` male, `r sum(x$gender=="Other")` other; *M*~age~ = `r round(mean(x$age,na.rm=TRUE),digits=2)`, min = `r min(x$age,na.rm=TRUE)`, max = `r max(x$age,na.rm=TRUE)`, *SD* = `r round(sd(x$age,na.rm=TRUE),digits=2)`)
+
+# Results
+
+## Rates of Dumbfounding depending on Exclusion type
+
+On the graphs below you can see the frequency of each response to the critical slide for each study. The furthest left bars represent the full sample. The responses for each of the sub-samples following the relevant exclusion criterion are displayed and labelled separately.
+
+The response we are intersted in is the `r colFmt("red bar",dumb_palette[3])` denoting a `r colFmt("dumbfounded response",dumb_palette[3])`. Percentages of the full sample are displayed within the plot. Percentages of the relevant sub-samples are displayed in parenthesis below the count.
+
+### Study 1:
+
+```{r reasonsprepfig1, include=FALSE}
+
+df3 <- study_1
+
+df_r1 <- rbind.data.frame(cbind(df3$InCS,
+                                rep(1,length(length(df3$InCS)))),
+                          
+                          cbind(df3$InCS[which(df3$Roz_fully_C==TRUE)],
+                              rep(2,length(sum(df3$Roz_fully_C==TRUE,na.rm = TRUE)))),
+                        
+                        cbind(df3$InCS[which(df3$eligible==TRUE)],
+                              rep(3,length(sum(df3$eligible==TRUE,na.rm = TRUE)))))
+
+colnames(df_r1) <- c("InCS", "convergence")
+variable.names(df_r1)
+y <- table(df_r1)
+y <- as.data.frame(y)
+
+z <- as.data.frame(table(df_r1$InCS,df_r1$convergence)/length(df3$InCS))
+perc <- z$Freq
+test <- cbind(y,perc)
+test$InCS <- recode(test$InCS, '"1"="1nothing wrong";"2"="2no reason";"3"="3reason"')
+
+
+test$sampleN <- c(rep(length(df3$gender),3),
+             rep(sum(df3$Roz_fully_C==TRUE,na.rm = TRUE),3),
+             rep(sum(df3$eligible==TRUE,na.rm = TRUE),3))
+             
+
+
+test$sample_perc <- test$Freq/test$sampleN
+
+
+test$convergence <- recode(test$convergence, '"1"="1total sample";"2"="2fully convergent";"3"="3revised convergence"')
+
+test
+test <- 
+  test %>% 
+  round_df(digits = 2)
+
+
+test
+#test1ab <- test
+#rm(test1ab)
+round(test$sample_perc,digits=2)
+
+scales::percent(round(test$sample_perc,digits=2),accuracy = 1)
+
+rm(z,y,df_r1,perc)
+```
+
+```{r reasonsfig1, fig.cap = "*Study 1 - Responses to critical slide for the full sample and for each exclusion criterion*", include=TRUE}
+
+# color for Study 2 "#B4B4B4"
+# Figure\ \@ref(fig:reasonsfig1)
+
+g <- ggplot(test, aes(x = convergence, y = perc, fill = InCS)) +
+  scale_y_continuous(limits = c(-.1,1),
+                     labels = percent_format()
+  )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+  )+
+  geom_text(family = "Times", size=3.5,
+            aes( label = scales::percent(test$perc,accuracy = 1),
+                 y= perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(family = "Times", size=3.5,
+            aes(label = format(Freq),
+                y= -3*(..count../100)/(..count..)),
+            stat= "count",
+            position = position_dodge(0.9),
+            #vjust = -.05,
+            fontface='plain'
+            )+
+  geom_text(family = "Times", size=3.3,
+            aes( label = paste0("(",scales::percent(round(test$sample_perc,digits=2),accuracy = 1),")"),
+                 y =  -.085),
+            stat= "identity",
+            vjust = -.03,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  labs(y = "% of Participants providing\nEach Response on Critical Slide",
+       x = "Measure of Convergence",
+       fill = "Response to\nCritical Slide"
+       )+
+  theme_apa()+
+  scale_fill_manual(name="Response"
+                    ,values = c(nothing_palette[3],dumb_palette[3],reasons_palette[3])
+                    ,labels=c("Nothing Wrong","Dumbfounded","Reasons")
+                    )+
+  # scale_fill_manual(values = c("#989898", "#333333", "#E6E6E6"),
+  #                   labels=c("Nothing\nWrong",
+  #                          "Dumbfounded",
+  #                          "Reasons\nProvided"))+
+  # scale_fill_grey(labels=c("Study 4\nN=31",
+  #                          "Study 5\nN=72",
+  #                          "Study 3a\nN=72",
+  #                          "Study 3b\nN=101")
+  #                 )+
+  scale_x_discrete(labels = c("Full Sample\n \U1D441 = 110",
+                              "Endorsing Only\n \U1D45B = 14",
+                              "Endorsing and\nArticulating\n \U1D45B = 52")
+                   )+
+  theme_bw()+
+  theme(plot.title=element_text(family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(family="Times",
+                                 colour = "black",
+                                 size=10
+                                 ),
+          axis.ticks.x = element_blank(),
+          axis.title=element_text(family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(family = "Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right")
+
+suppressWarnings(print(g))
+
+# ggsave("spsp_graphs/reasonsfig1.png"
+#        , width = 16, height = 12
+#        , units = "cm", dpi = 300)
+
+#rm(test)
+
+
+```
+
+### Study 2:
+
+```{r reasonsprepfig2, include=FALSE}
+df6 <- study_2
+df_r1 <- rbind.data.frame(cbind(df6$InCS,
+                                rep(1,length(length(df6$InCS)))),
+                          
+                          cbind(df6$InCS[which(df6$Roz_fully_C==TRUE)],
+                              rep(2,length(sum(df6$Roz_fully_C==TRUE,na.rm = TRUE)))),
+                          
+                          cbind(df6$InCS[which(df6$eligible==TRUE)],
+                                rep(3,length(sum(df6$eligible==TRUE,na.rm = TRUE)))),
+                        
+                        cbind(df6$InCS[which(df6$all_harm_norm==TRUE)],
+                              rep(4,length(sum(df6$all_harm_norm==TRUE,na.rm = TRUE)))))
+
+
+colnames(df_r1) <- c("InCS", "convergence")
+variable.names(df_r1)
+y <- table(df_r1)
+y <- as.data.frame(y)
+
+z <- as.data.frame(table(df_r1$InCS,df_r1$convergence)/length(df6$InCS))
+perc <- z$Freq
+test <- cbind(y,perc)
+test$InCS <- recode(test$InCS, '"1"="1nothing wrong";"2"="2no reason";"3"="3reason"')
+
+test$sampleN <- c(rep(length(df6$gender),3),
+             rep(sum(df6$Roz_fully_C==TRUE,na.rm = TRUE),3),
+             rep(sum(df6$eligible==TRUE,na.rm = TRUE),3),
+             rep(sum(df6$all_harm_norm==TRUE,na.rm = TRUE),3)
+             )
+
+
+test$sample_perc <- test$Freq/test$sampleN
+
+test$convergence <- recode(test$convergence, '"1"="1total sample";"2"="2fully convergent";"3"="3study1";"4"="4study2"')
+
+test <- 
+  test %>% 
+  round_df(digits = 2)
+
+
+test
+rm(z,y,df_r1,perc)
+
+```
+
+
+```{r reasonsfig2, fig.cap = "*Study 2 - Responses to critical slide for the full sample and for each exclusion criterion*", include=TRUE}
+
+# color for Study 2 "#B4B4B4"
+# Figure\ \@ref(fig:reasonsfig2)
+
+g <- ggplot(test, aes(x = convergence, y = perc, fill = InCS)) +
+   scale_y_continuous(limits = c(-.085,1),
+                      labels = percent_format()
+                      )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(family = "Times", size=3.2,
+            aes(label = scales::percent(test$perc,accuracy = 1L),
+                 y= test$perc  ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(family = "Times", size=2.8,
+            aes( label = paste0("(",scales::percent(test$sample_perc,accuracy = 1L),")"),
+                 y =  -.085),
+            stat= "identity",
+            vjust = -.03,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(family = "Times", size=3.5,
+            aes(label = format(Freq),
+                y= -3.0*(..count../100)/(..count..)),
+            stat= "count",
+            position = position_dodge(0.9),
+            #vjust = -.05,
+            fontface='plain'
+            )+
+  labs(y = "% of Participants providing\nEach Response on Critical Slide",
+       x = "Measure of Convergence",
+       fill = "Response to\nCritical Slide"
+       )+
+  theme_apa()+
+  scale_fill_manual(name="Response"
+                    ,values = c(nothing_palette[3],dumb_palette[3],reasons_palette[3])
+                    ,labels=c("Nothing Wrong","Dumbfounded","Reasons")
+                    )+
+  # scale_fill_manual(values = c("#989898", "#333333", "#E6E6E6"),
+  #                   labels=c("Nothing\nWrong",
+  #                          "Dumbfounded",
+  #                          "Reasons\nProvided"))+
+  # scale_fill_grey(labels=c("Study 4\nN=31",
+  #                          "Study 5\nN=72",
+  #                          "Study 3a\nN=72",
+  #                          "Study 3b\nN=101")
+  #                 )+
+  scale_x_discrete(labels = c(#expression("\n Full Sample", paste(italic("N"), " = 111      ")),
+                                 "\n Full Sample\n \U1D441 = 111",
+                              # bquote("\nEndorsing\nOnly", paste(italic("n"), " = 20      ")),
+                              #"\nEndorsing\nOnly",#, expression(italic("n"), " = 20      ")),
+                                 "\n Endorsing Only\n \U1D45B = 20",
+                              #expression(paste("\nEndorsing and\nArticulating\n", italic("n"), " = 61")),
+                              #expression("\nEndorsing,\nArticulating,and\nApplying", paste(italic("n"), " = 73        "))
+                                 "\nEndorsing and\nArticulating\n \U1D45B = 61",
+                                 "Endorsing,\nArticulating,and\nApplying\n \U1D45B = 73")
+  #)
+  )+
+  # scale_x_discrete(labels = c(expression(atop("\n Full Sample", paste(italic("N"), " = 111      "))),
+  #                             #   "\n Full Sample\n*N* = 111",
+  #                              bquote(atop("\nEndorsing\nOnly", paste(italic("n"), " = 20      "))),
+  #                             #"\nEndorsing\nOnly",#, expression(italic("n"), " = 20      ")),
+  #                             #   "\n Endorsing Only\nN = 20",
+  #                             expression(atop("\nEndorsing and\nArticulating", paste(italic("n"), " = 61        "))),
+  #                             expression(atop("\nEndorsing,\nArticulating,and\nApplying", paste(italic("n"), " = 73        ")))
+  #                             #   "\nEndorsing and\nArticulating\nN = 61",
+  #                             #   "Endorsing,\nArticulating,and\nApplying\nN=73")
+  # )
+  # )+
+  theme_bw()+
+  theme(plot.title=element_text(family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(family="Times",
+                                 colour = "black",
+                                 size=10
+                                 ),
+          #axis.text.x = element_text(angle = 0, vjust = -5.5, hjust = .5),
+          axis.ticks.x = element_blank(),
+          #axis.title.x = element_text(vjust = -5),
+          axis.title=element_text(family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(family = "Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right" #,
+        #plot.margin=unit(c(.1,.1,1,.1), "cm"
+#                         ),
+ #                  panel.margin=unit(c(0,0,6,0), "cm")
+                                     )
+
+# ggsave("spsp_graphs/reasonsfig2.png"
+#        , width = 16, height = 12
+#        , units = "cm", dpi = 300)
+
+suppressWarnings(print(g))
+
+
+#rm(test)
+
+```
+
+### Study 3:
+
+```{r S3reasonsprepfig2, include=FALSE}
+df6 <- study_3
+df_r1 <- rbind.data.frame(cbind(df6$InCS,
+                                rep(1,length(length(df6$InCS)))),
+                          
+                          cbind(df6$InCS[which(df6$Roz_fully_C==TRUE)],
+                              rep(2,length(sum(df6$Roz_fully_C==TRUE,na.rm = TRUE)))),
+                          
+                          cbind(df6$InCS[which(df6$eligible==TRUE)],
+                                rep(3,length(sum(df6$eligible==TRUE,na.rm = TRUE)))),
+                        
+                        cbind(df6$InCS[which(df6$all_harm_norm==TRUE)],
+                              rep(4,length(sum(df6$all_harm_norm==TRUE,na.rm = TRUE)))))
+
+
+colnames(df_r1) <- c("InCS", "convergence")
+variable.names(df_r1)
+y <- table(df_r1)
+y <- as.data.frame(y)
+
+z <- as.data.frame(table(df_r1$InCS,df_r1$convergence)/length(df6$InCS))
+perc <- z$Freq
+test <- cbind(y,perc)
+test$InCS <- recode(test$InCS, '"1"="1nothing wrong";"2"="2no reason";"3"="3reason"')
+
+test$sampleN <- c(rep(length(df6$gender),3),
+             rep(sum(df6$Roz_fully_C==TRUE,na.rm = TRUE),3),
+             rep(sum(df6$eligible==TRUE,na.rm = TRUE),3),
+             rep(sum(df6$all_harm_norm==TRUE,na.rm = TRUE),3)
+             )
+
+
+test$sample_perc <- test$Freq/test$sampleN
+
+test$convergence <- recode(test$convergence, '"1"="1total sample";"2"="2fully convergent";"3"="3study1";"4"="4study2"')
+
+test <- 
+  test %>% 
+  round_df(digits = 2)
+
+
+test
+#rm(z,y,df_r1,perc)
+
+```
+
+
+```{r S3reasonsfig2, fig.cap = "*Study 3 - Responses to critical slide for the full sample and for each exclusion criterion*", include=TRUE}
+
+# color for Study 2 "#B4B4B4"
+# Figure\ \@ref(fig:reasonsfig2)
+
+g <- ggplot(test, aes(x = convergence, y = perc, fill = InCS)) +
+   scale_y_continuous(limits = c(-.085,1),
+                      labels = percent_format()
+                      )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(family = "Times", size=3.2,
+            aes( label = scales::percent(test$perc,accuracy = 1L),
+                 y= perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(family = "Times", size=2.8,
+            aes( label = paste0("(",scales::percent(test$sample_perc,accuracy = 1L),")"),
+                 y =  -.085),
+            stat= "identity",
+            vjust = -.03,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(family = "Times", size=3.5,
+            aes(label = format(Freq),
+                y= -3.0*(..count../100)/(..count..)),
+            stat= "count",
+            position = position_dodge(0.9),
+            #vjust = -.05,
+            fontface='plain'
+            )+
+  labs(y = "% of Participants providing\nEach Response on Critical Slide",
+       x = "Measure of Convergence",
+       fill = "Response to\nCritical Slide"
+       )+
+  theme_apa()+
+  # scale_fill_manual(values = c("#989898", "#333333", "#E6E6E6"),
+  #                   labels=c("Nothing\nWrong",
+  #                          "Dumbfounded",
+  #                          "Reasons\nProvided"))+
+  scale_fill_manual(name="Response"
+                    ,values = c(nothing_palette[3],dumb_palette[3],reasons_palette[3])
+                    ,labels=c("Nothing Wrong","Dumbfounded","Reasons")
+                    )+
+  # scale_fill_grey(labels=c("Study 1\nN=31",
+  #                          "Study 2\nN=72",
+  #                          "Study 3a\nN=72",
+  #                          "Study 3b\nN=101")
+  # scale_fill_grey(labels=c("Study 4\nN=31",
+  #                          "Study 5\nN=72",
+  #                          "Study 3a\nN=72",
+  #                          "Study 3b\nN=101")
+  #                 )+
+  scale_x_discrete(labels = c("\n Full Sample\n \U1D441 = 502",
+                              "\n Endorsing Only\n \U1D45B = 84",
+                              "\nEndorsing and\nArticulating\n \U1D45B = 294",
+                              "Endorsing,\nArticulating,and\nApplying\n \U1D45B = 345")
+                   )+
+  theme_bw()+
+  theme(plot.title=element_text(family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(family="Times",
+                                 colour = "black",
+                                 size=10
+                                 ),
+          axis.ticks.x = element_blank(),
+          axis.title=element_text(family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(family = "Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right")
+
+# ggsave("spsp_graphs/S3reasonsfig2.png"
+#        , width = 16, height = 12
+#        , units = "cm", dpi = 300)
+
+#rm(test)
+suppressWarnings(print(g))
+
+
+```
+
+As we can see above, dumbfounded responding is found in the full sample for each study.
+
+Replicating the finding by Royzman et al. [-@royzman_curious_2015], if we exclude participants who `r colFmt("endorse",dual)` either principle, rates of dumbfounding are negligible.
+
+However, if we also account for whether people <font color="A0522D">articulate</font> or <font color="b45c33">apply</font> either principle, dumbfounded responding is observed. So whether or not dumbfounding is real, depends on which exclusion criterion is more *accurate*.
+
+## Relative Accuracy of Exclusion Criteria
+
+While we do not have a direct measure of the relative *accuracy* of the different exclusion criteria, we can assess the relative rates of false exclusions. All exclusions are based on attributing participants' judgements to either principle. In this case, the judgements should be **consistent** with the relevant principle. As such, participants who selected "There is nothing wrong" (blue bars above) should *not* be excluded from analysis. Any participant who selected "There is nothing wrong" and was excluded, was falsely excluded.
+
+Below we have subsetted the participants who selected "There is nothing wrong" across each study, and plot the rates of rates of false exclusion based on each exclusion criterion. The percentage of participants who selected "There is nothing wrong" is displayed within the plot, and the percentage of the full sample is displayed in parenthesis below the count.
+
+```{r forBestExclusion}
+df3 <- study_1
+
+df_r1 <- rbind.data.frame(cbind(df3$InCS,
+                                rep(1,length(length(df3$InCS)))),
+                          
+                          cbind(df3$InCS[which(df3$Roz_fully_C==FALSE)],
+                              rep(2,length(sum(df3$Roz_fully_C==FALSE,na.rm = TRUE)))),
+                        
+                        cbind(df3$InCS[which(df3$eligible==FALSE)],
+                              rep(3,length(sum(df3$eligible==FALSE,na.rm = TRUE)))))
+
+#cbind.data.frame(df_r1a, rep("Study 1", length(df_r1a)))
+
+colnames(df_r1) <- c("InCS", "convergence")
+variable.names(df_r1)
+y <- table(df_r1)
+y <- as.data.frame(y)
+
+z <- as.data.frame(table(df_r1$InCS,df_r1$convergence)/length(df3$InCS))
+perc <- z$Freq
+test <- cbind(y,perc)
+test$InCS <- recode(test$InCS, '"1"="1nothing wrong";"2"="2no reason";"3"="3reason"')
+test$InCS <- recode(test$InCS, '"1"="1nothing wrong";"2"="2no reason";"3"="3reason"')
+
+
+
+test$sampleN <- c(rep(length(df3$gender),3),
+             rep(sum(df3$Roz_fully_C==TRUE,na.rm = TRUE),3),
+             rep(sum(df3$eligible==TRUE,na.rm = TRUE),3))
+
+test$sampleN2 <- rep(sum(df3$InCS=="There is nothing wrong."), length(test$InCS))
+
+test$sample_perc <- test$Freq/test$sampleN
+
+test$sample_perc2 <- test$Freq/test$sampleN2
+
+
+test$convergence <- recode(test$convergence, '"1"="1total sample";"2"="2fully convergent";"3"="3study1"')
+
+test1 <- test
+
+df6 <- study_2
+df_r1 <- rbind.data.frame(cbind(df6$InCS,
+                                rep(1,length(length(df6$InCS)))),
+                          
+                          cbind(df6$InCS[which(df6$Roz_fully_C==FALSE)],
+                              rep(2,length(sum(df6$Roz_fully_C==FALSE,na.rm = TRUE)))),
+                          
+                          cbind(df6$InCS[which(df6$eligible==FALSE)],
+                                rep(3,length(sum(df6$eligible==FALSE,na.rm = TRUE)))),
+                        
+                        cbind(df6$InCS[which(df6$all_harm_norm==FALSE)],
+                              rep(4,length(sum(df6$all_harm_norm==FALSE,na.rm = TRUE)))))
+
+
+
+df_r1
+colnames(df_r1) <- c("InCS", "convergence")
+variable.names(df_r1)
+y <- table(df_r1)
+y <- as.data.frame(y)
+
+z <- as.data.frame(table(df_r1$InCS,df_r1$convergence)/length(df6$InCS))
+perc <- z$Freq
+test <- cbind(y,perc)
+test$InCS <- recode(test$InCS, '"1"="1nothing wrong";"2"="2no reason";"3"="3reason"')
+
+test$sampleN <- c(rep(length(df6$gender),3),
+             rep(sum(df6$Roz_fully_C==FALSE,na.rm = TRUE),3),
+             rep(sum(df6$eligible==FALSE,na.rm = TRUE),3),
+             rep(sum(df6$all_harm_norm==FALSE,na.rm = TRUE),3)
+             )
+
+test$sampleN2 <- rep(sum(df6$InCS=="There is nothing wrong."), length(test$InCS))
+
+test$sample_perc <- test$Freq/test$sampleN
+
+test$sample_perc2 <- test$Freq/test$sampleN2
+
+test$convergence <- recode(test$convergence, '"1"="1total sample";"2"="2fully convergent";"3"="3study1";"4"="4study2"')
+
+
+
+test2 <- test
+
+df6 <- study_3
+df_r1 <- rbind.data.frame(cbind(df6$InCS,
+                                rep(1,length(length(df6$InCS)))),
+                          
+                          cbind(df6$InCS[which(df6$Roz_fully_C==FALSE)],
+                              rep(2,length(sum(df6$Roz_fully_C==FALSE,na.rm = TRUE)))),
+                          
+                          cbind(df6$InCS[which(df6$eligible==FALSE)],
+                                rep(3,length(sum(df6$eligible==FALSE,na.rm = TRUE)))),
+                        
+                        cbind(df6$InCS[which(df6$all_harm_norm==FALSE)],
+                              rep(4,length(sum(df6$all_harm_norm==FALSE,na.rm = TRUE)))))
+
+
+
+
+df_r1
+colnames(df_r1) <- c("InCS", "convergence")
+variable.names(df_r1)
+y <- table(df_r1)
+y <- as.data.frame(y)
+
+z <- as.data.frame(table(df_r1$InCS,df_r1$convergence)/length(df6$InCS))
+perc <- z$Freq
+test <- cbind(y,perc)
+test$InCS <- recode(test$InCS, '"1"="1nothing wrong";"2"="2no reason";"3"="3reason"')
+
+test$sampleN <- c(rep(length(df6$gender),3),
+             rep(sum(df6$Roz_fully_C==FALSE,na.rm = TRUE),3),
+             rep(sum(df6$eligible==FALSE,na.rm = TRUE),3),
+             rep(sum(df6$all_harm_norm==FALSE,na.rm = TRUE),3)
+             )
+
+test$sampleN2 <- rep(sum(df6$InCS=="There is nothing wrong."), length(test$InCS))
+
+test$sample_perc <- test$Freq/test$sampleN
+
+test$sample_perc2 <- test$Freq/test$sampleN2
+
+test$convergence <- recode(test$convergence, '"1"="1total sample";"2"="2fully convergent";"3"="3study1";"4"="4study2"')
+
+
+
+test3 <- test
+length(test3$InCS)
+test3$Study <- rep("Study 3", length(test3$InCS))
+test2$Study <- rep("Study 2", length(test2$InCS))
+test1$Study <- rep("Study 1", length(test1$InCS))
+
+test_full <- rbind(test1,test2,test3)
+
+test <- 
+  as_tibble(test_full) %>% 
+  dplyr::filter(InCS=="1nothing wrong") %>% 
+  dplyr::filter(convergence!="1total sample") %>% 
+  rbind(list("1nothing wrong", "4study2",NA, 0,0,0,0,0 ,"Study 1")) %>% 
+  round_df(digits = 2)
+
+
+
+#test$sample_perc <- round(test$Freq/test$sampleN, digits=2)
+
+#rm(round_df)
+
+#install.packages("forestmangr")
+#library(forestmangr)
+round_df(test,digits=2)
+
+# test <-
+#   rbind.data.frame(test,
+#                    list("1nothing wrong", "4study2",NA, 0,0,0,0,0 ,"Study 1")
+#   )
+
+
+#test_full_t <- as_tibble(test_full)
+
+#test_full_t %>% filter
+
+#rm(z,y,df_r1,perc)
+
+```
+
+
+```{r S3reasonsfig3, fig.cap = "*Exclusion of participants who selected 'There is nothing wrong'*", include=TRUE}
+
+# color for Study 2 "#B4B4B4"
+# Figure\ \@ref(fig:reasonsfig2)
+g <- ggplot(test, aes(x = Study, y = sample_perc2, fill = convergence)) +
+   scale_y_continuous(limits = c(-.085,1),
+                      labels = percent_format()
+                      )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(family = "Times", size=3.2,
+            aes( label = scales::percent(test$sample_perc2),
+                 y= sample_perc2 ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(family = "Times", size=2.8,
+            aes( label = paste0("(",scales::percent(test$perc),")"),
+                 y =  -.085),
+            stat= "identity",
+            vjust = -.03,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(family = "Times", size=3.5,
+            aes(label = format(Freq),
+                y= -3.0*(..count../100)/(..count..)),
+            stat= "count",
+            position = position_dodge(0.9),
+            #vjust = -.05,
+            fontface='plain'
+            )+
+  labs(y = "% of Participants Excluded\n Based on Each Measure",
+       x = "",
+       fill = "Measure of\nConvergence"
+       )+
+  theme_apa()+
+  scale_fill_manual(values = c("#b93b8f", "#A0522D", "#F87431"),
+                    labels=c("Endorsing\nOnly\n",
+                              "Endorsing and\nArticulating\n",
+                              "Endorsing,Articulating,\nand Applying\n"))+
+  # scale_fill_manual(name="Response"
+  #                   ,values = c(nothing_palette[3],dumb_palette[3],reasons_palette[3])
+  #                   ,labels=c("Nothing Wrong","Dumbfounded","Reasons")
+  #                   )+
+  # scale_fill_grey(labels=c("Study 1\nN=31",
+  #                          "Study 2\nN=72",
+  #                          "Study 3a\nN=72",
+  #                          "Study 3b\nN=101")
+  # scale_fill_grey(labels=c("Study 4\nN=31",
+  #                          "Study 5\nN=72",
+  #                          "Study 3a\nN=72",
+  #                          "Study 3b\nN=101")
+  #                 )+
+  scale_x_discrete(labels = c("Study 1\n \U1D45B = 22",
+                              "Study 2\n \U1D45B = 36",
+                              #"\nEndorsing and\nArticulating\n \U1D45B = 294",
+                              "Study 3\n \U1D45B = 125")
+                   )+
+  theme_bw()+
+  theme(plot.title=element_text(family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(family="Times",
+                                 colour = "black",
+                                 size=10
+                                 ),
+          axis.ticks.x = element_blank(),
+          axis.title=element_text(family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(family = "Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right")
+
+# ggsave("spsp_graphs/S3reasonsfig3.png"
+#        , width = 16, height = 12
+#        , units = "cm", dpi = 300)
+suppressWarnings(print(g))
+
+#rm(test)
+
+```
+
+As can be seen from the above, rates of false exclusion are much higher when `r colFmt("endorsing",dual)` is the only exclusion criterion. Some false exclusion remains for each of the other exclusion criteria, however it is a considerable improvement. Based on this we conclude that these revised criteria are more robust, and our studies provide evidence that Moral Dumbfounding is indeed real.
+
+# Conclusion
+
+Moral dumbfounding cannot easily be explained away by attributing participants' judgements to `r colFmt("endorsed",dual)` principles. Accounting for whether people <font color="A0522D">articulate</font> or <font color="b45c33">apply</font> these principles provides a more robust measure of inclusion/exclusion. Using this more robust measure, dumbfounded was responding is consistently observed across three studies.
+
+## References
+
+<html>
+<style> 
+
+.references {
+  padding-left: 42px ;
+  text-indent: -42px ;
+  font-size: 10pt    ;
+} 
+
+</style>
+</html>
+
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.0/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: '#3f51b5',
+  textColor: '#fff'
+})</script>
+

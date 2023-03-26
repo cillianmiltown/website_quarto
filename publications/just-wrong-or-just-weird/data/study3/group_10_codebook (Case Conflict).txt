@@ -1,0 +1,76 @@
+# Scenarios ca tr pr hz
+
+# initial_judgement         : Ju1
+
+# initial_reason            : reason
+
+# initial_confidence        : conf1
+
+# counter argument 1        : ca1
+
+# still wrong 1             : still1
+
+# counter argument reason   : reason1
+
+# counter argument 2        : ca2
+
+# still wrong 2             : still2
+
+# counter argument reason 2 : reason2
+
+# counter argument 3        : ca3
+
+# still wrong 3             : still3
+
+# counter argument reason 3 : reason3
+
+# critical slide            : CS
+
+# critical slide reason     : reason_CS
+
+# revised judgement         : ju2
+
+# revised confidence        : conf2
+
+# changed mind              : chmind
+
+# confused                  : confused
+
+# irritated                 : irritated
+
+# based on reason           : based_reason
+
+# based on gut              : based_gut
+
+# vertical collectivism     : vc
+
+# horizontal collectivism   : hc
+
+# vertical individualism    : vi
+
+# horizontal individualism  : hi
+
+# meaning in life presence  : mlqp
+
+# meaning in life search    : mlqs
+
+# age gender nationality education education_TEXT religion religion_TEXT
+
+### group 10 Q_171 = religiosity
+
+
+#### Group 21
+
+# ,"BFI_1"
+# ,"BFI_2"
+# ,"BFI_3"
+# ,"BFI_4"
+# ,"BFI_5"
+# ,"BFI_6"
+# 
+# ,Q169_1
+# ,Q169_2
+# ,Q169_3
+# ,Q169_4
+# ,Q169_5
+# ,Q169_6

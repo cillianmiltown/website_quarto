@@ -1,0 +1,4627 @@
+---
+title: Just wrong? Or just WEIRD? 
+subtitle: Investigating the prevalence of moral dumbfounding in non-Western samples
+description: Memory & Cognition (2023)
+author: 
+  - name          : "Cillian McHugh"
+    affiliation   : University of Limerick
+    corresponding : yes    # Define only one corresponding author
+    address       : "University of Limerick, Limerick, Ireland"
+    email         : "cillian.mchugh@ul.ie"
+  - name          : "Run Zhang"
+    affiliation   : University of Limerick
+  - name          : "Tanuja Karnatak"
+    affiliation   : University of Limerick
+  - name          : "Nishtha Lamba"
+    affiliation   : Middlesex University Dubai
+  - name          : "Olga Khokhlova"
+    affiliation   : Middlesex University Dubai
+date: '2023-01-17'
+aliases:   
+  - ../just-wrong-or-just-weird/
+bibliography      : ["../../bib/My Library.bib"]
+categories: 
+  - morality
+  - moral dumbfounding
+  - WEIRD
+---
+
+
+
+
+> Moral dumbfounding occurs when people maintain a moral judgment even though they cannot provide a reason for this judgment. Dumbfounded responding may include admitting to not having reasons, or the use of unsupported declarations (“It’s just wrong”) as justification for a judgment. Published evidence for dumbfounding has drawn exclusively on samples of WEIRD backgrounds (Western, educated, industrialized, rich, and democratic), and it remains unclear to what extent the phenomenon is generalizable to other populations. Furthermore, the theoretical implications of moral dumbfounding have been disputed in recent years. In three studies we apply a standardized moral dumbfounding task, and show evidence for moral dumbfounding in a Chinese sample (Study 1, N = 165), an Indian sample (Study 2, N = 181), and a mixed sample primarily (but not exclusively) from North Africa and the Middle East (MENA region, Study 3, N = 264). These findings are consistent with a categorization theories of moral judgment."
+
+
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://link.springer.com/content/pdf/10.3758/s13421-022-01386-z.pdf?pdf=button');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://link.springer.com/article/10.3758/s13421-022-01386-z');" data-inline="true" >Source Document</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/2h3k7/');" data-inline="true" >OSF</button>
+
+
+<br>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just wrong? Or just WEIRD? Investigating the prevalence of moral dumbfounding in non-Western samples. <i>Memory &amp; Cognition</i>. <a href="https://doi.org/10.3758/s13421-022-01386-z">https://doi.org/10.3758/s13421-022-01386-z</a></div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.3758%2Fs13421-022-01386-z&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Just%20wrong%3F%20Or%20just%20WEIRD%3F%20Investigating%20the%20prevalence%20of%20moral%20dumbfounding%20in%20non-Western%20samples&amp;rft.jtitle=Memory%20%26%20Cognition&amp;rft.stitle=Mem%20Cogn&amp;rft.aufirst=Cillian&amp;rft.aulast=McHugh&amp;rft.au=Cillian%20McHugh&amp;rft.au=Run%20Zhang&amp;rft.au=Tanuja%20Karnatak&amp;rft.au=Nishtha%20Lamba&amp;rft.au=Olga%20Khokhlova&amp;rft.date=2023-01-17&amp;rft.issn=1532-5946&amp;rft.language=en"></span>
+</div></body>
+</html>
+
+
+```{r setup, include = FALSE}
+
+rm(list = ls())
+library("papaja")
+library(foreign)
+library(haven)
+library(tidyverse)
+library(scales)
+library(desnum)
+library(rstatix)
+library(lsr)
+library(DescTools)
+library(nnet)
+library(mlogit)
+library(reshape2)
+library(corrplot)
+library(psych)
+library(pwr)
+library(ggtext)
+library(readxl)
+library(lme4)
+library(lmerTest)
+library(glue)
+#wordcountaddin::text_stats("201210_nonWEIRD_draft.Rmd")
+
+r_refs("r-references.bib")
+```
+
+```{r analysis-preferences, include=FALSE}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(include = FALSE)
+
+```
+
+```{r loaddatachina}
+
+
+China2 <-       read.spss("data/China/split/data.sav",to.data.frame = TRUE)
+china2_raw_2 <- read.spss("data/China/split/sample2a.sav",to.data.frame = TRUE)
+china2_raw_3 <- read.spss("data/China/split/sample2b.sav",to.data.frame = TRUE)
+china2_raw_4 <- read.spss("data/China/split/sample2_all.sav",to.data.frame = TRUE)
+china2_raw_5 <- read.spss("data/China/split/sample2_full.sav",to.data.frame = TRUE)
+china1_raw_6 <-  read_sav("data/China/raw/MRP_DATA1_Original.sav")
+
+china2_raw_7 <-  read_sav("data/China/raw/MRP_DATA2a&2b_Analyses.sav")
+
+China1 <- read.spss("data/China/raw/MRP_DATA1_Analyses.sav",to.data.frame = TRUE)
+
+#df6 <- read.spss("data/China/raw/MRP_DATA1_Original.sav",to.data.frame = TRUE)
+
+
+condition1_U <- read_excel("data/China/raw/DATA2a_Original_Untranslated_cropped.xls")
+condition2_U <- read_excel("data/China/raw/DATA2b_Original_Untranslated.xls")
+china2_judgements <- read_csv("data/China/split/study2_judgements.csv")
+
+c_1 <- condition1_U
+c_2 <- condition2_U
+
+
+ut <- rbind.data.frame(
+  c_1[-c(5,19)],
+  c_2[-c(5,19)]
+)
+
+## Isolate gender and Age variables
+
+condition1_U$请选择你的性别
+
+ut$`请选择你的性别` == "女"
+ut$`请选择你的性别` == "男"
+
+ut <- 
+  ut %>% mutate(
+    gender =
+      recode(请选择你的性别
+             , "女"="female"
+             , "男"="male"
+      )
+    ,
+    age =
+      as.numeric(`请输入你的年龄（阿拉伯数字）`)
+  )
+
+Study2 <-
+  China2 %>% mutate(
+    Scenario = rep("Cannibal", length(China2$condition))
+    ,
+    InCS =
+      recode(ALL2_critial
+             , "nothing wrong"="a_nothing_wrong"
+             , "dumbfounded"="b_dumbfounded"
+             , "reasons"="c_reasons")
+  ) %>% 
+  select(Scenario, InCS)
+
+df <- China1
+
+CS <- df[1:4] %>%
+  gather(Scenario, InCS) %>% 
+  mutate(
+    Scenario =
+      recode(Scenario
+             , "H_Critical"="Heinz"
+             , "J_Critical"="Cannibal"
+             , "JM_Critical"="Incest"
+             , "P_Critical"="Trolley")
+    ,
+    InCS =
+      recode(InCS
+             , "nothing wrong"="a_nothing_wrong"
+             , "MD"="b_dumbfounded"
+             , "reasons"="c_reasons"),
+  )
+
+CS_China <- CS   
+
+```
+
+
+```{r loaddataIndia}
+# df8 <- read_csv("data/India/India.csv")
+# df8 <- df8[-c(1,2),]
+# df <- df8
+
+India <- read_sav("data/India/India.sav")
+India <- read_sav("data/India/India_with_order.sav")
+
+# scenario 1 = Julie and Mark
+# scenario 2 = Trolley
+# scenario 3 = Heinz
+# scenario 4 = Jennifer
+
+df <- India
+CS <- df %>% 
+  select(Q22,Q57,Q80,Q103) %>% 
+  gather(Scenario, InCS) %>% 
+  mutate(
+    Scenario =
+      recode(Scenario
+             , "Q80"="Heinz"
+             , "Q103"="Cannibal"
+             , "Q22"="Incest"
+             , "Q57"="Trolley")
+    ,
+    InCS =
+      recode(InCS
+             , "4"="a_nothing_wrong"
+             , "5"="b_dumbfounded"
+             , "7"="c_reasons"),
+  )
+
+CS <- CS[which(is.na(CS$InCS)==FALSE),]
+CS_India <- CS 
+
+
+CS_with_order <-
+  function(){
+    orderdf <- df %>% 
+      select(ResponseId,
+             FL_13_DO_MDPT_Scenario1,
+             FL_13_DO_MDPT_Scenario2,
+             FL_13_DO_MDPT_Scenario3,
+             FL_13_DO_MDPT_Scenario4) %>% 
+      pivot_longer(cols = c(FL_13_DO_MDPT_Scenario1,
+                            FL_13_DO_MDPT_Scenario2,
+                            FL_13_DO_MDPT_Scenario3,
+                            FL_13_DO_MDPT_Scenario4), names_to = "Scenario", values_to = "Position") %>% 
+      mutate(
+        Scenario = as.factor(Scenario)
+      ) %>% 
+      mutate(
+        Scenario =
+          dplyr::recode(Scenario
+                        , "FL_13_DO_MDPT_Scenario3"="Heinz"
+                        , "FL_13_DO_MDPT_Scenario4"="Cannibal"
+                        , "FL_13_DO_MDPT_Scenario1"="Incest"
+                        , "FL_13_DO_MDPT_Scenario2"="Trolley")
+        
+      )
+    responsedf <- df %>% 
+      select(ResponseId, Q22,Q57,Q80,Q103) %>% 
+      pivot_longer(cols = c(Q22,Q57,Q80,Q103), names_to = "Scenario", values_to = "InCS") %>% 
+      mutate(
+        Scenario = as.factor(Scenario),
+        InCS = as.factor(InCS)
+      ) %>% 
+      mutate(
+        Scenario =
+          dplyr::recode(Scenario
+                        , "Q80"="Heinz"
+                        , "Q103"="Cannibal"
+                        , "Q22"="Incest"
+                        , "Q57"="Trolley")
+        ,
+        InCS =
+          recode(InCS
+                 , "4"="a_nothing_wrong"
+                 , "5"="b_dumbfounded"
+                 , "7"="c_reasons"),
+      )
+    left_join(orderdf,responsedf, by = c("ResponseId", "Scenario"))
+    
+  }
+
+CS <- CS_with_order()
+CS <- CS[which(is.na(CS$InCS)==FALSE),]
+CS_India_with_order <- CS 
+
+table(CS_India_with_order$Position, CS_India_with_order$InCS)
+chisq.test(CS_India_with_order$Position, CS_India_with_order$InCS)
+
+table(CS_India_with_order$Position, CS_India_with_order$Scenario)
+chisq.test(CS_India_with_order$Position, CS_India_with_order$Scenario)$res
+
+# Q22 = Incest Critical slide
+# Q57 = Trolley Critical slide
+# Q80 = Heinz Critical Slide
+# Q103 = Cannibal Critical Slide
+
+test <- as.data.frame(table(CS))
+
+test$total <- rep(length(CS$Scenario)/4, length(test$Scenario))
+
+test$perc <- test$Freq/test$total
+
+test
+
+datalist <- ls()
+datalist <- ls()
+
+rm(list = setdiff(ls(),datalist))
+
+```
+
+The phenomenon of moral dumbfounding occurs when people defend a moral judgement even though they cannot provide a reason in support of this judgement [@haidt_moral_2000; @mchugh_searching_2017a]. It typically manifests as an explicit admission of not having reasons, or the use of unsupported declarations (e.g., "It's just wrong") as a justification for a judgement. For almost two decades, evidence for moral dumbfounding was limited to a single study, unpublished in peer reviewed form, and with a total sample of *N* = 30 [@haidt_moral_2000]. This meant that, while the phenomenon was widely discussed in the literature, its existence was not well supported by empirical evidence. Recent work [@mchugh_searching_2017a; -@mchugh_reasons_2020], has provided additional evidence for the existence moral dumbfounding, demonstrating that it can be reliably elicited [though perhaps it not as widespread as previously assumed, see @royzman_curious_2015; @mchugh_reasons_2020].
+
+Despite this recent work, it remains unclear how universal or generalisable the phenomenon is. Current evidence is limited to research involving exclusively WEIRD [Western, educated, industrialised, rich, and democratic, see @henrich_most_2010] samples. The purpose of the current research is to extend research on moral dumbfounding beyond these exclusively WEIRD contexts. Specifically we test for the presence of moral dumbfounding in a Chinese sample (Study 1), in an Indian sample (Study 2), and in a mixed sample from a diverse range of non-WEIRD countries (Study 3).
+
+# Evidence for Moral Dumbfounding
+The earliest documented evidence for dumbfounded responding on moral issues comes from a study by @haidt_affect_1993. In this study participants were asked to judge a range of moral scenarios. In addition, participants were asked and to justify their judgements. Some scenarios were potentially offensive but ostensibly harmless (e.g., a family eating their family dog after it was killed by a car; cutting up and using the national flag to clean a bathroom). @haidt_affect_1993 found that some participants struggled to provide justifications for their judgements, and in some cases, resorted to providing unsupported declarations as justification, e.g., "Because it's wrong to eat your dog" [@haidt_affect_1993, p. 632].
+
+In a later study this type of responding was investigated specifically, and the term *moral dumbfounding* was coined [@haidt_moral_2000]. In a series of interviews, @haidt_moral_2000 presented participants with moral scenarios depicting taboo behaviours that did not result in any harm.[^1] These scenarios (referred to as *intuition* scenarios) were designed to appear intuitively "wrong" but the absence of any resultant harm meant that providing a reason for judging the behaviour as wrong was difficult for participants. Responses to these *intuition* scenarios were contrasted against responses to a traditional *reasoning* scenario - the classic *Heinz* dilemma.[^3] Participants were able justify their judgements of the *reasoning* scenario, however, for the the *intuition* scenarios participants struggled to provide reasons for their judgements, presenting as morally dumbfounded.
+
+While @haidt_moral_2000 appeared to provide evidence for moral dumbfounding, this study did not provide standardised methods for systematically eliciting moral dumbfounding. More crucially, this work did not identify a formal measure of dumbfounded responding. Later work by @mchugh_searching_2017a addressed both of these limitations. Replicating and extending the original work by @haidt_moral_2000, @mchugh_searching_2017a identified two measurable responses that were indicative of moral dumbfounding (admissions of not having reasons, and the use of unsupported declarations as justification for a judgement). Furthermore, @mchugh_searching_2017a developed a computer-based task that reliably elicited these responses, thus providing both additional evidence for moral dumbfounding, and the means to study it more systematically, and on a larger scale.
+
+[^1]: One scenario (*Incest*) depicted an act of consensual sibling incest, using contraception; another (*Cannibal*) described an act of cannibalism involving a laboratory cadaver due to cremated.
+[^3]: Heinz could not afford drugs priced at 10 times the cost price, and steals drugs to save his wife's life.
+
+# Competing Interpretations of the Dumbfounding Narrative
+The dominant narrative surrounding moral dumbfounding presents it as evidence for the intuitive nature of moral judgements, over more rationalist perspectives [see @haidt_emotional_2001]. According to this view, moral judgements are based on intuitions rather than on principles or reasons. Recent theorists [e.g., @royzman_curious_2015] have challenged this, arguing that moral judgements, even in the dumbfounding paradigm, are based on reasons or principles. Some of these challenges are theoretical [e.g., @sneddon_social_2007; @wielenberg_robust_2014; @dwyer_moral_2009; @jacobson_moral_2012; @guglielmo_unfounded_2018], while others include empirical work testing assumptions relevant to dumbfounding [e.g., @gray_myth_2014; @gray_impure_2015], or testing the dumbfounding paradigm directly [e.g., @stanley_reasonbased_2019a; @royzman_curious_2015]. A common theme permeating these challenges is that moral dumbfounding is not a *real* phenomenon, and that the responding observed emerges as a consequence of the experimental paradigm.
+
+The strongest challenges to the dumbfounding narrative, appear to empirically demonstrate that people's judgements in the dumbfounding paradigm may be attributed to specific reasons, e.g., either harm-based (believing an action may cause harm) reasons or norm-based (breaking a moral norm is inherently wrong) reasons [see, @royzman_curious_2015; @stanley_reasonbased_2019a]. However, addressing key methodological limitations in @royzman_curious_2015, @mchugh_reasons_2020 demonstrated critical inconsistencies in people’s responding that undermine these reason based explanations[^4] providing additional evidence that moral dumbfounding is indeed a real phenomenon, though perhaps it is not as widespread as earlier reports suggest.
+
+[^4]: Participants do not articulate or consistently apply harm-based reasons/principles, nor do they articulate norm-based reasons/principles with sufficient consistency to provide evidence that these reasons are guiding their judgements in the dumbfounding paradigm [see @mchugh_reasons_2020].
+
+# Moral Dumbfounding and Moral Universals
+It is well established that moral judgement, moral development, and moral values can vary across cultures and across countries  [@haidt_affect_1993; @vasquez_cultural_2001; @vasudev_moral_1987]. There have been some attempts to develop taxonomies of moral values or systems [e.g., @haidt_moral_2008; @shweder_big_1997] that can be applied cross culturally or across different countries. However, the evidence for the universality of these approaches is inconsistent, leading some theorists to conclude that there are no moral universals [e.g., @davis_moral_2015; @doris_how_2008; @machery_evolution_2010; @prinz_morality_2008; @prinz_resisting_2008].
+
+At present the evidence for moral dumbfounding is based exclusively on studies involving participants from WEIRD [@henrich_most_2010] samples. The failure to study moral dumbfounding beyond WEIRD contexts presents a key limitation of our understanding of the phenomenon, such that it is not clear whether the phenomenon exists in other contexts. Despite the limited generalizability of moral dumbfounding, the existence of the phenomenon has informed inferences about the nature of the cognitive processes that underlie moral judgement [e.g., @haidt_emotional_2001]. The generalizability these inferences would be undermined significantly if moral dumbfounding is unique to specific samples. The current studies aim to address this limitation and extend the study of moral dumbfounding beyond studies of exclusively WEIRD participants.
+
+# Individual/Cultural Differences
+Given that this is the first study of moral dumbfounding in a non-WEIRD setting, we additionally investigated the potential influence of culturally relevant individual differences on moral dumbfounding. A measure that is widely regarded as one of the most prominent dimensions that varies with culture is individualism/collectivism [@renzhi_key_2013], and as such we included this in our study for exploratory purposes. 
+
+In order to assess the possible influence of individualism/collectivism, we included the individualism-collectivism scale [ICS: @triandis_individualism_2011; @li_dimensionality_2007; @renzhi_key_2013]. This scale includes four dimensions: collectivism, individualism, horizontal, vertical. Collectivism is characterized by common goals, interpersonal relationships, social dependencies and connections. Collectivists regard themselves as members of an organization, and they believe that their actions should conform to the collective beliefs and obligations. Individualism emphasizes individual goals and independence. Individualists regard themselves as being separated from within an organization. Individualist behaviour depends on expectations and estimates of effectiveness. Horizontal refers to egalitarianism, while vertical emphasizes authority, principles, and hierarchy [@renzhi_key_2013].
+
+Regarding the specific combinations of these dimensions, vertical collectivism (VC) maintains the authoritative structure within the organization, supporting self-sacrifice and competition outside the organization. In addition to treating the self as part of the organization, horizontal collectivism (HC) also emphasizes the equality of members within the group. Vertical individualism (VI) means the increase of achievement based on individualism, with emphasis on independence and placing the self on any interpersonal relationship. Horizontal individualism (HI) refers to the addition of universal values based on individualism, and independence is to maintain a certain meaning or freedom within a principle [@renzhi_key_2013].  
+
+# The Current Research
+In response to the WEIRD-centric nature of research on moral dumbfounding, we present two studies, extending research on moral dumbfounding to non-WEIRD samples. In Study 1 we assess whether or not moral dumbfounding can be elicited in a Chinese sample. In Study 2 we investigate whether or not moral dumbfounding can be found in an Indian sample. In Study 3 we test for moral dumbfounding in a sample from a diverse range of countries.
+
+# Study 1 - Chinese Sample
+In Study 1 we adapted the methods and materials developed by @mchugh_searching_2017a for use in a Chinese context. The primary aim of Study 1 was to investigate if moral dumbfounding can be elicited in a Chinese sample. Furthermore, we measure individual differences in individualism / collectivism and test for a possible relationship between these dimensions and dumbfounded responding.
+
+
+## Method
+
+```{r}
+china1_raw_6$Gender
+x <- china1_raw_6
+x <- x[which(is.na(x$Gender)==FALSE),]
+
+x <- x %>% 
+  mutate(
+      gender=Gender
+    , age=Age
+  )
+
+c <- chisq.test(
+  table(China2$ALL2_critial,China2$condition)
+)
+  
+
+```
+
+### Participants and design
+Study 1 was a frequency based attempted replication of @mchugh_searching_2017a. The aim of Study 1 was to identify if dumbfounded responding could be evoked in a Chinese context. Results are primarily descriptive. We have included exploratory analyses investigating the possible influence of individualism/collectivism [@renzhi_key_2013] on responding.
+
+An initial sample of `r length(x$gender)` (`r sum(x$gender==2)` female, `r sum(x$gender==1)` male, `r sum(x$gender==3)` other; *M~age~* = `r round(mean(x$age,na.rm=TRUE),digits=2)`, min = `r min(x$age,na.rm=TRUE)`, max = `r max(x$age,na.rm=TRUE)`, *SD* = `r round(sd(x$age,na.rm=TRUE),digits=2)`) participants took part.  An additional `r length(ut$gender)` (`r sum(ut$gender=="female")` female, `r sum(ut$gender=="male")` male, `r sum(ut$gender=="Other", na.rm=T)` other; *M*~age~ = `r round(mean(ut$age,na.rm=TRUE),digits=2)`, min = `r min(ut$age,na.rm=TRUE)`, max = `r max(ut$age,na.rm=TRUE)`, *SD* = `r round(sd(ut$age,na.rm=TRUE),digits=2)`) participants completed a follow-up study with the *Cannibal* scenario only, and in which we experimentally manipulated psychological distance [drawing on construal level theory e.g., @liberman_psychological_2007]. The experimental manipulation had no influence on dumbfounded responding, $\chi$^2^(`r c$parameter`, *N* = `r length(ut$gender)`) = `r round(c$statistic, digits=3)`, *p* `r paste(p_report(c$p.value))`, *V* = `r sqrt((c$statistic/(220))/1)`, and as such we have included these participants in the current analysis (for clarity these studies are reported separately as Study 1a and Study 1b).  Participants in this study were undergraduate students and postgraduate students, from Luoyang Normal University (China).  All participants were recruited from China and had a high level of Chinese, the entire online questionnaire survey was presented in Chinese. Participation was voluntary and participants were not reimbursed for their participation.
+
+### Procedure and materials
+Data were collected through the Chinese language online survey software Wenjuanxing [@_wenjuanxing_2006]. Participants were provided with a link to the online survey. The first page of the survey was an information sheet. If participants chose to continue, they proceeded to the second page, the consent form. Participants could only proceed to the remainder of the survey if they provide consent on the consent form. Upon providing consent and proceeding, participants completed some questions relating to basic demographics.
+
+The procedure and materials for the moral dumbfounding task were taken directly from @mchugh_searching_2017a. These were translated into Chinese by a member of the research team whose native language was Chinese. Four moral judgement scenarios were used, two "intuition" scenarios: *Incest*, *Cannibal*, and two "reasoning" scenarios *Trolley*, *Heinz* [taken from @mchugh_searching_2017a, see Appendix A].
+
+***Moral dumbfounding task.*** The basic procedure for moral dumbfounding tasks is as follows. Participants are presented with a scenario to read. They are then asked to rate, on a 7-point Likert scale (1 = *Morally wrong*; 4 = *Neutral*; 7 = *Morally right*), how right or wrong they regarded the behaviour described in the scenario. Following this participants are asked to rate their confidence in their judgement (again on a 7-point Likert scale). Participants are then presented with a series of counterarguments, which refuted commonly used justifications for rating the behaviours as “wrong” (see Appendix B). After each counter-argument, participants are asked "Do you (still) think it is wrong?", with a binary "yes/no" response option; and then they are asked "Do you have a reason for your judgement?", with three possible response option "Yes, I have a reason", "No I have no reason", and "Unsure". This sequence was repeated for each of the three counter-arguments.
+
+Dumbfounding is measured using the "critical slide" which contains a statement defending the behaviour, and a question asking how the behaviour could be wrong (see Appendix C). There are three possible answer options: (a) “There is nothing wrong”; (b) an admission of not having reasons (“It’s wrong but I can’t think of a reason”); and finally a judgement with accompanying justification (c) “It’s wrong and I can provide a valid reason”. The selecting of option (b), the admission of not having reasons, is taken to be a dumbfounded response. Participants who selected (c) were promoted to type a reason on the next page. The order of these response options was randomised.
+
+Following the critical slide, participants rated the behaviour again, and completed the post-discussion questionnaire devised by @haidt_moral_2000. They were required to rate on a 7-point Likert scale how sure were they about their judgement; how much they changed their mind; how confused were they; how irritated were they; how much was their judgement based on reason; how much was their judgement based on “gut” feeling (see Appendix D). This process is repeated in full for each moral scenario. The order of presentation of the moral scenarios was randomised.
+
+***Coding reasons.*** While there is a strong theoretical and empirical case for coding the reasons provided for unsupported declarations or tautological responses, as dumbfounded responses [see @mchugh_searching_2017a], this approach has been challenged by claims that these responses constitute the expression of a normative position [e.g., @royzman_curious_2015]. In response to this challenge, we adopt an "admission of not having reasons" as the only measure of moral dumbfounding in these studies. While this measure provides a more conservative estimate of the prevalence of moral dumbfounding, it provides a considerably less ambiguous estimate.
+
+***Individualism-collectivism scale.*** Following the dumbfounding task, participants completed the individualism-collectivism scale [@li_dimensionality_2007, see Appendix E]. This sixteen-item scale includes four sub-scales: Vertical Collectivism (VC), Horizontal Collectivism (HC), Vertical Individualism (VI) and Horizontal Individualism (HI). The responses were recorded on a 9-point Likert scale ranging from 1 = *strongly disagree*, to 9 = *strongly agree*. The entire study lasted approximately twenty minutes.
+
+
+
+```{r basictestsChina}
+load("data/study3/study_3.RData")
+
+#### Isolate judgement variables in Study 1a ####
+x <- china1_raw_6
+x <-
+  x[which(is.na(x$Gender)==FALSE),] %>%
+  as.data.frame() %>% 
+  select(
+      Gender
+    , JM_initial_rating
+    , H_initial_rating
+    , P_initial_rating
+    , J_initial_rating
+    , JM_revised_rating
+    , H_revised_rating
+    , P_revised_rating
+    , J_revised_rating
+  ) 
+
+china1_judgements <- cbind.data.frame(
+  x %>%
+    select(
+      JM_initial_rating
+      , H_initial_rating
+      , P_initial_rating
+      , J_initial_rating
+    ) %>% 
+    gather(scenario,InJu1) %>% 
+    mutate(scenario =
+             recode(scenario
+                    , "JM_initial_rating" = "Incest"
+                    , "H_initial_rating"  = "Heinz"
+                    , "P_initial_rating"  = "Trolley"
+                    , "J_initial_rating"  = "Cannibal"
+             )
+           ,
+           Ju1bin = 
+             recode(InJu1
+                    , "1" = "wrong"
+                    , "2" = "wrong"
+                    , "3" = "wrong"
+                    , "4" = "neutral"
+                    , "5" = "ok"
+                    , "6" = "ok"
+                    , "7" = "ok"
+             )
+    )
+  ,
+  
+  x %>%
+    select(
+      JM_revised_rating
+      , H_revised_rating
+      , P_revised_rating
+      , J_revised_rating
+    ) %>% 
+    gather(scenario,InJu2) %>% 
+    mutate(scenario =
+             recode(scenario
+                    , "JM_revised_rating" = "Incest"
+                    , "H_revised_rating"  = "Heinz"
+                    , "P_revised_rating"  = "Trolley"
+                    , "J_revised_rating"  = "Cannibal"
+             )
+           ,
+           Ju2bin = 
+             recode(InJu2
+                    , "1" = "wrong"
+                    , "2" = "wrong"
+                    , "3" = "wrong"
+                    , "4" = "neutral"
+                    , "5" = "ok"
+                    , "6" = "ok"
+                    , "7" = "ok"
+             )
+    )
+  
+) %>% select(-1)
+
+china1_judgements
+
+
+regular_table_ju1 <- function(v){
+  x <- v
+  
+  rows <- c("Initial: Wrong", "Initial: Neutral", "Initial: ok")
+  
+  hi <- c(table(x$critical_slide,x$Scenario_code
+  )[,1])
+  hi <- c(hi[3],hi[1],hi[2])
+  hip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,1])
+  hip <- c(paste0(hip[3],"%"),
+           paste0(hip[1],"%"),
+           paste0(hip[2],"%"))
+  
+  ti <- c(table(x$critical_slide,x$Scenario_code
+  )[,2])
+  ti <- c(ti[3],ti[1],ti[2])
+  tip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,2])
+  tip <- c(paste0(tip[3],"%"),
+           paste0(tip[1],"%"),
+           paste0(tip[2],"%"))
+  
+  ii <- c(table(x$critical_slide,x$Scenario_code
+  )[,3])
+  ii <- c(ii[3],ii[1],ii[2])
+  iip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,3])
+  iip <- c(paste0(iip[3],"%"),
+           paste0(iip[1],"%"),
+           paste0(iip[2],"%"))
+  
+  
+  ci <- c(table(x$critical_slide,x$Scenario_code
+  )[,4])
+  ci <- c(ci[3],ci[1],ci[2])
+  cip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,4])
+  cip <- c(paste0(cip[3],"%"),
+           paste0(cip[1],"%"),
+           paste0(cip[2],"%"))
+  
+  cp <- unname(cbind(rows,hi,hip,ti,tip,ii,iip,ci,cip))
+  cp
+}
+regular_table_ju2 <- function(v){
+  x <- v
+  
+  rows <- c("Revised: Wrong", "Revised: Neutral", "Revised: ok")
+  
+  hi <- c(table(x$critical_slide,x$Scenario_code
+  )[,1])
+  hi <- c(hi[3],hi[1],hi[2])
+  hip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,1])
+  hip <- c(paste0(hip[3],"%"),
+           paste0(hip[1],"%"),
+           paste0(hip[2],"%"))
+  
+  ti <- c(table(x$critical_slide,x$Scenario_code
+  )[,2])
+  ti <- c(ti[3],ti[1],ti[2])
+  tip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,2])
+  tip <- c(paste0(tip[3],"%"),
+           paste0(tip[1],"%"),
+           paste0(tip[2],"%"))
+  
+  ii <- c(table(x$critical_slide,x$Scenario_code
+  )[,3])
+  ii <- c(ii[3],ii[1],ii[2])
+  iip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,3])
+  iip <- c(paste0(iip[3],"%"),
+           paste0(iip[1],"%"),
+           paste0(iip[2],"%"))
+  
+  
+  ci <- c(table(x$critical_slide,x$Scenario_code
+  )[,4])
+  ci <- c(ci[3],ci[1],ci[2])
+  cip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,4])
+  cip <- c(paste0(cip[3],"%"),
+           paste0(cip[1],"%"),
+           paste0(cip[2],"%"))
+  
+  cp <- unname(cbind(rows,hi,hip,ti,tip,ii,iip,ci,cip))
+  cp
+}
+
+
+
+china1_InJu1 <- china1_judgements %>% 
+  mutate(
+    Scenario_code = recode(scenario
+                           , "Heinz"="1"
+                           , "Trolley"="2"
+                           , "Incest"="3"
+                           , "Cannibal"="4"
+    )
+    ,
+    critical_slide = Ju1bin
+    ,
+    InCS = Ju1bin
+  )
+
+china1_InJu2 <- china1_judgements %>% 
+  mutate(
+    Scenario_code = recode(scenario
+                           , "Heinz"="1"
+                           , "Trolley"="2"
+                           , "Incest"="3"
+                           , "Cannibal"="4"
+    )
+    ,
+    critical_slide = Ju2bin
+    ,
+    InCS = Ju2bin
+  )
+
+
+table(china1_InJu1$Ju1bin,china1_InJu1$scenario)
+table(china1_InJu2$Ju2bin,china1_InJu2$scenario)
+
+study1a_judgements <- rbind(
+  regular_table_ju1(china1_InJu1),
+  regular_table_ju2(china1_InJu2)
+)
+
+#### Isolate judgement variables in Study 1b ####
+
+china2_judgements <- read_csv("data/China/split/study2_judgements.csv") %>% 
+  mutate(
+    Scenario = rep("Cannibal", length(China2$condition))
+    ,
+    Ju1bin = 
+             recode(InJu1
+                    , "1" = "wrong"
+                    , "2" = "wrong"
+                    , "3" = "wrong"
+                    , "4" = "neutral"
+                    , "5" = "ok"
+                    , "6" = "ok"
+                    , "7" = "ok"
+             )
+    ,
+    Ju2bin = 
+             recode(InJu2
+                    , "1" = "wrong"
+                    , "2" = "wrong"
+                    , "3" = "wrong"
+                    , "4" = "neutral"
+                    , "5" = "ok"
+                    , "6" = "ok"
+                    , "7" = "ok"
+             )) %>% 
+  mutate(
+    Scenario_code = recode(Scenario
+                           , "Heinz"="1"
+                           , "Trolley"="2"
+                           , "Incest"="3"
+                           , "Cannibal"="4"
+    )
+    
+  )
+
+
+
+china2_judgements
+
+china2_InJu1 <- china2_judgements %>% 
+  mutate(
+    InCS = Ju1bin,
+    critical_slide = Ju1bin
+  )
+
+china2_InJu2 <- china2_judgements %>% 
+  mutate(
+    InCS = Ju2bin,
+    critical_slide = Ju2bin
+  )
+
+China2_table_judgements1 <- function(v){
+  x <- v
+  
+  rows <- c("Initial: Wrong", "Initial: Neutral", "Initial: OK")
+  
+  hi <- c("-","-","-")
+  
+  hip <- c("-","-","-")
+  
+  ti <- c("-","-","-")
+  
+  tip <- c("-","-","-")
+  tip <- c("-","-","-")
+  
+  ii <- c("-","-","-")
+  
+  iip <- c("-","-","-")
+  iip <- c("-","-","-")
+  
+  
+  ci <- c(table(x$critical_slide,x$Scenario_code
+  ))
+  ci <- c(ci[3],ci[1],ci[2])
+  cip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS))*100,
+                 digits=2))
+  cip <- c(paste0(cip[3],"%"),
+           paste0(cip[1],"%"),
+           paste0(cip[2],"%"))
+  
+  cp <- unname(cbind(rows,hi,hip,ti,tip,ii,iip,ci,cip))
+  cp
+}
+China2_table_judgements2 <- function(v){
+  x <- v
+  
+  rows <- c("Revised: Wrong", "Revised: Neutral", "Revised: OK")
+  
+  hi <- c("-","-","-")
+  
+  hip <- c("-","-","-")
+  
+  ti <- c("-","-","-")
+  
+  tip <- c("-","-","-")
+  tip <- c("-","-","-")
+  
+  ii <- c("-","-","-")
+  
+  iip <- c("-","-","-")
+  iip <- c("-","-","-")
+  
+  
+  ci <- c(table(x$critical_slide,x$Scenario_code
+  ))
+  ci <- c(ci[3],ci[1],ci[2])
+  cip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS))*100,
+                 digits=2))
+  cip <- c(paste0(cip[3],"%"),
+           paste0(cip[1],"%"),
+           paste0(cip[2],"%"))
+  
+  cp <- unname(cbind(rows,hi,hip,ti,tip,ii,iip,ci,cip))
+  cp
+}
+
+
+study1b_judgements <- rbind(China2_table_judgements1(china2_InJu1),China2_table_judgements1(china2_InJu2))
+
+#### Isolate judgement variables in Study 2 ####
+x <-
+  India %>%
+  mutate(
+    gender = Q4
+    ,  age = recode(Q3, "1"="")
+    ,  age = as.numeric(age)
+    , nationality = Q5
+    , reside = Q6
+    , religion = Q9)
+
+x <-
+  x[which(is.na(x$gender)==FALSE),] %>%
+  as.data.frame() %>% 
+  select(
+      gender
+    , Q10
+    , Q68
+    , Q45
+    , Q91
+    , Q24
+    , Q82
+    , Q59
+    , Q105
+  ) 
+
+India_judgements <- cbind.data.frame(
+  x %>%
+    select(
+        Q10
+      , Q68
+      , Q45
+      , Q91
+    ) %>% 
+    gather(scenario,InJu1) %>% 
+    mutate(scenario =
+             recode(scenario
+                    , "Q10" = "Incest"
+                    , "Q68"  = "Heinz"
+                    , "Q45"  = "Trolley"
+                    , "Q91"  = "Cannibal"
+             )
+           ,
+           Ju1bin = 
+             recode(InJu1
+                    , "1"  = "wrong"
+                    , "16" = "wrong"
+                    , "2"  = "wrong"
+                    , "3"  = "neutral"
+                    , "4"  = "ok"
+                    , "6"  = "ok"
+                    , "17" = "ok"
+             )
+           ,
+           InJu1 = 
+             recode(InJu1
+                    , "1"  = "1"
+                    , "16" = "2"
+                    , "2"  = "3"
+                    , "3"  = "4"
+                    , "4"  = "5"
+                    , "6"  = "6"
+                    , "17" = "7" )
+    )
+  ,
+  
+  x %>%
+    select(
+        Q24
+      , Q82
+      , Q59
+      , Q105
+    ) %>% 
+    gather(scenario,InJu2) %>% 
+    mutate(scenario =
+             recode(scenario
+                    , "Q24"  = "Incest"
+                    , "Q82"  = "Heinz"
+                    , "Q59"  = "Trolley"
+                    , "Q105" = "Cannibal"
+             )
+           ,
+           Ju2bin = 
+             recode(InJu2
+                    , "1" = "wrong"
+                    , "2" = "wrong"
+                    , "3" = "wrong"
+                    , "4" = "neutral"
+                    , "5" = "ok"
+                    , "6" = "ok"
+                    , "7" = "ok"
+             )
+    )
+  
+) %>% select(-1)
+  
+
+india_InJu1 <- India_judgements %>% 
+  mutate(
+    Scenario_code = recode(scenario
+                           , "Heinz"="1"
+                           , "Trolley"="2"
+                           , "Incest"="3"
+                           , "Cannibal"="4"
+    )
+    ,
+    critical_slide = Ju1bin
+    ,
+    InCS = Ju1bin
+  )
+
+india_InJu2 <- India_judgements %>% 
+  mutate(
+    Scenario_code = recode(scenario
+                           , "Heinz"="1"
+                           , "Trolley"="2"
+                           , "Incest"="3"
+                           , "Cannibal"="4"
+    )
+    ,
+    critical_slide = Ju2bin
+    ,
+    InCS = Ju2bin
+  )
+
+
+study2_judgements <- rbind(
+  regular_table_ju1(india_InJu1),
+  regular_table_ju2(india_InJu2)
+)
+
+India_judgements$InJu1 <- as.numeric(India_judgements$InJu1)
+India_judgements$InJu2 <- as.numeric(India_judgements$InJu2)
+
+
+
+##### Study 3 #####
+load("data/study3/study_3.RData")
+
+x <- Study_3_long
+x <- x[which(x$nationality_factor!="UK"),]
+x <- x[which(x$nationality_factor!="USA"),]
+x <- x[which(x$nationality_factor!="Canada"),]
+x <- x[which(x$nationality_factor!="Germany"),]
+x <- x[which(x$nationality_factor!="Portugal"),]
+x <- x[which(x$nationality_factor!="Netherlands"),]
+x <- x[which(x$nationality_factor!="unknown"),]
+
+Study_3_eligible_long <- x
+
+
+s3_ju1 <- Study_3_eligible_long %>% 
+    select(
+      ju1
+      , scenario
+    ) %>% 
+    mutate(Ju1bin = 
+             recode(as.character(ju1)
+                    , "1" = "wrong"
+                    , "16" = "wrong"
+                    , "2" = "wrong"
+                    , "3" = "neutral"
+                    , "4" = "ok"
+                    , "6" = "ok"
+                    , "17" = "ok")
+           ,
+           critical_slide = Ju1bin
+           ,
+           InCS = Ju1bin
+           ,
+           Scenario_code = recode(scenario
+                                  , "Heinz"="1"
+                                  , "Trolley"="2"
+                                  , "Promise"="3"
+                                  , "Dog"="4"
+           ))# %>% 
+ 
+s3_ju2 <- Study_3_eligible_long %>% 
+    select(
+      ju2
+      , scenario
+    ) %>% 
+    mutate(Ju2bin = 
+             recode(as.character(ju2)
+                    , "1" = "wrong"
+                    , "2" = "wrong"
+                    , "3" = "wrong"
+                    , "4" = "neutral"
+                    , "5" = "ok"
+                    , "6" = "ok"
+                    , "7" = "ok")
+           ,
+           critical_slide = Ju2bin
+           ,
+           InCS = Ju2bin
+           ,
+           Scenario_code = recode(scenario
+                                  , "Heinz"="1"
+                                  , "Trolley"="2"
+                                  , "Promise"="3"
+                                  , "Dog"="4"
+           ))
+    
+study3_judgements <- rbind(
+  regular_table_ju1(s3_ju1),
+  regular_table_ju2(s3_ju2)
+)
+
+# India_judgements$InJu1 <- as.numeric(India_judgements$InJu1)
+# India_judgements$InJu2 <- as.numeric(India_judgements$InJu2)
+
+
+##### Start building the table ####
+
+left_rows <- c("Study 1a","","","","","",
+               "Study 1b","","","","","",
+               "Study 2","","","","","",
+               "Study 3","","","","","")
+
+test1 <- unname(rbind(study1a_judgements, study1b_judgements, study2_judgements,study3_judgements))
+
+test1 <- cbind(unname(left_rows),test1)
+
+test1
+cols <- c(" "," ","N","percent","N","percent","N","percent","N","percent")
+test1 <- `colnames<-`(test1, cols)
+test1
+Heinz <- c(3,4)
+Trolley <- c(5,6)
+Incest <- c(7,8)
+Cannibal <- c(9,10)
+
+spans_all <- list(Heinz,Trolley,Incest,Cannibal)
+names(spans_all) <- c("Heinz","Trolley","Incest/Promise","Cannibal/Dog")
+x <- china1_judgements
+
+
+datalist <- c(datalist, "India_judgements", "china1_judgements", "china2_judgements")
+
+# mean(x$InJu1)
+# mean(x$InJu1[which(x$scenario=="Heinz")])
+# round(mean(x$InJu1[which(x$scenario=="Heinz"),], digits=2))
+
+```
+
+## Results and Discussion
+### Judgements of the scenarios
+The mean initial ratings for each scenario are as follows: *M~Heinz~* = `r round(mean(x$InJu1[which(x$scenario=="Heinz")]), digits=2)`, *SD~Heinz~* = `r round(sd(x$InJu1[which(x$scenario=="Heinz")]), digits=2)`; *M~Cannibal~* = `r round(mean(x$InJu1[which(x$scenario=="Cannibal")]), digits=2)`, *SD~Cannibal~* = `r round(sd(x$InJu1[which(x$scenario=="Cannibal")]), digits=2)`; *M~Incest~* = `r round(mean(x$InJu1[which(x$scenario=="Incest")]), digits=2)`, *SD~Incest~* = `r round(sd(x$InJu1[which(x$scenario=="Incest")]), digits=2)`; *M~Trolley~* = `r round(mean(x$InJu1[which(x$scenario=="Trolley")]), digits=2)`, *SD~Trolley~* = `r round(sd(x$InJu1[which(x$scenario=="Trolley")]), digits=2)`. The mean revised ratings for each scenario are as follows: *M~Heinz~* = `r round(mean(x$InJu2[which(x$scenario=="Heinz")]), digits=2)`, *SD~Heinz~* = `r round(sd(x$InJu2[which(x$scenario=="Heinz")]), digits=2)`; *M~Cannibal~* = `r round(mean(x$InJu2[which(x$scenario=="Cannibal")]), digits=2)`, *SD~Cannibal~* = `r round(sd(x$InJu2[which(x$scenario=="Cannibal")]), digits=2)`; *M~Incest~* = `r round(mean(x$InJu2[which(x$scenario=="Incest")]), digits=2)`, *SD~Incest~* = `r round(sd(x$InJu2[which(x$scenario=="Incest")]), digits=2)`; *M~Trolley~* = `r round(mean(x$InJu2[which(x$scenario=="Trolley")]), digits=2)`, *SD~Trolley~* = `r round(sd(x$InJu2[which(x$scenario=="Trolley")]), digits=2)`. The proportion of wrong, neutral, and ok, judgements for each scenario are displayed in Table\ \@ref(tab:tab2judge).
+
+```{r tab2judge,results = 'asis', include=TRUE}
+
+
+apa_table(
+   test1
+   , align = c("l", "l", "c", "c", "c", "c", "c", "c", "c", "c")
+   , caption = "Valence of initial and revised judgements for each scenarion for each study"
+   , added_stub_head = "Valence of judgement"
+   , col_spanners = spans_all
+   , small = TRUE
+   
+)
+
+```
+
+```{r}
+
+x <- split.data.frame(china1_judgements, china1_judgements$scenario)
+
+tt <- x$Heinz
+th <- t.test(tt$InJu1,tt$InJu2)
+tdh <- cohensD(tt$InJu1,tt$InJu2)
+tt <- x$Cannibal
+tc <- t.test(tt$InJu1,tt$InJu2)
+tdc <- cohensD(tt$InJu1,tt$InJu2)
+tt <- x$Incest
+ti <- t.test(tt$InJu1,tt$InJu2)
+tdi <- cohensD(tt$InJu1,tt$InJu2)
+tt <- x$Trolley
+tp <- t.test(tt$InJu1,tt$InJu2)
+tdp <- cohensD(tt$InJu1,tt$InJu2)
+
+x <- china1_judgements
+
+aov <- summary(aov(InJu1~scenario,x))
+summary(aov(InJu1~scenario,x))
+eta <- (aov[[1]][["Sum Sq"]][1])/((aov[[1]][["Sum Sq"]][1])+(aov[[1]][["Sum Sq"]][2]))
+tuk <- TukeyHSD(aov(InJu1~scenario,x))
+tuk[4]
+
+tuk$scenario[1,4]
+tuk$scenario[2,4]
+
+qplot(factor(scenario),InJu1, data=x,geom = c("boxplot", "jitter"))
+
+```
+ 
+A paired samples t-test revealed no differences in the ratings of behaviours from time one to time two, *Heinz*, *t*(`r th$parameter`) = `r round(th$statistic, digits=3)`, *p* `r paste(p_report(th$p.value))`, *d* = `r tdh`; *Cannibal*, *t*(`r tc$parameter`) = `r round(tc$statistic, digits=3)`, *p* `r paste(p_report(tc$p.value))`, *d* = `r tdc`; *Incest*, *t*(`r ti$parameter`) = `r round(ti$statistic, digits=3)`, *p* `r paste(p_report(ti$p.value))`, *d* = `r tdi`; *Trolley*, *t*(`r tp$parameter`) = `r round(tp$statistic, digits=3)`, *p* `r paste(p_report(tp$p.value))`, *d* = `r tdp`. 
+
+A one-way ANOVA revealed significant differences in initial judgements depending on scenario, *F*(`r paste(df_aov(aov))`) = `r paste(round(F_aov(aov),digits=2))`, *p* `r paste(p_aov(aov))`, partial $\eta$^2^ `r paste(p_report(eta))`.  Tukey’s post-hoc pairwise comparison revealed that judgements in the *Heinz* dilemma were significantly more favourable than for each of the other scenarios: *Cannibal*, *p* `r paste(p_report(tuk$scenario[1,4]))`, *Incest*, *p* `r paste(p_report(tuk$scenario[4,4]))`, *Trolley*, *p* `r paste(p_report(tuk$scenario[5,4]))`; while judgements of *Cannibal* were significantly more harsh than all other scenarios: *Heinz*, *p* `r paste(p_report(tuk$scenario[1,4]))`, *Incest*, *p* `r paste(p_report(tuk$scenario[2,4]))`. *Trolley*, *p* `r paste(p_report(tuk$scenario[3,4]))`; there was no significant difference between judgements of *Incest* and of *Trolley*, *p* `r paste(p_report(tuk$scenario[6,4]))`.
+
+```{r}
+aov <- summary(aov(InJu2~scenario,x))
+summary(aov(InJu2~scenario,x))
+eta <- (aov[[1]][["Sum Sq"]][1])/((aov[[1]][["Sum Sq"]][1])+(aov[[1]][["Sum Sq"]][2]))
+tuk <- TukeyHSD(aov(InJu2~scenario,x))
+
+qplot(factor(scenario),InJu2, data=x,geom = c("boxplot", "jitter"))
+print(p_report(tuk$scenario[5,4]))
+
+```
+
+A one-way ANOVA revealed the same pattern of differences in revised judgements depending on scenario, *F*(`r paste(df_aov(aov))`) = `r paste(round(F_aov(aov),digits=2))`, *p* `r paste(p_aov(aov))`, partial $\eta$^2^ `r paste(p_report(eta))`.  Again, Tukey’s post-hoc pairwise comparison revealed that judgements in the *Heinz* dilemma were significantly more favourable than for each of the other scenarios: *Cannibal*, *p* `r paste(p_report(tuk$scenario[1,4]))`, *Incest*, *p* `r paste(p_report(tuk$scenario[4,4]))`, *Trolley*, *p* `r paste(p_report(tuk$scenario[5,4]))`; while judgements of *Cannibal* were significantly more harsh than all other scenarios: *Heinz*, *p* `r paste(p_report(tuk$scenario[1,4]))`, *Incest*, *p* `r paste(p_report(tuk$scenario[2,4]))`. *Trolley*, *p* `r paste(p_report(tuk$scenario[3,4]))`; there was no significant difference between judgements of *Incest* and of *Trolley*, *p* `r paste(p_report(tuk$scenario[6,4]))`.
+
+```{r}
+rm(list = setdiff(ls(),datalist))
+```
+
+
+```{r reasonsz_scores, include=FALSE}
+
+
+4/53
+1/53
+
+z_score <- function(p1,p2,n1,n2){
+  z <- ((mean(p1/n1)-mean(p2/n2))-0)/
+    (sqrt((mean((p1+p2)/(n1+n2))*(1-mean((p1+p2)/(n1+n2))))*((1/n1)+(1/n2))))
+  z
+}
+z_score(8,0,42,42)
+2*pnorm(z_score(8,0,42,42),lower.tail = FALSE)
+
+z_score(9,0,42,42)
+2*pnorm(z_score(9,0,42,42),lower.tail = FALSE)
+
+z_score(7,0,42,42)
+2*pnorm(z_score(7,0,42,42),lower.tail = FALSE)
+
+z_score(13,0,42,42)
+2*pnorm(z_score(13,0,42,42),lower.tail = FALSE)
+
+z_score(47,0,123,123)
+2*pnorm(z_score(47,0,123,123),lower.tail = FALSE)
+
+
+```
+
+
+### Tables of other Responses
+
+
+```{r othervariablestable}
+#load("data/study3/study_3.RData")
+
+
+# initial confidence
+# revised confidence
+# changed mind
+
+
+# confused
+# irritated
+# reason based
+# gut based
+
+
+#### Isolate judgement variables in Study 1a ####
+x <- china1_raw_6
+x
+x <-
+  x[which(is.na(x$Gender)==FALSE),] %>%
+  as.data.frame() %>% 
+  select(
+      Participants
+    , Gender
+    ,JM_initial_conf
+    , H_initial_conf
+    , P_initial_conf
+    , J_initial_conf
+    ,JM_revised_conf
+    , H_revised_conf
+    , P_revised_conf
+    , J_revised_conf
+    ,JM_changed_mind
+    , H_changed_mind
+    , P_changed_mind
+    , J_changed_mind
+  ) 
+study1a_bits <- rbind(
+round(
+  c(
+     mean(x$JM_initial_conf,na.rm = T)
+    ,  sd(x$JM_initial_conf,na.rm = T)
+    , mean(x$H_initial_conf,na.rm = T)
+    ,   sd(x$H_initial_conf,na.rm = T)
+    , mean(x$P_initial_conf,na.rm = T)
+    ,   sd(x$P_initial_conf,na.rm = T)
+    , mean(x$J_initial_conf,na.rm = T)
+    ,   sd(x$J_initial_conf,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+     mean(x$JM_revised_conf,na.rm = T)
+    ,  sd(x$JM_revised_conf,na.rm = T)
+    , mean(x$H_revised_conf,na.rm = T)
+    ,   sd(x$H_revised_conf,na.rm = T)
+    , mean(x$P_revised_conf,na.rm = T)
+    ,   sd(x$P_revised_conf,na.rm = T)
+    , mean(x$J_revised_conf,na.rm = T)
+    ,   sd(x$J_revised_conf,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+     mean(x$JM_changed_mind,na.rm = T)
+    ,  sd(x$JM_changed_mind,na.rm = T)
+    , mean(x$H_changed_mind,na.rm = T)
+    ,   sd(x$H_changed_mind,na.rm = T)
+    , mean(x$P_changed_mind,na.rm = T)
+    ,   sd(x$P_changed_mind,na.rm = T)
+    , mean(x$J_changed_mind,na.rm = T)
+    ,   sd(x$J_changed_mind,na.rm = T)
+  )
+  ,digits = 1)
+)
+
+china2_other_v <-
+`colnames<-`(
+rbind.data.frame(
+ condition1_U[c(7,20,21,22,23,24,25)]
+,condition2_U[c(7,20,21,22,23,24,25)]
+),
+c( "conf1"
+  ,"conf2"
+  ,"chmind"
+  ,"confused"
+  ,"irritated"
+  ,"based_reason"
+  ,"based_gut"
+)
+)
+
+x <- china2_other_v
+
+x$conf1 <- 
+as.numeric(
+dplyr::recode(x$conf1
+            , "1：极不确定" = "1"   # very uncertain  
+            , "4：中立的"   = "4"   # neutral
+            , "7：极其确定" = "7")) # very certain
+
+x$conf2 <- 
+as.numeric(
+dplyr::recode(x$conf2
+            , "1：一点也不" = "1"   # not at all
+            , "4：中立的"   = "4"   # neutral
+            , "7：非常" = "7")) # very certain
+
+x$chmind <- 
+as.numeric(
+dplyr::recode(x$chmind
+            , "1：一点也不" = "1"   # not at all
+            , "4：中立的"   = "4"   # neutral
+            , "7：非常"     = "7"))    # very much
+
+x$confused <- 
+as.numeric(
+dplyr::recode(x$confused
+            , "1：一点也不" = "1"   # not at all
+            , "4：中立的"   = "4"   # neutral
+            , "7：非常"     = "7"))    # very much
+
+x$irritated <- 
+as.numeric(
+dplyr::recode(x$irritated
+            , "1：一点也不" = "1"   # not at all
+            , "4：中立的"   = "4"   # neutral
+            , "7：非常"     = "7"))    # very much
+
+x$based_reason <- 
+as.numeric(
+dplyr::recode(x$based_reason
+            , "1：一点也不" = "1"   # not at all
+            , "4：中立的"   = "4"   # neutral
+            , "7：非常"     = "7"))    # very much
+
+x$based_gut <- 
+as.numeric(
+dplyr::recode(x$based_gut
+            , "1：一点也不" = "1"   # not at all
+            , "4：中立的"   = "4"   # neutral
+            , "7：非常"     = "7"))    # very much
+
+
+
+study1b_bits <- rbind(
+  
+  c("-","-","-"
+    ,"-","-","-"
+    , round(mean(x$conf1,na.rm = T),digits = 1)
+    ,   round(sd(x$conf1,na.rm = T),digits = 1)
+  )
+  ,
+  c("-","-","-"
+    ,"-","-","-"
+    , round(mean(x$conf2,na.rm = T),digits = 1)
+    ,   round(sd(x$conf2,na.rm = T),digits = 1)
+  )
+  ,
+  c("-","-","-"
+    ,"-","-","-"
+    , round(mean(x$chmind,na.rm = T),digits = 1)
+    ,   round(sd(x$chmind,na.rm = T),digits = 1)
+  )
+)
+
+rbind(study1a_bits,study1b_bits)
+china2_other_v <- x
+
+###### India ######
+
+# # Incest
+# Q12 = conf1
+# Q25 = conf2
+# Q26 = chmind
+# Q30 = irritated
+# Q29 = confused
+# Q31 = based_reason
+# Q32 = based_gut
+# 
+# # Trolley
+# Q47 = conf1
+# Q60 = conf2
+# Q61 = chmind
+# Q65 = irritated
+# Q64 = confused
+# Q66 = based_reason
+# Q67 = based_gut
+# 
+# 
+# # Heinz
+# Q70 = conf1
+# Q83 = conf2
+# Q86 = chmind
+# Q88 = irritated
+# Q87 = confused
+# Q89 = based_reason
+# Q90 = based_gut
+# 
+# 
+# # Jennifer
+# Q93 = conf1
+# Q106 = conf2
+# Q107 = chmind
+# Q111 = irritated
+# Q110 = confused
+# Q112 = based_reason
+# Q113 = based_gut
+
+x <- India
+x
+
+x$Q86
+
+x$Q61
+x$Q107
+x$Q26
+
+
+as.numeric(x$Q61)
+x$Q61 <- 
+  recode(as.numeric(x$Q61),
+         "15"  = 1
+         ,"16" = 2
+         ,"18" = 3
+         ,"19" = 4
+         ,"20" = 5
+         ,"21" = 6
+         ,"22" = 7)
+
+x$Q107 <- 
+  recode(as.numeric(x$Q107),
+         "15"  = 1
+         ,"16" = 2
+         ,"18" = 3
+         ,"19" = 4
+         ,"20" = 5
+         ,"21" = 6
+         ,"22" = 7)
+
+x$Q26 <- 
+  recode(as.numeric(x$Q26),
+         "15"  = 1
+         ,"16" = 2
+         ,"18" = 3
+         ,"19" = 4
+         ,"20" = 5
+         ,"21" = 6
+         ,"22" = 7)
+
+
+study2_bits <- rbind(
+round(
+  c(
+     mean(x$Q12,na.rm = T)
+    ,  sd(x$Q12,na.rm = T)
+    , mean(x$Q70,na.rm = T)
+    ,   sd(x$Q70,na.rm = T)
+    , mean(x$Q47,na.rm = T)
+    ,   sd(x$Q47,na.rm = T)
+    , mean(x$Q93,na.rm = T)
+    ,   sd(x$Q93,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+     mean(x$Q25,na.rm = T)
+    ,  sd(x$Q25,na.rm = T)
+    , mean(x$Q83,na.rm = T)
+    ,   sd(x$Q83,na.rm = T)
+    , mean(x$Q60,na.rm = T)
+    ,   sd(x$Q60,na.rm = T)
+    , mean(x$Q106,na.rm = T)
+    ,   sd(x$Q106,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+     mean(x$Q26,na.rm = T)
+    ,  sd(x$Q26,na.rm = T)
+    , mean(x$Q86,na.rm = T)
+    ,   sd(x$Q86,na.rm = T)
+    , mean(x$Q61,na.rm = T)
+    ,   sd(x$Q61,na.rm = T)
+    , mean(x$Q107,na.rm = T)
+    ,   sd(x$Q107,na.rm = T)
+  )
+  ,digits = 1)
+)
+
+rbind(study1a_bits,study1b_bits,study2_bits)
+
+###### Study 3 ######
+
+
+load("data/study3/study_3.RData")
+
+x <- Study_3_wide
+x <- x[which(x$nationality_factor!="UK"),]
+x <- x[which(x$nationality_factor!="USA"),]
+x <- x[which(x$nationality_factor!="Canada"),]
+x <- x[which(x$nationality_factor!="Germany"),]
+x <- x[which(x$nationality_factor!="Portugal"),]
+x <- x[which(x$nationality_factor!="Netherlands"),]
+x <- x[which(x$nationality_factor!="unknown"),]
+
+Study_3_eligible_wide <- x
+
+x$promise_chmind <- 
+  recode(as.numeric(x$promise_chmind),
+         "15"  = 1
+         ,"16" = 2
+         ,"18" = 3
+         ,"19" = 4
+         ,"20" = 5
+         ,"21" = 6
+         ,"22" = 7)
+
+x$trolley_chmind <- 
+  recode(as.numeric(x$trolley_chmind),
+         "15"  = 1
+         ,"16" = 2
+         ,"18" = 3
+         ,"19" = 4
+         ,"20" = 5
+         ,"21" = 6
+         ,"22" = 7)
+
+x$dog_chmind <- 
+  recode(as.numeric(x$dog_chmind),
+         "15"  = 1
+         ,"16" = 2
+         ,"18" = 3
+         ,"19" = 4
+         ,"20" = 5
+         ,"21" = 6
+         ,"22" = 7)
+
+study3_bits <- rbind(
+round(
+  c(
+     mean(x$promise_conf1,na.rm = T)
+    ,  sd(x$promise_conf1,na.rm = T)
+    , mean(x$heinz_conf1,na.rm = T)
+    ,   sd(x$heinz_conf1,na.rm = T)
+    , mean(x$trolley_conf1,na.rm = T)
+    ,   sd(x$trolley_conf1,na.rm = T)
+    , mean(x$dog_conf1,na.rm = T)
+    ,   sd(x$dog_conf1,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+     mean(x$promise_conf2,na.rm = T)
+    ,  sd(x$promise_conf2,na.rm = T)
+    , mean(x$heinz_conf2,na.rm = T)
+    ,   sd(x$heinz_conf2,na.rm = T)
+    , mean(x$trolley_conf2,na.rm = T)
+    ,   sd(x$trolley_conf2,na.rm = T)
+    , mean(x$dog_conf2,na.rm = T)
+    ,   sd(x$dog_conf2,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+      mean(x$promise_chmind,na.rm = T)
+    ,   sd(x$promise_chmind,na.rm = T)
+    , mean(  x$heinz_chmind,na.rm = T)
+    ,   sd(  x$heinz_chmind,na.rm = T)
+    , mean(x$trolley_chmind,na.rm = T)
+    ,   sd(x$trolley_chmind,na.rm = T)
+    , mean(    x$dog_chmind,na.rm = T)
+    ,   sd(    x$dog_chmind,na.rm = T)
+  )
+  ,digits = 1)
+)
+
+test1 <- unname(rbind(study1a_bits,study1b_bits,study2_bits,study3_bits))
+
+measures <- rep(c("Initial Confidence","Revised Confidence","Changed Mind"),4)
+
+left_rows <- c("Study 1a","","",
+               "Study 1b","","",
+               "Study 2","","", 
+               "Study 3","",""   )
+
+test1 <- cbind(unname(left_rows),unname(measures),test1)
+test1
+
+
+test1 <- test1[,c(1,2,5,6,7,8,3,4,9,10)]
+
+
+test1
+cols <- c(" "," ","M","SD","M","SD","M","SD","M","SD")
+test1 <- `colnames<-`(test1, cols)
+test1
+
+Heinz <- c(3,4)
+Trolley <- c(5,6)
+Incest <- c(7,8)
+Cannibal <- c(9,10)
+
+spans_all <- list(Heinz,Trolley,Incest,Cannibal)
+
+names(spans_all) <- c("Heinz","Trolley","Incest/Promise","Cannibal/Dog")
+
+
+```
+
+
+
+```{r tab2other,results = 'asis', include=TRUE}
+
+
+apa_table(
+   test1
+   , align = c("l", "l", "c", "c", "c", "c", "c", "c", "c", "c")
+   , caption = "Means and Standard Deviations for initial and revised confidence ratings, and for self-reported changed mind for each scenario for each study"
+   , added_stub_head = "Response to critical slide"
+   , col_spanners = spans_all
+   , small = TRUE
+   
+)
+
+rm(spans_all,test1)
+
+```
+
+\newpage
+
+```{r postQstable}
+#load("data/study3/study_3.RData")
+
+
+# initial confidence
+# revised confidence
+# changed mind
+
+
+# confused
+# irritated
+# reason based
+# gut based
+
+
+#### Isolate judgement variables in Study 1a ####
+x <- china1_raw_6
+variable.names(x)
+x
+x <-
+  x[which(is.na(x$Gender)==FALSE),] %>%
+  as.data.frame() %>% 
+  select(
+      Participants
+    , Gender
+    ,JM_confused
+    , H_confused
+    , P_confused
+    , J_confused
+    ,JM_irritated
+    , H_irritated
+    , P_irritated
+    , J_irritated
+    ,JM_reason
+    , H_reason
+    , P_reason
+    , J_reason
+    ,JM_gut
+    , H_gut
+    , P_gut
+    , J_gut
+  ) 
+
+# Below for study 1:
+# Incest, Heinz, Trolley, Jennifer
+
+study1a_bits <- rbind(
+round(
+  c(
+     mean(x$JM_confused,na.rm = T)
+    ,  sd(x$JM_confused,na.rm = T)
+    , mean(x$H_confused,na.rm = T)
+    ,   sd(x$H_confused,na.rm = T)
+    , mean(x$P_confused,na.rm = T)
+    ,   sd(x$P_confused,na.rm = T)
+    , mean(x$J_confused,na.rm = T)
+    ,   sd(x$J_confused,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+     mean(x$JM_irritated,na.rm = T)
+    ,  sd(x$JM_irritated,na.rm = T)
+    , mean(x$H_irritated,na.rm = T)
+    ,   sd(x$H_irritated,na.rm = T)
+    , mean(x$P_irritated,na.rm = T)
+    ,   sd(x$P_irritated,na.rm = T)
+    , mean(x$J_irritated,na.rm = T)
+    ,   sd(x$J_irritated,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+     mean(x$JM_reason,na.rm = T)
+    ,  sd(x$JM_reason,na.rm = T)
+    , mean(x$H_reason,na.rm = T)
+    ,   sd(x$H_reason,na.rm = T)
+    , mean(x$P_reason,na.rm = T)
+    ,   sd(x$P_reason,na.rm = T)
+    , mean(x$J_reason,na.rm = T)
+    ,   sd(x$J_reason,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+     mean(x$JM_gut,na.rm = T)
+    ,  sd(x$JM_gut,na.rm = T)
+    , mean(x$H_gut,na.rm = T)
+    ,   sd(x$H_gut,na.rm = T)
+    , mean(x$P_gut,na.rm = T)
+    ,   sd(x$P_gut,na.rm = T)
+    , mean(x$J_gut,na.rm = T)
+    ,   sd(x$J_gut,na.rm = T)
+  )
+  ,digits = 1)
+)
+
+# china2_other_v <-
+# `colnames<-`(
+# rbind.data.frame(
+#  condition1_U[c(7,20,21,22,23,24,25)]
+# ,condition2_U[c(7,20,21,22,23,24,25)]
+# ),
+# c( "conf1"
+#   ,"conf2"
+#   ,"chmind"
+#   ,"confused"
+#   ,"irritated"
+#   ,"based_reason"
+#   ,"based_gut"
+# )
+# )
+
+x <- china2_other_v
+
+study1b_bits <- rbind(
+  
+  c("-","-","-"
+    ,"-","-","-"
+    , round(mean(x$confused,na.rm = T),digits = 1)
+    ,   round(sd(x$confused,na.rm = T),digits = 1)
+  )
+  ,
+  c("-","-","-"
+    ,"-","-","-"
+    , round(mean(x$irritated,na.rm = T),digits = 1)
+    ,   round(sd(x$irritated,na.rm = T),digits = 1)
+  )
+  ,
+  c("-","-","-"
+    ,"-","-","-"
+    , round(mean(x$based_reason,na.rm = T),digits = 1)
+    ,   round(sd(x$based_reason,na.rm = T),digits = 1)
+  )
+  ,
+  c("-","-","-"
+    ,"-","-","-"
+    , round(mean(x$based_gut,na.rm = T),digits = 1)
+    ,   round(sd(x$based_gut,na.rm = T),digits = 1)
+  )
+)
+
+rbind(study1a_bits,study1b_bits)
+#china2_other_v <- x
+
+###### India ######
+
+# # Incest
+# Q12 = conf1
+# Q25 = conf2
+# Q26 = chmind
+# Q30 = irritated
+# Q29 = confused
+# Q31 = based_reason
+# Q32 = based_gut
+
+# # Heinz
+# Q70 = conf1
+# Q83 = conf2
+# Q86 = chmind
+# Q88 = irritated
+# Q87 = confused
+# Q89 = based_reason
+# Q90 = based_gut
+# 
+# 
+# # Trolley
+# Q47 = conf1
+# Q60 = conf2
+# Q61 = chmind
+# Q65 = irritated
+# Q64 = confused
+# Q66 = based_reason
+# Q67 = based_gut
+# 
+# 
+# 
+# # Jennifer
+# Q93 = conf1
+# Q106 = conf2
+# Q107 = chmind
+# Q111 = irritated
+# Q110 = confused
+# Q112 = based_reason
+# Q113 = based_gut
+
+x <- India
+x
+
+x$Q86
+
+x$Q61
+x$Q107
+x$Q26
+
+
+as.numeric(x$Q32)
+x$Q32 <- 
+  recode(as.numeric(x$Q32),
+          "8"  = 1
+         ,"9"  = 2
+         ,"10" = 3
+         ,"11" = 4
+         ,"12" = 5
+         ,"13" = 6
+         ,"14" = 7)
+
+x$Q67 <- 
+  recode(as.numeric(x$Q67),
+          "8"  = 1
+         ,"9"  = 2
+         ,"10" = 3
+         ,"11" = 4
+         ,"12" = 5
+         ,"13" = 6
+         ,"14" = 7)
+
+x$Q90 <- 
+  recode(as.numeric(x$Q90),
+          "8"  = 1
+         ,"30"= 2
+         ,"31" = 3
+         ,"32" = 4
+         ,"33" = 5
+         ,"34" = 6
+         ,"35" = 7)
+
+x$Q113 <- 
+  recode(as.numeric(x$Q113),
+          "8"  = 1
+         ,"9"  = 2
+         ,"10" = 3
+         ,"11" = 4
+         ,"12" = 5
+         ,"13" = 6
+         ,"14" = 7)
+
+# For Study 2 Below is:
+# Incest Heinz Trolley Jennifer
+
+# Below for study 1:
+# Incest, Heinz, Trolley, Jennifer
+
+study2_bits <- rbind(
+round(
+  c(
+      mean(x$Q29,na.rm = T)
+    ,   sd(x$Q29,na.rm = T)
+    , mean(x$Q87,na.rm = T)
+    ,   sd(x$Q87,na.rm = T)
+    , mean(x$Q64,na.rm = T)
+    ,   sd(x$Q64,na.rm = T)
+    , mean(x$Q110,na.rm = T)
+    ,   sd(x$Q110,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+      mean(x$Q30,na.rm = T)
+    ,   sd(x$Q30,na.rm = T)
+    , mean(x$Q88,na.rm = T)
+    ,   sd(x$Q88,na.rm = T)
+    , mean(x$Q65,na.rm = T)
+    ,   sd(x$Q65,na.rm = T)
+    , mean(x$Q111,na.rm = T)
+    ,   sd(x$Q111,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+      mean(x$Q31,na.rm = T)
+    ,   sd(x$Q31,na.rm = T)
+    , mean(x$Q89,na.rm = T)
+    ,   sd(x$Q89,na.rm = T)
+    , mean(x$Q66,na.rm = T)
+    ,   sd(x$Q66,na.rm = T)
+    , mean(x$Q112,na.rm = T)
+    ,   sd(x$Q112,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+      mean(x$Q32,na.rm = T)
+    ,   sd(x$Q32,na.rm = T)
+    , mean(x$Q90,na.rm = T)
+    ,   sd(x$Q90,na.rm = T)
+    , mean(x$Q67,na.rm = T)
+    ,   sd(x$Q67,na.rm = T)
+    , mean(x$Q113,na.rm = T)
+    ,   sd(x$Q113,na.rm = T)
+  )
+  ,digits = 1)
+)
+
+rbind(study1a_bits,study1b_bits,study2_bits)
+
+###### Study 3 ######
+
+
+load("data/study3/study_3.RData")
+
+x <- Study_3_wide
+x <- x[which(x$nationality_factor!="UK"),]
+x <- x[which(x$nationality_factor!="USA"),]
+x <- x[which(x$nationality_factor!="Canada"),]
+x <- x[which(x$nationality_factor!="Germany"),]
+x <- x[which(x$nationality_factor!="Portugal"),]
+x <- x[which(x$nationality_factor!="Netherlands"),]
+x <- x[which(x$nationality_factor!="unknown"),]
+
+Study_3_eligible_wide <- x
+
+x$dog_based_gut
+x$promise_based_gut <- 
+  recode(as.numeric(x$promise_based_gut),
+          "8"  = 1
+         ,"9"  = 2
+         ,"10" = 3
+         ,"11" = 4
+         ,"12" = 5
+         ,"13" = 6
+         ,"14" = 7)
+
+x$trolley_based_gut <- 
+  recode(as.numeric(x$trolley_based_gut),
+          "8"  = 1
+         ,"9"  = 2
+         ,"10" = 3
+         ,"11" = 4
+         ,"12" = 5
+         ,"13" = 6
+         ,"14" = 7)
+
+x$heinz_based_gut <- 
+  recode(as.numeric(x$heinz_based_gut),
+          "8"  = 1
+         ,"30"= 2
+         ,"31" = 3
+         ,"32" = 4
+         ,"33" = 5
+         ,"34" = 6
+         ,"35" = 7)
+
+x$dog_based_gut <- 
+  recode(as.numeric(x$dog_based_gut),
+          "8"  = 1
+         ,"9"  = 2
+         ,"10" = 3
+         ,"11" = 4
+         ,"12" = 5
+         ,"13" = 6
+         ,"14" = 7)
+
+# For Study 2 Below is:
+# Incest Heinz Trolley Jennifer
+
+# Below for study 1:
+# Incest, Heinz, Trolley, Jennifer
+
+# Below for study 3 is 
+# promise/incest, Heinz, Trolley, Jennifer
+
+
+study3_bits <- rbind(
+round(
+  c(
+      mean(x$promise_confused,na.rm = T)
+    ,   sd(x$promise_confused,na.rm = T)
+    , mean(  x$heinz_confused,na.rm = T)
+    ,   sd(  x$heinz_confused,na.rm = T)
+    , mean(x$trolley_confused,na.rm = T)
+    ,   sd(x$trolley_confused,na.rm = T)
+    , mean(    x$dog_confused,na.rm = T)
+    ,   sd(    x$dog_confused,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+      mean(x$promise_irritated,na.rm = T)
+    ,   sd(x$promise_irritated,na.rm = T)
+    , mean(  x$heinz_irritated,na.rm = T)
+    ,   sd(  x$heinz_irritated,na.rm = T)
+    , mean(x$trolley_irritated,na.rm = T)
+    ,   sd(x$trolley_irritated,na.rm = T)
+    , mean(    x$dog_irritated,na.rm = T)
+    ,   sd(    x$dog_irritated,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+      mean(x$promise_based_reason,na.rm = T)
+    ,   sd(x$promise_based_reason,na.rm = T)
+    , mean(  x$heinz_based_reason,na.rm = T)
+    ,   sd(  x$heinz_based_reason,na.rm = T)
+    , mean(x$trolley_based_reason,na.rm = T)
+    ,   sd(x$trolley_based_reason,na.rm = T)
+    , mean(    x$dog_based_reason,na.rm = T)
+    ,   sd(    x$dog_based_reason,na.rm = T)
+  )
+  ,digits = 1)
+,
+round(
+  c(
+      mean(x$promise_based_gut,na.rm = T)
+    ,   sd(x$promise_based_gut,na.rm = T)
+    , mean(  x$heinz_based_gut,na.rm = T)
+    ,   sd(  x$heinz_based_gut,na.rm = T)
+    , mean(x$trolley_based_gut,na.rm = T)
+    ,   sd(x$trolley_based_gut,na.rm = T)
+    , mean(    x$dog_based_gut,na.rm = T)
+    ,   sd(    x$dog_based_gut,na.rm = T)
+  )
+  ,digits = 1)
+)
+
+
+
+test1 <- unname(rbind(study1a_bits,study1b_bits,study2_bits,study3_bits))
+
+measures <- rep(c("Confused","Irritated","Reason-Based","Gut-Based"),4)
+
+left_rows <- c("Study 1a","","","",
+               "Study 1b","","","",
+               "Study 2","","", "",
+               "Study 3","","",""  )
+
+test1 <- cbind(unname(left_rows),unname(measures),test1)
+test1
+
+# For Study 2 Below is:
+# Incest Heinz Trolley Jennifer
+
+# Below for study 1:
+# Incest, Heinz, Trolley, Jennifer
+
+# Below for study 3 is 
+# promise/incest, Heinz, Trolley, Jennifer
+
+test1 <- test1[,c(1,2,5,6,7,8,3,4,9,10)]
+
+
+test1
+cols <- c(" "," ","M","SD","M","SD","M","SD","M","SD")
+test1 <- `colnames<-`(test1, cols)
+test1
+
+Heinz <- c(3,4)
+Trolley <- c(5,6)
+Incest <- c(7,8)
+Cannibal <- c(9,10)
+
+spans_all <- list(Heinz,Trolley,Incest,Cannibal)
+
+names(spans_all) <- c("Heinz","Trolley","Incest/Promise","Cannibal/Dog")
+
+
+```
+
+
+
+```{r tabPostQs,results = 'asis', include=TRUE}
+
+
+apa_table(
+   test1
+   , align = c("l", "l", "c", "c", "c", "c", "c", "c", "c", "c")
+   , caption = "Means and Standard Deviations for responses to the post-discussion questionnaire for each scenario for each study"
+   , added_stub_head = "Response to critical slide"
+   , col_spanners = spans_all
+   , small = TRUE
+   
+)
+
+rm(spans_all,test1)
+
+```
+
+
+
+
+
+```{r testingchina}
+x <- china1_raw_6
+x <- x[which(is.na(x$Gender)==FALSE),]
+
+x <- x %>% 
+  mutate(
+      gender=Gender
+    , age=Age
+  )
+
+c <- chisq.test(
+  table(China2$ALL2_critial,China2$condition)
+)
+
+table(CS_China)
+c <- chisq.test( table(CS_China) )
+
+CS_China <-
+  CS_China %>% 
+  mutate(scenario_type =
+           recode(Scenario
+                  , "Incest"   = "Intuition"
+                  , "Cannibal" = "Intuition"
+                  , "Trolley"  = "Reasoning"
+                  , "Heinz"    = "Reasoning"
+                  ))
+
+table(CS_China$InCS,CS_China$scenario_type)
+c2 <- chisq.test(table(CS_China$InCS,CS_China$scenario_type))
+
+
+sum(x$SUM_dumbfounding!=0)
+
+(sum(x$SUM_dumbfounding!=0)/length(x$gender))*100
+
+sum(China2$ALL2_critial=="dumbfounded")
+(sum(China2$ALL2_critial=="dumbfounded")/length(China2$condition))*100
+
+```
+
+\newpage
+
+### Measuring dumbfounding
+Participants who selected the admission of not having reasons were identified as dumbfounded. Across the four scenarios (Study 1a), `r sum(x$SUM_dumbfounding!=0)` participants (`r (sum(x$SUM_dumbfounding!=0)/length(x$gender))*100`%) provided a dumbfounded response at least once. In Study 1b, `r sum(China2$ALL2_critial=="dumbfounded")` participants, (`r (sum(China2$ALL2_critial=="dumbfounded")/length(China2$condition))*100`%) provided a dumbfounded response for the *Cannibal* scenario. Table\ \@ref(tab:tab2dumb) shows the number and percentage of participants who selected each response for each scenario across Studies 1a and 1b. Figure\ \@ref(fig:chinesefig) shows this information for Study 1a, while Figure\ \@ref(fig:chinesefig2) additionally includes the responses for Study1b. Crucially for the current study, rates of dumbfounded responding for each scenario in Study 1a were significantly greater than zero, *Heinz*: *z* = `r round(z_score(8,0,42,42), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(8,0,42,42),lower.tail = FALSE)))`; *Trolley*: *z* = `r round(z_score(9,0,42,42), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(9,0,42,42),lower.tail = FALSE)))`; *Incest*: *z* = `r round(z_score(7,0,42,42), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(7,0,42,42),lower.tail = FALSE)))`; *Cannibal*: *z* = `r round(z_score(13,0,42,42), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(13,0,42,42),lower.tail = FALSE)))`. Similarly rates of dumbfounded responding in Study 1b were significantly greater than zero for the *Cannibal* scenario, *z* = `r round(z_score(47,0,123,123), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(47,0,123,123),lower.tail = FALSE)))`.
+```{r preptable}
+
+
+regular_table <- function(v){
+  x <- v
+  
+  rows <- c("Nothing wrong", "Dumbfounded", "Reasons")
+  
+  hi <- c(table(x$critical_slide,x$Scenario_code
+  )[,1])
+  
+  hip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,1])
+  hip <- c(paste0(hip[1],"%"),
+           paste0(hip[2],"%"),
+           paste0(hip[3],"%"))
+  
+  ti <- c(table(x$critical_slide,x$Scenario_code
+  )[,2])
+  
+  tip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,2])
+  tip <- c(paste0(tip[1],"%"),
+           paste0(tip[2],"%"),
+           paste0(tip[3],"%"))
+  
+  ii <- c(table(x$critical_slide,x$Scenario_code
+  )[,3])
+  
+  iip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,3])
+  iip <- c(paste0(iip[1],"%"),
+           paste0(iip[2],"%"),
+           paste0(iip[3],"%"))
+  
+  
+  ci <- c(table(x$critical_slide,x$Scenario_code
+  )[,4])
+  
+  cip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS)/
+                      4)*100,
+                 digits=2)[,4])
+  cip <- c(paste0(cip[1],"%"),
+           paste0(cip[2],"%"),
+           paste0(cip[3],"%"))
+  
+  cp <- unname(cbind(rows,hi,hip,ti,tip,ii,iip,ci,cip))
+  cp
+}
+Study3_table <- function(v){
+  x <- v
+  
+  rows <- c("Nothing wrong", "Dumbfounded", "Reasons")
+  
+  hi <- c(table(x$critical_slide,x$Scenario_code
+  )[,1])
+  hil <- sum(x$scenario=="Heinz"&is.na(x$critical_slide)==FALSE) 
+  hip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (hil)*100,
+                 digits=2)[,1])
+  hip <- c(paste0(hip[1],"%"),
+           paste0(hip[2],"%"),
+           paste0(hip[3],"%"))
+  
+  ti <- c(table(x$critical_slide,x$Scenario_code
+  )[,2])
+  
+  til <- sum(x$scenario=="Trolley"&is.na(x$critical_slide)==FALSE)
+  tip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (til)*100,
+                 digits=2)[,2])
+  tip <- c(paste0(tip[1],"%"),
+           paste0(tip[2],"%"),
+           paste0(tip[3],"%"))
+  
+  ii <- c(table(x$critical_slide,x$Scenario_code
+  )[,3])
+  
+  iil <- sum(x$scenario=="Promise"&is.na(x$critical_slide)==FALSE)
+  iip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (iil)*100,
+                 digits=2)[,3])
+  iip <- c(paste0(iip[1],"%"),
+           paste0(iip[2],"%"),
+           paste0(iip[3],"%"))
+  
+  
+  ci <- c(table(x$critical_slide,x$Scenario_code
+  )[,4])
+  
+  cil <- sum(x$scenario=="Dog"&is.na(x$critical_slide)==FALSE)
+  cip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (cil)*100,
+                 digits=2)[,4])
+  cip <- c(paste0(cip[1],"%"),
+           paste0(cip[2],"%"),
+           paste0(cip[3],"%"))
+  
+  cp <- unname(cbind(rows,hi,hip,ti,tip,ii,iip,ci,cip))
+  cp
+}
+
+China2_table <- function(v){
+  x <- v
+  
+  rows <- c("Nothing wrong", "Dumbfounded", "Reasons")
+  
+  hi <- c("-","-","-")
+  
+  hip <- c("-","-","-")
+  
+  ti <- c("-","-","-")
+  
+  tip <- c("-","-","-")
+  tip <- c("-","-","-")
+  
+  ii <- c("-","-","-")
+  
+  iip <- c("-","-","-")
+  iip <- c("-","-","-")
+  
+  
+  ci <- c(table(x$critical_slide,x$Scenario_code
+  ))
+  
+  cip <- c(round(table(x$critical_slide,
+                       x$Scenario_code)/
+                   (length(x$InCS))*100,
+                 digits=2))
+  cip <- c(paste0(cip[1],"%"),
+           paste0(cip[2],"%"),
+           paste0(cip[3],"%"))
+  
+  cp <- unname(cbind(rows,hi,hip,ti,tip,ii,iip,ci,cip))
+  cp
+}
+
+
+df1 <- 
+  CS_China %>% mutate(
+    Scenario_code = recode(Scenario
+                           , "Heinz"="1"
+                           , "Trolley"="2"
+                           , "Incest"="3"
+                           , "Cannibal"="4"
+    )
+    ,
+    critical_slide = InCS
+  )
+
+df1_2 <- Study2 %>% 
+  mutate(
+    Scenario_code = recode(Scenario
+                           , "Heinz"="1"
+                           , "Trolley"="2"
+                           , "Incest"="3"
+                           , "Cannibal"="4"
+    )
+    ,
+    critical_slide = InCS
+  )
+
+
+df2 <- 
+  CS_India %>% mutate(
+    Scenario_code = recode(Scenario
+                           , "Heinz"="1"
+                           , "Trolley"="2"
+                           , "Incest"="3"
+                           , "Cannibal"="4"
+    )
+    ,
+    critical_slide = InCS
+  )
+
+#Study_3_eligible_long <- x
+load("data/study3/study_3.RData")
+
+x <- Study_3_long
+x <- x[which(x$nationality_factor!="UK"),]
+x <- x[which(x$nationality_factor!="USA"),]
+x <- x[which(x$nationality_factor!="Canada"),]
+x <- x[which(x$nationality_factor!="Germany"),]
+x <- x[which(x$nationality_factor!="Portugal"),]
+x <- x[which(x$nationality_factor!="Netherlands"),]
+x <- x[which(x$nationality_factor!="unknown"),]
+
+Study_3_eligible_long <- x
+
+
+s3_CS <- Study_3_eligible_long %>% 
+    mutate(
+           Scenario_code = recode(scenario
+                                  , "Heinz"="1"
+                                  , "Trolley"="2"
+                                  , "Promise"="3"
+                                  , "Dog"="4"
+           )
+           ,
+           critical_slide = CS
+           ,
+           InCS = CS
+           )# %>% 
+ 
+regular_table(df1)
+China2_table(df1_2)
+
+regular_table(df2)
+Study3_table(s3_CS)
+
+S1a_t <- regular_table(df1)
+S1b_t <- China2_table(df1_2)
+S2_t <- regular_table(df2)
+S3_t <- regular_table(s3_CS)
+
+left_rows <- c("Study 1a","","",
+               "Study 1b","","",
+               "Study 2","","",
+               "Study 3","","")
+
+test1 <- unname(rbind(S1a_t, S1b_t, S2_t,S3_t))
+rm(int_t,cp1,cp2,cp2str,ol,olstr)
+test1 <- cbind(unname(left_rows),test1)
+
+test1
+cols <- c(" "," ","N","percent","N","percent","N","percent","N","percent")
+test1 <- `colnames<-`(test1, cols)
+test1
+Heinz <- c(3,4)
+Trolley <- c(5,6)
+Incest <- c(7,8)
+Cannibal <- c(9,10)
+
+spans_all <- list(Heinz,Trolley,Incest,Cannibal)
+
+names(spans_all) <- c("Heinz","Trolley","Incest/Promise","Cannibal/Dog")
+
+rm(S1a_t,S1b_t,S2_t,cols,left_rows)
+
+```
+
+```{r tab2dumb,results = 'asis', include=TRUE}
+
+
+apa_table(
+   test1
+   , align = c("l", "l", "c", "c", "c", "c", "c", "c", "c", "c")
+   , caption = "Observed frequency and percentage of each of the responses: dumbfounded, nothing wrong, and reasons provided for each scenario for each study"
+   , added_stub_head = "Response to critical slide"
+   , col_spanners = spans_all
+   , small = TRUE
+   
+)
+
+rm(spans_all,test1)
+
+```
+
+
+
+```{r prepchina1fig}
+
+#CS <- rbind(CS, Study2)
+CS <- CS_China %>% select(-scenario_type)
+test <- as.data.frame(table(CS))
+
+test <- rbind.data.frame(
+  test %>% 
+    filter(Scenario=="Incest") %>% 
+    mutate(
+      total=
+        rep(sum(Freq), length(Scenario))
+    )
+  ,test %>% 
+    filter(Scenario=="Trolley") %>% 
+    mutate(
+      total=
+        rep(sum(Freq), length(Scenario))
+    )
+  ,test %>% 
+    filter(Scenario=="Heinz") %>% 
+    mutate(
+      total=
+        rep(sum(Freq), length(Scenario))
+    )
+  ,test %>% 
+    filter(Scenario=="Cannibal") %>% 
+    mutate(
+      total=
+        rep(sum(Freq), length(Scenario))
+    )
+)
+  
+#test$total <- rep(length(CS$Scenario)/4, length(test$Scenario))
+
+test$perc <- test$Freq/test$total
+
+test_h <- test[which(test$Scenario== "Heinz"),] 
+test_h$total <- sum(test_h$Freq)
+test_h$perc <- test_h$Freq/test_h$total
+# Trolley
+test_t <- test[which(test$Scenario== "Trolley"),] 
+test_t$total <- sum(test_t$Freq)
+test_t$perc <- test_t$Freq/test_t$total
+# Promise
+test_p <- test[which(test$Scenario== "Incest"),] 
+test_p$total <- sum(test_p$Freq)
+test_p$perc <- test_p$Freq/test_p$total
+# Dog
+test_d <- test[which(test$Scenario== "Cannibal"),] 
+test_d$total <- sum(test_d$Freq)
+test_d$perc <- test_d$Freq/test_d$total
+
+
+test <- rbind(test_h,test_t,test_p,test_d)
+
+test
+
+```
+
+```{r chinesefigCreate, fig.cap="Rates of each type of response for each scenario in the Chinese Sample (\\emph{N} = 42)", include = FALSE}
+g <- ggplot(test, aes(x = Scenario, y = perc, fill = InCS)) +
+  scale_y_continuous(limits = c(-.035,1),
+                     labels = percent_format()
+                     )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(#family = "Times", 
+            size=2.2,
+            aes( label = scales::percent(test$perc
+                                         , accuracy = 1),
+                 y= test$perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(#family = "Times",
+            size=2.5,
+            aes(label = format(Freq),
+                y= -3.5*(..count../100)/..count..),
+            stat= "count",
+            position = position_dodge(0.9),
+            vjust = -.2,
+            fontface='plain'
+            )+
+  labs(y = "% of participants displaying each type of\nresponse for each scenario",
+       fill = "Response:"
+  )+
+  theme_apa()+
+  # scale_fill_manual(values = c("#333333", "#B4B4B4", "#E6E6E6")
+  #                   , labels=c("Study 1\nN=31",
+  #                              "Study 3a\nN=72",
+  #                              "Study 3b\nN=101")
+  # )+
+  scale_fill_grey(
+      labels=c(
+        "Nothing Wrong"
+      , "Dumbfounded"
+      , "Reasons")
+  )+
+  scale_x_discrete(limits = c("Heinz","Trolley","Incest","Cannibal")
+                   )+
+  theme_bw() +
+  theme(plot.title=element_text(#family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(#family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(#family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(#family="Times",
+                                 colour = "black",
+                                 size=8
+                                 ),
+          axis.ticks.x = element_blank(),
+          axis.title=element_text(#family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(#family="Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right")
+```
+
+```{r chinesefig, fig.cap="Rates of each type of response for each scenario in the Chinese Sample (\\emph{N} = 42)", include = TRUE}
+
+suppressWarnings(print(g))
+
+```
+
+
+
+
+```{r loaddatachina2}
+
+
+
+
+chisq.test(
+  table(China2$ALL2_critial,China2$condition)
+)
+Study2 <-
+  China2 %>% mutate(
+    Scenario = rep("Cannibal", length(China2$condition))
+    ,
+    InCS =
+      recode(ALL2_critial
+             , "nothing wrong"="a_nothing_wrong"
+             , "dumbfounded"="b_dumbfounded"
+             , "reasons"="c_reasons")
+  ) %>% 
+  select(Scenario, InCS)
+
+df <- China1
+
+CS <- df[1:4] %>%
+  gather(Scenario, InCS) %>% 
+  mutate(
+    Scenario =
+      recode(Scenario
+             , "H_Critical"="Heinz"
+             , "J_Critical"="Cannibal"
+             , "JM_Critical"="Incest"
+             , "P_Critical"="Trolley")
+    ,
+    InCS =
+      recode(InCS
+             , "nothing wrong"="a_nothing_wrong"
+             , "MD"="b_dumbfounded"
+             , "reasons"="c_reasons"),
+  )
+  
+
+CS <- rbind(CS, Study2)
+
+test <- as.data.frame(table(CS))
+
+test <- rbind.data.frame(
+  test %>% 
+    filter(Scenario=="Incest") %>% 
+    mutate(
+      total=
+        rep(sum(Freq), length(Scenario))
+    )
+  ,test %>% 
+    filter(Scenario=="Trolley") %>% 
+    mutate(
+      total=
+        rep(sum(Freq), length(Scenario))
+    )
+  ,test %>% 
+    filter(Scenario=="Heinz") %>% 
+    mutate(
+      total=
+        rep(sum(Freq), length(Scenario))
+    )
+  ,test %>% 
+    filter(Scenario=="Cannibal") %>% 
+    mutate(
+      total=
+        rep(sum(Freq), length(Scenario))
+    )
+)
+  
+#test$total <- rep(length(CS$Scenario)/4, length(test$Scenario))
+
+test$perc <- test$Freq/test$total
+
+test
+
+
+```
+
+```{r chinesefig2CREATE, dev="cairo_pdf", fig.cap="Rates of each type of response for each scenario in the Chinese Sample (including additional data on Cannibal scenario)", include = TRUE}
+g <- ggplot(test, aes(x = Scenario, y = perc, fill = InCS)) +
+  scale_y_continuous(limits = c(-.045,1),
+                     labels = percent_format()
+                     )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(#family = "Times", 
+            size=2.2,
+            aes( label = scales::percent(test$perc
+                                         , accuracy = 1),
+                 y= test$perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(#family = "Times",
+            size=2.5,
+            aes(label = format(Freq),
+                y= -4*(..count../100)/..count..),
+            stat= "count",
+            position = position_dodge(0.9),
+            vjust = -.2,
+            fontface='plain'
+            )+
+  labs(y = "% of participants displaying each type of\nresponse for each scenario",
+       fill = "Response:"
+  )+
+  theme_apa()+
+  # scale_fill_manual(values = c("#333333", "#B4B4B4", "#E6E6E6")
+  #                   , labels=c("Study 1\nN=31",
+  #                              "Study 3a\nN=72",
+  #                              "Study 3b\nN=101")
+  # )+
+  scale_fill_grey(
+      labels=c(
+        "Nothing Wrong"
+      , "Dumbfounded"
+      , "Reasons")
+  )+
+  scale_x_discrete(limits = c("Heinz","Trolley","Incest","Cannibal")
+                  ,labels = c("Heinz \n(\U1D62F = 42)"
+                              ,"Trolley \n(\U1D62F = 42)"
+                              ,"Incest \n(\U1D62F = 42)"
+                              ,"Cannibal \n(\U1D62F = 165)")
+                   )+
+  theme_bw() +
+  theme(plot.title=element_text(#family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(#family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(#family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(#family="Times",
+                                 colour = "black",
+                                 size=8
+                                 ),
+          axis.ticks.x = element_blank(),
+          axis.title=element_text(#family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(#family="Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right")
+```
+
+```{r chinesefig2, fig.cap="Rates of each type of response for each scenario in the Chinese Sample (including additional data on Cannibal scenario)", include = TRUE}
+suppressWarnings(print(g))
+
+```
+
+
+```{r chinesefig2Color, dev="cairo_pdf", fig.cap="Rates of each type of response for each scenario in the Chinese Sample (including additional data on Cannibal scenario)", include = FALSE}
+# install.packages("ggtext")
+# library(ggtext)
+# library(glue)
+g <- ggplot(test, aes(x = Scenario, y = perc, fill = InCS)) +
+  scale_y_continuous(limits = c(-.045,1),
+                     labels = percent_format()
+                     )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(#family = "Times", 
+            size=4,
+            aes( label = scales::percent(test$perc
+                                         , accuracy = 1),
+                 y= test$perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain',
+            color='white'
+            )+
+  geom_text(#family = "Times",
+            size=4,
+            aes(label = format(Freq),
+                y= -4*(..count../100)/..count..),
+            stat= "count",
+            position = position_dodge(0.9),
+            vjust = -.2,
+            fontface='plain',
+            color='white'
+            )+
+  labs(y = "Proportion of responses",
+       fill = "Response:"
+  )+
+  geom_hline(yintercept = 0)+
+  theme_apa()+
+  scale_fill_manual(values = c("#356eff", "#ff6035", "#ffc635")
+                    ,  labels=c(
+        "Nothing Wrong"
+      , "Dumbfounded"
+      , "Reasons")
+  )+
+  # scale_fill_grey(
+  #     labels=c(
+  #       "Nothing Wrong"
+  #     , "Dumbfounded"
+  #     , "Reasons")
+  # )+
+  scale_x_discrete(limits = c("Heinz","Trolley","Incest","Cannibal")
+                  ,labels = c(glue("Heinz<br>(<i>{'n'}</i> = 42)")
+                              ,glue("Trolley <br>(<i>{'n'}</i> = 42)")
+                              ,glue("Incest <br>(<i>{'n'}</i> = 42)")
+                              ,glue("Cannibal <br>(<i>{'n'}</i> = 165)"))
+                   )+
+  theme_bw() +
+  theme(plot.title=element_text(#family="Times",
+                                size=12
+                                ),
+        axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+        legend.text=element_text(#family="Times",
+                                 size=10
+                                 , color='white'
+                                 ),
+          legend.title=element_text(#family="Times",
+                                    size=12
+                                    ,color = 'white'
+                                    ),
+          axis.text=element_text(#family="Times",
+                                 colour = "white",
+                                 size=12
+                                 ),
+        axis.text.x = element_markdown(),
+          axis.ticks.x = element_blank(),
+  axis.ticks.y = element_line(color = 'white'),
+          axis.title=element_text(#family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(#family="Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right",
+            panel.background = element_rect(fill='transparent', color='white'), #transparent panel bg
+        panel.border = element_rect(fill='transparent', color='white'),
+    plot.background = element_rect(
+      fill='transparent',
+      color='transparent'), #transparent plot bg
+     panel.grid.major = element_line(color='lightgrey'), #remove major gridlines
+     panel.grid.minor = element_blank(), #remove minor gridlines
+    legend.background = element_rect(fill='transparent', color='transparent'), #transparent legend bg
+    legend.box.background = element_rect(fill='transparent',color = 'transparent') #transparent legend panel
+#    legend.box.background = element
+  
+        )
+
+suppressWarnings(print(g))
+
+ggsave('China_color.png', g, bg='transparent')
+
+```
+
+
+There was no significant difference in observed rates of dumbfounded responding depending on which scenario was being discussed, $\chi$^2^(`r c$parameter`, *N* = `r length(x$gender)/4`) = `r round(c$statistic, digits=2)`, *p* `r paste(p_report(c$p.value))`. Similarly, there was no influence of type of scenario (reasoning vs intuition) on rates of dumbfounded responding $\chi$^2^(`r c2$parameter`, *N* = `r length(x$gender)/4`) = `r round(c2$statistic, digits=2)`, *p* `r paste(p_report(c2$p.value))`.
+
+We found clear evidence for dumbfounded responding in our Chinese sample. Interestingly, while the *Incest* scenario is generally regarded as the most reliable for eliciting moral dumbfounding in Western samples [e.g., @royzman_curious_2015], *Cannibal* appeared to be the scenario most likely to elicit dumbfounding in this sample. While this difference in responding to the critical slide is not statistically significant, we did observe significantly harsher judgements for *Cannibal* than for the other scenarios. The pattern of responding to the critical slide is therefore not surprising.  Furthermore, it is possible that the small sample size meant that our study was not sufficiently powered to detect differences in responding to the critical slide. As such, we note that the converging evidence across three measures (initial judgement, revised judgement, and critical slide), point towards issues surrounding death and respect for the dead as being more relevant in this Chinese sample. This is consistent with existing research on the death taboo, and the importance of death in Chinese culture [e.g., @selin_death_2019;@wu_cognitive_2011]. This interpretation is further corroborated by analysis of the open-ended responses, with 20 participants (47.62%) providing statements such as "Jennifer eating human flesh is an immoral and uncivilized behaviour". This suggests that while WEIRD samples appear to be more inclined to moralise, and present as dumbfounded for, the *Incest* scenario, it appears (from our small and limited sample) that it is the *Cannibal* scenario that is of greater concern to Chinese participants.
+
+```{r chinainddiffs}
+df <-
+  china1_raw_6 %>% 
+  mutate(
+      vc = VC1+VC2+VC3+VC4
+    , vi = VI1+VI2+VI3+VI4
+    , hc = HC1+HC2+HC3+HC4
+    , hi = HI1+HI2+HI3+HI4
+  )
+  
+df <- df[which(is.na(df$JM_critical_slide)==FALSE),]
+df3 <- as.data.frame(df)
+
+
+revised_PseudoR2s <- function(LogModel) {
+  dev <- LogModel$deviance
+  nullDev <- LogModel$null.deviance
+  modelN <- length(LogModel$fitted.values)
+  R.l <- 1 - dev / nullDev
+  R.cs <- 1- exp ( -(nullDev - dev) / modelN)
+  R.n <- R.cs / ( 1 - ( exp (-(nullDev / modelN))))
+  
+  all <- list(hosmer_and_lemeshow = as.numeric(R.l), mcfadden = NA, cox_and_snell = as.numeric(R.cs), nagelkerke = as.numeric(R.n))
+  all
+}
+
+```
+
+```{r}
+fit <- lm(SUM_dumbfounding~vc+vi+hc+hi,df)
+apa_fit <- apa_print(summary(fit))
+apa_fit$full_result$modelfit
+
+
+x <- df %>% select(SUM_dumbfounding,vc,vi,hc,hi)
+x$SUM_dumbfounding <- x$SUM_dumbfounding*-1
+#cor.plot(x)
+
+
+df3$variable <- df3$SUM_dumbfounding
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+vi+hc+hi, data = df3a, reflevel = "0")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Hpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(8),sig.level = .05)
+Hsummary_InCS_model <- summary_InCS_model
+
+```
+
+### Individual differences (Study 1a)
+A hierarchical linear regression was conducted to test the possible relationship between ICS [@renzhi_key_2013], and susceptibility to dumbfounding. Susceptibility to dumbfounding was operationalised by creating a new variable representing the number of times each participant provided a dumbfounded response. This measure was included as our outcome variable, and the four sub-scales of ICS were included as predictor variables. The overall model did not significantly predict susceptibility to dumbfounding `r apa_fit$full_result$modelfit`.
+
+```{r logits}
+
+#### Heinz ####
+df3$variable <- df3$H_critical_slide
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+vi+hc+hi, data = df3a, reflevel = "2")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Hpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(8),sig.level = .05)
+Hsummary_InCS_model <- summary_InCS_model
+
+#### Trolley ####
+df3$variable <- df3$P_critical_slide
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+vi+hc+hi, data = df3a, reflevel = "2")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Tpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(8),sig.level = .05)
+Tsummary_InCS_model <- summary_InCS_model
+
+#### Incest ####
+df3$variable <- df3$JM_critical_slide
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+vi+hc+hi, data = df3a, reflevel = "2")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Ipw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(8),sig.level = .05)
+Isummary_InCS_model <- summary_InCS_model
+
+#### Cannibal #####
+df3$variable <- df3$J_critical_slide
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+vi+hc+hi, data = df3a, reflevel = "2")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Cpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(8),sig.level = .05)
+Csummary_InCS_model <- summary_InCS_model
+
+```
+
+We conducted a series of multinomial logistic regressions to investigate the possible relationship between ICS [@renzhi_key_2013] and responding to each of the scenarios individually. Response to the critical slide scenario was the dependent variable for each scenario, and the four sub-scales of the ICS were included as predictor variables.
+
+The overall model did not significantly predict responses for the *Heinz* dilemma, $\chi$^2^(`r Hsummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Hsummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Hsummary_InCS_model$lratio$p.value))`, the observed power was `r round(Hpw$power,digits=2)`; neither did the model significantly predict responses for the *Trolley* scenario, $\chi$^2^(`r Tsummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Tsummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Tsummary_InCS_model$lratio$p.value))`, the observed power was `r round(Tpw$power,digits=2)`; the *Incest* scenario, $\chi$^2^(`r Isummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Isummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Isummary_InCS_model$lratio$p.value))`, the observed power was `r round(Ipw$power,digits=2)`; nor the *Cannibal* scenario, $\chi$^2^(`r Csummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Csummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Csummary_InCS_model$lratio$p.value))`, the observed power was `r round(Cpw$power,digits=2)`.
+
+
+### Individual differences (Study 1b)
+```{r}
+#### Cannibal #####
+
+#ALL2_SUM_VC ALL2_SUM_HC ALL2_SUM_VI ALL2_SUM_HI
+
+df <-
+  China2 %>% 
+  mutate(
+      vc = ALL2_SUM_VC
+    , vi = ALL2_SUM_VI
+    , hc = ALL2_SUM_HC
+    , hi = ALL2_SUM_HI
+  )
+  
+df <- df[which(is.na(df$ALL2_critial)==FALSE),]
+df3 <- as.data.frame(df)
+
+df3$variable <- df3$ALL2_critial
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+vi+hc+hi, data = df3a, reflevel = "reasons")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$ALL2_critial))
+pw <- pwr.chisq.test(w=w,N=length(df3$ALL2_critial),df=(8),sig.level = .05)
+summary_InCS_model <- summary_InCS_model
+```
+Given the larger sample size in Study 1b, we additionally tested if ICS [@renzhi_key_2013] predicted responses to the *Cannibal* scenario in Study 1b. We conducted a multinomial logistic regression with response to the critical slide as the outcome variable and the four sub-scales of the ICS entered as predictor variables. Overall the model did not significantly predict responses to the critical slide for the *Cannibal* scenario, $\chi$^2^(`r Csummary_InCS_model$lratio$parameter`, *N* = `r length(df3$ALL2_critial)`) = `r round(summary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(summary_InCS_model$lratio$p.value))`, the observed power was `r round(pw$power,digits=2)`.
+
+```{r}
+rm(list = setdiff(ls(),datalist))
+```
+
+# Study 2 - Indian Sample
+
+Having demonstrated dumbfounded responding in a Chinese context, the aim of Study 2 was to assess if dumbfounded responding can be elicited in an Indian context.
+
+```{r prepindia}
+# df8 <- read_csv("data/India/India.csv")
+# df8 <- df8[-c(1,2),]
+# df <- df8
+
+#India <- read_sav("data/India/India.sav")
+
+x <-
+  India %>%
+  mutate(
+    gender = Q4
+    ,  age = recode(Q3, "1"="")
+    ,  age = as.numeric(age)
+    , nationality = Q5
+    , reside = Q6
+    , religion = Q9)
+
+x <- x[which(is.na(x$gender)==FALSE),]
+```
+
+## Method
+
+### Participants and design
+
+Study 2 was a frequency based attempted replication of @mchugh_searching_2017a. The aim of Study 2 was to identify if dumbfounded responding could be evoked in an Indian context. 
+
+A total sample of `r length(x$gender)` (`r sum(x$gender==2)` female, `r sum(x$gender==1)` male, `r sum(x$gender==3)` other, `r sum(x$gender==4)` declined to report their gender; *M~age~* = `r round(mean(x$age,na.rm=TRUE),digits=2)`, min = `r min(x$age,na.rm=TRUE)`, max = `r max(x$age,na.rm=TRUE)`, *SD* = `r round(sd(x$age,na.rm=TRUE),digits=2)`) participants took part. The breakdown of participants' religion is as follows, Hinduism: *n* = `r sum(x$religion==1)`, Islam: *n* = `r (sum(x$religion==2))`, Christianity: *n* = `r (sum(x$religion==3))`, Sikhism: *n* = `r (sum(x$religion==4))`, Buddhism: *n* = `r (sum(x$religion==5))`, Jainism: *n* = `r (sum(x$religion==6))`, other: *n* = `r (sum(x$religion==7))`, and `r sum(x$religion==8)` participants declined to provide their religion. All participants were of Indian nationality, and `r sum(x$reside==1)` indicated that they resided in India at the time of completing the survey. Participants were recruited through snowball sampling.
+
+### Procedure and materials
+
+The procedure for Study 2 was the same as for Study 1, with some minor changes. Given the diversity of languages in India, and the high proficiency of English among Indian nationals, all written materials were presented in English. The survey was programmed and presented using Qualtrics. The demographic information recorded additionally included religion, given the prominence and diversity of religions in Indian society. We also included the meaning in life questionnaire [MLQ: @steger_understanding_2008] in Study 2. The entire study lasted twenty to twenty-five minutes.
+
+```{r}
+x <- India_judgements
+```
+## Results and Discussion
+### Judgements of the scenarios
+The mean initial ratings for each scenario were as follows:
+*M~Heinz~* = 
+`r round(mean(x$InJu1[which(x$scenario=="Heinz")], na.rm=T), digits=2)`,
+*SD~Heinz~* = 
+`r round(sd(x$InJu1[which(x$scenario=="Heinz")], na.rm=T), digits=2)`; 
+*M~Cannibal~* = 
+`r round(mean(x$InJu1[which(x$scenario=="Cannibal")], na.rm=T), digits=2)`, 
+*SD~Cannibal~* = 
+`r round(sd(x$InJu1[which(x$scenario=="Cannibal")], na.rm=T), digits=2)`; 
+*M~Incest~* = 
+`r round(mean(x$InJu1[which(x$scenario=="Incest")], na.rm=T), digits=2)`,
+*SD~Incest~* = 
+`r round(sd(x$InJu1[which(x$scenario=="Incest")], na.rm=T), digits=2)`;
+*M~Trolley~* = 
+`r round(mean(x$InJu1[which(x$scenario=="Trolley")], na.rm=T), digits=2)`,
+*SD~Trolley~* = 
+`r round(sd(x$InJu1[which(x$scenario=="Trolley")], na.rm=T), digits=2)`. The mean revised ratings for each scenario are as follows:
+*M~Heinz~* = 
+`r round(mean(x$InJu2[which(x$scenario=="Heinz")], na.rm=T), digits=2)`, 
+*SD~Heinz~* = 
+`r round(sd(x$InJu2[which(x$scenario=="Heinz")], na.rm=T), digits=2)`; 
+*M~Cannibal~* = 
+`r round(mean(x$InJu2[which(x$scenario=="Cannibal")], na.rm=T), digits=2)`, 
+*SD~Cannibal~* = 
+`r round(sd(x$InJu2[which(x$scenario=="Cannibal")], na.rm=T), digits=2)`; 
+*M~Incest~* = 
+`r round(mean(x$InJu2[which(x$scenario=="Incest")], na.rm=T), digits=2)`, 
+*SD~Incest~* = 
+`r round(sd(x$InJu2[which(x$scenario=="Incest")], na.rm=T), digits=2)`; 
+*M~Trolley~* = 
+`r round(mean(x$InJu2[which(x$scenario=="Trolley")], na.rm=T), digits=2)`, 
+*SD~Trolley~* = 
+`r round(sd(x$InJu2[which(x$scenario=="Trolley")], na.rm=T), digits=2)`. The proportion of wrong, neutral, and ok, judgements for each scenario are displayed in Table\ \@ref(tab:tab2judge).
+
+```{r}
+
+x <- split.data.frame(India_judgements, India_judgements$scenario)
+
+tt <- x$Heinz
+th <- t.test(tt$InJu1,tt$InJu2)
+tdh <- cohensD(tt$InJu1,tt$InJu2)
+tt <- x$Cannibal
+tc <- t.test(tt$InJu1,tt$InJu2)
+tdc <- cohensD(tt$InJu1,tt$InJu2)
+tt <- x$Incest
+ti <- t.test(tt$InJu1,tt$InJu2)
+tdi <- cohensD(tt$InJu1,tt$InJu2)
+tt <- x$Trolley
+tp <- t.test(tt$InJu1,tt$InJu2)
+tdp <- cohensD(tt$InJu1,tt$InJu2)
+
+x <- India_judgements
+
+aov <- summary(aov(InJu1~scenario,x))
+summary(aov(InJu1~scenario,x))
+eta <- (aov[[1]][["Sum Sq"]][1])/((aov[[1]][["Sum Sq"]][1])+(aov[[1]][["Sum Sq"]][2]))
+tuk <- TukeyHSD(aov(InJu1~scenario,x))
+tuk
+
+tuk$scenario[1,4]
+tuk$scenario[2,4]
+
+qplot(factor(scenario),InJu1, data=x,geom = c("boxplot", "jitter"))
+
+```
+ 
+A paired samples t-test revealed no differences in the ratings of behaviours from time one to time two, *Heinz*, *t*(`r th$parameter`) = `r round(th$statistic, digits=3)`, *p* `r paste(p_report(th$p.value))`, *d* = `r tdh`; *Cannibal*, *t*(`r tc$parameter`) = `r round(tc$statistic, digits=3)`, *p* `r paste(p_report(tc$p.value))`, *d* = `r tdc`; *Incest*, *t*(`r ti$parameter`) = `r round(ti$statistic, digits=3)`, *p* `r paste(p_report(ti$p.value))`, *d* = `r tdi`; *Trolley*, *t*(`r tp$parameter`) = `r round(tp$statistic, digits=3)`, *p* `r paste(p_report(tp$p.value))`, *d* = `r tdp`. 
+
+A one-way ANOVA revealed significant differences in initial judgements depending on scenario, *F*(`r paste(df_aov(aov))`) = `r paste(round(F_aov(aov),digits=2))`, *p* `r paste(p_aov(aov))`, partial $\eta$^2^ `r paste(p_report(eta))`.  Tukey’s post-hoc pairwise comparison revealed that judgements of *Cannibal* were significantly more harsh than all other scenarios: *Heinz*, *p* `r paste(p_report(tuk$scenario[1,4]))`, *Incest*, *p* `r paste(p_report(tuk$scenario[2,4]))`. *Trolley*, *p* `r paste(p_report(tuk$scenario[3,4]))`; there were no significant differences in the ratings of the other scenarios, *Heinz*/*Incest*, *p* `r paste(p_report(tuk$scenario[4,4]))`, *Heinz*/*Trolley*, *p* `r paste(p_report(tuk$scenario[5,4]))`, *Incest*/*Trolley*, *p* `r paste(p_report(tuk$scenario[6,4]))`.
+
+```{r}
+aov <- summary(aov(InJu2~scenario,x))
+summary(aov(InJu2~scenario,x))
+eta <- (aov[[1]][["Sum Sq"]][1])/((aov[[1]][["Sum Sq"]][1])+(aov[[1]][["Sum Sq"]][2]))
+tuk <- TukeyHSD(aov(InJu2~scenario,x))
+
+qplot(factor(scenario),InJu2, data=x,geom = c("boxplot", "jitter"))
+print(p_report(tuk$scenario[5,4]))
+
+```
+
+A one-way ANOVA revealed the same pattern of differences in revised judgements depending on scenario, *F*(`r paste(df_aov(aov))`) = `r paste(round(F_aov(aov),digits=2))`, *p* `r paste(p_aov(aov))`, partial $\eta$^2^ `r paste(p_report(eta))`.  Again, Tukey’s post-hoc pairwise comparison revealed that judgements of *Cannibal* were significantly more harsh than all other scenarios: *Heinz*, *p* `r paste(p_report(tuk$scenario[1,4]))`, *Incest*, *p* `r paste(p_report(tuk$scenario[2,4]))`. *Trolley*, *p* `r paste(p_report(tuk$scenario[3,4]))`; there were no significant differences in the ratings of the other scenarios, *Heinz*/*Incest*, *p* `r paste(p_report(tuk$scenario[4,4]))`, *Heinz*/*Trolley*, *p* `r paste(p_report(tuk$scenario[5,4]))`, *Incest*/*Trolley*, *p* `r paste(p_report(tuk$scenario[6,4]))`.
+
+
+```{r}
+df <- 
+  India[which(is.na(India$Q143)==FALSE),]
+df <- df %>% 
+  mutate(
+       vc   = Q104.0+ Q129 + Q130 + Q131
+    ,  hc   = Q132  + Q133 + Q134 + Q135
+    ,  vi   = Q136  + Q137 + Q138 + Q139
+    ,  hi   = Q140  + Q141 + Q142 + Q143
+    , mlqp  = Q119  + Q123 + Q124 + Q125 + reverse.code(-1, as.numeric(Q128))
+    , mlqs  = Q121  + Q122 + Q126 + Q127
+    , Heinz = recode(as.numeric(Q80)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Trolley = recode(as.numeric(Q57)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Incest = recode(as.numeric(Q22)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Cannibal = recode(as.numeric(Q103)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Gender = Q4
+  )
+
+
+df <- df %>% 
+  mutate(SUM_dumbfounding = 
+           c(df$Heinz=="b_dumbfounded")
+         + c(df$Trolley=="b_dumbfounded")
+         + c(df$Incest=="b_dumbfounded")
+         + c(df$Cannibal=="b_dumbfounded")
+         , VC = vc
+         , VI = vi
+         , HC = hc
+         , HI = hi
+         , `MLQ Presence` = mlqp
+         , `MLQ Search`   = mlqs
+           )
+x <- df
+x$Gender <- x$Q4
+
+
+z_score <- function(p1,p2,n1,n2){
+  z <- ((mean(p1/n1)-mean(p2/n2))-0)/
+    (sqrt((mean((p1+p2)/(n1+n2))*(1-mean((p1+p2)/(n1+n2))))*((1/n1)+(1/n2))))
+  z
+}
+z_score(20,0,181,181)
+2*pnorm(z_score(20,0,181,181),lower.tail = FALSE)
+
+z_score(47,0,181,181)
+2*pnorm(z_score(47,0,181,181),lower.tail = FALSE)
+
+z_score(33,0,181,181)
+2*pnorm(z_score(33,0,181,181),lower.tail = FALSE)
+
+z_score(44,0,181,181)
+2*pnorm(z_score(44,0,181,181),lower.tail = FALSE)
+
+
+table(CS_India_with_order$Position, CS_India_with_order$InCS)
+chisq.test(CS_India_with_order$Position, CS_India_with_order$InCS)
+c <- chisq.test(CS_India_with_order$Position, CS_India_with_order$InCS)
+
+```
+
+### Measuring dumbfounding
+Participants who selected the admission of not having reasons were identified as dumbfounded. Across the four scenarios `r sum(x$SUM_dumbfounding!=0)` participants (`r (sum(x$SUM_dumbfounding!=0)/length(x$Gender))*100`%) provided a dumbfounded response at least once. Table\ \@ref(tab:tab2dumb) and Figure\ \@ref(fig:indiafig) show the number and percentage of participants who selected each response for each scenario. Rates of dumbfounded responding for each scenario in Study 2 were significantly greater than zero, *Heinz*: *z* = `r round(z_score(20,0,181,181), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(20,0,181,181),lower.tail = FALSE)))`; *Trolley*: *z* = `r round(z_score(47,0,181,181), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(47,0,181,181),lower.tail = FALSE)))`; *Incest*: *z* = `r round(z_score(33,0,181,181), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(33,0,181,181),lower.tail = FALSE)))`; *Cannibal*: *z* = `r round(z_score(44,0,181,181), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(44,0,181,181),lower.tail = FALSE)))`, thus providing evidence for moral dumbfounding in our Indian sample. To test fot the possibility of order effects, we conducted a chi-square test for independence which revealed no significant differences in responses to the critical slide depending on when the scenario was presented, $\chi$^2^(`r c$parameter`, *N* = `r length(x$Gender)`) = `r round(c$statistic, digits=2)`, *p* `r paste(p_report(c$p.value))`.
+
+```{r prepindiafig}
+df <- India
+CS <- df %>% 
+  select(Q22,Q57,Q80,Q103) %>% 
+  gather(Scenario, InCS) %>% 
+  mutate(
+    Scenario =
+      recode(Scenario
+             , "Q80"="Heinz"
+             , "Q103"="Cannibal"
+             , "Q22"="Incest"
+             , "Q57"="Trolley")
+    ,
+    InCS =
+      recode(InCS
+             , "4"="a_nothing_wrong"
+             , "5"="b_dumbfounded"
+             , "7"="c_reasons"),
+  )
+
+CS <- CS[which(is.na(CS$InCS)==FALSE),]
+CS_India <- CS 
+
+# Q22 = Incest Critical slide
+# Q57 = Trolley Critical slide
+# Q80 = Heinz Critical Slide
+# Q103 = Cannibal Critical Slide
+
+test <- as.data.frame(table(CS))
+
+test$total <- rep(length(CS$Scenario)/4, length(test$Scenario))
+
+test_h <- test[which(test$Scenario== "Heinz"),] 
+test_h$total <- sum(test_h$Freq)
+test_h$perc <- test_h$Freq/test_h$total
+# Trolley
+test_t <- test[which(test$Scenario== "Trolley"),] 
+test_t$total <- sum(test_t$Freq)
+test_t$perc <- test_t$Freq/test_t$total
+# Promise
+test_p <- test[which(test$Scenario== "Incest"),] 
+test_p$total <- sum(test_p$Freq)
+test_p$perc <- test_p$Freq/test_p$total
+# Dog
+test_d <- test[which(test$Scenario== "Cannibal"),] 
+test_d$total <- sum(test_d$Freq)
+test_d$perc <- test_d$Freq/test_d$total
+
+test <- rbind(test_h,test_t,test_p,test_d)
+
+test
+```
+
+
+```{r indiafigColor, fig.cap="Rates of each type of response for each scenario in the Indian Sample (\\emph{N} = 181)", include = FALSE}
+g <- ggplot(test, aes(x = Scenario, y = perc, fill = InCS)) +
+  scale_y_continuous(limits = c(-.045,1),
+                     labels = percent_format()
+                     )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(#family = "Times", 
+            size=4,
+            aes( label = scales::percent(test$perc
+                                         , accuracy = 1),
+                 y= test$perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain',
+            color='white'
+            )+
+  geom_text(#family = "Times",
+            size=4,
+            aes(label = format(Freq),
+                y= -4*(..count../100)/..count..),
+            stat= "count",
+            position = position_dodge(0.9),
+            vjust = -.2,
+            fontface='plain',
+            color='white'
+            )+
+  labs(y = "% of participants displaying each type of\nresponse for each scenario",
+       fill = "Response:"
+  )+
+  geom_hline(yintercept = 0)+
+  theme_apa()+
+ scale_fill_manual(values = c("#356eff", "#ff6035", "#ffc635")
+                    ,  labels=c(
+        "Nothing Wrong"
+      , "Dumbfounded"
+      , "Reasons")
+  )+
+  # scale_fill_grey(
+  #     labels=c(
+  #       "Nothing Wrong"
+  #     , "Dumbfounded"
+  #     , "Reasons")
+  # )+
+  scale_x_discrete(limits = c("Heinz","Trolley","Incest","Cannibal")
+                  ,labels = c(glue("Heinz<br>(<i>{'n'}</i> = 181)")
+                              ,glue("Trolley <br>(<i>{'n'}</i> = 181)")
+                              ,glue("Incest <br>(<i>{'n'}</i> = 181)")
+                              ,glue("Cannibal <br>(<i>{'n'}</i> = 181)"))
+  )+
+  theme_bw() +
+  theme(plot.title=element_text(#family="Times",
+    size=12
+  ),
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  legend.text=element_text(#family="Times",
+    size=10
+    , color='white'
+  ),
+  legend.title=element_text(#family="Times",
+    size=12
+    ,color = 'white'
+  ),
+  axis.text=element_text(#family="Times",
+    colour = "white",
+    size=12
+  ),
+  axis.text.x = element_markdown(),
+  axis.ticks.x = element_blank(),
+  axis.ticks.y = element_line(color = 'white'),
+  axis.title=element_text(#family="Times",
+    size=12
+  ),
+  strip.text=element_text(#family="Times",
+    size = 12
+  ),
+  strip.background = element_rect(fill = "white"),
+  legend.position="right",
+  panel.background = element_rect(fill='transparent', color='white'), #transparent panel bg
+  panel.border = element_rect(fill='transparent', color='white'),
+  plot.background = element_rect(
+    fill='transparent',
+    color='transparent'), #transparent plot bg
+  panel.grid.major = element_line(color='lightgrey'), #remove major gridlines
+  panel.grid.minor = element_blank(), #remove minor gridlines
+  legend.background = element_rect(fill='transparent', color='transparent'), #transparent legend bg
+  legend.box.background = element_rect(fill='transparent',color = 'transparent') #transparent legend panel
+  #    legend.box.background = element
+  
+  )
+
+suppressWarnings(print(g))
+
+ggsave('India_color.png', g, bg='transparent')
+
+```
+
+
+```{r indiafigCREATE, fig.cap="Rates of each type of response for each scenario in the Indian Sample (\\emph{N} = 181)", include = FALSE}
+g <- ggplot(test, aes(x = Scenario, y = perc, fill = InCS)) +
+  scale_y_continuous(limits = c(-.03,1),
+                     labels = percent_format()
+                     )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(#family = "Times", 
+            size=2.2,
+            aes( label = scales::percent(test$perc
+                                         , accuracy = 1),
+                 y= test$perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(#family = "Times",
+            size=2.5,
+            aes(label = format(Freq),
+                y= -3*(..count../100)/..count..),
+            stat= "count",
+            position = position_dodge(0.9),
+            vjust = -.2,
+            fontface='plain'
+            )+
+  labs(y = "% of participants displaying each type of\nresponse for each scenario",
+       fill = "Response:"
+  )+
+  theme_apa()+
+  # scale_fill_manual(values = c("#333333", "#B4B4B4", "#E6E6E6")
+  #                   , labels=c("Study 1\nN=31",
+  #                              "Study 3a\nN=72",
+  #                              "Study 3b\nN=101")
+  # )+
+  scale_fill_grey(
+      labels=c(
+        "Nothing Wrong"
+      , "Dumbfounded"
+      , "Reasons")
+  )+
+  scale_x_discrete(limits = c("Heinz","Trolley","Incest","Cannibal")
+                   )+
+  theme_bw() +
+  theme(plot.title=element_text(#family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(#family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(#family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(#family="Times",
+                                 colour = "black",
+                                 size=8
+                                 ),
+          axis.ticks.x = element_blank(),
+          axis.title=element_text(#family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(#family="Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right")
+```
+
+```{r indiafig, fig.cap="Rates of each type of response for each scenario in the Indian Sample (\\emph{N} = 181)", include = TRUE}
+suppressWarnings(print(g))
+
+```
+
+
+```{r}
+
+
+CS_India <-
+  CS_India %>% 
+  mutate(Scenario =
+           recode(Scenario
+                  , "Heinz"="1"
+                  , "Trolley"="2"
+                  , "Incest"="3"
+                  , "Cannibal"="4"))
+
+c <- chisq.test( table(CS_India) )
+
+CS_India <-
+  CS_India %>% 
+  mutate(scenario_type =
+           recode(Scenario
+                  , "3"   = "Intuition"
+                  , "4" = "Intuition"
+                  , "1"  = "Reasoning"
+                  , "2"    = "Reasoning"
+                  ))
+
+table(CS_India$InCS,CS_India$scenario_type)
+c2 <- chisq.test(table(CS_India$InCS,CS_India$scenario_type))
+
+sum(CS_India$InCS[which(CS_India$Scenario=="3")]=="a_nothing_wrong")
+((sum(CS_India$InCS[which(CS_India$Scenario=="3")]=="a_nothing_wrong"))/(length(CS_India$Scenario)/4))*100
+
+x$Gender <- x$Q4
+
+```
+
+A chi-square test for independence revealed significant differences in responses to the critical slide depending on which scenario was being discussed, $\chi$^2^(`r c$parameter`, *N* = `r length(x$Gender)`) = `r round(c$statistic, digits=2)`, *p* `r paste(p_report(c$p.value))`. Table\ \@ref(tab:tabchisq1) shows the observed counts, expected counts and standardised residuals for each response for each scenario. For *Heinz*, people were significantly better at providing reasons, and significantly less likely to present as dumbfounded; while people were significantly more likely to be dumbfounded by *Trolley* than expected; for *Incest*, people were significantly less likely to provide reasons, and significantly more likely to select "There is nothing wrong" than expected; finally for *Cannibal* significantly fewer than expected selected "There is nothing wrong".
+
+The observed variability was not related to the type of scenario (intuition vs reasoning), with no relationship between type of scenario and response to the critical slide being observed, $\chi$^2^(`r c2$parameter`, *N* = `r length(x$Gender)`) = `r round(c2$statistic, digits=2)`, *p* `r paste(p_report(c2$p.value))`.
+
+
+```{r}
+ps <- function(y){
+  if(as.numeric(sqrt( y*y) ) >3.3) print(paste0(y,"**"), quote = FALSE)
+  else if(as.numeric(sqrt( y*y) ) >1.96) print(paste0(y,"*"), quote = FALSE)
+  else print(y)}
+
+
+x <- c$stdres
+x <- round(x, digits = 2)
+c$expected <- round(c$expected)
+
+chitab <- `colnames<-`(cbind(
+  c("Nothing Wrong","","","Dumbfounded","","","Reason","",""),
+  c("Observed count","Expected count","Standardised residuals",
+    "Observed count","Expected count","Standardised residuals",
+    "Observed count","Expected count","Standardised residuals"),
+  rbind(
+    c$observed[,1],
+    c$expected[,1],
+      c(ps(x[1,1]),ps(x[2,1]),ps(x[3,1]),ps(x[4,1])),
+    c$observed[,2],
+    c$expected[,2],
+      c(ps(x[1,2]),ps(x[2,2]),ps(x[3,2]),ps(x[4,2])),
+    c$observed[,3],
+    c$expected[,3],
+      c(ps(x[1,3]),ps(x[2,3]),ps(x[3,3]),ps(x[4,3]))
+  )),
+  c("Response"," ","Heinz","Trolley","Incest","Cannibal")
+)
+
+```
+
+
+```{r tabchisq1,results = 'asis', include=TRUE}
+
+
+apa_table(
+   chitab
+   , align = c("l", "l", "c", "c", "c", "c")
+   , caption = "Observed counts, expected counts, and standardised residuals for each response to the critical slide depending on Scenario"
+   , added_stub_head = "Response to critical slide"
+   , note = "* = sig. at \\emph{p} < .05; ** = sig. at \\emph{p} < .001"
+   , escape = FALSE
+  # , col_spanners = spans_all
+  # , small = TRUE
+   
+)
+
+```
+
+Study 2 provided evidence that dumbfounded responding can be elicited in an Indian sample. Interestingly, the *Cannibal* appeared to be of more concern to the participants in this sample than the *Incest* scenario. Indeed, the proportion of participants selecting "there is nothing wrong" for the *Incest* scenario was significantly higher (`r sum(CS_India$InCS[which(CS_India$Scenario=="3")]=="a_nothing_wrong")` participants; `r ((sum(CS_India$InCS[which(CS_India$Scenario=="3")]=="a_nothing_wrong"))/(length(CS_India$Scenario)/4))*100`%) than for the other scenarios. This also appears to be higher than reported in previous studies involving WEIRD samples, however there is notable fluctuation in the selecting of this response for the *Incest* scenario, ranging from 16.7% [@mchugh_searching_2017a, Study 3a] to 32.4% [@mchugh_reasons_2020, Study 2]. Regarding the *Cannibal* scenario, it appears the relative importance of death observed in Study 1 is similarly present in our Study 2 sample, pointing towards potentially important cultural differences that should be considered in future studies.
+
+```{r}
+df <- 
+  India[which(is.na(India$Q143)==FALSE),]
+df <- df %>% 
+  mutate(
+       vc   = Q104.0+ Q129 + Q130 + Q131
+    ,  hc   = Q132  + Q133 + Q134 + Q135
+    ,  vi   = Q136  + Q137 + Q138 + Q139
+    ,  hi   = Q140  + Q141 + Q142 + Q143
+    , mlqp  = Q119  + Q123 + Q124 + Q125 + reverse.code(-1, as.numeric(Q128))
+    , mlqs  = Q121  + Q122 + Q126 + Q127
+    , Heinz = recode(as.numeric(Q80)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Trolley = recode(as.numeric(Q57)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Incest = recode(as.numeric(Q22)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Cannibal = recode(as.numeric(Q103)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Gender = Q4
+  )
+
+
+df <- df %>% 
+  mutate(SUM_dumbfounding = 
+           c(df$Heinz=="b_dumbfounded")
+         + c(df$Trolley=="b_dumbfounded")
+         + c(df$Incest=="b_dumbfounded")
+         + c(df$Cannibal=="b_dumbfounded")
+         , VC = vc
+         , VI = vi
+         , HC = hc
+         , HI = hi
+         , `MLQ Presence` = mlqp
+         , `MLQ Search`   = mlqs
+           )
+
+```
+
+
+```{r indiainddiffs}
+
+df3 <- as.data.frame(df)
+
+
+revised_PseudoR2s <- function(LogModel) {
+  dev <- LogModel$deviance
+  nullDev <- LogModel$null.deviance
+  modelN <- length(LogModel$fitted.values)
+  R.l <- 1 - dev / nullDev
+  R.cs <- 1- exp ( -(nullDev - dev) / modelN)
+  R.n <- R.cs / ( 1 - ( exp (-(nullDev / modelN))))
+  
+  all <- list(hosmer_and_lemeshow = as.numeric(R.l), mcfadden = NA, cox_and_snell = as.numeric(R.cs), nagelkerke = as.numeric(R.n))
+  all
+}
+
+```
+
+```{r}
+fit <- lm(SUM_dumbfounding~vc+hc+vi+hi+mlqp+mlqs,df)
+fit <- lm(SUM_dumbfounding~VC+HC+VI+HI+`MLQ Presence`+`MLQ Search`,df)
+
+apa_fit <- apa_print(summary(fit))
+apa_fit$full_result$modelfit
+
+x <- df %>% select(SUM_dumbfounding,vc,vi,hc,hi,mlqp,mlqs)
+#cor.plot(x)
+apa_fit$full_result$VI
+
+
+df3$variable <- df3$SUM_dumbfounding
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "0")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Hpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(8),sig.level = .05)
+Hsummary_InCS_model <- summary_InCS_model
+
+```
+
+
+
+### Individual differences
+A hierarchical linear regression was conducted to test the possible relationship between ICS [@renzhi_key_2013], MLQ [@steger_understanding_2008], and susceptibility to dumbfounding. As in Study 1a, we created a new variable by calculating the number of times each participant provided a dumbfounded response, and used this variable as a measure of participants' susceptibility to dumbfounding. This measure was our outcome variable, and the four sub-scales of ICS, along with both sub-scales of the MLQ, were included as predictor variables. The overall model was a significant predictor of susceptibility to dumbfounding `r apa_fit$full_result$modelfit`, with Vertical Individualism as the only variable making a significant contribution to the model, `r apa_fit$full_result$VI`, see Table\ \@ref(tab:regressiontable).
+
+```{r regressiontable,results = 'asis', include=TRUE}
+apa_table(
+  apa_fit$table
+  #, align = c()
+  , caption = "Study 2: Predictors of susceptibility to moral dumbfounding"
+  )
+```
+
+```{r logits2}
+
+#### Heinz ####
+df3$variable <- df3$Heinz
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "c_reasons")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Hpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(12),sig.level = .05)
+Hsummary_InCS_model <- summary_InCS_model
+
+#### Trolley ####
+df3$variable <- df3$Trolley
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "c_reasons")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Tpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(12),sig.level = .05)
+Tsummary_InCS_model <- summary_InCS_model
+```
+
+We conducted a series of logistic regressions to investigate the possible relationship between ICS [@renzhi_key_2013] and responding to each of the scenarios individually. Response to the critical slide scenario was the dependent variable for each scenario, and the four sub-scales of the ICS were included as predictor variables.
+
+The overall model did not significantly predict responses for the *Heinz* dilemma, $\chi$^2^(`r Hsummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Hsummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Hsummary_InCS_model$lratio$p.value))`, the observed power was `r round(Hpw$power,digits=2)`; neither did the model significantly predict responses for the *Trolley* scenario, $\chi$^2^(`r Tsummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Tsummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Tsummary_InCS_model$lratio$p.value))`, the observed power was `r round(Tpw$power,digits=2)`.
+
+
+```{r logit3}
+#### Incest ####
+df3$variable <- df3$Incest
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "c_reasons")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Ipw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(12),sig.level = .05)
+Isummary_InCS_model <- summary_InCS_model
+
+wald1 <- ((summary_InCS_model$CoefTable[9,1])^2)/((summary_InCS_model$CoefTable[9,2])^2)
+a <- exp(confint(InCSModel))
+a[9,1]
+a[9,2]
+logits_rsquared <- glm(as.factor(variable)~vc+hc+vi+hi+mlqp+mlqs,df3, family = binomial(link = "logit"))
+cox <- revised_PseudoR2s(logits_rsquared)
+paste(p_report(summary_InCS_model$CoefTable[9,4]))
+summary_InCS_model$CoefTable[9,4]
+
+##### extra ##### 
+
+InCSModelb<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "b_dumbfounded")
+summary_InCS_modelb <- summary(InCSModelb)
+
+wald2 <- ((summary_InCS_modelb$CoefTable[3,1])^2)/((summary_InCS_modelb$CoefTable[3,2])^2)
+ab <- exp(confint(InCSModelb))
+# https://www.researchgate.net/post/Do_you_know_how_Wald_statistics_are_calculated_for_categorical_data_in_a_logistic_regression_based_on_the_wald_test_in_SPSS
+```
+
+Interestingly, the overall model significantly predicted responses for the *Incest* scenario, $\chi$^2^(`r Isummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Isummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Isummary_InCS_model$lratio$p.value))`, the observed power was `r round(Ipw$power,digits=2)`. The overall model explained between `r round(cox$cox_and_snell*100, digits=2)`% (Cox and Snell R square) and `r round(cox$nagelkerke*100, digits=2)`% (Nadelkerke R squared) of the variance in responses to the critical slide. The only significant predictors in the model were Horizontal Individualism, and Vertical Collectivism. As HI increased, participants were significantly more likely to select "there is nothing wrong" than to provide reasons for their judgement, Wald = `r round(wald1,digits=2)`, *p* `r paste(p_report(summary_InCS_model$CoefTable[9,4]))`, odds ratio = `r exp(InCSModel$coefficients)[9]`, 95% CI [`r a[9,1]`, `r a[9,2]`]. As VC increased, participants were significantly more likely to present as dumbfounded than to provide reasons, Wald = `r round(wald2,digits=2)`, *p* `r paste(p_report(summary_InCS_modelb$CoefTable[3,4]))`, odds ratio = `r exp(InCSModelb$coefficients)[3]`, 95% CI [`r ab[3,1]`, `r a[3,2]`].
+
+
+```{r logit4}
+#### Cannibal #####
+df3$variable <- df3$Cannibal
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "c_reasons")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Cpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(12),sig.level = .05)
+Csummary_InCS_model <- summary_InCS_model
+
+logits_rsquared <- glm(as.factor(variable)~vc+hc+vi+hi+mlqp+mlqs,df3, family = binomial(link = "logit"))
+cox <- revised_PseudoR2s(logits_rsquared)
+
+wald1 <- ((summary_InCS_model$CoefTable[12,1])^2)/((summary_InCS_model$CoefTable[12,2])^2)
+a <- exp(confint(InCSModel))
+
+
+```
+
+
+The overall model also significantly predicted responses for the *Cannibal* scenario, $\chi$^2^(`r Csummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Csummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Csummary_InCS_model$lratio$p.value))`, the observed power was `r round(Cpw$power,digits=2)`. The overall model explained between `r round(cox$cox_and_snell*100, digits=2)`% (Cox and Snell R square) and `r round(cox$nagelkerke*100, digits=2)`% (Nadelkerke R squared) of the variance in responses to the critical slide. Meaning in Life: Presence [@steger_understanding_2008] was the only significant predictor in the model, as Meaning in Life: Presence, increased, participants were significantly more likely provide reasons than to present as dumbfounded,
+Wald = `r round(wald1,digits=2)`, *p* `r paste(p_report(summary_InCS_model$CoefTable[12,4]))`, odds ratio = `r exp(InCSModel$coefficients)[12]`, 95% CI [`r a[12,1]`, `r a[12,2]`].
+
+# Study 3 - Mixed Sample
+Having demonstrated dumbfounded responding in targeted samples in two different countries, the aim of Study 3 was to investigate if dumbfounded responding could be elicited in a more diverse sample recruited from a range of non-WEIRD countries.
+
+```{r study3}
+
+#rm(list = ls())
+259+204
+
+load("data/study3/study_3.RData")
+
+x <- Study_3_wide
+
+x <-
+  x %>%
+  mutate(
+    age = as.numeric(age)
+    )
+
+Study_3_wide <- x
+
+y <- sum(x$nationality_factor=="UK") + 
+  sum(x$nationality_factor=="USA") + 
+  sum(x$nationality_factor=="Canada") + 
+  sum(x$nationality_factor=="Germany") + 
+  sum(x$nationality_factor=="Portugal") + 
+  sum(x$nationality_factor=="Netherlands") + 
+  sum(x$nationality_factor=="unknown")
+
+min(x$age,na.rm=TRUE)
+max(x$age,na.rm=TRUE)
+
+table(Study_3_long$Position,Study_3_long$CS)
+chisq.test(Study_3_long$Position,Study_3_long$CS)
+
+```
+
+
+
+## Method
+
+### Participants and design
+Study 3 was a frequency based attempted replication of @mchugh_searching_2017a. The aim of Study 3 was to identify if dumbfounded responding could be evoked in a mixed sample of participants from a selection of non-WEIRD countries, primarily North Africa and the Middle East.
+
+An initial sample of four-hundred-and-sixty-three participants were recruited for Study 3. Some participants did not provide full responses for all four scenarios (the total number of participants who completed the Critial Slide for all four scenarios was *n* = `r sum(is.na(x$dog_CS)==FALSE&is.na(x$heinz_CS)==FALSE&is.na(x$trolley_CS)==FALSE&is.na(x$promise_CS)==FALSE)`. In removing participants with missing data, we retained all participants who completed the Critical Slide for at least one scenario. Following this, we were left with a total sample of *N* = `r length(x$gender)` (`r sum(x$gender==2)` female, `r sum(x$gender==1)` male, `r sum(x$gender==3)` other, `r sum(x$gender==4)` declined to report their gender; *M~age~* = `r round(mean(x$age,na.rm=TRUE),digits=2)`, min = `r min(x$age,na.rm=TRUE)`, max = `r max(x$age,na.rm=TRUE)`, *SD* = `r round(sd(x$age,na.rm=TRUE),digits=2)`).
+
+```{r}
+
+xUK       <- sum(x$nationality_factor=="UK")
+xUSA      <- sum(x$nationality_factor=="USA")
+xCanada   <- sum(x$nationality_factor=="Canada")
+xGermany  <- sum(x$nationality_factor=="Germany")
+xPortugal <- sum(x$nationality_factor=="Portugal")
+xNed      <- sum(x$nationality_factor=="Netherlands")
+xunknown  <- sum(x$nationality_factor=="unknown")
+
+x <- Study_3_wide
+x <- x[which(x$nationality_factor!="UK"),]
+x <- x[which(x$nationality_factor!="USA"),]
+x <- x[which(x$nationality_factor!="Canada"),]
+x <- x[which(x$nationality_factor!="Germany"),]
+x <- x[which(x$nationality_factor!="Portugal"),]
+x <- x[which(x$nationality_factor!="Netherlands"),]
+x <- x[which(x$nationality_factor!="unknown"),]
+
+Study_3_eligible_wide <- x
+
+x <- Study_3_long
+x <- x[which(x$nationality_factor!="UK"),]
+x <- x[which(x$nationality_factor!="USA"),]
+x <- x[which(x$nationality_factor!="Canada"),]
+x <- x[which(x$nationality_factor!="Germany"),]
+x <- x[which(x$nationality_factor!="Portugal"),]
+x <- x[which(x$nationality_factor!="Netherlands"),]
+x <- x[which(x$nationality_factor!="unknown"),]
+
+Study_3_eligible_long <- x
+
+x <- Study_3_eligible_wide
+
+length(x$gender)
+```
+
+
+```{r}
+test <- as.data.frame(table(x$nationality_factor))
+test <- `colnames<-`(test, c("Country", "Frequency"))
+```
+
+
+```{r tabcountries,results = 'asis', include=TRUE}
+
+
+apa_table(
+   test
+   , align = c("l", "l", "c", "c", "c", "c")
+   , caption = "Participants by Country"
+  # , added_stub_head = "Response to critical slide"
+  # , note = "* = sig. at \\emph{p} < .05; ** = sig. at \\emph{p} < .001"
+   , escape = FALSE
+   , font_size = "small"
+  # , col_spanners = spans_all
+  # , small = TRUE
+   
+)
+
+```
+
+Our target sample was participants from non-WEIRD countries. As such we removed `r y` participants who reported being from the UK (*n* = `r xUK`), USA (*n* = `r xUSA`), Canada (*n* = `r xCanada`), Germany (*n* = `r xGermany`), Portugal (*n* = `r xPortugal`), Netherlands (*n* = `r xNed`), and participants who did not provide a country of origin (*n* = `r xunknown`). This left a total sample of  *N* = `r length(x$gender)` (`r sum(x$gender==2)` female, `r sum(x$gender==1)` male, `r sum(x$gender==3)` other, `r sum(x$gender==4)` declined to report their gender; *M~age~* = `r round(mean(x$age,na.rm=TRUE),digits=2)`, min = `r 18`, max = `r max(x$age,na.rm=TRUE)`, *SD* = `r round(sd(x$age,na.rm=TRUE),digits=2)`). The breakdown of participants' nationalities is displayed in Table\ \@ref(tab:tabcountries). The breakdown of participants' religions is as follows, Islam: *n* = `r (sum(x$religion==2))`, Christianity: *n* = `r (sum(x$religion==3))`, Hinduism: *n* = `r sum(x$religion==1)`, other: *n* = `r (sum(x$religion==7))`, and `r sum(x$religion==8)` participants declined to provide their religion. 
+
+```{r study3b}
+x$nationality_factor
+table(x$nationality_factor)
+
+```
+
+```{r }
+x <- Study_3_eligible_long
+
+x <- 
+  x %>% mutate(ju1 = recode(
+    as.character(ju1)
+    , "1"  =  "1"
+    , "16" =  "2"
+    , "2"  =  "3"
+    , "3"  =  "4"
+    , "4"  =  "5"
+    , "6"  =  "6"
+    , "17" =  "7"
+  ))
+
+x$ju1 <- as.numeric(x$ju1)
+x$ju2 <- as.numeric(x$ju2)
+
+x$InJu1 <- x$ju1
+x$InJu2 <- x$ju2
+
+Study_3_eligible_long <- x
+
+```
+
+### Procedure and materials
+
+The procedure for Study 3 was largely the same as Study 2, with some key changes. Data collection was conducted in collaboration with the Middlesex University Dubai, and participants were recruited through opportunity and snowball sampling by undergraduate students in the University. Given the potentially sensitive and offensive nature of some of the traditional dumbfounding scenarios (*Incest* and *Cannibal*), we replaced these scenarios with scenarios less likely to cause offence: *Promise* and *Dog* (see Appendix A).
+
+The survey was programmed and presented using Qualtrics. The demographic information recorded additionally included participants' nationality. We also included a filter question in an attempt to limit participation to participants from non-WEIRD countries. As in Study 2, we also included the meaning in life questionnaire [MLQ: @steger_understanding_2008] and  ICS [@renzhi_key_2013]. The entire study lasted twenty to twenty-five minutes.
+
+## Results and Discussion
+### Judgements of the scenarios
+The mean initial ratings for each scenario were as follows: *M~Heinz~* = `r round(mean(x$InJu1[which(x$scenario=="Heinz")], na.rm = T), digits=2)`, *SD~Heinz~* = `r round(sd(x$InJu1[which(x$scenario=="Heinz")], na.rm = T), digits=2)`; *M~Dog~* = `r round(mean(x$InJu1[which(x$scenario=="Dog")], na.rm = T), digits=2)`, *SD~Dog~* = `r round(sd(x$InJu1[which(x$scenario=="Dog")], na.rm = T), digits=2)`; *M~Promise~* = `r round(mean(x$InJu1[which(x$scenario=="Promise")], na.rm = T), digits=2)`, *SD~Promise~* = `r round(sd(x$InJu1[which(x$scenario=="Promise")], na.rm = T), digits=2)`; *M~Trolley~* = `r round(mean(x$InJu1[which(x$scenario=="Trolley")], na.rm = T), digits=2)`, *SD~Trolley~* = `r round(sd(x$InJu1[which(x$scenario=="Trolley")], na.rm = T), digits=2)`. The mean revised ratings for each scenario are as follows: *M~Heinz~* = `r round(mean(x$InJu2[which(x$scenario=="Heinz")], na.rm = T), digits=2)`, *SD~Heinz~* = `r round(sd(x$InJu2[which(x$scenario=="Heinz")], na.rm = T), digits=2)`; *M~Dog~* = `r round(mean(x$InJu2[which(x$scenario=="Dog")], na.rm = T), digits=2)`, *SD~Dog~* = `r round(sd(x$InJu2[which(x$scenario=="Dog")], na.rm = T), digits=2)`; *M~Promise~* = `r round(mean(x$InJu2[which(x$scenario=="Promise")], na.rm = T), digits=2)`, *SD~Promise~* = `r round(sd(x$InJu2[which(x$scenario=="Promise")], na.rm = T), digits=2)`; *M~Trolley~* = `r round(mean(x$InJu2[which(x$scenario=="Trolley")], na.rm = T), digits=2)`, *SD~Trolley~* = `r round(sd(x$InJu2[which(x$scenario=="Trolley")], na.rm = T), digits=2)`. The proportion of wrong, neutral, and ok, judgements for each scenario are displayed in Table\ \@ref(tab:tab2judge).
+
+```{r}
+
+x <- split.data.frame(Study_3_eligible_long, Study_3_eligible_long$scenario)
+
+tt <- x$Heinz
+th <- t.test(tt$InJu1,tt$InJu2)
+tdh <- cohensD(tt$InJu1,tt$InJu2)
+tt <- x$Dog
+tc <- t.test(tt$InJu1,tt$InJu2)
+tdc <- cohensD(tt$InJu1,tt$InJu2)
+tt <- x$Promise
+ti <- t.test(tt$InJu1,tt$InJu2)
+tdi <- cohensD(tt$InJu1,tt$InJu2)
+tt <- x$Trolley
+tp <- t.test(tt$InJu1,tt$InJu2)
+tdp <- cohensD(tt$InJu1,tt$InJu2)
+
+x <- Study_3_eligible_long
+
+aov <- summary(aov(InJu1~scenario,x))
+summary(aov(InJu1~scenario,x))
+eta <- (aov[[1]][["Sum Sq"]][1])/((aov[[1]][["Sum Sq"]][1])+(aov[[1]][["Sum Sq"]][2]))
+tuk <- TukeyHSD(aov(InJu1~scenario,x))
+tuk
+
+tuk$scenario[1,4]
+tuk$scenario[2,4]
+tuk$scenario[3,4]
+tuk$scenario[4,4]
+tuk$scenario[5,4]
+tuk$scenario[6,4]
+
+qplot(factor(scenario),InJu1, data=x,geom = c("boxplot", "jitter"))
+
+```
+ 
+A paired samples t-test revealed no differences in the ratings of behaviours from time one to time two for *Heinz*, *t*(`r th$parameter`) = `r round(th$statistic, digits=3)`, *p* `r paste(p_report(th$p.value))`, *d* = `r tdh`; *Dog*, *t*(`r tc$parameter`) = `r round(tc$statistic, digits=3)`, *p* `r paste(p_report(tc$p.value))`, *d* = `r tdc`; or *Trolley*, *t*(`r tp$parameter`) = `r round(tp$statistic, digits=3)`, *p* `r paste(p_report(tp$p.value))`, *d* = `r tdp`. In contrast, participants revised ratings of *Promise* (*M* = `r round(mean(x$InJu2[which(x$scenario=="Promise")], na.rm = T), digits=2)`, *SD* = `r round(sd(x$InJu2[which(x$scenario=="Promise")], na.rm = T), digits=2)`) were significantly more favourable than their initial ratings  *M* = `r round(mean(x$InJu1[which(x$scenario=="Promise")], na.rm = T), digits=2)`, *SD* = `r round(sd(x$InJu1[which(x$scenario=="Promise")], na.rm = T), digits=2)`, *t*(`r ti$parameter`) = `r round(ti$statistic, digits=3)`, *p* `r paste(p_report(ti$p.value))`, *d* = `r tdi`
+
+A one-way ANOVA revealed significant differences in initial judgements depending on scenario, *F*(`r paste(df_aov(aov))`) = `r paste(round(F_aov(aov),digits=2))`, *p* `r paste(p_aov(aov))`, partial $\eta$^2^ `r paste(p_report(eta))`.  Tukey’s post-hoc pairwise comparison revealed that judgements of *Promise* were significantly more favourable than all other scenarios: *Heinz*, *p* `r paste(p_report(tuk$scenario[4,4]))`, *Dog*, *p* `r paste(p_report(tuk$scenario[2,4]))`. *Trolley*, *p* `r paste(p_report(tuk$scenario[6,4]))`; *Heinz* was rated significantly more favourably than *Dog*, `r paste(p_report(tuk$scenario[1,4]))` there were no significant differences in the ratings of the other scenarios, *Heinz*/*Trolley*, *p* `r paste(p_report(tuk$scenario[5,4]))`, *Dog*/*Trolley*, *p* `r paste(p_report(tuk$scenario[3,4]))`.
+
+```{r}
+aov <- summary(aov(InJu2~scenario,x))
+summary(aov(InJu2~scenario,x))
+eta <- (aov[[1]][["Sum Sq"]][1])/((aov[[1]][["Sum Sq"]][1])+(aov[[1]][["Sum Sq"]][2]))
+tuk <- TukeyHSD(aov(InJu2~scenario,x))
+tuk
+
+qplot(factor(scenario),InJu2, data=x,geom = c("boxplot", "jitter"))
+print(p_report(tuk$scenario[5,4]))
+
+```
+
+A one-way ANOVA revealed a similar pattern of differences in revised judgements depending on scenario, *F*(`r paste(df_aov(aov))`) = `r paste(round(F_aov(aov),digits=2))`, *p* `r paste(p_aov(aov))`, partial $\eta$^2^ `r paste(p_report(eta))`.  Again, Tukey’s post-hoc pairwise comparison revealed that judgements of *Promise* were significantly more favourable than all other scenarios: *Heinz*, *p* `r paste(p_report(tuk$scenario[4,4]))`, *Dog*, *p* `r paste(p_report(tuk$scenario[2,4]))`. *Trolley*, *p* `r paste(p_report(tuk$scenario[6,4]))`; and judgements of *Dog* were significantly more harsh than both *Heinz*, *p* `r paste(p_report(tuk$scenario[1,4]))` and *Trolley*, *p* `r paste(p_report(tuk$scenario[3,4]))`; all there were no significant differences in ratings of *Heinz* and *Trolley*, *p* `r paste(p_report(tuk$scenario[5,4]))`.
+
+```{r}
+
+df <- Study_3_eligible_wide
+
+df <- Study_3_eligible_wide %>% 
+  mutate(
+    #    vc   = Q104.0+ Q129 + Q130 + Q131
+    # ,  hc   = Q132  + Q133 + Q134 + Q135
+    # ,  vi   = Q136  + Q137 + Q138 + Q139
+    # ,  hi   = Q140  + Q141 + Q142 + Q143
+    # , mlqp  = Q119  + Q123 + Q124 + Q125 + reverse.code(-1, as.numeric(Q128))
+    # , mlqs  = Q121  + Q122 + Q126 + Q127
+     Heinz = recode(as.numeric(heinz_CS)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Trolley = recode(as.numeric(trolley_CS)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Promise = recode(as.numeric(promise_CS)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Dog = recode(as.numeric(dog_CS)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+   
+  )
+
+
+
+
+dfa <- df[which(is.na(df$Heinz)),]
+dfb <- df[which((df$Heinz=="NA")==FALSE),]
+dfa$Heinz <- rep(0)
+df <- rbind(dfa,dfb)
+df$Heinz
+
+
+dfa <- df[which(is.na(df$Trolley)),]
+dfb <- df[which((df$Trolley=="NA")==FALSE),]
+dfa$Trolley <- rep(0)
+df <- rbind(dfa,dfb)
+df$Trolley
+
+dfa <- df[which(is.na(df$Promise)),]
+dfb <- df[which((df$Promise=="NA")==FALSE),]
+dfa$Promise <- rep(0)
+df <- rbind(dfa,dfb)
+df$Promise
+
+dfa <- df[which(is.na(df$Dog)),]
+dfb <- df[which((df$Dog=="NA")==FALSE),]
+dfa$Dog <- rep(0)
+df <- rbind(dfa,dfb)
+df$Dog
+
+# df$Heinz <- replace_na(df$Heinz, 0)
+# df$Trolley <- replace_na(df$Trolley, 0)
+# df$Promise <- replace_na(df$Promise, 0)
+# df$Dog <- replace_na(df$Dog, 0)
+
+
+df <- df %>% 
+  mutate(SUM_dumbfounding = 
+           c(df$Heinz=="b_dumbfounded")
+         + c(df$Trolley=="b_dumbfounded")
+         + c(df$Promise=="b_dumbfounded")
+         + c(df$Dog=="b_dumbfounded")
+         , VC = vc
+         , VI = vi
+         , HC = hc
+         , HI = hi
+         , `MLQ Presence` = mlqp
+         , `MLQ Search`   = mlqs
+           )
+df$SUM_dumbfounding
+
+x <- df
+x$Gender <- x$gender
+
+z_score <- function(p1,p2,n1,n2){
+  z <- ((mean(p1/n1)-mean(p2/n2))-0)/
+    (sqrt((mean((p1+p2)/(n1+n2))*(1-mean((p1+p2)/(n1+n2))))*((1/n1)+(1/n2))))
+  z
+}
+# Heinz
+z_score(30,0,211,211)
+2*pnorm(z_score(30,0,211,211),lower.tail = FALSE)
+# Promise
+z_score(22,0,225,225)
+2*pnorm(z_score(22,0,225,225),lower.tail = FALSE)
+# Trolley
+z_score(48,0,210,210)
+2*pnorm(z_score(48,0,210,210),lower.tail = FALSE)
+# Dog
+z_score(41,0,253,253)
+2*pnorm(z_score(41,0,253,253),lower.tail = FALSE)
+
+
+
+table(Study_3_long$Position,Study_3_long$CS)
+chisq.test(Study_3_long$Position,Study_3_long$CS)
+c <- chisq.test(Study_3_long$Position,Study_3_long$CS)
+
+
+```
+
+
+### Measuring dumbfounding
+Participants who selected the admission of not having reasons were identified as dumbfounded. Across the four scenarios `r sum(x$SUM_dumbfounding!=0)` participants (`r (sum(x$SUM_dumbfounding!=0)/length(x$gender))*100`%) provided a dumbfounded response at least once. Table\ \@ref(tab:tab2dumb) and Figure\ \@ref(fig:study3fig) show the number and percentage of participants who selected each response for each scenario. Rates of dumbfounded responding for each scenario in Study 2 were significantly greater than zero, *Heinz*: *z* = `r round(z_score(30,0,211,211), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(30,0,211,211),lower.tail = FALSE)))`; *Trolley*: *z* = `r round(z_score(48,0,210,210), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(48,0,210,210),lower.tail = FALSE)))`; *Promise*: *z* = `r round(z_score(22,0,225,225), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(22,0,225,225),lower.tail = FALSE)))`; *Dog*: *z* = `r round(z_score(41,0,253,253), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(41,0,253,253),lower.tail = FALSE)))`, thus providing evidence for moral dumbfounding in our MENA sample. To test for the possibility of order effects, we conducted a chi-square test for independence which revealed no significant differences in responses to the critical slide depending on when the scenario was presented, $\chi$^2^(`r c$parameter`, *N* = `r length(x$Gender)`) = `r round(c$statistic, digits=2)`, *p* `r paste(p_report(c$p.value))`.
+
+
+```{r prepstudy3fig}
+
+
+CS <-
+  Study_3_eligible_long %>% 
+  select(scenario, CS) %>% 
+  mutate(
+    Scenario = scenario
+  ,  InCS = 
+      recode(as.numeric(CS)
+             , "4"="a_nothing_wrong"
+             , "5"="b_dumbfounded"
+             , "7"="c_reasons"
+      ),)
+
+CS <- CS %>% select(InCS,Scenario)
+
+# df <- India
+# CS <- df %>% 
+#   select(Q22,Q57,Q80,Q103) %>% 
+#   gather(Scenario, InCS) %>% 
+#   mutate(
+#     Scenario =
+#       recode(Scenario
+#              , "Q80"="Heinz"
+#              , "Q103"="Cannibal"
+#              , "Q22"="Incest"
+#              , "Q57"="Trolley")
+#     ,
+#     InCS =
+#       recode(InCS
+#              , "4"="a_nothing_wrong"
+#              , "5"="b_dumbfounded"
+#              , "7"="c_reasons"),
+#   )
+
+# CS <- CS[which(is.na(CS$InCS)==FALSE),]
+# CS_India <- CS 
+
+# Q22 = Incest Critical slide
+# Q57 = Trolley Critical slide
+# Q80 = Heinz Critical Slide
+# Q103 = Cannibal Critical Slide
+
+test <- as.data.frame(table(CS))
+
+test <- test %>% group_by(Scenario)
+
+test$total <- rep(length(CS$InCS)/4, length(test$Scenario))
+# Heinz
+test_h <- test[which(test$Scenario== "Heinz"),] 
+test_h$total <- sum(test_h$Freq)
+test_h$perc <- test_h$Freq/test_h$total
+# Trolley
+test_t <- test[which(test$Scenario== "Trolley"),] 
+test_t$total <- sum(test_t$Freq)
+test_t$perc <- test_t$Freq/test_t$total
+# Promise
+test_p <- test[which(test$Scenario== "Promise"),] 
+test_p$total <- sum(test_p$Freq)
+test_p$perc <- test_p$Freq/test_p$total
+# Dog
+test_d <- test[which(test$Scenario== "Dog"),] 
+test_d$total <- sum(test_d$Freq)
+test_d$perc <- test_d$Freq/test_d$total
+
+test <- rbind(test_h,test_t,test_p,test_d)
+
+
+```
+
+
+```{r study3figCREATE, dev="cairo_pdf", fig.cap="Rates of each type of response for each scenario in the Mixed Sample", include = FALSE}
+g <- ggplot(test, aes(x = Scenario, y = perc, fill = InCS)) +
+  scale_y_continuous(limits = c(-.045,1),
+                     labels = percent_format()
+                     )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(#family = "Times", 
+            size=2.2,
+            aes( label = scales::percent(test$perc
+                                         , accuracy = 1),
+                 y= test$perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(#family = "Times", 
+            size=2.5,
+            aes(label = format(Freq),
+                y= -4*(..count../100)/..count..),
+            stat= "count",
+            position = position_dodge(0.9),
+            vjust = -.2,
+            fontface='plain'
+            )+
+  labs(y = "% of participants displaying each type of\nresponse for each scenario",
+       fill = "Response:"
+  )+
+  theme_apa()+
+  # scale_fill_manual(values = c("#333333", "#B4B4B4", "#E6E6E6")
+  #                   , labels=c("Study 1\nN=31",
+  #                              "Study 3a\nN=72",
+  #                              "Study 3b\nN=101")
+  # )+
+  scale_fill_grey(
+      labels=c(
+        "Nothing Wrong"
+      , "Dumbfounded"
+      , "Reasons")
+  )+
+  scale_x_discrete(limits = c("Heinz","Trolley","Promise","Dog"),
+                   labels = c("Heinz\n \U1D62F = 211","Trolley\n \U1D62F = 210","Promise\n \U1D62F = 225","Dog\n \U1D62F = 215")
+                   )+
+  theme_bw() +
+  theme(plot.title=element_text(##family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(##family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(#family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(#family="Times",
+                                 colour = "black",
+                                 size=8
+                                 ),
+          axis.ticks.x = element_blank(),
+          axis.title=element_text(#family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(#family="Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right")
+```
+
+```{r study3fig, fig.cap="Rates of each type of response for each scenario in the Mixed Sample", include = TRUE}
+suppressWarnings(print(g))
+
+#dev.off()
+
+```
+
+
+```{r study3figColor, dev="cairo_pdf", fig.cap="Rates of each type of response for each scenario in the Mixed Sample", include = FALSE}
+g <- ggplot(test, aes(x = Scenario, y = perc, fill = InCS)) +
+  scale_y_continuous(limits = c(-.045,1),
+                     labels = percent_format()
+                     )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(#family = "Times", 
+            size=4,
+            aes( label = scales::percent(test$perc
+                                         , accuracy = 1),
+                 y= test$perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain',
+            color='white'
+            )+
+  geom_text(#family = "Times", 
+            size=4,
+            aes(label = format(Freq),
+                y= -4*(..count../100)/..count..),
+            stat= "count",
+            position = position_dodge(0.9),
+            vjust = -.2,
+            fontface='plain',
+            color='white'
+            )+
+  labs(y = "% of participants displaying each type of\nresponse for each scenario",
+       fill = "Response:"
+  )+
+  geom_hline(yintercept = 0)+
+  theme_apa()+
+  scale_fill_manual(values = c("#356eff", "#ff6035", "#ffc635")
+                    ,  labels=c(
+        "Nothing Wrong"
+      , "Dumbfounded"
+      , "Reasons")
+  )+
+  # scale_fill_grey(
+  #     labels=c(
+  #       "Nothing Wrong"
+  #     , "Dumbfounded"
+  #     , "Reasons")
+  # )+
+  scale_x_discrete(limits = c("Heinz","Trolley","Promise","Dog")
+                  ,labels = c(glue("Heinz<br>(<i>{'n'}</i> = 211)")
+                              ,glue("Trolley <br>(<i>{'n'}</i> = 210)")
+                              ,glue("Promise <br>(<i>{'n'}</i> = 225)")
+                              ,glue("Dog <br>(<i>{'n'}</i> = 215)"))
+                   )+
+  theme_bw() +
+  theme(plot.title=element_text(#family="Times",
+                                size=12
+                                ),
+        axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+        legend.text=element_text(#family="Times",
+                                 size=10
+                                 , color='white'
+                                 ),
+          legend.title=element_text(#family="Times",
+                                    size=12
+                                    ,color = 'white'
+                                    ),
+          axis.text=element_text(#family="Times",
+                                 colour = "white",
+                                 size=12
+                                 ),
+        axis.text.x = element_markdown(),
+          axis.ticks.x = element_blank(),
+  axis.ticks.y = element_line(color = 'white'),
+          axis.title=element_text(#family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(#family="Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right",
+            panel.background = element_rect(fill='transparent', color='white'), #transparent panel bg
+        panel.border = element_rect(fill='transparent', color='white'),
+    plot.background = element_rect(
+      fill='transparent',
+      color='transparent'), #transparent plot bg
+     panel.grid.major = element_line(color='lightgrey'), #remove major gridlines
+     panel.grid.minor = element_blank(), #remove minor gridlines
+    legend.background = element_rect(fill='transparent', color='transparent'), #transparent legend bg
+    legend.box.background = element_rect(fill='transparent',color = 'transparent') #transparent legend panel
+#    legend.box.background = element
+  
+        )
+
+suppressWarnings(print(g))
+
+ggsave('MENA_color.png', g, bg='transparent')
+
+#dev.off()
+
+```
+
+
+```{r}
+
+
+CS <-
+  Study_3_eligible_long %>% 
+  select(scenario, CS) %>% 
+  mutate(
+    Scenario = scenario
+  ,  InCS = 
+      recode(as.numeric(CS)
+             , "4"="a_nothing_wrong"
+             , "5"="b_dumbfounded"
+             , "7"="c_reasons"
+      ),) %>% 
+  select(Scenario, InCS)
+CS2 <- CS[which(CS$Scenario!="Promise"),]
+
+#CS <- CS[which(is.na(CS$InCS)==FALSE),]
+#CS_India <- CS
+
+# Q22 = Incest Critical slide
+# Q57 = Trolley Critical slide
+# Q80 = Heinz Critical Slide
+# Q103 = Cannibal Critical Slide
+
+
+# CS_India <-
+#   CS_India %>% 
+#   mutate(Scenario =
+#            recode(Scenario
+#                   , "Heinz"="1"
+#                   , "Trolley"="2"
+#                   , "Incest"="3"
+#                   , "Cannibal"="4"))
+
+c <- chisq.test( table(CS) )
+
+CS <-
+  CS %>% 
+  mutate(scenario_type =
+           recode(Scenario
+                  , "3"   = "Intuition"
+                  , "4" = "Intuition"
+                  , "1"  = "Reasoning"
+                  , "2"    = "Reasoning"
+                  ))
+
+table(CS$InCS,CS$scenario_type)
+c2 <- chisq.test(table(CS$InCS,CS$scenario_type))
+
+table(CS$InCS,CS$scenario_type)
+c3 <- chisq.test(table(CS2$InCS,CS2$Scenario))
+
+c3$residuals
+x$Gender <- x$gender
+
+#sum(CS$InCS[which(CS$Scenario=="3")]=="a_nothing_wrong")
+#((sum(CS_India$InCS[which(CS_India$Scenario=="3")]=="a_nothing_wrong"))/(length(CS_India$Scenario)/4))*100
+```
+
+A chi-square test for independence revealed significant differences in responses to the critical slide depending on which scenario was being discussed, $\chi$^2^(`r c$parameter`, *N* = `r length(x$Gender)`) = `r round(c$statistic, digits=2)`, *p* `r paste(p_report(c$p.value))`. Table\ \@ref(tab:tabchisq1b) shows the observed counts, expected counts and standardised residuals for each response for each scenario. For *Heinz*, *Dog*, and *Trolley*, people were significantly more likely to provide reasons than to select "there is nothing wrong". In contrast, for *Promise* participants were more likely to select "there is nothing wrong" than to present as dumbfounded, or to present as dumbfounded or provide reasons. We note that this finding may have been confounded by the responses to *Promise*, however the result holds when *Promise* is excluded from the analysis,  $\chi$^2^(`r c3$parameter`, *N* = `r length(x$Gender)`) = `r round(c3$statistic, digits=2)`, *p* `r paste(p_report(c$p.value))`. Study 3 provided further evidence that dumbfounded responding can be elicited in a non-WEIRD sample. Furthermore, the use of alternative scenarios provide evidence that moral dumbfounding can be elicited by a broader range of scenarios than normally demonstrated in the existing literature.
+
+
+```{r}
+ps <- function(y){
+  if(as.numeric(sqrt( y*y) ) >3.3) print(paste0(y,"**"), quote = FALSE)
+  else if(as.numeric(sqrt( y*y) ) >1.96) print(paste0(y,"*"), quote = FALSE)
+  else print(y)}
+
+
+x <- c$stdres
+x <- round(x, digits = 2)
+x
+round(c$expected)
+c$expected <- round(c$expected)
+
+chitab <- `colnames<-`(cbind(
+  c("Nothing Wrong","","","Dumbfounded","","","Reason","",""),
+  c("Observed count","Expected count","Standardised residuals",
+    "Observed count","Expected count","Standardised residuals",
+    "Observed count","Expected count","Standardised residuals"),
+  rbind(
+    c$observed[,1],
+    c$expected[,1],
+      c(ps(x[1,1]),ps(x[2,1]),ps(x[3,1]),ps(x[4,1])),
+    c$observed[,2],
+    c$expected[,2],
+      c(ps(x[1,2]),ps(x[2,2]),ps(x[3,2]),ps(x[4,2])),
+    c$observed[,3],
+    c$expected[,3],
+      c(ps(x[1,3]),ps(x[2,3]),ps(x[3,3]),ps(x[4,3]))
+  )),
+  c("Response"," ","Dog","Heinz","Promise","Trolley")
+)
+chitab
+```
+
+
+```{r tabchisq1b,results = 'asis', include=TRUE}
+
+
+apa_table(
+   chitab
+   , align = c("l", "l", "c", "c", "c", "c")
+   , caption = "Observed counts, expected counts, and standardised residuals for each response to the critical slide depending on Scenario"
+   , added_stub_head = "Response to critical slide"
+   , note = "* = sig. at \\emph{p} < .05; ** = sig. at \\emph{p} < .001"
+   , escape = FALSE
+  # , col_spanners = spans_all
+  # , small = TRUE
+   
+)
+
+```
+
+
+```{r}
+
+df <- Study_3_eligible_wide
+
+df <- Study_3_eligible_wide %>% 
+  mutate(
+    #    vc   = Q104.0+ Q129 + Q130 + Q131
+    # ,  hc   = Q132  + Q133 + Q134 + Q135
+    # ,  vi   = Q136  + Q137 + Q138 + Q139
+    # ,  hi   = Q140  + Q141 + Q142 + Q143
+    # , mlqp  = Q119  + Q123 + Q124 + Q125 + reverse.code(-1, as.numeric(Q128))
+    # , mlqs  = Q121  + Q122 + Q126 + Q127
+     Heinz = recode(as.numeric(heinz_CS)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Trolley = recode(as.numeric(trolley_CS)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Promise = recode(as.numeric(promise_CS)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+    , Dog = recode(as.numeric(dog_CS)
+                     , "4"="a_nothing_wrong"
+                     , "5"="b_dumbfounded"
+                     , "7"="c_reasons"
+                     )
+   
+  )
+
+
+
+dfa <- df[which(is.na(df$Heinz)),]
+dfb <- df[which((df$Heinz=="NA")==FALSE),]
+dfa$Heinz <- rep(0)
+df <- rbind(dfa,dfb)
+df$Heinz
+
+
+dfa <- df[which(is.na(df$Trolley)),]
+dfb <- df[which((df$Trolley=="NA")==FALSE),]
+dfa$Trolley <- rep(0)
+df <- rbind(dfa,dfb)
+df$Trolley
+
+dfa <- df[which(is.na(df$Promise)),]
+dfb <- df[which((df$Promise=="NA")==FALSE),]
+dfa$Promise <- rep(0)
+df <- rbind(dfa,dfb)
+df$Promise
+
+dfa <- df[which(is.na(df$Dog)),]
+dfb <- df[which((df$Dog=="NA")==FALSE),]
+dfa$Dog <- rep(0)
+df <- rbind(dfa,dfb)
+df$Dog
+
+# df$Heinz <- replace_na(df$Heinz, 0)
+# df$Trolley <- replace_na(df$Trolley, 0)
+# df$Promise <- replace_na(df$Promise, 0)
+# df$Dog <- replace_na(df$Dog, 0)
+
+
+df <- df %>% 
+  mutate(SUM_dumbfounding = 
+           c(df$Heinz=="b_dumbfounded")
+         + c(df$Trolley=="b_dumbfounded")
+         + c(df$Promise=="b_dumbfounded")
+         + c(df$Dog=="b_dumbfounded")
+         , VC = vc
+         , VI = vi
+         , HC = hc
+         , HI = hi
+         , `MLQ Presence` = mlqp
+         , `MLQ Search`   = mlqs
+           )
+df$SUM_dumbfounding
+
+
+
+# df <- 
+#   India[which(is.na(India$Q143)==FALSE),]
+# df <- df %>% 
+#   mutate(
+#        vc   = Q104.0+ Q129 + Q130 + Q131
+#     ,  hc   = Q132  + Q133 + Q134 + Q135
+#     ,  vi   = Q136  + Q137 + Q138 + Q139
+#     ,  hi   = Q140  + Q141 + Q142 + Q143
+#     , mlqp  = Q119  + Q123 + Q124 + Q125 + reverse.code(-1, as.numeric(Q128))
+#     , mlqs  = Q121  + Q122 + Q126 + Q127
+#     , Heinz = recode(as.numeric(Q80)
+#                      , "4"="a_nothing_wrong"
+#                      , "5"="b_dumbfounded"
+#                      , "7"="c_reasons"
+#                      )
+#     , Trolley = recode(as.numeric(Q57)
+#                      , "4"="a_nothing_wrong"
+#                      , "5"="b_dumbfounded"
+#                      , "7"="c_reasons"
+#                      )
+#     , Incest = recode(as.numeric(Q22)
+#                      , "4"="a_nothing_wrong"
+#                      , "5"="b_dumbfounded"
+#                      , "7"="c_reasons"
+#                      )
+#     , Cannibal = recode(as.numeric(Q103)
+#                      , "4"="a_nothing_wrong"
+#                      , "5"="b_dumbfounded"
+#                      , "7"="c_reasons"
+#                      )
+#     , Gender = Q4
+#   )
+# 
+# 
+# df <- df %>% 
+#   mutate(SUM_dumbfounding = 
+#            c(df$Heinz=="b_dumbfounded")
+#          + c(df$Trolley=="b_dumbfounded")
+#          + c(df$Incest=="b_dumbfounded")
+#          + c(df$Cannibal=="b_dumbfounded")
+#          , VC = vc
+#          , VI = vi
+#          , HC = hc
+#          , HI = hi
+#          , `MLQ Presence` = mlqp
+#          , `MLQ Search`   = mlqs
+#            )
+
+```
+
+
+```{r study3inddiffs}
+
+df3 <- as.data.frame(df)
+
+
+revised_PseudoR2s <- function(LogModel) {
+  dev <- LogModel$deviance
+  nullDev <- LogModel$null.deviance
+  modelN <- length(LogModel$fitted.values)
+  R.l <- 1 - dev / nullDev
+  R.cs <- 1- exp ( -(nullDev - dev) / modelN)
+  R.n <- R.cs / ( 1 - ( exp (-(nullDev / modelN))))
+  
+  all <- list(hosmer_and_lemeshow = as.numeric(R.l), mcfadden = NA, cox_and_snell = as.numeric(R.cs), nagelkerke = as.numeric(R.n))
+  all
+}
+
+df3$Gender <- df3$gender
+
+```
+
+```{r}
+fit <- lm(SUM_dumbfounding~vc+hc+vi+hi+mlqp+mlqs,df)
+fit <- lm(SUM_dumbfounding~VC+HC+VI+HI+`MLQ Presence`+`MLQ Search`,df)
+
+apa_fit <- apa_print(summary(fit))
+apa_fit$full_result$modelfit
+
+x <- df %>% select(SUM_dumbfounding,vc,vi,hc,hi,mlqp,mlqs)
+#cor.plot(x)
+apa_fit$full_result$VI
+
+
+df3$variable <- df3$SUM_dumbfounding
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "0")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Hpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(8),sig.level = .05)
+Hsummary_InCS_model <- summary_InCS_model
+
+```
+
+
+
+### Individual differences
+A hierarchical linear regression was conducted to test the possible relationship between ICS [@renzhi_key_2013], MLQ [@steger_understanding_2008], and susceptibility to dumbfounding. As in Studies 1 and 2, susceptibility to dumbfounding was operationalized by calculating the number of times a participant provided a dumbfounded response. With this measure as the outcome variable, we included the four sub-scales of ICS, along with both sub-scales of the MLQ,  as predictor variables in a multinomial logistic regression model. The overall model was not a significant predictor of susceptibility to dumbfounding `r apa_fit$full_result$modelfit` in Study 3.
+
+```{r logits2b}
+
+#### Heinz ####
+df3$variable <- df3$Heinz
+df3 <- df3[which(df3$variable!="0"),]
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "c_reasons")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Hpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(12),sig.level = .05)
+Hsummary_InCS_model <- summary_InCS_model
+
+wald1 <- ((summary_InCS_model$CoefTable[7,1])^2)/((summary_InCS_model$CoefTable[7,2])^2)
+wald2 <- ((summary_InCS_model$CoefTable[14,1])^2)/((summary_InCS_model$CoefTable[14,2])^2)
+a <- exp(confint(InCSModel))
+a[7,1]
+a[7,2]
+logits_rsquared <- glm(as.factor(variable)~vc+hc+vi+hi+mlqp+mlqs,df3, family = binomial(link = "logit"))
+cox <- revised_PseudoR2s(logits_rsquared)
+paste(p_report(summary_InCS_model$CoefTable[7,4]))
+summary_InCS_model$CoefTable[7,4]
+paste(p_report(summary_InCS_model$CoefTable[14,4]))
+summary_InCS_model$CoefTable[14,4]
+
+#### Trolley ####
+df3$variable <- df3$Trolley
+df3 <- df3[which(df3$variable!="0"),]
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "c_reasons")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Tpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(12),sig.level = .05)
+Tsummary_InCS_model <- summary_InCS_model
+```
+
+We conducted a series of logistic regressions to investigate the possible relationship between ICS [@renzhi_key_2013] and MLQ [@steger_understanding_2008], and responding to each of the scenarios individually. Response to the critical slide scenario was the dependent variable for each scenario, and the four sub-scales of the ICS, along with the two sub-scales of the MLQ were included as predictor variables.
+
+The overall model predicted responses for the *Heinz* dilemma, $\chi$^2^(`r Hsummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Hsummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Hsummary_InCS_model$lratio$p.value))`, the observed power was `r round(Hpw$power,digits=2)`.  neither did the model significantly predict responses for the *Trolley* scenario, $\chi$^2^(`r Tsummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Tsummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Tsummary_InCS_model$lratio$p.value))`, the observed power was `r round(Tpw$power,digits=2)`. The overall model explained between `r round(cox$cox_and_snell*100, digits=2)`% (Cox and Snell R square) and `r round(cox$nagelkerke*100, digits=2)`% (Nadelkerke R squared) of the variance in responses to the critical slide. The only significant predictors in the model were Vertical Individualism, and Meaning in Life: Search. As VI increased, participants were significantly more likely to select "there is nothing wrong" than to provide reasons for their judgement, Wald = `r round(wald1,digits=2)`, *p* `r paste(p_report(summary_InCS_model$CoefTable[7,4]))`, odds ratio = `r exp(InCSModel$coefficients)[7]`, 95% CI [`r a[7,1]`, `r a[7,2]`]. As Meaning in Life: Search increased, participants were significantly more likely to present as dumbfounded than to provide reasons, Wald = `r round(wald2,digits=2)`, *p* `r paste(p_report(summary_InCS_modelb$CoefTable[14,4]))`, odds ratio = `r exp(InCSModelb$coefficients)[14]`, 95% CI [`r a[14,1]`, `r a[14,2]`].
+
+
+
+
+```{r logit3b}
+#### Incest ####
+df3$variable <- df3$Promise
+df3 <- df3[which(df3$variable!="0"),]
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "c_reasons")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Ipw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(12),sig.level = .05)
+Isummary_InCS_model <- summary_InCS_model
+
+wald1 <- ((summary_InCS_model$CoefTable[9,1])^2)/((summary_InCS_model$CoefTable[9,2])^2)
+a <- exp(confint(InCSModel))
+a[9,1]
+a[9,2]
+logits_rsquared <- glm(as.factor(variable)~vc+hc+vi+hi+mlqp+mlqs,df3, family = binomial(link = "logit"))
+cox <- revised_PseudoR2s(logits_rsquared)
+paste(p_report(summary_InCS_model$CoefTable[9,4]))
+summary_InCS_model$CoefTable[9,4]
+
+##### extra ##### 
+
+InCSModelb<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "b_dumbfounded")
+summary_InCS_modelb <- summary(InCSModelb)
+
+wald2 <- ((summary_InCS_modelb$CoefTable[3,1])^2)/((summary_InCS_modelb$CoefTable[3,2])^2)
+ab <- exp(confint(InCSModelb))
+# https://www.researchgate.net/post/Do_you_know_how_Wald_statistics_are_calculated_for_categorical_data_in_a_logistic_regression_based_on_the_wald_test_in_SPSS
+```
+
+
+
+```{r logit4b}
+#### Cannibal #####
+df3$variable <- df3$Dog
+df3 <- df3[which(df3$variable!="0"),]
+df3a <- mlogit.data(df3, choice = "variable", shape = "wide")
+InCSModel<-mlogit(variable ~ 1 | vc+hc+vi+hi+mlqp+mlqs, data = df3a, reflevel = "c_reasons")
+summary_InCS_model <- summary(InCSModel)
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$Gender))
+Cpw <- pwr.chisq.test(w=w,N=length(df3$Gender),df=(12),sig.level = .05)
+Csummary_InCS_model <- summary_InCS_model
+
+logits_rsquared <- glm(as.factor(variable)~vc+hc+vi+hi+mlqp+mlqs,df3, family = binomial(link = "logit"))
+cox <- revised_PseudoR2s(logits_rsquared)
+
+wald1 <- ((summary_InCS_model$CoefTable[12,1])^2)/((summary_InCS_model$CoefTable[12,2])^2)
+a <- exp(confint(InCSModel))
+
+
+```
+
+The overall models did not significantly predict responses for any of the other scenarios: *Trolley*, $\chi$^2^(`r Tsummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Tsummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Tsummary_InCS_model$lratio$p.value))`, the observed power was `r round(Tpw$power,digits=2)`; *Promise*, $\chi$^2^(`r Isummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Isummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Isummary_InCS_model$lratio$p.value))`, the observed power was `r round(Ipw$power,digits=2)`; *Dog*, $\chi$^2^(`r Csummary_InCS_model$lratio$parameter`, *N* = `r length(df3$Gender)`) = `r round(Csummary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(Csummary_InCS_model$lratio$p.value))`, the observed power was `r round(Cpw$power,digits=2)`.
+
+# General Discussion
+
+The primary aim of the current studies was to investigate if moral dumbfounding is present in non-WEIRD samples. Across three studies, we adopted previously standardised materials and procedure for eliciting and measuring moral dumbfounding [@mchugh_searching_2017a], and tested whether dumbfounded responding could be elicited in a Chinese sample (Study 1), in an Indian Sample (Study 2), and a mixed sample (Study 3). In order to minimise ambiguity and increase confidence in our results, we employed a conservative measure of dumbfounded responding in all three studies. Participants were only identified as dumbfounded if they admitted to not having reasons for their judgement. Using this conservative measure, we found evidence for moral dumbfounding in all three samples. Our studies are the first to elicit dumbfounded responding in a non-WEIRD context, demonstrating that  moral dumbfounding is not unique to WEIRD samples, and providing further evidence that dumbfounding is indeed a real phenomenon.
+
+Study 1 showed no significant variation in rates of dumbfounded responding depending on scenario in our Chinese sample - though this may be due to an underpowered small sample.[^5] In Study 2 we found significant variability in responding depending on scenario, with lower rates of dumbfounding for *Heinz*.  In Study 3, using different scenarios, we again found significant variability depending on scenario. Interestingly, in Study 2, we found higher rates of dumbfounding of *Trolley*, whereas previous research involving WEIRD samples has found *Cannibal* and *Incest* to be more likely to elicit dumbfounded responding than *Trolley* [@mchugh_searching_2017a]. This provides some evidence that there may be cultural differences in the types of scenarios that lead to dumbfounding. This cultural variation is interesting and warrants further study for two reasons: (a) different cultures appear to evaluate moral content differently; (b) moral dumbfounding does not appear to be content specific, that is, some scenarios elicit higher rates of moral dumbfounding in some cultures, while in other cultures different scenarios appear to elicit higher rates of moral dumbfounding. Understanding this cultural variability may provide an insight into how different moral content may lead to dumbfounding which in turn could inform our understanding of the cognitive processes that underlie moral dumbfounding, and moral judgement more generally.
+
+[^5]: We note that, although not statistically significant, the *Cannibal* scenario appeared to elicit more dumbfounded responding in the Chinese sample
+
+## Individual Differences and Dumbfounded Responding
+In addition to testing for the existence of moral dumbfounding in non-WEIRD samples, we investigated the possible relationship between dumbfounded responding and ICS [@renzhi_key_2013: Studies 1 and 2] and MLQ [@steger_understanding_2008: Study 2]. Study 1 revealed no significant relationship between ICS and (a) overall susceptibility to dumbfounding, or (b) responses for each scenario individually.
+
+In Study 2 we found that Vertical Individualism [@renzhi_key_2013] was related to susceptibility to dumbfounded responding, with those scoring high in Vertical Individualism, being less likely to present as dumbfounded. It is possible that this observed relationship emerged as a result of participants' relative motivations to do well in the task of providing reasons. Previous research [@mchugh_searching_2017a] provides suggestive evidence that a dumbfounded response is aversive, that people are motivated to appear consistent. This consistency can be successfully achieved by providing a reason for a judgement, or by revising a judgement and selecting "there is nothing wrong". In contrast, providing a dumbfounded response may be seen as failing to present as consistent. The items in the Vertical Individualism sub-scale appear to provide a measure of people's motivations to do well in relation to others (e.g., "It is important that I do my job better than others"; "When another person does better than I do, I get tense and aroused"). However, it is possible that this sub-scale additionally provides an indication of people's motivations for success (e.g., "Winning is everything"). As such people who are more motivated to "succeed" in general, may be more motivated to avoid the perceived failure associated with a dumbfounded response. This interpretation is merely speculative, and follow up studies should investigate this in more detail.
+
+In Study 2 we also found evidence that responses to specific scenarios were related to to the individual difference variables measured. Responses to the *Incest* scenario were predicted by Horizontal Individualism, and Vertical Collectivism [@renzhi_key_2013]. It is possible that this relationship emerges as a result of the *content* of the scenario rather than providing an insight into the cognitive processes involved in moral dumbfounding. Participants scoring higher in Horizontal Individualism were more likely to select "There is nothing wrong" than to provide a reason for their judgement. It appears that HI is linked with the valence of participants' judgements of *Incest* rather than whether or not it leads to dumbfounding. A key consideration in the *Incest* scenario is the importance of individual autonomy. Similarly, the items in the HI sub-scale appear to relate to individual autonomy [e.g., "I rely on myself most of the time; I rarely rely on others", "I often do 'my own thing'", @renzhi_key_2013]. As such it is not surprising that participants who score highly on HI, place higher value on individual autonomy when considering the *Incest* scenario.
+
+Furthermore, three of the four Vertical Collectivism [@renzhi_key_2013] items specifically relate to the importance of the family. thus providing an indirect measure of the degree to which people value the family unit. Participants who scored higher in VC were more likely to present as dumbfounded than to provide reasons for their judgement of the *Incest* scenario. It is likely that participants who score higher in VC regard the family as particularly important, and the *Incest* scenario presents an affront to the family. As such, these participants may perceive the actions of Julile and Mark as a threat to something that they value, but may not be able to articulate this as a reason for their judgement (e.g., it is too abstract, or they do not think it is an "acceptable" reason).
+
+Finally, Meaning in Life: Presence [@steger_understanding_2008], was related to responses to the *Cannibal* scenario, such that participants who scored higher in Meaning in Life: Presence were more likely to provide reasons for their judgements then to present as dumbfounded by *Cannibal*. Again this is likely due to the specific content, rather than informing the cognitive processes involved. It could be argued that the *Cannibal* scenario involves considerations about the value of life. Participants who score higher in Meaning in Life: Presence, have given consideration to the meaning (and by extension, value) of life (e.g., "I understand my life's meaning"). It seems that this reflection life's meaning may provide people with the necessary justifications/arguments/resources to articulate why they disapprove of *Cannibal*.
+
+Study 3 did not find any relationship between susceptibility to dumbfounded responding and either ICS [@renzhi_key_2013] or MLQ [@steger_understanding_2008]. We did find that Vertical Individualilsm predicted selecting "There is nothing wrong" for the *Heinz* dilemma. The content of the scenario may provide an explanation for this observed relationship. Participants were judging the behaviour of the Druggist, who charged an extremely high price for the drug he developed. The druggest's behaviour is consistent with individualistic values, and it is not surprising that participants who score higher on this individualism measure endorse the behaviour of the druggist. Study 3 also found that participants who scored higher in Meaning in Life: Search were more likely to be dumbfounded than to provide reasons for their judgement. 
+
+## Limitations and Future directions
+A key limitation in the current studies is the sample make up. Participants in Study 1 were recruited through a Chinese university, participants in Study 2 were university graduates, who also were proficient in English, and participants in Study 3 were also proficient in English, and recruited through snowball sampling in a University setting. This means that none of our samples are representative of their respective population. Furthermore, the samples involved either university graduates, or those currently studying in a university setting, and as such this high level of education is a significant challenge to our stated aim of recruiting from non-WEIRD samples.
+
+The moral foreign language effect [@cipolletti_moral_2016] means that the use of an English language survey in Studies 2 and 3 is another potential limitation. Previous research has shown that people appear to make more utilitarian judgements when moral scenarios are presented in another language [@costa_your_2014]. In the case of the *Intuition* scenarios, this could potentially lead to a higher number of participants selecting "There is nothing wrong", rather than presenting as dumbfounded. Despite this potential confound, dumbfounded responding was observed for all scenarios in Studies 2 and 3.
+
+Our studies were not intended as a systematic investigation of cultural differences in evaluation of specific moral content [there are other research programmes dedicated to this, e.g., @haidt_moral_2008; @shweder_big_1997; @narvaez_embodied_2016]. Here, we applied existing methods in three novel contexts, to assess whether or not moral dumbfounding can be elicited in these under-studied contexts. We found evidence for moral dumbfounding in a Chinese sample, an Indian sample and a mixed sample. Our results provided some evidence for cultural variation (e.g., the relative importance of the death taboo), that may inform the development of future research programmes.
+
+# Conclusion
+Previous research on moral dumbfounding has exclusively studied WEIRD participants. This poses a challenge to the generalisability of the phenomenon. In three studies we tested whether or not dumbfounded responding could be elicited in non-WEIRD samples. We found evidence for moral dumbfounding in all three samples. Our findings provide some evidence that moral dumbfounding may emerge as a consequence of the nature of moral knowledge - that is, the cognitive processes that underlie the making of moral judgements seem to lead to the emergence of moral dumbfounding in diverse samples. This suggests that further study of the phenomenon, in diverse samples, may provide unique insights into the cognitive mechanisms that govern moral judgements. 
+
+# Data Accessibility Statement
+All participant data, and analysis scripts can be found on this paper’s project page on the Open Science Framework at [https://osf.io/2h3k7/](https://osf.io/2h3k7/).
+
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+```{r}
+
+save(Study_3_eligible_long, India, CS_China, ut, China2, China1, china1_raw_6, Study_3_eligible_wide, file = "nonWEIRD_for_graphs.RData")
+
+```
+
+\newpage
+
+
+
+# References
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+\endgroup
+

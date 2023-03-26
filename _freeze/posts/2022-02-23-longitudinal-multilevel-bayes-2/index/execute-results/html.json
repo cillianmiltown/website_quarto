@@ -1,0 +1,14 @@
+{
+  "hash": "6eba8161dbb4a1cc230956e0325f0669",
+  "result": {
+    "markdown": "---\ntitle: Bayesian analysis of longitudinal multilevel data using brms and rethinking - part 2  \ndescription: Part 2 of a tutorial showing how to fit Bayesian models using the `rethinking` package.\nauthor: Andreas Handel\ndate: '2022-02-23'\nlastMod: \"2022-05-02\"\naliases: \n  - ../longitudinal-multilevel-bayesian-analysis-2/\ncategories: \n- R\n- Data Analysis\n- Bayesian\nimage: \"featured.png\"\n---\n\n\nI assume you've read [part 1](/posts/longitudinal-multilevel-bayesian-analysis-1/), otherwise this post won't make much sense. You might even want to open that first part in a separate tab for quick comparison.\n\n# Introduction\n\nIn the previous post, I showed a setup where some continuous outcome data (in our case, virus load) was collected over time for several individuals. Those individuals differed by some characteristic (in our case, dose at which they got infected). I specified several models that are useful for both fitting the data, and creating simulations. We've done the simulating part, now we'll start fitting models to that data.\n\nThe advantage of fitting to simulated data is that we know exactly what model and what parameters produced the data, so we can compare our model estimates to the truth (i.e. the parameter and model settings that were used to generate the data) to see how our models perform. It is always good to do that to get some confidence that your models make sense, before you apply them to real data. For the latter, you don't know what the \"truth\" is, so you have to trust whatever your model tells you.\n\nFitting Bayesian models can take a good bit of time (hours, depending on the settings for the fitting routine). It is generally advisable to place code that takes a while to run into its own `R` script, run that script and then save the results for further processing. This is in fact what I did here. I wrote 2 separate R scripts, one that does the fitting and one that does the exploration of the model fits. The code shown below comes from those 2 scripts. There is some value in re-coding yourself by copying and pasting the code chunks from this tutorial, but if you just want to get all the code from this post you can find it [here](ulamfitmodels.R) and [here](ulamexploremodels.R).\n\n# R Setup",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "hash": "3ff8bda282b8684143097dcf688ca300",
+  "result": {
+    "markdown": "---\ntitle: Bayesian analysis of longitudinal multilevel data using brms and rethinking - part 3  \ndescription: Part 3 of a tutorial showing how to fit Bayesian models using the `brms` package.\nauthor: Andreas Handel\ndate: '2022-02-24'\nlastMod: \"2022-04-18\"\naliases:\n  - ../longitudinal-multilevel-bayesian-analysis-3/\ncategories: \n- R\n- Data Analysis\n- Bayesian\nimage: \"featured.png\"\n---\n\n\n\nThis is part 3 of a tutorial illustrating how one can use the `brms` and `rethinking` R packages to perform a Bayesian analysis of longitudinal data using a multilevel/hierarchical/mixed-effects setup.\n\nI assume you've read both [part 1](/posts/longitudinal-multilevel-bayesian-analysis-1/), and [part 2](/posts/longitudinal-multilevel-bayesian-analysis-2/) otherwise this post won't make much sense.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

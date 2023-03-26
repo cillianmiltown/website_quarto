@@ -1,0 +1,73 @@
+---
+title: Cillian McHugh
+title-block-banner: "files/20210214_162331.jpg"
+title-block-style: default
+about:
+  template: solana
+  image-width: 12em
+  image-shape: round
+  image: files/avatar1.jpg
+  links:
+    - icon: globe
+    #  text: Web
+      href: www.cillianmchugh.com
+    - icon: github
+    #  text: Github
+      href: https://github.com/cillianmiltown
+    - icon: twitter
+    #   text: Twitter
+      href: https://twitter.com/CillianMacAodh
+    - icon: mastodon
+    #  text: Mastodon
+      href: https://mastodon.ie/@cillianmchugh
+    # - icon: linkedin
+    #   text: LinkedIn
+    #   href: https://www.linkedin.com/in/andreashandel/
+    - icon: google-scholar
+      text: Google Scholar
+      href: https://scholar.google.com/citations?hl=en&user=OInfWlkAAAAJ
+    # - icon: impactstory
+    #   text: ImpactStory
+    #   href: https://impactstory.org/u/0000-0002-4622-1146
+    - icon: orcid
+      text: ORCID
+      href: https://orcid.org/0000-0002-9701-3232
+comments: false
+format: 
+  html:
+    page-layout: full
+css: styles_home.css
+---
+
+```{r, echo=FALSE, eval = TRUE}
+# Based on: https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto/#netlify-redirects
+# lines to insert to a netlify _redirect file
+redirects <- paste0("/talk /presentations \n/talks /presentations \n/post /posts")
+# write the _redirect file
+writeLines(redirects, here::here("_site", "_redirects"))
+
+```
+
+
+## Background
+
+I am an Experimental Psychologist specialising in cognitive and social psychology. I have worked with a diverse range of research techniques, and I have applied experience in the development of new methods and materials, and in theory development. The main focus of my research to date has been on morality and moral judgement. I have applied understandings from the cognitive psychology of concepts and categories to the moral domain to propose a novel theory of [*Moral Judgment as Categorization (MJAC)*](https://www.cillianmchugh.com/publication/moral-judgment-as-categorization). 
+
+My empirical work has largely focused on the phenomenon of [moral dumbfounding](https://www.cillianmchugh.com/publication/searching-for-moral-dumbfounding/); when a person defends a moral judgement in the absence of reasons. The dumbfounding paradigm has been influential in moral psychology; however, there has been limited empirical work investigating it. This has meant that the main focus of my work to date has been testing, and attempting to understand the phenomenon.
+
+My interests extend beyond the moral domain to include learning and knowledge acquisition, categorisation, skill/expertise, meaning, motivation, and memory. My theoretical interests include Ecological Psychology, Embodiment, and Dynamical Systems.
+
+<a rel="me" href="https://mastodon.ie/@cillianmchugh"></a>
+
+## Featured Video
+
+Moral Judgment as Categorization (MJAC): presentation to IMP seminar series 31st May 2021
+
+```{=html}
+<div>
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/VZahP87TCqE" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
+```

@@ -1,0 +1,17 @@
+.quarto-title-block .quarto-title-banner {
+  background-image: url(../../img/drawing_board.jpg);
+  background-size: 9%;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-left: 12px;
+  background-origin: content-box;
+  height: 200px;
+}
+
+
+pre {
+  white-space: pre-wrap;
+  background: #F5F5F5;
+  max-width: 100%;
+  overflow-x: auto;
+}

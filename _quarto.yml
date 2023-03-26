@@ -1,0 +1,80 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "*.Rmd"
+    - "*.md"
+    - "!README.md"
+    - "!LICENSE.md"
+    - "!myresources/"
+    - "!certificate*"
+  resources:
+    - "files/"
+  preview:
+    port: 4321
+    browser: true
+
+execute:
+  # Re-render only when source changes
+  freeze: auto
+
+description-meta: "Andreas Handel's personal website."
+
+website:
+  title: "Cillian McHugh"
+  site-url: "www.cillianmchugh.com"
+  repo-url: https://github.com/andreashandel/andreashandelwebsite
+  description: "Homepage for Cillian McHugh"
+  favicon: /files/icon1.png 
+  #google-analytics: "UA-48442618-4"
+  twitter-card: 
+    creator: "@cillianmacaodh"
+  cookie-consent: true    
+  search: true
+  navbar:
+    pinned: true
+    background: "#3f51b5"
+    #logo: /files/icon1.png
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Posts"
+        file: posts.qmd
+      - text: "Publications"
+        file: publications.qmd
+      - text: "Projects"
+        file: projects.qmd
+      - text: "Music"
+        file: music.qmd
+      - text: "Other"
+        file: other.qmd
+      - text: "R Blog"
+        file: rblog.qmd
+      
+      # - text: "Subscribe"
+      #   file: subscribe.qmd
+    right: 
+        - icon: twitter
+          href: https://twitter.com/cillianmacaodh
+  
+
+
+  page-footer:
+    left: |
+      {{< fa regular copyright >}} Cillian McHugh, 2023<br>
+      All content licensed under {{< fa brands creative-commons >}}
+      {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-sa >}} {{< fa brands creative-commons-nc >}} [(CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+      
+    right: |
+      Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)<br>
+      Inspiration and code snippets taken from [this site.](https://github.com/andreashandel/andreashandelwebsite)<br>
+      [Source at {{< fa brands github >}} GitHub](https://github.com/andreashandel/andreashandelwebsite)
+
+
+format:
+  html:
+    theme: 
+      light: yeti
+      dark: superhero
+    css: customstyle.css 
+    toc: true

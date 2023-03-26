@@ -1,0 +1,47 @@
+---
+title: "Projects"
+listing:
+  contents: projects
+  sort: "title"
+  type: grid
+  image-height: 260px
+  categories: true
+  sort-ui: true
+  filter-ui: true
+page-layout: full
+title-block-banner: true
+comments: false
+---
+
+Click on any of the Projects below to participate in my current research:
+
+
+
+```{=html}
+
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header" onclick="window.open('https://unioflimerick.eu.qualtrics.com/jfe/form/SV_7X0bIQKbboJUrXM');">Moral Characters</div>
+  <div class="card-body" onclick="window.open('https://unioflimerick.eu.qualtrics.com/jfe/form/SV_7X0bIQKbboJUrXM');">
+    <p class="card-text">Complete a 3-5 min survey</p>
+  </div>
+</div>  
+
+<br>
+  
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header" onclick="window.open('https://unioflimerick.eu.qualtrics.com/jfe/form/SV_39Hz8GlPQD63tPv');">Individual Differences</div>
+  <div class="card-body" onclick="window.open('https://unioflimerick.eu.qualtrics.com/jfe/form/SV_39Hz8GlPQD63tPv');">
+    <p class="card-text">Complete a longer survey</p>
+  </div>
+</div>  
+  
+<br>
+
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header" onclick="window.open('https://unioflimerick.eu.qualtrics.com/jfe/form/SV_4310xRmTNMzVtvo');">Moral Judgements</div>
+  <div class="card-body" onclick="window.open('https://unioflimerick.eu.qualtrics.com/jfe/form/SV_4310xRmTNMzVtvo');">
+    <p class="card-text">Make a series of moral decisions (20 min)</p>
+  </div>
+</div>  
+  
+```

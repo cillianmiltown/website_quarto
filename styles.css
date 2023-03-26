@@ -1,0 +1,10 @@
+.quarto-title-block .quarto-title-banner {
+  background-image: url(img/20210214_162331.jpg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(60%);
+  padding-left: 0px;
+  background-origin: content-box;
+  height: 400px;
+}

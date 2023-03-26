@@ -1,0 +1,53 @@
+Hi Team,
+
+Firstly, well done on collecting some high quality data. I have looked through the responses to some of the open-ended response questions, and your participants really engaged with the task and provided some rich data.
+
+There were a lot of drop-outs leading to missing data. I included participants who provided partial data if they provided a response to the variable of interest for any of the four scenarios (feel free to remove participants with partial data in your own analyses if this is preferred).
+
+I screened the open-ended responses following the critical slide for nonsense responses and removed any participant who provided nonsense responses to this question for any scenario.
+
+It is possible that other participants that warrant removal will be found during the analysis.
+
+I have created 2 spss files; a "long" one and a "wide" one. The Wide one has 1 row per participant, and the variables of interest are prefixed with the relevant scenario. The Long one has 4 rows per participant, with the variables of interest grouped by scenario. I have included an additional variable "scenario" so the responses for individual scenarios are identifiable. An outline of the variable names is below:
+
+# initial_judgement           :  Ju1
+# initial_reason              :  reason
+# initial_confidence          :  conf1
+# counter argument 1          :  ca1
+# still wrong 1               :  still1
+# counter argument reason     :  reason1
+# counter argument 2          :  ca2
+# still wrong 2               :  still2
+# counter argument reason 2   :  reason2
+# counter argument 3          :  ca3
+# still wrong 3               :  still3
+# counter argument reason 3   :  reason3
+# critical slide              :  CS
+# critical slide reason       :  reason_CS
+# revised judgement           :  ju2
+# revised confidence          :  conf2
+# changed mind                :  chmind
+# confused                    :  confused
+# irritated                   :  irritated
+# based on reason             :  based_reason
+# based on gut                :  based_gut
+# vertical collectivism       :  vc
+# horizontal collectivism     :  hc
+# vertical individualism      :  vi
+# horizontal individualism    :  hi
+# meaning in life presence    :  mlqp
+# meaning in life search      :  mlqs
+# age                         :  age
+# gender                      :  gender
+# nationality                 :  nationality
+# education                   :  education
+# open ended education other  :  education_6_TEXT
+# religion                    :  religion
+# open ended religion other   :  religion_TEXT
+
+# items for BFI short form    :  "BFI_1"
+#                             :  "BFI_2"
+#                             :  "BFI_3"
+#                             :  "BFI_4"
+#                             :  "BFI_5"
+#                             :  "BFI_6"
