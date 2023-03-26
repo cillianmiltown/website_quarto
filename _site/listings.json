@@ -55,10 +55,13 @@
     "listing": "/publications.html",
     "items": [
       "/publications/just-wrong-or-just-weird/index.html",
+      "/publications/predicting-attitudinal/index.html",
       "/publications/moral-identity-and-covid-19/index.html",
       "/publications/pandemic-threat/index.html",
       "/publications/national-identity/index.html",
       "/publications/moral-judgment-as-categorization/index.html",
+      "/publications/the-political-psychology-of-covid19/index.html",
+      "/publications/solidarity-matters/index.html",
       "/publications/reasons-or-rationalizations/index.html",
       "/publications/searching-for-moral-dumbfounding/index.html"
     ]
@@ -70,11 +73,11 @@
   {
     "listing": "/music.html",
     "items": [
-      "/music/videos/index.html",
-      "/music/launch-gig-photos/index.html",
-      "/music/it-will-pass/index.html",
-      "/music/back-to-the-drawing-board/index.html",
-      "/music/spectrum/index.html"
+      "/music/albums/it-will-pass/index.html",
+      "/music/albums/back-to-the-drawing-board/index.html",
+      "/music/albums/spectrum/index.html",
+      "/music/other/videos/index.html",
+      "/music/other/launch-gig-photos/index.html"
     ]
   },
   {
@@ -93,6 +96,12 @@
       "/rblog/2018-10-20-a_lazy_function/index.html",
       "/rblog/2017-08-27-writing_functions_2/index.html",
       "/rblog/2017-07-27-writing_functions_1/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/publications/moral-judgment-as-categorization/index.html"
     ]
   }
 ]

@@ -1,5 +1,6 @@
 ---
-title: "Searching for Moral Dumbfounding: Identifying Measurable Indicators of Moral Dumbfounding"
+title: "Searching for Moral Dumbfounding:"
+subtitle: "Identifying Measurable Indicators of Moral Dumbfounding"
 description: "Collabra: Psychology (2017)"
 author: 
   - name          : "Cillian McHugh"

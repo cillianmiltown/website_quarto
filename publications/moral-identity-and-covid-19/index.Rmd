@@ -1,5 +1,6 @@
 ---
-title: "Moral Identity Predicts Adherence to COVID-19 Mitigation Procedures Depending on Political Ideology: A Comparison Between the USA and New Zealand"
+title: "Moral Identity Predicts Adherence to COVID-19 Mitigation Procedures Depending on Political Ideology:"
+subtitle: "A Comparison Between the USA and New Zealand"
 description: "Political Psychology (2022)"
 author: 
   - name          : "Cillian McHugh"
@@ -8,7 +9,7 @@ author:
     address       : University of Limerick
     email         : "cillian.mchugh@ul.ie"
   - name          : "Siobhán M. Griffin"
-    address       : University of Limerick
+    affiliation   : University of Limerick
   - name          : "Melanie J. McGrath"
     affiliation   : University of Melbourne
   - name          : "Joshua J. Rhee"

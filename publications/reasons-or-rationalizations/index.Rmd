@@ -1,5 +1,5 @@
 ---
-title             : "Reasons or Rationalisations"
+title             : "Reasons or Rationalisations:"
 subtitle        : "The Role of Principles in the Moral Dumbfounding Paradigm"
 description: " Journal of Behavioral Decision Making (2020)"
 author: 

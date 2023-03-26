@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href=".//files/icon1.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -64,6 +66,35 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-featured .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-featured'] = new List('listing-featured', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HN11FG1NGL"></script>
 
 <script type="text/plain" cookie-consent="tracking">
@@ -102,6 +133,8 @@ cookieconsent.run({
     }
     </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="customstyle.css">
 <link rel="stylesheet" href="styles_home.css">
@@ -167,13 +200,13 @@ cookieconsent.run({
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
+    <div class="quarto-title column-body">
       <h1 class="title">Cillian McHugh</h1>
                       </div>
   </div>
   <div class="quarto-title-meta">
     </div>
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -187,27 +220,54 @@ cookieconsent.run({
 </nav>
     </div>
 <!-- main -->
-<div class="quarto-about-solana column-page-left">
+<div class="quarto-about-solana column-body">
   <div class="about-entity">
     <div class="entity-contents">
        
-      <div class="about-contents"><main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+      <div class="about-contents"><main class="content quarto-banner-title-block" id="quarto-document-content">
 
 <section id="background" class="level2">
 <h2 data-anchor-id="background">Background</h2>
-<p>I am an Experimental Psychologist specialising in cognitive and social psychology. I have worked with a diverse range of research techniques, and I have applied experience in the development of new methods and materials, and in theory development. The main focus of my research to date has been on morality and moral judgement. I have applied understandings from the cognitive psychology of concepts and categories to the moral domain to propose a novel theory of <a href="https://www.cillianmchugh.com/publication/moral-judgment-as-categorization"><em>Moral Judgment as Categorization (MJAC)</em></a>.</p>
-<p>My empirical work has largely focused on the phenomenon of <a href="https://www.cillianmchugh.com/publication/searching-for-moral-dumbfounding/">moral dumbfounding</a>; when a person defends a moral judgement in the absence of reasons. The dumbfounding paradigm has been influential in moral psychology; however, there has been limited empirical work investigating it. This has meant that the main focus of my work to date has been testing, and attempting to understand the phenomenon.</p>
+<p>I am an Experimental Psychologist specialising in cognitive and social psychology. I have worked with a diverse range of research techniques, and I have applied experience in the development of new methods and materials, and in theory development. The main focus of my research to date has been on morality and moral judgement. I have applied understandings from the cognitive psychology of concepts and categories to the moral domain to propose a novel theory of <a href="https://www.cillianmchugh.com/publications/moral-judgment-as-categorization"><em>Moral Judgment as Categorization (MJAC)</em></a>.</p>
+<p>My empirical work has largely focused on the phenomenon of <a href="https://www.cillianmchugh.com/publications/searching-for-moral-dumbfounding/">moral dumbfounding</a>; when a person defends a moral judgement in the absence of reasons. The dumbfounding paradigm has been influential in moral psychology; however, there has been limited empirical work investigating it. This has meant that the main focus of my work to date has been testing, and attempting to understand the phenomenon.</p>
 <p>My interests extend beyond the moral domain to include learning and knowledge acquisition, categorisation, skill/expertise, meaning, motivation, and memory. My theoretical interests include Ecological Psychology, Embodiment, and Dynamical Systems.</p>
 <p><a rel="me" href="https://mastodon.ie/@cillianmchugh"></a></p>
 </section>
 <section id="featured-paper" class="level2">
 <h2 data-anchor-id="featured-paper">Featured Paper</h2>
-<div class="card border-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header" onclick="window.open('https://www.cillianmchugh.com/publications/moral-judgment-as-categorization/');">Moral Judgment as Categorization</div>
-  <div class="card-body" onclick="window.open('https://www.cillianmchugh.com/publications/moral-judgment-as-categorization/');">
-    <h4 class="card-title">MJAC: </h4>
-    <p class="card-text">A new theory of moral judgment. (McHugh, McGann, Igou &amp; Kinsella, 2022)</p>
-  </div>
+<div id="listing-featured" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="morality,moral judgment,categorization" data-listing-date-sort="1642464000000" data-listing-file-modified-sort="1679851070966" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="61">
+<div class="thumbnail">
+<p><a href="./publications/moral-judgment-as-categorization/index.html"> <img src="publications/moral-judgment-as-categorization/index_files/figure-html/unnamed-chunk-9-1.png" /> </a></p>
+</div>
+<div class="body">
+<a href="./publications/moral-judgment-as-categorization/index.html">
+<h3 class="no-anchor listing-title">
+Moral Judgment as Categorization (MJAC)
+</h3>
+<div class="listing-subtitle">
+</div>
+<div class="listing-description">
+<p>Perspectives in Psychological Science (2022)</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./publications/moral-judgment-as-categorization/index.html">
+<div class="listing-date">
+1/18/22
+</div>
+<div class="listing-author">
+Cillian McHugh, Marek McGann, Eric R. Igou, Elaine L. Kinsella
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
 </div>
 </section>
 <section id="featured-video" class="level2">

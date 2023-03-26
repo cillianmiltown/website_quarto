@@ -1,5 +1,6 @@
 ---
-title: "Pandemic threat and group cohesion: national identification in the wake of COVID-19 is associated with authoritarianism"
+title: "Pandemic threat and group cohesion:"
+subtitle: "national identification in the wake of COVID-19 is associated with authoritarianism"
 description: "The Journal of Social Psychology (2022)"
 author: 
   - name          : "Paul J. Maher"

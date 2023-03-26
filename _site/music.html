@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Andreas Handel’s personal website.">
+<meta name="description" content="Cillian McHugh’s personal website.">
 
 <title>Cillian McHugh - Music</title>
 <style>
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-albums .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -83,7 +83,35 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-albums'] = new List('listing-albums', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-other .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-other'] = new List('listing-other', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -96,6 +124,15 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HN11FG1NGL"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HN11FG1NGL', { 'anonymize_ip': true});
+</script>
 
 <script type="text/javascript" charset="UTF-8">
 document.addEventListener('DOMContentLoaded', function () {
@@ -133,10 +170,10 @@ background-size: cover;
 <link rel="stylesheet" href="styles_music.css">
 <meta name="twitter:title" content="Cillian McHugh - Music">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="www.cillianmchugh.com/music/videos/featured.png">
+<meta name="twitter:image" content="www.cillianmchugh.com/music/albums/it-will-pass/featured.png">
 <meta name="twitter:creator" content="@cillianmacaodh">
-<meta name="twitter:image-height" content="720">
-<meta name="twitter:image-width" content="1280">
+<meta name="twitter:image-height" content="1523">
+<meta name="twitter:image-width" content="2198">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -186,14 +223,7 @@ background-size: cover;
  <span class="menu-text">R Blog</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/cillianmacaodh" rel="" target=""><i class="bi bi-twitter" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools ms-auto">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           </div> <!-- /navcollapse -->
@@ -225,8 +255,11 @@ background-size: cover;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#music" id="toc-music" class="nav-link active" data-scroll-target="#music">Music</a></li>
-  <li><a href="#more" id="toc-more" class="nav-link" data-scroll-target="#more">More</a></li>
+  <li><a href="#music" id="toc-music" class="nav-link active" data-scroll-target="#music">Music</a>
+  <ul class="collapse">
+  <li><a href="#albums" id="toc-albums" class="nav-link" data-scroll-target="#albums">Albums</a></li>
+  <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other">Other</a></li>
+  </ul></li>
   </ul>
 </nav>
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div></div></div>
@@ -239,7 +272,7 @@ background-size: cover;
 <section id="music" class="level1">
 <h1>Music</h1>
 <p>I have been playing music from a young age and started writing songs as a teenager. Influences range from heavy, multi-instrumental Prog (Yes, Rush, Pink Floyd and Genesis) to more traditional acoustic folk and blues (Neil Young, Eric Bibb and Tom Waits) and everything in between.</p>
-<p>I have released 2 albums to date: <a href="https://www.cillianmchugh.com/music/back_to_the_drawing_board/"><em>Back to the Drawing Board</em></a> was released in 2012, and <a href="https://www.cillianmchugh.com/music/it_will_pass/"><em>It Will Pass…</em></a> was released in 2019. Both albums are available online (check out <a href="https://open.spotify.com/artist/4YrhGzeBXwDn6FM4WfI8b1">Cillian Mc Hugh</a> on Spotify (also on <a href="https://music.youtube.com/channel/UCbR_uvTsZFNJvVznanBCOEA?feature=share">youtube music</a>, and <a href="https://music.apple.com/ie/artist/cillian-mc-hugh/485620903">itunes</a>). Have a listen to the new album below. I also have the unreleased <a href="https://www.cillianmchugh.com/music/spectrum/"><em>Spectrum</em></a> which included some songs that made it onto <em>Back to the Drawing Board</em> along with some longer songs that reflect my Prog influences. Some material from <a href="https://www.cillianmchugh.com/music/spectrum/"><em>Spectrum</em></a> is available on <a href="https://soundcloud.com/cillianmchugh">Soundcloud</a> (in particular see <a href="https://soundcloud.com/cillianmchugh/sets/long-songs">this playlist</a>).</p>
+<p>I have released 2 albums to date: <a href="https://www.cillianmchugh.com/music/albums/back_to_the_drawing_board/"><em>Back to the Drawing Board</em></a> was released in 2012, and <a href="https://www.cillianmchugh.com/music/albums/it_will_pass/"><em>It Will Pass…</em></a> was released in 2019. Both albums are available online (check out <a href="https://open.spotify.com/artist/4YrhGzeBXwDn6FM4WfI8b1">Cillian Mc Hugh</a> on Spotify (also on <a href="https://music.youtube.com/channel/UCbR_uvTsZFNJvVznanBCOEA?feature=share">youtube music</a>, and <a href="https://music.apple.com/ie/artist/cillian-mc-hugh/485620903">itunes</a>). Have a listen to the new album below. I also have the unreleased <a href="https://www.cillianmchugh.com/music/albums/spectrum/"><em>Spectrum</em></a> which included some songs that made it onto <em>Back to the Drawing Board</em> along with some longer songs that reflect my Prog influences. Some material from <a href="https://www.cillianmchugh.com/music/albums/spectrum/"><em>Spectrum</em></a> is available on <a href="https://soundcloud.com/cillianmchugh">Soundcloud</a> (in particular see <a href="https://soundcloud.com/cillianmchugh/sets/long-songs">this playlist</a>).</p>
 <br>
 
 
@@ -255,19 +288,132 @@ background-size: cover;
 
 
 <br>
-</section>
-<section id="more" class="level1">
-<h1>More</h1>
-
-
-
-</section>
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<section id="albums" class="level2">
+<h2 class="anchored" data-anchor-id="albums">Albums</h2>
+<div id="listing-albums" class="quarto-listing quarto-listing-container-default">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+     <select id="listing-albums-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-albums'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1552435200000" data-listing-file-modified-sort="1679785822840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="thumbnail">
+<p><a href="./music/albums/it-will-pass/index.html"> <img src="./music/albums/it-will-pass/featured.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./music/albums/it-will-pass/index.html">
+<h3 class="no-anchor listing-title">
+It will pass…
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+<p>Album released in 2019</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./music/albums/it-will-pass/index.html">
+<div class="listing-date">
+Mar 13, 2019
+</div>
+<div class="listing-author">
+Cillian Mc Hugh
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1347404400000" data-listing-file-modified-sort="1679785826977" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="thumbnail">
+<p><a href="./music/albums/back-to-the-drawing-board/index.html"> <img src="./music/albums/back-to-the-drawing-board/featured.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./music/albums/back-to-the-drawing-board/index.html">
+<h3 class="no-anchor listing-title">
+Back to the Drawing Board
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+<p>Album released in 2012</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./music/albums/back-to-the-drawing-board/index.html">
+<div class="listing-date">
+Sep 12, 2012
+</div>
+<div class="listing-author">
+Cillian Mc Hugh
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1240182000000" data-listing-file-modified-sort="1679785813202" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="thumbnail">
+<p><a href="./music/albums/spectrum/index.html"> <img src="./music/albums/spectrum/featured.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./music/albums/spectrum/index.html">
+<h3 class="no-anchor listing-title">
+Spectrum
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+<p>Album released in 2009</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./music/albums/spectrum/index.html">
+<div class="listing-date">
+Apr 20, 2009
+</div>
+<div class="listing-author">
+Cillian Mc Hugh
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="other" class="level2">
+<h2 class="anchored" data-anchor-id="other">Other</h2>
+<div id="listing-other" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-other-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-other'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
        <option value="" disabled="" selected="" hidden="">Order By</option>
        <option value="index" data-direction="asc">Default</option>
          <option value="listing-title" data-direction="asc">
@@ -292,10 +438,10 @@ background-size: cover;
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-listing-date-sort="1639267200000" data-listing-file-modified-sort="1679785698669" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./music/videos/index.html"> <img src="./music/videos/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="./music/other/videos/index.html"> <img src="./music/other/videos/featured.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
-<a href="./music/videos/index.html">
+<a href="./music/other/videos/index.html">
 <h3 class="no-anchor listing-title">
 Videos
 </h3>
@@ -308,7 +454,7 @@ In addition to the studio albums I also have some home video recordings availabl
 </a>
 </div>
 <div class="metadata">
-<a href="./music/videos/index.html">
+<a href="./music/other/videos/index.html">
 <div class="listing-date">
 Dec 12, 2021
 </div>
@@ -320,10 +466,10 @@ Cillian McHugh
 </div>
 <div class="quarto-post image-right" data-index="1" data-listing-date-sort="1555023600000" data-listing-file-modified-sort="1679785806254" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./music/launch-gig-photos/index.html"> <img src="./music/launch-gig-photos/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="./music/other/launch-gig-photos/index.html"> <img src="./music/other/launch-gig-photos/featured.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
-<a href="./music/launch-gig-photos/index.html">
+<a href="./music/other/launch-gig-photos/index.html">
 <h3 class="no-anchor listing-title">
 Launch Gig (photos and videos)
 </h3>
@@ -336,7 +482,7 @@ A collection of photos from the official launch of <em>It will pass…</em> in T
 </a>
 </div>
 <div class="metadata">
-<a href="./music/launch-gig-photos/index.html">
+<a href="./music/other/launch-gig-photos/index.html">
 <div class="listing-date">
 Apr 12, 2019
 </div>
@@ -346,95 +492,18 @@ Cillian McHugh
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1552435200000" data-listing-file-modified-sort="1679785822840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
-<div class="thumbnail">
-<p><a href="./music/it-will-pass/index.html"> <img src="./music/it-will-pass/featured.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./music/it-will-pass/index.html">
-<h3 class="no-anchor listing-title">
-It will pass…
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Album released in 2019</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./music/it-will-pass/index.html">
-<div class="listing-date">
-Mar 13, 2019
-</div>
-<div class="listing-author">
-Cillian Mc Hugh
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1347404400000" data-listing-file-modified-sort="1679785826977" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
-<div class="thumbnail">
-<p><a href="./music/back-to-the-drawing-board/index.html"> <img src="./music/back-to-the-drawing-board/featured.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./music/back-to-the-drawing-board/index.html">
-<h3 class="no-anchor listing-title">
-Back to the Drawing Board
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Album released in 2012</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./music/back-to-the-drawing-board/index.html">
-<div class="listing-date">
-Sep 12, 2012
-</div>
-<div class="listing-author">
-Cillian Mc Hugh
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1240182000000" data-listing-file-modified-sort="1679785813202" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
-<div class="thumbnail">
-<p><a href="./music/spectrum/index.html"> <img src="./music/spectrum/featured.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./music/spectrum/index.html">
-<h3 class="no-anchor listing-title">
-Spectrum
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Album released in 2009</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./music/spectrum/index.html">
-<div class="listing-date">
-Apr 20, 2009
-</div>
-<div class="listing-author">
-Cillian Mc Hugh
-</div>
-</a>
-</div>
-</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div>
+
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -788,7 +857,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-footer">
     <div class="nav-footer-left"><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></div>   
     <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
-    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/andreashandel/andreashandelwebsite">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
   </div>
 </footer>
 
