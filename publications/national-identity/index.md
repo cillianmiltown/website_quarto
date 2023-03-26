@@ -12,7 +12,7 @@ author:
   - name          : "Paulo S. Boggio"
 date: '2022-01-26'
 aliases:   
-  - ../moral-identity/
+  - ../national-identity/
 bibliography      : ["../../bib/My Library.bib"]
 image: featured.png
 categories: 
