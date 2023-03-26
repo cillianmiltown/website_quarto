@@ -1,7 +1,6 @@
 ---
 title: Cillian McHugh
 title-block-banner: "files/20210214_162331.jpg"
-title-block-style: default
 about:
   template: solana
   image-width: 12em
@@ -59,6 +58,22 @@ My empirical work has largely focused on the phenomenon of [moral dumbfounding](
 My interests extend beyond the moral domain to include learning and knowledge acquisition, categorisation, skill/expertise, meaning, motivation, and memory. My theoretical interests include Ecological Psychology, Embodiment, and Dynamical Systems.
 
 <a rel="me" href="https://mastodon.ie/@cillianmchugh"></a>
+
+
+## Featured Paper
+
+
+```{=html}
+
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header" onclick="window.open('https://www.cillianmchugh.com/publications/moral-judgment-as-categorization/');">Moral Judgment as Categorization</div>
+  <div class="card-body" onclick="window.open('https://www.cillianmchugh.com/publications/moral-judgment-as-categorization/');">
+    <h4 class="card-title">MJAC: </h4>
+    <p class="card-text">A new theory of moral judgment. (McHugh, McGann, Igou & Kinsella, 2022)</p>
+  </div>
+</div>
+```
+
 
 ## Featured Video
 
