@@ -1,6 +1,6 @@
 ---
-title             : "Reasons or Rationalisations:\n The Role of Principles in the Moral Dumbfounding Paradigm"
-shorttitle        : "Reasons or Rationalisations"
+title             : "Reasons or Rationalisations"
+subtitle        : "The Role of Principles in the Moral Dumbfounding Paradigm"
 description: " Journal of Behavioral Decision Making (2020)"
 author: 
   - name          : "Cillian McHugh"
@@ -15,23 +15,13 @@ author:
   - name          : "Elaine L. Kinsella"
     affiliation   : University of Limerick
 date: '2020-01-05'
-author_note: >
-  All procedures performed in studies involving human participants were approved by institutional research ethics committee and conducted in accordance with the Code of Professional Ethics of the Psychological Society of Ireland, and with the 1964 Helsinki declaration and its later amendments or comparable ethical standards.  Informed consent was obtained from all individual participants included in the study.  The authors declare that there are no potential conflicts of interest with respect to the research, authorship, and/or publication of this article.  All authors consented to the submission of this manuscript. 
-
-  
-keywords          : "morality, moral judgment, dumbfounding, intuition, rationalism, reasons"
-wordcount         : "11,298"
 aliases:   
   - ../reasons-or-rationalizations/
 bibliography      : ["../../bib/My Library.bib"]
-figsintext        : yes
-figurelist        : yes
-tablelist         : yes
-footnotelist      : no
-lineno            : yes
-lang              : "english"
-class             : "man"
-
+categories: 
+  - morality
+  - moral dumbfounding
+  - methods
 ---
 
 
@@ -42,6 +32,9 @@ class             : "man"
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/reasons-or-rationalizations/reasons-or-rationalizations.pdf');" data-inline="true" >PDF</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://onlinelibrary.wiley.com/doi/abs/10.1002/bdm.2167')" >Source Document</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/m4ce7/')" >OSF</button>
+
+
+# Reasons or Rationalisations: The Role of Principles in the Moral Dumbfounding Paradigm
 
 ```{r reasonsload libraries, include = FALSE}
 
