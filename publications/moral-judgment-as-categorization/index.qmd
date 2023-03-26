@@ -28,7 +28,7 @@ categories:
 >Observed variability and complexity of judgments of 'right' and 'wrong' cannot be readily accounted for within extant approaches to understanding moral judgment. In response to this challenge, we present a novel perspective on categorization in moral judgment. Moral judgment as categorization (MJAC) incorporates principles of category formation research while addressing key challenges of existing approaches to moral judgment. People develop skills in making context-relevant categorizations. They learn that various objects (events, behaviors, people, etc.) can be categorized as morally 'right' or 'wrong'. Repetition and rehearsal results in reliable, habitualized categorizations. According to this skill formation account of moral categorization, the learning and the habitualization of the forming of moral categories, occurs within goal-directed activity that is sensitive to various contextual influences. By allowing for the complexity of moral judgments, MJAC offers greater explanatory power than existing approaches while also providing opportunities for a diverse range of new research questions.
 
 
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('/moral-judgment-as-categorization/mjac.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/moral-judgment-as-categorization/mjac.pdf');" data-inline="true" >PDF</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://journals.sagepub.com/doi/full/10.1177/1745691621990636" >Source Document</button>
 
 

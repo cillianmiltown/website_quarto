@@ -85,16 +85,16 @@ Moral Judgment as Categorization (MJAC): presentation to IMP seminar series 31st
 
 <p align="center" style="fontsize: 40px">
 
-<a href="https://mastodon.ie/@cillianmchugh"><i class="fa-brands fa-mastodon fa-2x" title="Mastodon" aria-hidden="true"></i></a>
-<a href="https://twitter.com/CillianMacAodh"><i class="fa-brands fa-twitter fa-2x" title="Twitter" aria-hidden="true"></i></a>
-<a href="https://github.com/cillianmiltown"><i class="fa-brands fa-github fa-2x" title="GitHub" aria-hidden="true"></i></a>
-<a href="https://www.researchgate.net/profile/Cillian_Mchugh2"><i class="ai ai-researchgate ai-2x" title="ResearchGate" aria-hidden="true"></i></a>
-<a href="https://limerick.academia.edu/CillianMcHugh"><i class="ai ai-academia ai-2x" title="Academia" aria-hidden="true"></i></a>
-<a href="https://scholar.google.com/citations?hl=en&user=OInfWlkAAAAJ"><i class="ai ai-google-scholar ai-2x"></i></a>
+<a href="https://mastodon.ie/@cillianmchugh" target="_blank"><i class="fa-brands fa-mastodon fa-2x" title="Mastodon" aria-hidden="true"></i></a>
+<a href="https://twitter.com/CillianMacAodh" target="_blank"><i class="fa-brands fa-twitter fa-2x" title="Twitter" aria-hidden="true"></i></a>
+<a href="https://github.com/cillianmiltown" target="_blank"><i class="fa-brands fa-github fa-2x" title="GitHub" aria-hidden="true"></i></a>
+<a href="https://www.researchgate.net/profile/Cillian_Mchugh2" target="_blank"><i class="ai ai-researchgate ai-2x" title="ResearchGate" aria-hidden="true"></i></a>
+<a href="https://limerick.academia.edu/CillianMcHugh" target="_blank"><i class="ai ai-academia ai-2x" title="Academia" aria-hidden="true"></i></a>
+<a href="https://scholar.google.com/citations?hl=en&user=OInfWlkAAAAJ" target="_blank"><i class="ai ai-google-scholar ai-2x"></i></a>
 <br>
-<a href="https://orcid.org/0000-0002-9701-3232"><i class="ai ai-orcid ai-2x"></i></a>
-<a href="http://mchugh.socialpsychology.org/"><i class="ai ai-scirate ai-2x"></i></a>
-<a href="https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/files/CV.pdf"><i class="ai ai-cv ai-2x"></i></a>
+<a href="https://orcid.org/0000-0002-9701-3232" target="_blank"><i class="ai ai-orcid ai-2x"></i></a>
+<a href="http://mchugh.socialpsychology.org/" target="_blank"><i class="ai ai-scirate ai-2x"></i></a>
+<a href="https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/files/CV.pdf" target="_blank"><i class="ai ai-cv ai-2x"></i></a>
 
 </p>
 ```
