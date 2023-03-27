@@ -27,9 +27,10 @@ website:
   favicon: /files/icon1.png 
   google-analytics: "G-HN11FG1NGL"
   twitter-card: 
-    image: img/20210214_162331.jpg
+    image: /img/20210214_162331.jpg
     creator: "@cillianmacaodh"
   cookie-consent: false    
+  open-graph: true
   search: true
   navbar:
     pinned: true
