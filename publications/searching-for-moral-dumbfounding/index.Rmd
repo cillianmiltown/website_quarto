@@ -29,8 +29,8 @@ categories:
 
 
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/searching-for-moral-dumbfounding/searching-for-moral-dumbfounding.pdf');" data-inline="true" >PDF</button>
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://online.ucpress.edu/collabra/article/3/1/23/112379/Searching-for-Moral-Dumbfounding-Identifying" >Source Document</button>
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/wm6vc/" >OSF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://online.ucpress.edu/collabra/article/3/1/23/112379/Searching-for-Moral-Dumbfounding-Identifying');" >Source Document</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/wm6vc/');" >OSF</button>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">

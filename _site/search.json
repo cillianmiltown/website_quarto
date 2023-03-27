@@ -1230,5 +1230,19 @@
     "title": "A Shiny App for JS Mediation",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThe purpose of this post is to demonstrate the code for these analyses, as such there may be issues with the analyses reported - I haven’t checked any assumptions or anything.↩︎\nIn order to enable people to use the app for their own analysis I needed a way for them to upload their data into the app. After a bit of googling I found this example, for uploading .csv files. I copied the code and modified it to include read.spss() from the package foreign instead of read.csv()↩︎"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Cillian McHugh - Brief professional bio",
+    "section": "",
+    "text": "Current position"
+  },
+  {
+    "objectID": "shiny.html",
+    "href": "shiny.html",
+    "title": "Shiny",
+    "section": "",
+    "text": "No matching items"
   }
 ]

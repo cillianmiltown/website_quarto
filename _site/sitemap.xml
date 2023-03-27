@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.cillianmchugh.com/index.html</loc>
-    <lastmod>2023-03-27T10:58:51.540Z</lastmod>
+    <lastmod>2023-03-27T18:19:49.865Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/posts.html</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/publications.html</loc>
-    <lastmod>2023-03-27T10:53:13.029Z</lastmod>
+    <lastmod>2023-03-27T18:19:48.448Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/posts/searching/index.html</loc>
@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/publications/searching-for-moral-dumbfounding/index.html</loc>
-    <lastmod>2023-03-27T10:52:07.482Z</lastmod>
+    <lastmod>2023-03-27T18:19:46.707Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/publications/solidarity-matters/index.html</loc>
@@ -131,5 +131,13 @@
   <url>
     <loc>https://www.cillianmchugh.com/rblog/2019-08-11-js_mediation/index.html</loc>
     <lastmod>2023-03-27T11:10:46.160Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/about.html</loc>
+    <lastmod>2023-03-27T18:19:57.090Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/shiny.html</loc>
+    <lastmod>2023-03-27T18:19:57.629Z</lastmod>
   </url>
 </urlset>
