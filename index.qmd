@@ -32,6 +32,7 @@ about:
   #     text: ORCID
   #     href: https://orcid.org/0000-0002-9701-3232
 comments: false
+image: featured.png
 listing:
   - id: featured
     contents: publications

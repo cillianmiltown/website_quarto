@@ -22,15 +22,15 @@ description-meta: "Cillian McHugh's personal website."
 website:
   title: "Cillian McHugh"
   site-url: "www.cillianmchugh.com"
+  open-graph: true
+  twitter-card: 
+    image: /img/20210214_162331.jpg
+    creator: "@cillianmacaodh"
   repo-url: https://github.com/cillianmiltown/website_quarto
   description: "Homepage for Cillian McHugh"
   favicon: /files/icon1.png 
   google-analytics: "G-HN11FG1NGL"
-  twitter-card: 
-    image: /img/20210214_162331.jpg
-    creator: "@cillianmacaodh"
   cookie-consent: false    
-  open-graph: true
   search: true
   navbar:
     pinned: true
