@@ -24,7 +24,7 @@ website:
   site-url: "www.cillianmchugh.com"
   open-graph: true
   twitter-card: 
-    image: /img/20210214_162331.jpg
+    image: featured.png
     creator: "@cillianmacaodh"
   repo-url: https://github.com/cillianmiltown/website_quarto
   description: "Homepage for Cillian McHugh"
