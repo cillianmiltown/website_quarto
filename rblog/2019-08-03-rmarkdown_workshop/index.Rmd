@@ -7,7 +7,6 @@ aliases:
   - ../rmarkdown-workshop
 bibliography      : ["../../bib/My Library.bib"]
 link-citations: true
-
 reading_time: true  # Show estimated reading time?
 share: true  # Show social sharing links?
 profile: false  # Show author profile?

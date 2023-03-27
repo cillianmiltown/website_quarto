@@ -6,6 +6,7 @@ page-layout: full
 aliases: 
   - ../moral-networks-shinyapp
 description: A Shiny App for Making Moral Networks
+image: featured.png
 ---
 
 Following discussions with members of the [DAFINET](https://www.ul.ie/dafinet/) team, I have become increasingly interested in the idea that moral values might be strengthened by the way in which people might be connected by their values.  To investigate this, I started playing around with building networks in R.  I downloaded some existing data on Moral Foundations Theory from the OSF (see [here](https://osf.io/nh4ck/)).  In order to play with it more interactively, I built [this ShinyApp](https://cillianmacaodh.shinyapps.io/moral_networks/). 

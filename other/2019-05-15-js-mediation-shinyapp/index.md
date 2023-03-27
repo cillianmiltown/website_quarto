@@ -5,6 +5,7 @@ date: '2019-05-15'
 aliases: 
   - ../js-mediation-shinyapp
 description: A Shiny App for running JS Mediation
+image: featured.png
 ---
 
 
@@ -21,6 +22,6 @@ In response to [this](https://perso.uclouvain.be/vincent.yzerbyt/Yzerbyt%20et%20
 ```
 
 
-(see [https://cillianmacaodh.shinyapps.io/JS_mediation/"](https://cillianmacaodh.shinyapps.io/JS_mediation/"))
+(see [https://cillianmacaodh.shinyapps.io/JS_mediation/](https://cillianmacaodh.shinyapps.io/JS_mediation/))
 
 Yzerbyt, V., Muller, D., Batailler, C., & Judd, C. M. (2018). New Recommendations for Testing Indirect Effects in Mediational Models: The Need to Report and Test Component Paths. *Journal of Personality and Social Psychology: Attitudes and Social Cognition*, 115(6), 929–943. http://dx.doi.org/10.1037/pspa0000132
