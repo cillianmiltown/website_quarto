@@ -21,11 +21,11 @@ description-meta: "Cillian McHugh's personal website."
 
 website:
   title: "Cillian McHugh"
-  site-url: "www.cillianmchugh.com"
+  site-url: "https://www.cillianmchugh.com/"
   open-graph: true
   twitter-card: 
     image: featured.png
-    creator: "@cillianmacaodh"
+    creator: "@CillianMacAodh"
   repo-url: https://github.com/cillianmiltown/website_quarto
   description: "Homepage for Cillian McHugh"
   favicon: /files/icon1.png 

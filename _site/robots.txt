@@ -1,1 +1,1 @@
-Sitemap: www.cillianmchugh.com/sitemap.xml
+Sitemap: https://www.cillianmchugh.com/sitemap.xml
