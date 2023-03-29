@@ -13,31 +13,18 @@ Track information for the album *It Will Pass...*. Listen to the full album belo
 
 
 # It will pass...
+
 ```{=html}
-<div>
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_mYaYyP7L_Zq72SMK54b7lnV3nFXMDiHmc" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
 
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/19BDO0YFKBzXs18wAvGKYS?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-&nbsp;<br>
 ```
+
+
 ## The Race 
 **Vocals**: Cillian McHugh<br>
 **Guitars**: Cillian McHugh
 
-```{=html}
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/u8k5oktNsyY" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
-
-<br>
-```
 
 What if you, if you were in my shoes?<br>
 Would they fit? And would they keep you warm?<br>
@@ -69,18 +56,6 @@ is caught up, is made up<br>
 **Drums**: Donal McHugh<br>
 **Bass**: Simon O'Donnell
 
-```{=html}
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/OXZYyYpU5wY" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
-
-
-<br>
-
-```
 
 ```{results=asis}
   Verse:
@@ -135,17 +110,6 @@ And you have to say goodbye<br>
 **Vocals**: Cillian McHugh<br>
 **Guitar**: Cillian McHugh
 
-```{=html}
-
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/oH4XFmC-a90" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
-
-<br>
-```
 
 There are no words, there are no words, there's just hanging on <br>
 And holding out, and holding on, until it's gone<br>
@@ -170,16 +134,7 @@ Will come again, will come again...<br>
 **Bass**: Cillian McHugh<br>
 **Harmonica**: Cillian McHugh
 
-```{=html}
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/Yx3XwRwnCEA" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
 
-<br>
-```
 
 Chances that I blew<br>
 And candles that I knew<br>
@@ -212,16 +167,6 @@ unknown arms wrapped around me<br>
 **Vocals**: Cillian McHugh<br>
 **Guitars**: Cillian McHugh
 
-```{=html}
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/3Y-4htLDq-4" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
-
-<br>
-```
 
 
 ```{results=asis}
@@ -322,17 +267,7 @@ Only last so long<br>
 **Vocals**: Cillian McHugh<br>
 **Guitar**: Cillian McHugh
 
-```{=html}
 
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/zTjv5g6L6U0" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
-
-<br>
-```
 
 Walking home across the city from the train to the plane<br>
 You're on your own, there's no pity there's no pain in vain<br>
@@ -362,17 +297,6 @@ Like you count the days each time
 **Vocals**: Cillian McHugh<br>
 **Guitars**: Cillian McHugh
 
-```{=html}
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/WGdK6guj4Lg" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
-
-<br>
-
-```
 
 ```{results=asis}
 
@@ -425,16 +349,7 @@ I'd care<br>
 **Vocals**: Cillian McHugh<br>
 **Guitar**: Cillian McHugh
 
-```{=html}
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/VorAwtSzFzs" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
 
-<br>
-```
 
 Too many times,<br>
 But it will pass and come again,<br>
@@ -462,16 +377,7 @@ But it will pass and come again.
 **Drums**: Donal McHugh<br>
 **Bass**: Simon O'Donnell
 
-```{=html}
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/bYkPdSiiGYM" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
 
-<br>
-```
 
 ```{results=asis}
   
@@ -521,16 +427,6 @@ Today’s flight home, the last flight home<br>
 **Guitar**: Cillian McHugh<br>
 **Harmonica**: Cillian McHugh
 
-```{=html}
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/Nm2NOUmhURI" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
-
-<br>
-```
 
 Sitting three cars back from the red light<br>
 The fan's on full, and the windows are down<br>
@@ -568,16 +464,6 @@ And you're going nowhere<br>
 **Organ**: Donal McHugh
 
 
-```{=html}
-<div style="width:25%;height:25%;">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/5w3r6ADw3M8" frameborder="0" allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</div>
-
-<br>
-```
 
 He tries to speak his mind and he finds the line but the words that he chose don't fit,<br>
 He tries to hide behind the disguise but he's blind in the maze that he built himself,<br>

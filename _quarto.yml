@@ -45,6 +45,8 @@ website:
         file: publications.qmd
       - text: "Projects"
         file: projects.qmd
+      # - text: "Presentations"
+      #   file: presentations.qmd
       - text: "Music"
         file: music.qmd
       - text: "Other"
