@@ -10,7 +10,7 @@ css: styles_music2.css
 
 
 
-Track information for the album *Back to the Drawing Board*. Listen to the full album below (or on [youtube music](https://music.youtube.com/playlist?list=OLAK5uy_mAlQPWGykP4bg17olx62xIjT4ljvxiAko&feature=share), [Spotify](https://open.spotify.com/album/6KyhptdTED359G2PCJ3fFk?si=FQizNHCvSN-s_BJPsTmz0Q), or [itunes](https://music.apple.com/ie/album/back-to-the-drawing-board/485620902))
+Track information for the album *Back to the Drawing Board*. Preview the album in the Spotify player below or listen to the full album on on [youtube music](https://music.youtube.com/playlist?list=OLAK5uy_mAlQPWGykP4bg17olx62xIjT4ljvxiAko&feature=share), [Spotify](https://open.spotify.com/album/6KyhptdTED359G2PCJ3fFk?si=FQizNHCvSN-s_BJPsTmz0Q), or [itunes](https://music.apple.com/ie/album/back-to-the-drawing-board/485620902). There is also a YouTube playlist at the bottom of this page (and available [here](https://www.youtube.com/watch?v=Xk3JpKZbtYU&list=OLAK5uy_mi0VaUBTlt-KA5J4po0EKInKU-EQdn__U))
 
 
 
@@ -20,6 +20,8 @@ Track information for the album *Back to the Drawing Board*. Listen to the full 
 
 &nbsp;<br>
 ```
+
+
 
 
 # Back to the Drawing Board 
@@ -35,6 +37,18 @@ Back to the Drawing Board is a 13 track album released in 2012. The official lau
 **Backing Vocals**: Cillian McHugh<br>
 **Guitar**: Cillian McHugh
 
+```{=html}
+
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/Xk3JpKZbtYU" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
+
+
+<br>
+```
 
 The sky is grey, it's raining today <br>
 Pearls on the grass <br>
@@ -71,7 +85,17 @@ And the rain falls
 **Drums**: Donal McHugh<br>
 **Bass**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/AEIlDvf64Ao" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 Look up to see, to see how high<br>
 can we ever reach the sky<br>
@@ -145,7 +169,17 @@ far and wide past the milky way<br>
 **Drums**: Donal McHugh<br>
 **Bass**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/CGbVHCXMx0E" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 I watch the sun go down:<br>
 Purple and red through the scattered clouds.<br>
@@ -183,7 +217,17 @@ Silver streak shines on your cheek as a star winks out.<br>
 **Drums**: Donal McHugh<br>
 **Bass**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/pHWnFRprADo" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 What if I told you that everyone was wrong?<br>
 wrong in what they believe...<br>
@@ -211,7 +255,17 @@ Would you call me mad if I told you that I knew...?...and didn't know...because 
 **Drums**: Donal McHugh<br>
 **Bass**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/ALZN9BPAvbM" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 *Verse 1*<br>
 Reverse the answer, It’s 24<br>
@@ -272,7 +326,17 @@ And we let it happen<br>
 **Vocals**: Cillian McHugh<br>
 **Guitar**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/D4BahEdOHWM" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 to love is to catch a rainbow<br>
 the sun and the rain, the joy and the pain<br>
@@ -306,7 +370,18 @@ chase rainbows<br>
 **Backing Vocals**: Cillian McHugh<br>
 **Guitar**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/WDAvlXZ7-h4" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+
+```
 
 The days pass.<br>
 But your heart still cries<br>
@@ -323,7 +398,17 @@ But your heart still cries<br>
 **Drums**: Donal McHugh<br>
 **Bass**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/iO7EDuaq53o" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 ```{results=asis}
 
@@ -395,7 +480,17 @@ is tosaigh arís, tosaigh arís<br>
 **Bass**: Cillian McHugh<br>
 **Harmonica**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/v2kpOONkefM" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 Waiting... Holding out<br>
 Hoping time won't run out<br>
@@ -416,7 +511,17 @@ Cause no pain, break no-one's heart<br>
 **Drums**: Donal McHugh<br>
 **Bass**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/hJBC3X8bryk" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 You mean it. You say it’s true.<br>
 I believe it. I feel it too.<br>
@@ -451,7 +556,17 @@ Meaning lost.<br>
 **Bass**: Cillian McHugh<br>
 **Harmonica**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/ZSJ7tTRVacc" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 
 ```{results=asis}
@@ -514,7 +629,17 @@ and i believe<br>
 **Bass**: Cillian McHugh<br>
 **Harmonica**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/gWsc5f_48QM" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 Listening to the silence of chords that were never played<br>
 Humming through the lines of mistakes we made<br>
@@ -532,7 +657,17 @@ True for you now, wondering how<br>
 **Backing Vocals**: Cillian McHugh<br>
 **Guitar**: Cillian McHugh
 
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/GBUXLnN12Ug" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 
+
+<br>
+```
 
 Kids are playin’ on the grass,<br>
 The sun is out, the rain has passed.<br>
@@ -556,6 +691,20 @@ The sun is bright the sky is clear.<br>
 You’re all alone, there’s no one here.<br>
 Hurting inside you fight the tears,<br>
 And the sun shines.<br>
+
+
+
+```{=html}
+<div>
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_mi0VaUBTlt-KA5J4po0EKInKU-EQdn__U" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
+
+
+&nbsp;<br>
+```
 
 
 <script src="https://unpkg.com/vanilla-back-to-top@7.2.0/dist/vanilla-back-to-top.min.js"></script>
