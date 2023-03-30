@@ -8,7 +8,7 @@ image: featured.png
 css: styles_music.css
 ---
 
-Track information for the album *It Will Pass...*. Preview the full album in the Spotify player below, or listen to the full album on  [youtube music](https://music.youtube.com/playlist?list=OLAK5uy_l9jItlYhFouJPhALQciwkFUCLiEPKUxPA&feature=share), [Spotify](https://open.spotify.com/album/19BDO0YFKBzXs18wAvGKYS?si=kvd9LDnURtScrRx_8d4Fww), or [itunes](https://music.apple.com/ie/album/it-will-pass/1455690979). There is also a YouTube playlist at the bottom of this page (and available [here](https://www.youtube.com/watch?v=u8k5oktNsyY&list=OLAK5uy_mYaYyP7L_Zq72SMK54b7lnV3nFXMDiHmc))
+Track information for the album *It Will Pass...*. Preview the full album in the Spotify player below, or listen to the full album on  [youtube music](https://music.youtube.com/playlist?list=OLAK5uy_l9jItlYhFouJPhALQciwkFUCLiEPKUxPA&feature=share), [Spotify](https://open.spotify.com/album/19BDO0YFKBzXs18wAvGKYS?si=kvd9LDnURtScrRx_8d4Fww), or [itunes](https://music.apple.com/ie/album/it-will-pass/1455690979). There is also a YouTube playlist at the bottom of this page (and available [here](https://www.youtube.com/watch?v=u8k5oktNsyY&list=OLAK5uy_mYaYyP7L_Zq72SMK54b7lnV3nFXMDiHmc)).
 
 
 
@@ -598,6 +598,8 @@ It's been a long long time and its on his mind and he knows that that's enough<b
 It's been a long time he knows<br>
 It's been a long time he knows<br>
 
+# Listen on YouTube
+
 ```{=html}
 <div>
   <div style="position:relative;padding-top:56.25%;">
@@ -605,6 +607,8 @@ It's been a long time he knows<br>
       style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
   </div>
 </div>
+
+```
 
 <script src="https://unpkg.com/vanilla-back-to-top@7.2.0/dist/vanilla-back-to-top.min.js"></script>
 <script>addBackToTop({
