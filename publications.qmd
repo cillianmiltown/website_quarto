@@ -2,14 +2,30 @@
 title: "Publications"
 title-block-banner: "files/20210214_162331.jpg"
 listing:
-  contents: publications
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: true
-  filter-ui: true
+  - id: pubs
+    contents: publications/pubs
+    sort: "date desc"
+    type: default
+    categories: true
+    sort-ui: true
+    filter-ui: true
+  - id: presentations
+    contents: publications/presentations
+    sort: "date desc"
+    type: default
+    categories: true
+    sort-ui: true
+    filter-ui: true  
 page-layout: full
 css: styles_home.css
 ---
 
 # Publications
+
+:::{#pubs}
+:::
+
+# Presentations
+
+:::{#presentations}
+:::

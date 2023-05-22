@@ -1,0 +1,43 @@
+---
+title: "The Complexity of Moral Psychology:"
+subtitle: "When Right and Wrong is not Straightforward"
+author: "Cillian McHugh"
+description: "Department of Psychology Seminar Series (2023)"
+date: "April 2023"
+institute: "UL/Department of Psychology Seminar Series"
+bibliography: "../../../bib/My Library.bib"
+image: featured.png
+csl: "../../../bib/apa.csl"
+aliases:   
+  - ../complexity-of-morality
+editor: source
+---
+
+
+publications/presentations/complexity/complexity
+
+
+## Abstract
+
+> Moral judgments are present in many aspects of everyday life. In one moment, we might praise a co-worker’s helpfulness, while in the next, we condemn a politician who fails to protect the rights of vulnerable citizens. Research has increasingly shown that our moral judgments are highly complex and can be influenced by a range of contextual factors. This talk will explore some of the ways we try to understand this complexity. These include advances in theory development, as well as attention to robust methods (including open-science and registered reports). Specific phenomena in moral psychology as well as real world applications will also be discussed.
+
+
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://www.cillianmchugh.com//publications/presentations/complexity/complexity.html');" data-inline="true" >Slides</button>
+
+
+```{=html}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">McHugh, C., (2023).  <i>The Complexity of Moral Psychology: When Right and Wrong is not Straightforward</i>, Department of Psychology Seminar Series, University of Limerick, Limerick, Ireland (online).
+</div></body>
+</html>
+
+```

@@ -1,0 +1,779 @@
+---
+title: "The Complexity of Moral Psychology:"
+subtitle: "When Right and Wrong is not Straightforward"
+author: "Cillian McHugh"
+description: "Department of Psychology Seminar Series (2023)"
+institute: "UL/Department of Psychology Seminar Series"
+bibliography: "../../../bib/My Library.bib"
+image: featured.png
+csl: "../../../bib/apa.csl"
+format:
+  revealjs:
+    slide-number: false
+    logo: "../../../img/ul-psychology-logos.png"
+    footer: "Cillian McHugh - 17/4/23"
+    theme: mytheme.scss
+    chalkboard: 
+      buttons: true
+aliases:   
+  - ../complexity-of-morality
+editor: source
+---
+
+
+
+## Overview
+
+- Complexity of Morality
+- Making sense of this complexity
+    - Theory of Dyadic Morality
+    - Dual Process Approaches
+    - Categorization/Learning Approaches
+- Looking forward
+    - Continual theory building & testing
+    - Real world application
+
+
+# Complexity of Morality
+
+
+## Goodies vs Baddies
+
+![](../../../img/batman.png){width="600"}
+
+
+
+
+## Goodies vs Baddies
+
+
+
+<img src="../../../img/superman.jpg" width="600px" class="img-frame"/>
+
+
+
+## Goodies vs Baddies
+
+
+
+<img src="../../../img/maleficent.jpg" width="600px" class="img-frame"/>
+
+
+## Goodies vs Baddies
+
+
+
+<img src="../../../img/ursilla.jpg" width="830px" class="img-frame"/>
+
+
+## Goodies vs Baddies
+
+
+
+<img src="../../../img/scar.png" width="750px" class="img-frame"/>
+
+
+## Goodies vs Baddies ???
+
+
+
+
+## Goodies vs Baddies ???
+
+
+<img src="../../../img/arthur.jpeg" width="750px" class="img-frame"/>
+
+## Goodies vs Baddies / Right vs Wrong
+
+
+
+## Goodies vs Baddies / Right vs Wrong
+
+
+
+<img src="../../../img/buffy.png" width="730px" class="img-frame"/>
+
+
+## Known Influences on Moral Judgements {.smaller}
+
+#### ... some of them anyway...
+
+- Emotional influences [e.g., @cameron_morality_2013]
+- Intentionality, Evitability, benefit recipient [@christensen_moral_2014; @christensen_moral_2012]
+- Action-outcome distinction [@crockett_models_2013; @cushman_action_2013]
+- Trustworthiness and social evaluation [@everett_inference_2016; @everett_costs_2018]
+- Personal-impersonal distinction [@greene_fmri_2001]
+- Doctrine of double effect [@mikhail_rawls_2000]
+- Level of physical contact [@valdesolo_manipulations_2006]
+- Order effects [@wiegmann_order_2012]
+
+
+
+# Understanding this complexity
+
+
+## Existing Approaches {.smaller}
+
+> - **Moral Emotions**: @prinz_passionate_2005
+>   - *'Emotions, I will suggest are perceptions of our bodily states. To recognise the moral value of an event is, thus, to perceive the perturbation that it causes'* [@prinz_passionate_2005, p. 99]
+> - **Social Intuitionist Model** [@haidt_emotional_2001]
+>   - e.g., intuitions as phonemes [@haidt_emotional_2001, p. 827]
+>   - ‘brain has a kind of gauge’, a ‘like-ometer’ [@haidt_social_2008, p. 187]
+
+> - **Theory of Dyadic Morality**: [@gray_mind_2012; @schein_theory_2018]
+>   - Content focused (rather than underlying processes)
+
+> - **Dual Process Theories**: [e.g., @greene_secret_2008]
+>   - 'Emotion' vs 'Cognition' (not well defined)
+
+# Theory of Dyadic Morality (TDM)
+
+## Theory of Dyadic Morality (TDM) {.smaller}
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<br>
+
+- "an intentional agent causing damage to a vulnerable patient" [@schein_theory_2018, p. 33]
+
+<br>
+
+
+- "an intentional moral agent and a suffering moral patient [@gray_mind_2012, p. 101].
+
+<br>
+
+- "interpersonal harm is the essence of morality" [@gray_mind_2012, p. 109]
+
+:::
+
+::: {.column width="40%"}
+
+<br>
+<br>
+<br>
+![](../../../img/voldemort.jpg)
+
+:::
+
+::::
+
+## Issues with TDM
+
+
+### Harmless Wrongs: Moral Dumbfounding
+
+::: {.columns}
+
+::: {.column width="60%"}
+
+- Moral dumbfounding occurs when people defend a moral judgement even though they cannot provide supporting reasons<br>
+[@mchugh_searching_2017; @haidt_moral_2000]
+
+
+:::
+
+::: {.column width="40%"}
+
+![](../../../img/searching.png)
+:::
+
+::::
+
+## Moral Dumbfounding {.smaller}
+
+<br>
+
+> Jennifer works in a medical school pathology lab as a research assistant. The lab prepares human cadavers that are used to teach medical students about anatomy. The cadavers come from people who had donated their body to science for research. One night Jennifer is leaving the lab when she sees a body that is going to be discarded the next day. Jennifer was a vegetarian, for moral reasons. She thought it was wrong to kill animals for food. But then, when she saw a body about to be cremated, she thought it was irrational to waste perfectly edible meat. So she cut off a piece of flesh, and took it home and cooked it. The person had died recently of a heart attack, and she cooked the meat thoroughly, so there was no risk of disease.
+
+
+## Challenges to Moral Dumbfounding {.smaller}
+
+- Failure to provide reasons does not mean there are no reasons [@sneddon_social_2007]
+- People implicitly perceive harm [@gray_myth_2014]
+- People have do have reasons but are “beaten into submission” [@jacobson_moral_2012] 
+- Evidence for principles or reasons guiding judgements
+  - Harm based Norm based [@royzman_curious_2015]
+    - Excluding participants who endorsed either principle
+      - Moral Dumbfounding effectively disappeared…
+
+## Responding to Challenges {.smaller}
+
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+- People do not consistently articulate or apply harm or norm-based reasons [@mchugh_reasons_2020]
+- Demonstrably more accurate exclusion criteria
+  - fewer false exclusions<br>(<8% from >50%)
+- Interesting order effect
+
+> *"it is wrong for two people to engage in an activity whereby harm may occur"*
+
+(Boxing/Rugby)
+
+:::
+
+::: {.column width="50%"}
+
+![](../../../img/reasons.png)
+:::
+
+::::
+
+
+## More Evidence for Dumbfounding {.smaller}
+
+
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](../../../img/weird_results.png)
+:::
+
+::: {.column width="40%"}
+![](../../../img/just_wrong.png)
+
+@mchugh_just_2023
+:::
+
+::::
+
+
+
+
+## Understanding Dumbfounding?
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- Trying to understand moral judgments and moral dumbfounding
+  - e.g., testing explanations of dumbfounding<br>[@mchugh_cognitive_2023]
+:::
+
+::: {.column width="40%"}
+![](../../../img/cog_load.png)
+
+:::
+
+::::
+
+## Issues with TDM
+
+### Wrongless Harms
+
+::: {.columns}
+
+::: {.column width="60%"}
+
+- Harmful acts that are not viewed as wrong
+- e.g., Boxing / Rugby
+- @royzman_puzzle_2022
+  - *The puzzle of wrongless harms*
+    - Dating, Fired, Mask, Chess
+
+:::
+
+::: {.column width="40%"}
+
+![](../../../img/reasons.png)
+:::
+
+::::
+
+
+## Issues with TDM
+
+- Harmless Wrongs
+- Wrongless Harms
+
+# Dual-Process approaches
+
+
+
+
+## Trolley Dilemma
+
+
+<img src="../../../img/trolley_switch.png" width="760px" class="img-frame"/>
+
+
+## Trolley Dilemma
+
+![](../../../img/trial_by_trolley.png){width="600"}
+
+
+
+## Classic Trolley Problem
+
+<br>
+
+<img src="../../../img/trolley_problem.png" width="760px" class="img-frame"/>
+
+
+
+## Dual-Process approaches
+
+<br>
+
+![](../../../img/deont_util.png){width="600"}
+
+
+
+
+## Dual-Process approaches
+
+<img src="../../../img/MJAC_dual_process/soft.png" width="830px" class="img-frame"/>
+
+
+## Dual-Process approaches
+
+
+
+<img src="../../../img/MJAC_dual_process/general1.png" width="830px" class="img-frame"/>
+
+## Dual-Process approaches
+
+
+
+<img src="../../../img/MJAC_dual_process/general2.png" width="830px" class="img-frame"/>
+
+## Dual-Process approaches
+
+
+
+<img src="../../../img/MJAC_dual_process/general3.png" width="830px" class="img-frame"/>
+
+## @greene_why_2016
+
+
+
+<img src="../../../img/MJAC_dual_process/Greene1.png" width="830px" class="img-frame"/>
+
+
+## @greene_why_2016
+
+
+
+<img src="../../../img/MJAC_dual_process/Greene2.png" width="830px" class="img-frame"/>
+
+
+## @greene_why_2016
+
+
+
+<img src="../../../img/MJAC_dual_process/Greene3.png" width="830px" class="img-frame"/>
+
+## @crockett_models_2013, @cushman_action_2013
+
+
+
+<img src="../../../img/MJAC_dual_process/models1.png" width="830px" class="img-frame"/>
+
+## @crockett_models_2013, @cushman_action_2013
+
+
+
+<img src="../../../img/MJAC_dual_process/models2.png" width="830px" class="img-frame"/>
+
+## @crockett_models_2013, @cushman_action_2013
+
+
+
+<img src="../../../img/MJAC_dual_process/models3.png" width="830px" class="img-frame"/>
+
+
+## Summary
+
+
+
+<img src="../../../img/MJAC_dual_process/together1.png" width="830px" class="img-frame"/>
+
+## Summary
+
+
+
+<img src="../../../img/MJAC_dual_process/together2.png" width="830px" class="img-frame"/>
+
+## Summary
+
+
+
+<img src="../../../img/MJAC_dual_process/together3.png" width="830px" class="img-frame"/>
+
+## Summary
+
+
+
+<img src="../../../img/MJAC_dual_process/together4.png" width="830px" class="img-frame"/>
+
+
+## Other Contexts?
+
+<img src="../../../img/MJAC_dual_process/together4.png" width="830px" class="img-frame"/>
+
+## Other Contexts?
+
+<img src="../../../img/MJAC_dual_process/context7.png" width="830px" class="img-frame"/>
+
+## Additional Inconsistencies
+
+- Deontological responses are supported by deliberation<br>
+[@gamez-djokic_affective_2016; @korner_concrete_2014; @mcphetres_reflecting_2018; @pizarro_intelligence_2003]
+- Utilitarian responses grounded in affect<br>
+[@gubbins_dual_2014; @reynolds_not_2018; @deneys_dual_2017]
+
+## Moral Judgment as Categorization (MJAC)
+
+
+![](../../../img/mjac.png)
+
+
+## Moral Judgment as Categorization (MJAC) {.smaller}
+
+
+### Premises
+
+- Moral judgment is a process of **categorizing** as *MORALLY RIGHT* / *MORALLY WRONG*
+
+- **Domain general**
+
+- **Context sensitive** & **Dynamical**, **Goal-Directed Activity**
+
+### Core Predictions
+
+- *Stability* emerges through continued and consistent type-token interpretation
+
+- *Robustness* emerges through consistency across multiple contexts
+
+
+
+## Ad-Hoc Goal-Derived Catagories
+
+
+
+<img src="../../../img/suitcase.jpg" height=380px />
+
+- *THINGS TO PACK INTO A SUITCASE* [@barsalou_deriving_1991; @barsalou_situated_2003]
+- Type-token interpretation
+
+
+## The Organisation of Categories: Fruit
+
+
+
+
+## The Organisation of Categories: Fruit
+
+
+
+![](../../../img/fruit1.png)
+
+
+
+## The Organisation of Categories: Fruit
+
+![](../../../img/fruit2.png)
+
+
+## The Organisation of Categories: Fruit
+
+![](../../../img/fruit3.png)
+
+## The Organisation of Categories: Fruit
+
+![](../../../img/fruit4.png)
+
+
+# Evidence
+
+
+
+
+
+
+## Original Table of Evidence
+
+
+
+<img src="../../../img/mjac_old_table.png" width="830px" class="img-frame"/>
+
+
+## Similarity of Explanation {.smaller}
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+*Morality*
+:::
+
+::: {.column width="50%"}
+*Categorization*
+:::
+
+::::
+
+**Order Effects**:
+
+:::: {.columns}
+
+::: {.column width="40%"}
+@petrinovich_influence_1996
+:::
+
+::: {.column width="60%"}
+@barsalou_contextindependent_1982, @higgins_nature_1985
+:::
+
+::::
+
+**Language Effects**:
+
+:::: {.columns}
+
+::: {.column width="40%"}
+@cipolletti_moral_2016
+:::
+
+::: {.column width="60%"}
+@colbeck_blinded_2012, @harris_taboo_2003
+:::
+
+::::
+
+**Emotion Effects**:
+
+:::: {.columns}
+
+::: {.column width="40%"}
+@cameron_morality_2013
+:::
+
+::: {.column width="60%"}
+@barsalou_situating_2005
+:::
+
+::::
+
+**Typicality**:
+
+:::: {.columns}
+
+::: {.column width="40%"}
+@gray_impure_2015
+:::
+
+::: {.column width="60%"}
+@mccloskey_natural_1978, @oden_fuzziness_1977
+:::
+
+::::
+
+
+# Contrasting with Existing Approaches
+
+## Recall
+
+<img src="../../../img/MJAC_dual_process/together4.png" width="830px" class="img-frame"/>
+
+
+## Recall
+
+<img src="../../../img/MJAC_dual_process/context7.png" width="830px" class="img-frame"/>
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac1.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac2.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac3.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac4.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac5.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac6.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac7.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac8.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac9.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac10.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac11.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac12.png" width="830px" class="img-frame"/>
+
+
+## MJAC
+
+
+
+<img src="../../../img/MJAC_dual_process/mjac13.png" width="830px" class="img-frame"/>
+
+
+
+# Looking Forward
+
+
+
+## Looking Forward 
+
+- Continue Theory Building
+- Dual process vs moral learning [@railton_moral_2017]
+- Registered Report
+  - (McHugh, Francis, Everett & Timmons, *accepted in principle at Journal of Experimental Social Psychology*)
+
+## Looking Forward
+
+
+@railton_moral_2017
+
+
+![](../../../img/railton_table.png)
+
+
+
+
+## Bus {.smaller}
+
+> You are visiting a city where there have recently been terrorist suicide bombings. The terrorists target crowded buses or subway cars. To prevent anyone stopping them, they run up at the last moment when the bus or subway doors are closing, triggering their bomb as they enter. You are on a crowded bus at rush hour, just getting off at your stop. Next to you a large man is also getting off, and the doors are about to close behind the two of you. You spot a man with an overcoat rushing at the doors, aiming to enter just behind the exiting man. Under his coat you see bombs strapped to his chest, and his finger is on a trigger. If you were to push the large man hard in the direction of the approaching man, they both would fall onto the sidewalk, where the bomb would explode, killing both. You would have fallen back onto the bus, and the closing doors would protect you and the other occupants of the bus from the bomb. Alternatively, you could continue exiting the bus, and you and the large man would be on sidewalk, protected by the closing doors, as the bomb goes off inside the bus, killing the terrorist and five passengers. Either way, then, you will not be hurt. Should you push the large man onto the bomber?
+
+
+## Wave {.smaller}
+
+> A runaway trolley is speeding down the track, its driver slumped over the controls, apparently unconscious. Ahead on the tracks are five workers, who do not see the trolley coming, and who soon will be struck and killed. A wall prevents them from moving to their left to avoid the trolley, but there is space to their right. You are standing at some distance from the track, with no ability to turn the train. The workers are facing in your direction, and if you were to wave to their right with your arms, the five workers on the track would step off and escape injury. However, a single worker who is closer to you and standing to the left of the track, and who also does not see the trolley, will see you wave, and he will step onto the track, and immediately be hit and killed. Should you wave to the workers?
+
+## Beckon {.smaller}
+
+> A runaway trolley is speeding down the track, its driver slumped over the controls, apparently unconscious. Ahead on the tracks are five workers, who do not see the trolley coming, and who soon will be struck and killed. You are standing at some distance from the track, with no ability to turn the train or warn the men. A large man, whose weight is sufficient to stop the trolley, is standing on the other side of the track, facing in your direction. He is unable to see the oncoming trolley owing to a traffic signal box that blocks his view up the track. If you would beckon to him, he would step forward onto the track, and be immediately struck and killed. This would halt the trolley and save the five workers. Should you beckon to the large man?
+
+## Moral Learning
+
+![](../../../img/railton_table2.png)
+
+## Issues with @railton_moral_2017
+
+- Confounding variables
+  - *means* vs *side-effect*
+- *Scenario* effects?
+- Small sample
+
+
+## Beckon vs Wave
+
+![](../../../img/railton_rep1.png)
+
+
+## Means vs Side-Effect
+
+![](../../../img/railton_rep_2.png)
+
+## Means vs Side-Effect (Wave)
+
+
+![](../../../img/shiny_results.png)
+
+
+
+## Proposed method
+
+
+![](../../../img/railton_table3.png)
+
+## Looking Forward: Applications
+
+## Looking Forward: Applications
+
+
+![](../../../img/pops.png)
+
+@mchugh_moral_2023
+
+
+## Looking Forward: Applications
+
+- Real world moral decision making?
+  - Moral Psychology of #MeToo
+
+
+
+
+
+## Thank You for Listening
+
+
+
+<img src="../../../img/Are-We-The-Baddies.jpg" width="750px" class="img-frame"/>
+
+
+
+
+## References {.smallest}

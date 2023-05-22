@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.287">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tomislav PavlovićJay J. Van Bavel">
+<meta name="author" content="Flavio Azevedo">
+<meta name="author" content="… … …">
+<meta name="author" content="Cillian McHugh">
+<meta name="author" content="… … …">
+<meta name="author" content="Siobhán M. Griffin">
+<meta name="author" content="… … …">
+<meta name="author" content="Jay J. Van Bavel">
+<meta name="dcterms.date" content="2022-07-05">
+<meta name="description" content="Cillian McHugh’s personal website.">
+
+<title>Cillian McHugh - Predicting attitudinal and behavioral responses to COVID-19 pandemic using machine learning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../..//files/icon1.png" rel="icon" type="image/png">
+<script src="../../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HN11FG1NGL"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HN11FG1NGL', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="../../../customstyle.css">
+<meta property="og:title" content="Cillian McHugh - Predicting attitudinal and behavioral responses to COVID-19 pandemic using machine learning">
+<meta property="og:description" content="PNAS Nexus (2022)">
+<meta property="og:image" content="https://www.cillianmchugh.com/publications/publications/predicting-attitudinal/featured.png">
+<meta property="og:site-name" content="Cillian McHugh">
+<meta property="og:image:height" content="371">
+<meta property="og:image:width" content="520">
+<meta name="twitter:title" content="Cillian McHugh - Predicting attitudinal and behavioral responses to COVID-19 pandemic using machine learning">
+<meta name="twitter:description" content="PNAS Nexus (2022)">
+<meta name="twitter:image" content="https://www.cillianmchugh.com/publications/publications/predicting-attitudinal/featured.png">
+<meta name="twitter:creator" content="@CillianMacAodh">
+<meta name="twitter:image-height" content="371">
+<meta name="twitter:image-width" content="520">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Cillian McHugh</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts.html" rel="" target="">
+ <span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../publications.html" rel="" target="">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../projects.html" rel="" target="">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../music.html" rel="" target="">
+ <span class="menu-text">Music</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../other.html" rel="" target="">
+ <span class="menu-text">Other</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../rblog.html" rel="" target="">
+ <span class="menu-text">R Blog</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Predicting attitudinal and behavioral responses to COVID-19 pandemic using machine learning</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">COVID-19</div>
+    <div class="quarto-category">moral identity</div>
+    <div class="quarto-category">Political Ideology</div>
+    <div class="quarto-category">machine learning</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    PNAS Nexus (2022)
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tomislav PavlovićJay J. Van Bavel </p>
+             <p>Flavio Azevedo </p>
+             <p>… … … </p>
+             <p>Cillian McHugh </p>
+             <p>… … … </p>
+             <p>Siobhán M. Griffin </p>
+             <p>… … … </p>
+             <p>Jay J. Van Bavel </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 5, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<blockquote class="blockquote">
+<p>At the beginning of 2020, COVID-19 became a global problem. Despite all the efforts to emphasize the relevance of preventive measures, not everyone adhered to them. Thus, learning more about the characteristics determining attitudinal and behavioral responses to the pandemic is crucial to improving future interventions. In this study, we applied machine learning on the multinational data collected by the International Collaboration on the Social and Moral Psychology of COVID-19 (N = 51,404) to test the predictive efficacy of constructs from social, moral, cognitive, and personality psychology, as well as socio-demographic factors, in the attitudinal and behavioral responses to the pandemic. The results point to several valuable insights. Internalized moral identity provided the most consistent predictive contribution—individuals perceiving moral traits as central to their self-concept reported higher adherence to preventive measures. Similar results were found for morality as cooperation, symbolized moral identity, self-control, open-mindedness, and collective narcissism, while the inverse relationship was evident for the endorsement of conspiracy theories. However, we also found a non-neglible variability in the explained variance and predictive contributions with respect to macro-level factors such as the pandemic stage or cultural region. Overall, the results underscore the importance of morality-related and contextual factors in understanding adherence to public health recommendations during the pandemic.</p>
+</blockquote>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/predicting-attitudinal/predicting-attitudinal.pdf');" data-inline="true">
+PDF
+</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://academic.oup.com/pnasnexus/article/1/3/pgac093/6631580?login=false')">
+Source Document
+</button>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Bibliography</title>
+
+
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">Pavlović, T., Azevedo, F., De, K., Riaño-Moreno, J. C., Maglić, M., Gkinopoulos, T., Donnelly-Kehoe, P. A., Payán-Gómez, C., Huang, G., Kantorowicz, J., Birtel, M. D., Schönegger, P., Capraro, V., Santamaría-García, H., Yucel, M., Ibanez, A., Rathje, S., Wetter, E., Stanojević, D., … Van&nbsp;Bavel, J. J. (2022). Predicting attitudinal and behavioral responses to COVID-19 pandemic using machine learning. <i>PNAS Nexus</i>, <i>1</i>(3), pgac093. <a href="https://doi.org/10.1093/pnasnexus/pgac093">https://doi.org/10.1093/pnasnexus/pgac093</a></div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1093%2Fpnasnexus%2Fpgac093&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Predicting%20attitudinal%20and%20behavioral%20responses%20to%20COVID-19%20pandemic%20using%20machine%20learning&amp;rft.jtitle=PNAS%20Nexus&amp;rft.stitle=PNAS%20Nexus&amp;rft.volume=1&amp;rft.issue=3&amp;rft.aufirst=Tomislav&amp;rft.aulast=Pavlovi%C4%87&amp;rft.au=Tomislav%20Pavlovi%C4%87&amp;rft.au=Flavio%20Azevedo&amp;rft.au=Koustav%20De&amp;rft.au=Juli%C3%A1n%20C%20Ria%C3%B1o-Moreno&amp;rft.au=Marina%20Magli%C4%87&amp;rft.au=Theofilos%20Gkinopoulos&amp;rft.au=Patricio%20Andreas%20Donnelly-Kehoe&amp;rft.au=C%C3%A9sar%20Pay%C3%A1n-G%C3%B3mez&amp;rft.au=Guanxiong%20Huang&amp;rft.au=Jaroslaw%20Kantorowicz&amp;rft.au=Mich%C3%A8le%20D%20Birtel&amp;rft.au=Philipp%20Sch%C3%B6negger&amp;rft.au=Valerio%20Capraro&amp;rft.au=Hernando%20Santamar%C3%ADa-Garc%C3%ADa&amp;rft.au=Meltem%20Yucel&amp;rft.au=Agustin%20Ibanez&amp;rft.au=Steve%20Rathje&amp;rft.au=Erik%20Wetter&amp;rft.au=Dragan%20Stanojevi%C4%87&amp;rft.au=Jan-Willem%20van%C2%A0Prooijen&amp;rft.au=Eugenia%20Hesse&amp;rft.au=Christian%20T%20Elbaek&amp;rft.au=Renata%20Franc&amp;rft.au=Zoran%20Pavlovi%C4%87&amp;rft.au=Panagiotis%20Mitkidis&amp;rft.au=Aleksandra%20Cichocka&amp;rft.au=Michele%20Gelfand&amp;rft.au=Mark%20Alfano&amp;rft.au=Robert%20M%20Ross&amp;rft.au=Hallgeir%20Sj%C3%A5stad&amp;rft.au=John%20B%20Nezlek&amp;rft.au=Aleksandra%20Cislak&amp;rft.au=Patricia%20Lockwood&amp;rft.au=Koen%20Abts&amp;rft.au=Elena%20Agadullina&amp;rft.au=David%20M%20Amodio&amp;rft.au=Matthew%20A%20J%20Apps&amp;rft.au=John%20Jamir%20Benzon%20Aruta&amp;rft.au=Sahba%20Besharati&amp;rft.au=Alexander%20Bor&amp;rft.au=Becky%20Choma&amp;rft.au=William%20Cunningham&amp;rft.au=Waqas%20Ejaz&amp;rft.au=Harry%20Farmer&amp;rft.au=Andrej%20Findor&amp;rft.au=Biljana%20Gjoneska&amp;rft.au=Estrella%20Gualda&amp;rft.au=Toan%20L%20D%20Huynh&amp;rft.au=Mostak%20Ahamed%20Imran&amp;rft.au=Jacob%20Israelashvili&amp;rft.au=Elena%20Kantorowicz-Reznichenko&amp;rft.au=Andr%C3%A9%20Krouwel&amp;rft.au=Yordan%20Kutiyski&amp;rft.au=Michael%20Laakasuo&amp;rft.au=Claus%20Lamm&amp;rft.au=Jonathan%20Levy&amp;rft.au=Caroline%20Leygue&amp;rft.au=Ming-Jen%20Lin&amp;rft.au=Mohammad%20Sabbir%20Mansoor&amp;rft.au=Antoine%20Marie&amp;rft.au=Lewend%20Mayiwar&amp;rft.au=Honorata%20Mazepus&amp;rft.au=Cillian%20McHugh&amp;rft.au=Andreas%20Olsson&amp;rft.au=Tobias%20Otterbring&amp;rft.au=Dominic%20Packer&amp;rft.au=Jussi%20Palom%C3%A4ki&amp;rft.au=Anat%20Perry&amp;rft.au=Michael%20Bang%20Petersen&amp;rft.au=Arathy%20Puthillam&amp;rft.au=Tobias%20Rothmund&amp;rft.au=Petra%20C%20Schmid&amp;rft.au=David%20Stadelmann&amp;rft.au=Augustin%20Stoica&amp;rft.au=Drozdstoy%20Stoyanov&amp;rft.au=Kristina%20Stoyanova&amp;rft.au=Shruti%20Tewari&amp;rft.au=Bojan%20Todosijevi%C4%87&amp;rft.au=Benno%20Torgler&amp;rft.au=Manos%20Tsakiris&amp;rft.au=Hans%20H%20Tung&amp;rft.au=Radu%20Gabriel%20Umbre%C8%99&amp;rft.au=Edmunds%20Vanags&amp;rft.au=Madalina%20Vlasceanu&amp;rft.au=Andrew%20J%20Vonasch&amp;rft.au=Yucheng%20Zhang&amp;rft.au=Mohcine%20Abad&amp;rft.au=Eli%20Adler&amp;rft.au=Hamza%20Alaoui%20Mdarhri&amp;rft.au=Benedict%20Antazo&amp;rft.au=F%20Ceren%20Ay&amp;rft.au=Mouhamadou%20El%20Hady%20Ba&amp;rft.au=Sergio%20Barbosa&amp;rft.au=Brock%20Bastian&amp;rft.au=Anton%20Berg&amp;rft.au=Micha%C5%82%20Bia%C5%82ek&amp;rft.au=Ennio%20Bilancini&amp;rft.au=Natalia%20Bogatyreva&amp;rft.au=Leonardo%20Boncinelli&amp;rft.au=Jonathan%20E%20Booth&amp;rft.au=Sylvie%20Borau&amp;rft.au=Ondrej%20Buchel&amp;rft.au=Chrissie%20Ferreira%20de%C2%A0Carvalho&amp;rft.au=Tatiana%20Celadin&amp;rft.au=Chiara%20Cerami&amp;rft.au=Hom%20Nath%20Chalise&amp;rft.au=Xiaojun%20Cheng&amp;rft.au=Luca%20Cian&amp;rft.au=Kate%20Cockcroft&amp;rft.au=Jane%20Conway&amp;rft.au=Mateo%20A%20C%C3%B3rdoba-Delgado&amp;rft.au=Chiara%20Crespi&amp;rft.au=Marie%20Crouzevialle&amp;rft.au=Jo%20Cutler&amp;rft.au=Marzena%20Cyprya%C5%84ska&amp;rft.au=Justyna%20Dabrowska&amp;rft.au=Victoria%20H%20Davis&amp;rft.au=John%20Paul%20Minda&amp;rft.au=Pamala%20N%20Dayley&amp;rft.au=Sylvain%20Delouv%C3%A9e&amp;rft.au=Ognjan%20Denkovski&amp;rft.au=Guillaume%20Dezecache&amp;rft.au=Nathan%20A%20Dhaliwal&amp;rft.au=Alelie%20Diato&amp;rft.au=Roberto%20Di%20Paolo&amp;rft.au=Uwe%20Dulleck&amp;rft.au=J%C4%81nis%20Ekmanis&amp;rft.au=Tom%20W%20Etienne&amp;rft.au=Hapsa%20Hossain%20Farhana&amp;rft.au=Fahima%20Farkhari&amp;rft.au=Kristijan%20Fidanovski&amp;rft.au=Terry%20Flew&amp;rft.au=Shona%20Fraser&amp;rft.au=Raymond%20Boadi%20Frempong&amp;rft.au=Jonathan%20Fugelsang&amp;rft.au=Jessica%20Gale&amp;rft.au=E%20Bego%C3%B1a%20Garc%C3%ADa-Navarro&amp;rft.au=Prasad%20Garladinne&amp;rft.au=Kurt%20Gray&amp;rft.au=Siobh%C3%A1n%20M%20Griffin&amp;rft.au=Bjarki%20Gronfeldt&amp;rft.au=June%20Gruber&amp;rft.au=Eran%20Halperin&amp;rft.au=Volo%20Herzon&amp;rft.au=Matej%20Hru%C5%A1ka&amp;rft.au=Matthias%20F%20C%20Hudecek&amp;rft.au=Ozan%20Isler&amp;rft.au=Simon%20Jangard&amp;rft.au=Frederik%20J%C3%B8rgensen&amp;rft.au=Oleksandra%20Keudel&amp;rft.au=Lina%20Koppel&amp;rft.au=Mika%20Koverola&amp;rft.au=Anton%20Kunnari&amp;rft.au=Josh%20Leota&amp;rft.au=Eva%20Lermer&amp;rft.au=Chunyun%20Li&amp;rft.au=Chiara%20Longoni&amp;rft.au=Darragh%20McCashin&amp;rft.au=Igor%20Miklou%C5%A1i%C4%87&amp;rft.au=Juliana%20Molina-Paredes&amp;rft.au=C%C3%A9sar%20Monroy-Fonseca&amp;rft.au=Elena%20Morales-Marente&amp;rft.au=David%20Moreau&amp;rft.au=Rafa%C5%82%20Muda&amp;rft.au=Annalisa%20Myer&amp;rft.au=Kyle%20Nash&amp;rft.au=Jonas%20P%20Nitschke&amp;rft.au=Matthew%20S%20Nurse&amp;rft.au=Victoria%20Oldemburgo%20de%C2%A0Mello&amp;rft.au=Maria%20Soledad%20Palacios-Galvez&amp;rft.au=Yafeng%20Pan&amp;rft.au=Zs%C3%B3fia%20Papp&amp;rft.au=Philip%20P%C3%A4rnamets&amp;rft.au=Mariola%20Paruzel-Czachura&amp;rft.au=Silva%20Perander&amp;rft.au=Michael%20Pitman&amp;rft.au=Ali%20Raza&amp;rft.au=Gabriel%20Gaudencio%20R%C3%AAgo&amp;rft.au=Claire%20Robertson&amp;rft.au=Iv%C3%A1n%20Rodr%C3%ADguez-Pascual&amp;rft.au=Teemu%20Saikkonen&amp;rft.au=Octavio%20Salvador-Ginez&amp;rft.au=Waldir%20M%20Sampaio&amp;rft.au=Gaia%20Chiara%20Santi&amp;rft.au=David%20Schultner&amp;rft.au=Enid%20Schutte&amp;rft.au=Andy%20Scott&amp;rft.au=Ahmed%20Skali&amp;rft.au=Anna%20Stefaniak&amp;rft.au=Anni%20Sternisko&amp;rft.au=Brent%20Strickland&amp;rft.au=Jeffrey%20P%20Thomas&amp;rft.au=Gustav%20Tingh%C3%B6g&amp;rft.au=Iris%20J%20Traast&amp;rft.au=Raffaele%20Tucciarelli&amp;rft.au=Michael%20Tyrala&amp;rft.au=Nick%20D%20Ungson&amp;rft.au=Mete%20Sefa%20Uysal&amp;rft.au=Dirk%20Van%C2%A0Rooy&amp;rft.au=Daniel%20V%C3%A4stfj%C3%A4ll&amp;rft.au=Joana%20B%20Vieira&amp;rft.au=Christian%20von%C2%A0Sikorski&amp;rft.au=Alexander%20C%20Walker&amp;rft.au=Jennifer%20Watermeyer&amp;rft.au=Robin%20Willardt&amp;rft.au=Michael%20J%20A%20Wohl&amp;rft.au=Adrian%20Dominik%20W%C3%B3jcik&amp;rft.au=Kaidi%20Wu&amp;rft.au=Yuki%20Yamada&amp;rft.au=Onurcan%20Yilmaz&amp;rft.au=Kumar%20Yogeeswaran&amp;rft.au=Carolin-Theresa%20Ziemer&amp;rft.au=Rolf%20A%20Zwaan&amp;rft.au=Paulo%20Sergio%20Boggio&amp;rft.au=Ashley%20Whillans&amp;rft.au=Paul%20A%20M%20Van%C2%A0Lange&amp;rft.au=Rajib%20Prasad&amp;rft.au=Michal%20Onderco&amp;rft.au=Cathal%20O'Madagain&amp;rft.au=Tarik%20Nesh-Nash&amp;rft.au=Oscar%20Moreda%20Laguna&amp;rft.au=Emily%20Kubin&amp;rft.au=Mert%20G%C3%BCmren&amp;rft.au=Ali%20Fenwick&amp;rft.au=Arhan%20S%20Ertan&amp;rft.au=Michael%20J%20Bernstein&amp;rft.au=Hanane%20Amara&amp;rft.au=Jay%20Joseph%20Van%C2%A0Bavel&amp;rft.date=2022-07-01&amp;rft.pages=pgac093&amp;rft.issn=2752-6542"></span>
+</div>
+
+
+
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>

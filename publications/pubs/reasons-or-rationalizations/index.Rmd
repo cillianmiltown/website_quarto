@@ -1,0 +1,2773 @@
+---
+title             : "Reasons or Rationalisations:"
+subtitle        : "The Role of Principles in the Moral Dumbfounding Paradigm"
+description: " Journal of Behavioral Decision Making (2020)"
+author: 
+  - name          : "Cillian McHugh"
+    affiliation   : University of Limerick
+    corresponding : yes    # Define only one corresponding author
+    address       : "University of Limerick, Limerick, Ireland"
+    email         : "cillian.mchugh@ul.ie"
+  - name          : "Marek McGann"
+    affiliation   : Mary Immaculate College
+  - name          : "Eric R. Igou"
+    affiliation   : University of Limerick
+  - name          : "Elaine L. Kinsella"
+    affiliation   : University of Limerick
+date: '2020-01-05'
+aliases:   
+  - ../reasons-or-rationalizations/
+bibliography      : ["../../../bib/My Library.bib"]
+categories: 
+  - morality
+  - moral dumbfounding
+  - methods
+---
+
+
+>Moral dumbfounding occurs when people maintain a moral judgment even though they cannot provide reasons for it. Recently, questions have been raised about whether dumbfounding is a real phenomenon. Two reasons have been proposed as guiding the judgments of dumbfounded participants: harm-based reasons (believing an action may cause harm) or norm-based reasons (breaking a moral norm is inherently wrong). Participants who endorsed either reason were excluded from analysis, and instances of moral dumbfounding seemingly reduced to non-significance. We argue that endorsing a reason is not sufficient evidence that a judgment is grounded in that reason. Stronger evidence should additionally account for (a) articulating a given reason, and (b) consistently applying the reason in different situations. Building on this, we develop revised exclusion criteria across 2 studies. Study 1 included an open-ended response option immediately after the presentation of a moral scenario. Responses were coded for mention of harm-based or norm-based reasons. Participants were excluded from analysis if they both articulated and endorsed a given reason. Using these revised criteria for exclusion, we found evidence for dumbfounding, as measured by the selecting of an admission of not having reasons. Study 2 included a further three questions relating to harm-based reasons specifically, assessing the consistency with which people apply harm-based reasons across differing contexts. As predicted, few participants consistently applied, articulated, and endorsed harm-based reasons, and evidence for dumbfounding was found.
+
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/reasons-or-rationalizations/reasons-or-rationalizations.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://onlinelibrary.wiley.com/doi/abs/10.1002/bdm.2167')" >Source Document</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/m4ce7/')" >OSF</button>
+
+
+```{=html}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">McHugh, C., McGann, M., Igou, E. R., &amp; Kinsella, E. L. (2020). Reasons or rationalizations: The role of principles in the moral dumbfounding paradigm. <i>Journal of Behavioral Decision Making</i>, <i>33</i>(3), 376–392. <a href="https://doi.org/10.1002/bdm.2167">https://doi.org/10.1002/bdm.2167</a></div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1002%2Fbdm.2167&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Reasons%20or%20rationalizations%3A%20The%20role%20of%20principles%20in%20the%20moral%20dumbfounding%20paradigm&amp;rft.jtitle=Journal%20of%20Behavioral%20Decision%20Making&amp;rft.volume=33&amp;rft.issue=3&amp;rft.aufirst=Cillian&amp;rft.aulast=McHugh&amp;rft.au=Cillian%20McHugh&amp;rft.au=Marek%20McGann&amp;rft.au=Eric%20R.%20Igou&amp;rft.au=Elaine%20L.%20Kinsella&amp;rft.date=2020&amp;rft.pages=376-392&amp;rft.spage=376&amp;rft.epage=392&amp;rft.issn=1099-0771&amp;rft.language=en"></span>
+</div></body>
+</html>
+```
+
+# Reasons or Rationalisations: The Role of Principles in the Moral Dumbfounding Paradigm
+
+```{r reasonsload libraries, include = FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+rm(list=ls())
+
+
+# install.packages("jsonlite")
+# install.packages("mime")
+# install.packages("citr")
+# install.packages("ggplot2")
+# install.packages("scales")
+# install.packages("extrafont")
+# install.packages("devtools")
+# devtools::install_github("crsh/papaja",force=TRUE)
+# install.packages("codetools")
+# install.packages("afex")
+# devtools::install_github("cillianmiltown/R_desnum")
+# devtools::install_github("benmarwick/wordcountaddin",force=TRUE)
+# install.packages("lsr")
+library(citr)
+#install.packages("sjstats")
+library(plyr)
+library(foreign)
+library(car)
+library(desnum)
+library(ggplot2)
+library(extrafont)
+#devtools::install_github("crsh/papaja")
+library(papaja)
+#library("dplyr")
+library("afex")
+library("tibble")
+library(scales)
+#install.packages("metap")
+library(metap)
+library(pwr)
+library(lsr)
+#install.packages("sjstats")
+#library(sjstats)
+library(DescTools)
+#inatall.packages("ggstatsplot")
+#library(ggstatsplot)
+library(VGAM)
+library(nnet)
+library(mlogit)
+library(reshape2)
+#install.packages("powerMediation")
+library("powerMediation")
+library(QuantPsyc)
+#library(Cairo)
+
+#library(dplyr)
+
+#sudo dpkg -i "/home/cillian/Downloads/pandoc-2.2.1-1-amd64.deb"
+
+
+
+#source("load_all_data.R")
+
+
+
+getwd()
+
+```
+
+```{r, wordcount, include = FALSE}
+#wordcountaddin::text_stats("Reasons_or_Rationalisations_30Sept19.Rmd")
+# according to wordcountadding: 11317
+# according to libroffice: 10665 (no footnotes)
+
+```
+
+# 1 | Introduction
+Moral dumbfounding occurs when people maintain a moral judgment even though they cannot provide a reason in support of this judgment [@haidt_moral_2000; @haidt_emotional_2001].  It is typically evoked when people encounter taboo behaviors that do not result in any harm [@haidt_moral_2000; @haidt_emotional_2001; see also @mchugh_searching_2017a].  One example of such a behavior can be found in the widely discussed *Incest* scenario, which reads as follows:
+
+>Julie and Mark, who are brother and sister are traveling together in France. They are both on summer vacation from college. One night they are staying alone in a cabin near the beach. They decide that it would be interesting and fun if they tried making love. At very least it would be a new experience for each of them. Julie was already taking birth control pills, but Mark uses a condom too, just to be safe. They both enjoy it, but they decide not to do it again. They keep that night as a special secret between them, which makes them feel even closer to each other. [@haidt_moral_2000, p. 22]
+
+Incest is considered taboo in most cultures, and in violating this taboo, Julie and Mark's actions are typically judged as wrong.  However, the consensual and harmless nature of their actions means that the reasons people generally provide do not apply in this case.  People who maintain their judgment in the absence of reasons are identified as morally dumbfounded.  @mchugh_searching_2017a, building on the original work by @haidt_moral_2000, identified two measurable responses that may be taken as indicators of moral dumbfounding.  Firstly, people may explicitly admit to not having reasons for their judgment.  Secondly, people may use unsupported declarations ("it's just wrong") or tautological reasons ("because it's incest") as justifications for a judgment.
+
+## 1.1 | The Influence of Moral Dumbfounding
+The discovery of moral dumbfounding [@haidt_moral_2000; see also @haidt_affect_1993] coincided with, and arguably contributed to, some of the key developments in moral psychology over the past two decades.  It had a clear influence on the development of Haidt's social intuitionist model of moral judgment [SIM, @haidt_emotional_2001], and by extension may be seen as contributing to the growth of intuitionist theories of moral judgment that followed [e.g., @cushman_multisystem_2010; @haidt_emotional_2001; @prinz_passionate_2005].
+
+Haidt proposed the SIM in opposition to the perceived dominance of rationalist approaches [@kohlberg_stages_1969; @kohlberg_ought_1971; @narvaez_neokohlbergian_2005; @topolski_choosing_2013].  According to rationalist approaches our moral judgments are grounded in reason, informed by discernible moral principles [@fine_emotional_2006; @kennett_will_2009; @kohlberg_ought_1971; @kohlberg_stages_1969; @royzman_curious_2015]; @haidt_emotional_2001.  Moral dumbfounding is presented by Haidt [-@haidt_emotional_2001] and by @prinz_passionate_2005 as evidence against this rationalist perspective, in that, if moral judgments were grounded in reason, people would be able to provide reasons for their judgments (and moral dumbfounding would not occur).  Intuitionist theorists propose that moral judgments are grounded in an emotional or intuitive automatic response rather than slow deliberate reasoning [@cameron_morality_2013; @haidt_emotional_2001; @prinz_passionate_2005].  In recent years the joint role of reason/deliberation and intuition in the making of moral judgments has been emphasised in dual-process theories [@crockett_models_2013; @cushman_multisystem_2010; @cushman_action_2013; @greene_secret_2008; @brand_dualprocess_2016].  The dumbfounding paradigm may be useful in developing and extending these theories; developing an understanding of moral dumbfounding and the processes that lead to it, may inform the further development of theories of moral judgment, leading to a greater understanding of the processes that underlie moral judgment more generally.
+
+The influence of dumbfounding may be observed in everyday discourse, particularly in relation to highly sensitive and divisive social issues.  Real-world interactions differ from a laboratory study designed to elicit a dumbfounded response, and as such, in the absence of explicit and consistent refuting of arguments, it is unlikely that people in everyday life would admit to not having reasons for their moral judgments.  Despite this, it is not uncommon to hear unsupported declarations/tautological statements as arguments in support of a position with no further justification [e.g., @mustonen_abortion_2017; @stepniak_televising_1995].  Similarly, moral positions are often justified by appealing to emotions [e.g., @mustonen_abortion_2017; @stepniak_televising_1995; see also @rozin_disgust_2008; @rozin_cad_1999].  This type of appeal to emotion has previously been discussed as similar/equivalent to dumbfounding [see @prinz_passionate_2005, p. 101; see also @haidt_sexual_2001].  These responses may not clearly demonstrate dumbfounding, however they illustrate the way in which discussions of reasons for moral positions are occasionally absent from the public debate.
+
+That people may defend a judgment in the absence of articulated reasons, and maintain it even in the knowledge of their own inconsistencies poses a challenge for the type of rational debate that is supposed to form the basis of public discourse and inform the development of public policy.  The study of moral dumbfounding, as an extreme case, may lead to a better understanding of the underlying cognitive processes that lead to these types of problematic practices that have no place in public debate.  Identifying these processes and explaining moral dumbfounding is beyond the scope of the current research.  Here, in light of recent critiques, here we test whether or not dumbfounding is a real phenomenon, worthy of further study.
+
+## 1.2 | Challenging the Dumbfounding Paradigm
+A key concern regarding the dumbfounding paradigm is that the eliciting scenarios have been artificially construed to remove potentially harmful consequences to the point that they become unrealistic or otherwise not credible [e.g., @jacobson_moral_2012].  It could be argued that studying such idiosyncratic scenarios does little to inform our understanding of everyday moral decision making; similar criticisms have been made regarding the widely used trolley-type sacrificial dilemmas [e.g., @bauman_revisiting_2014; @bostyn_mice_2018].  However, responses to hypothetical trolley dilemmas have been found to predict behaviour in a money burning game with real pay-off consequences [@dickinson_using_2018], and the study of trolley-type dilemmas arguably contributed to key theoretical advancements of the past two decades [e.g., @plunkett_overlooked_2019; see also @greene_secret_2008; @christensen_moral_2012; @christensen_moral_2014; @greene_fmri_2001].  If moral dumbfounding is a real phenomenon it may prove a useful paradigm to further advance theories of moral judgment, and examine the mechanisms and cognitive processes that underlie the making of moral judgments (e.g., the relative roles of emotion versus deliberation).  It may be possible to identify specific contextual features that may lead people to change their mind rather than provide a dumbfounded response (or vice-versa).  Experimental manipulations that may increase dumbfounded responding (e.g., cognitive load) or reduce dumbfounded responding (e.g., distancing) could be investigated.  There may also be individual difference variables that predict susceptibility to dumbfounding.
+
+In defending the claim that moral judgments are not caused by reasoning, @haidt_emotional_2001 presents moral dumbfounding as a demonstration of inconsistency between judgment and reasons available.  The implicit alternative to this argument is that the absence of reasons would lead a moral judgment to change or to be revised; i.e., the presence or absence of reasons can cause a judgment to change.  Haidt does not clearly distinguish between *reasoning* as a cause versus *reasons* as a cause of judgments [e.g., -@haidt_emotional_2001, p. 822].  Despite being inconsistent with approaches beyond the moral domain [e.g., @mercier_argumentative_2016; @mercier_enigma_2017; @mercier_why_2011; @todd_ecological_2012; @johnson-laird_how_2006], this ambiguity can still be seen in discussions of moral judgment (and moral dumbfounding), such that, for the rationalist perspective [see @haidt_emotional_2001], reasons appear to play a causal role,  [e.g., @jacobson_moral_2012, p. 17; @triskiel_psychology_2016, p. 93; @flanagan_naturalizing_2008, p. 7].  Furthermore, this assumption is implicit in challenges to the dumbfounding narrative, whereby these challenges attempt to demonstrate that people do have "warrantable reasons" for their judgments [@royzman_curious_2015, p. 309].  Here we identify and address methodological limitations of one example of this type of challenge to the dumbfounding paradigm [@royzman_curious_2015].
+
+@gray_myth_2014 argue that people's moral judgments are grounded in harm-based reasons, suggesting that when judging moral scenarios, people implicitly perceive harm even in scenarios that are construed as objectively harmless. If people perceive harm in the scenarios, then, even when the experimenter claims that they are harm free, this perception of harm still serves as a reason to condemn the behavior. They conducted a series of experiments demonstrating that people do implicitly perceive harm in supposedly victim-less scenarios; e.g., "masturbating to a picture of one’s dead sister, watching animals have sex to become sexually aroused, having sex with a corpse, covering a Bible with feces" [@gray_myth_2014, p. 1063].  This suggests that in studies of moral dumbfounding people may also be making judgments based on an implicit perception of harm.
+
+@jacobson_moral_2012 makes specific reference to the scenarios used in the study of moral dumbfounding, and presents a number of plausible reasons why a person may condemn the actions of the characters in these scenarios. In the case of the *Incest* scenario, he suggests that the behavior of Julie and Mark was risky, "reckless and licentious" [@jacobson_moral_2012, p. 25].  Jacobson also discusses another scenario, *Cannibal*, that has been used in studies of moral dumbfounding.  This scenario describes an act of cannibalism by a researcher in a pathology lab (Jennifer) on a cadaver from the lab.  Jacobson argues that if Jennifer's behavior became known, people would be less willing to donate their bodies to the lab.  In addition to providing reasons that may explain the judgments of participants, Jacobson suggests that when participants appear to be dumbfounded they have simply given up on the argument and conceded to the experimenter who is in a position of authority.  While this claim is not directly tested empirically by Jacobson, it has been studied by @royzman_curious_2015, as discussed in the following section.
+
+## 1.3 | Evidence for Judgments Based on Reasons or Principles
+A recent series of studies by @royzman_curious_2015, investigating the *Incest* scenario specifically, aimed to identify if participants presenting as dumbfounded genuinely had no reasons to support their judgments.  In line with @jacobson_moral_2012, they claim that dumbfounding occurs as a result of social pressure to adhere to conversational norms, arguing that dumbfounded participants do have reasons for their judgments and that these reasons are incorrectly dismissed as invalid by the experimenter.  They argue that dumbfounded responding occurs as a result of social pressure to avoid appearing "uncooperative" [@royzman_curious_2015, p. 299], "inattentive" or "stubborn"  [-@royzman_curious_2015, p. 300].  In addition to this claim, @royzman_curious_2015 identify two justifying principles that may be guiding participants' judgments: the harm principle and the norm principle.  They argue that when excluding from analysis participants who endorse either of these principles, incidences of dumbfounding are negligible.
+
+In identifying the *harm principle*, @royzman_curious_2015 draw on the work of @gray_myth_2014.  They hypothesised that participants may not believe the scenario to be harm free even in the face of repeated assurances from the experimenter that it is harm free.  If a participant does not believe that an act is truly harm free then this provides them with a perfectly valid reason to judge it as morally wrong [@gray_myth_2014; @royzman_curious_2015].  They devised two questions which served as a "credulity check" [@royzman_curious_2015, p. 309], to assess whether or not participants believed that the *Incest* scenario was harm-free.  The questions read as follows: (i) "Having read the story and considering the arguments presented, are you able to believe that Julie and Mark’s having sex with each other will not negatively affect the quality of their relationship or how they feel about each other later on?"; (ii) "Having read the story and considering the arguments presented, are you able to believe that Julie and Mark’s having sex with each other will have no bad consequences for them personally and/or for those close to them?" [@royzman_curious_2015, pp.  302–303].  If participants responded "No" to either of these questions, their judgments were attributed to harm-based reasons, and therefore they could not be identified as dumbfounded.
+
+The second principle identified by @royzman_curious_2015 is the *norm principle*.  They argue that if people believe that committing a particular act is wrong, regardless of the circumstances, then, for these people, this belief may be sufficient to serve as a reason to condemn the behavior of the characters in the scenario.  @royzman_curious_2015 presented participants with two statements: (a) "violating an established moral norm just for fun or personal enjoyment is wrong only in situations where someone is harmed as a result, but is acceptable otherwise"; (b) "violating an established moral norm just for fun or personal enjoyment is inherently wrong even in situations where no one is harmed as a result" (Royzman et al., 2015, p. 305).  If participants endorsed (b) over (a) they reasoned that a judgment could be legitimately defended using a normative statement.  They suggest that the "unsupported declarations" [@haidt_moral_2000, p. 12] identified by @haidt_moral_2000 are statements of a normative position, and that, rather than being a viewed as a dumbfounded response, they may be viewed as reasons for judgments.
+
+@royzman_curious_2015 used the credulity check to assess if participants' judgments could be attributed to the harm principle, while attributing judgments to the norm principle was based on the norm statements.  @royzman_curious_2015 use the phrase "fully convergent" to describe participants who, in their view, are eligible for analysis [@royzman_curious_2015, p. 306].  According to @royzman_curious_2015, a participant is fully convergent if their judgment cannot be attributed to either the harm principle or the norm principle.  Using these stricter criteria for dumbfounding, @royzman_curious_2015 initially identified 4 participants, from a sample of 53, who presented as dumbfounded.  Each of these participants was then interviewed and the inconsistencies in their responses pointed out to them.  During these interviews 2 participants changed their judgment of the behavior and 1 participant changed her position on the normative statements.  This left just 1 fully convergent, dumbfounded participant.  This participant did not resolve the inconsistency in his responses to the questions, and, following post-experiment interviews, Royzman and colleagues found dumbfounding to occur once in a sample of 53.  This was found to be not significantly greater than 0 [@royzman_curious_2015, p. 309], supporting the claim that moral dumbfounding is "highly irregular" or even "non-existent" [@royzman_curious_2015, p. 300; see also @guglielmo_unfounded_2018].
+
+```{r reasonsz_scores, include=FALSE}
+
+
+4/53
+1/53
+
+z_score <- function(p1,p2,n1,n2){
+  z <- ((mean(p1/n1)-mean(p2/n2))-0)/
+    (sqrt((mean((p1+p2)/(n1+n2))*(1-mean((p1+p2)/(n1+n2))))*((1/n1)+(1/n2))))
+  z
+}
+z_score(1,0,53,53)
+2*pnorm(z_score(1,0,53,53),lower.tail = FALSE)
+
+z_score(4,0,53,53)
+2*pnorm(z_score(4,0,53,53),lower.tail = FALSE)
+
+
+```
+
+## 1.4 | Reasons or Rationalisations
+The studies conducted by @royzman_curious_2015 introduce an additional level of methodological rigor to the study of moral dumbfounding.  They clearly demonstrate that people will endorse a reason for a judgment if it is available to them. This undermines the dumbfounding narrative, that people defend a judgment in the absence of reasons, and poses a strong challenge to the existence of moral dumbfounding.
+
+We [@mchugh_searching_2017a] have previously outlined some limitations with the conclusions presented by @royzman_curious_2015.  Firstly, @royzman_curious_2015 suggest that people who present as morally dumbfounded do so in an attempt to avoid appearing "stubborn" or "inattentive" [-@royzman_curious_2015, p. 310].  However, @royzman_curious_2015 also employ the original @haidt_moral_2000 definition of moral dumbfounding, which defines moral dumbfounding as "the stubborn and puzzled maintenance of a judgment without supporting reasons"" [@haidt_moral_2000, p. 2; see also @haidt_social_2008, p. 197; @haidt_sexual_2001, p. 194].  This means that according to @royzman_curious_2015, people who present as dumbfounded, paradoxically present as stubborn in an attempt to avoid appearing stubborn.
+
+Secondly, the means by which @royzman_curious_2015 arrive at their estimate of 1 instance of moral dumbfounding out of a sample of 53 is problematic for the claim that moral dumbfounding occurs as a result of social pressure.  They present their estimate of 1/53 as not significantly greater than 0/53 (*z* = `r round(z_score(1,0,53,53), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(1,0,53,53),lower.tail = FALSE)))`).^[No explanation for the responding of this participant is offered. Neither can this participant’s response be explained by the theoretical position adopted by @royzman_curious_2015.]  However their original estimate of instances of moral dumbfounding was 4/53, which is significantly greater than 0/53 (*z* = `r round(z_score(4,0,53,53), digits=2)`, *p* `r paste(p_report(2*pnorm(z_score(4,0,53,53),lower.tail = FALSE)))`).  These participants were invited back into the lab and the "inconsistencies" in their "responses were pointed out directly" to them [@royzman_curious_2015, p. 308].  Furthermore they were then "advised to carefully review and, if appropriate, revise" their responses [@royzman_curious_2015, p. 308].  This procedure subjected participants to social pressure to appear consistent in their responding.  This illustrates that dumbfounded responding can be influenced by social pressure, however it does not support the stronger claim [by @royzman_curious_2015] that dumbfounded responding can be attributed to social pressure [@mchugh_searching_2017a].  The role of social pressure in eliminating instances of dumbfounded responding is not acknowledged by @royzman_curious_2015.
+
+Finally, demonstrating that people endorse principles that are consistent with their judgments does not provide evidence that these principles are guiding their judgments.  In relying on participants' endorsing of a given principle to attribute their judgment to that principle, @royzman_curious_2015 may have falsely excluded some participants from analysis. Consider the following scenario to illustrate this point:
+
+>Two friends (John and Pat) are bored one afternoon and trying to think of something to do. John suggests they go for a swim. Pat declines stating that it’s too much effort – to get changed, and then to get dried and then washed and dried again after; he says he’d rather do something that requires less effort. John agrees and adds "Oh yeah, and there’s that surfing competition on today so the place will be mobbed". To which Pat replies "Yeah exactly!" [@mchugh_searching_2017a, p. 20]
+
+It is clear from reading this scenario that even though he endorsed it to support or to rationalise his decision, the surfing competition was not the reason for John's decision not to go to the beach. It would be incorrect to attribute his decision to this reason.  The studies conducted by @royzman_curious_2015 do not guard against the possibility of this type of false attribution, and it is likely that some participants were incorrectly excluded from analysis on this basis. This possibility of false exclusion presents a key limitation @royzman_curious_2015 that casts doubt on their findings.
+
+We suggest that attributing people's judgments to principles requires stronger evidence than endorsing alone.  We propose two measures that may be useful in establishing whether or not a given principle may truly be identified as a reason for the judgments made by participants. Firstly, participants should be given the opportunity to provide the reason(s) that they based their judgment on, and the reasons provided should inform decisions of inclusion or exclusion.^[Participants in @royzman_curious_2015 provided reasons however these reasons did not inform their exclusion criteria.] Attributing participants' judgments to particular reasons/principles should account for both the endorsing and the articulating of the reason/principle. Secondly, if a principle is guiding the judgments of participants, this principle should be applied consistently across different contexts. We predict that when these two measures are applied evidence for dumbfounding will be found.
+
+## 1.5 | The Current Studies
+The aim of the current studies was to investigate whether or not people's moral judgments can be attributed to moral principles based on their endorsing of these principles.  Specifically, aim to address the concerns raised by @mchugh_searching_2017a and test the claim by @royzman_curious_2015 that participants' judgments in the *Incest* scenario can be attributed to the harm principle or the norm principle.  Firstly, the degree to which participants articulate either the harm principle or the norm principle as informing their judgment is examined (Study 1).  Secondly, the consistency with which participants apply the harm principle across differing contexts is additionally assessed (Studies 2 and 3).  We hypothesise that by developing more rigorous exclusion criteria the rates of false exclusion of participants would be reduced and that evidence for moral dumbfounding would be found, posing a challenge to the type of rationalist perspective described by @haidt_emotional_2001.  The failure to identify dumbfounded responding would serve as support for these alternative perspectives [e.g., @gray_myth_2014; @jacobson_moral_2012; @royzman_curious_2015; @sneddon_social_2007; @wielenberg_robust_2014; @guglielmo_unfounded_2018] and pose a challenge to SIM as described by @haidt_emotional_2001.  Given that the exclusion criteria used by @royzman_curious_2015 were developed for the *Incest* dilemma, the studies reported here similarly focus on the *Incest* dilemma specifically.
+
+```{r reasons set up data Study 1, include=FALSE}
+
+load("loaded_data/one.RData")
+df3 <- study_1
+
+x <- df3
+
+
+
+# code for word numbers below (no hyphen possible using numbers2words function)
+# numbers2words_cap1(length(df1$gender))
+# numbers2words_cap1(length(df2$gender))
+
+```
+
+# 2 | Study 1: Articulating and Endorsing
+In Study 1 we use an existing method for the evoking of dumbfounded responding [@mchugh_searching_2017a], however, we incorporate to additional materials taken from @royzman_curious_2015 as a more stringent set of criteria for inclusion in analysis. This serves two purposes. If effective, it reduces the likelihood of false inclusions for analysis to identify rates of dumbfounded responding, and also allows us to assess rates at which participants will explicitly articulate or endorse the principles when given the opportunity to do so.  In addition to the stricter measure of inclusion proposed by @royzman_curious_2015, we introduce an additional change designed to reduce the possibility of false exclusions.  Study 1 was an extension the work of @royzman_curious_2015, using largely the same materials.  One moral judgment vignette (*Incest*) was taken from Haidt et al. [-@haidt_moral_2000, Appendix A].  Targeted questions, designed to assess participants endorsements of the harm principle or the norm principle, were taken directly from @royzman_curious_2015.
+
+As noted above, if a participant endorses a principle this does not necessarily provide evidence that this principle was guiding their judgment.  Relying on the endorsing of principles to determine participants' eligibility for analysis may result in some participants being falsely excluded from analysis, and any resulting estimate of the prevalence of dumbfounded responding would be inaccurate.  In an attempt to control for the possibility of falsely attributing participants' judgments to principles based on endorsing alone, we included an open-ended response option to assess whether or not participants could also articulate these principles.  This was presented to participants immediately after the presenting of the vignette.  The inclusion or exclusion of participants from analysis, depended on both endorsing and articulating either principle.  Participants' judgments were only attributed to a given principle if they both articulated and endorsed that principle.  It was hypothesised that participants' endorsing of a principle would not be predictive of their ability to articulate this principle, and that by accounting for this, rates of false attribution and false exclusion would be reduced.  We hypothesised that in reducing rates of false exclusion, dumbfounded responding would be observed.
+
+## 2.1 | Method
+### 2.1.1 | Participants and design
+Study 1 was a frequency based extension of @royzman_curious_2015.  A combined sample of `r length(x$gender)` (`r sum(x$gender=="Female")` female, `r sum(x$gender=="Male")` male, `r sum(x$gender=="Other")` other; *M*~age~ = `r round(mean(x$age,na.rm=TRUE),digits=2)`, min = `r min(x$age,na.rm=TRUE)`, max = `r max(x$age,na.rm=TRUE)`, *SD* = `r round(sd(x$age,na.rm=TRUE),digits=2)`) took part.  Fifty-eight (`r sum(df1$gender=="Female")` female, `r sum(df1$gender=="Male")` male, `r sum(df1$gender=="Other")` other; *M*~age~ = `r round(mean(df1$age,na.rm=TRUE),digits=2)`, min = `r min(df1$age,na.rm=TRUE)`, max = `r max(df1$age,na.rm=TRUE)`, *SD* = `r round(sd(df1$age,na.rm=TRUE),digits=2)`) were recruited through MTurk.^[In order to prevent repeat participation from MTurk workers, this study and all remaining studies conducted on MTurk, were included as part of the same MTurk project as Study 3b from @mchugh_searching_2017a.  In addition, a probe question was included to check if participants had encountered the scenario before.  This probe included a follow-up question to determine the nature of participants' previous experience with the scenario.]  Participation was voluntary and participants were paid 0.50 US dollars for their participation.  Participants were recruited from English speaking countries or from countries where residents generally have a high level of English (e.g., The Netherlands, Denmark, Sweden).  Fifty-two (`r sum(df2$gender=="Female")` female, `r sum(df2$gender=="Male")` male; *M*~age~ = `r round(mean(df2$age,na.rm=TRUE),digits=2)`, min = `r min(df2$age,na.rm=TRUE)`, max = `r max(df2$age,na.rm=TRUE)`, *SD* = `r round(sd(df2$age,na.rm=TRUE),digits=2)`) were recruited through direct electronic correspondence.  Participants in this sample were undergraduate students, postgraduate students, and alumni from Mary Immaculate College (MIC), and University of Limerick (UL).  Participation was voluntary and participants did not receive a reward for their participation.  Previous research on moral dumbfounding found responses from an MTurk sample and a College sample are largely comparable [see @mchugh_searching_2017a Study 3a and 3b].
+
+
+### 2.1.2 | Procedure and materials
+Data were collected using an online questionnaire generated using Questback [@unipark_questback_2013].  The questionnaire opened with the information sheet and consent form.  The main questionnaire was only accessible once consent had been provided.  Following the consent form, participants were presented with questions relating to basic demographics.  Participants were then presented with two statements to assess if participants’ judgments may be grounded in the norm principle.  These were taken directly from Royzman et al. (2015): (i) "violating an established moral norm just for fun or personal enjoyment is wrong only in situations where someone is harmed as a result, but is acceptable otherwise."; (ii) "violating an established moral norm just for fun or personal enjoyment is inherently wrong even in situations where no one is harmed as a result.".  Participants read both statements and were asked to select the statement they "identify with the most".  The order of these statements was randomised.  Participants who selected (ii) were then asked to elaborate on their position through an open-ended response question.  The purpose of these statements was to assess participants' own *prior beliefs* regarding moral judgment and justifications [see @royzman_curious_2015, p. 331].  In order to prevent the potentially confounding influence of a salient example moral scenario, these statements were presented before the moral judgment task.
+
+Participants were then presented with the *Incest* vignette (Appendix A) from the original moral dumbfounding study [@haidt_moral_2000].  They were asked to rate on a seven-point Likert scale how right or wrong they would rate the behavior of Julie and Mark (where, 1 = *Morally wrong*; 4 = *Neutral*; 7 = *Morally right*).  They were asked to provide a reason for their judgment through open-ended response, and, rated their confidence in their judgment.  Participants were then presented with a series of prepared counter-arguments designed to refute commonly used justifications for rating the behavior as "wrong" (Appendix B).
+
+Dumbfounding was measured using a "critical slide" [developed by @mchugh_searching_2017a].  The critical slide is a page in an online or computer based questionnaire specifically designed to measure dumbfounded responding.  It contains a statement defending the behavior and a question as to how the behavior could be wrong ("Julie and Mark’s behavior did not harm anyone, how can there be anything wrong with what they did?").  There are three possible answer options: (a) "There is nothing wrong"; (b) an admission of not having reasons ("It’s wrong but I can’t think of a reason"); and finally a judgment with accompanying justification (c) "It’s wrong and I can provide a valid reason".  The order of these response options is randomised.  Participants who select (c) are prompted on a following slide to type a reason.  In line with @mchugh_searching_2017a, the selecting of option (b), the admission of not having reasons, was taken to be a dumbfounded response.
+
+Following the critical slide, participants rated the behavior, and rated their confidence in their judgment again.  They also indicated, on a 7-point Likert scale, how much they changed their mind.  A post-discussion questionnaire containing self-report reaction to the scenario across various dimensions (confidence, confusion, irritation, etc.) taken from @haidt_moral_2000 was administered after these revised judgments had been made (Appendix C).
+
+Two targeted questions were taken directly from @royzman_curious_2015 to assess whether or not participants’ judgments may be grounded in the harm principle: (i) "Having read the story and considering the arguments presented, are you able to believe that Julie and Mark’s having sex with each other will not negatively affect the quality of their relationship or how they feel about each other later on?"; (ii) "Having read the story and considering the arguments presented, are you able to believe that Julie and Mark’s having sex with each other will have no bad consequences for them personally and/or for those close to them?".  Participants responded "Yes" or "No" to each of these statements.  The order of these questions was randomised.
+
+Two other measures were also taken for exploratory purposes: Meaning in Life questionnaire [MLQ; @steger_understanding_2008].  This ten item scale is made up of two five item sub scales: presence (e.g., "I understand my life’s meaning.") and search (e.g., "I am looking for something that makes my life feel meaningful.").  Responses were recorded using a 7-point Likert scale ranging from 1 (*strongly disagree*) to 7 (*strongly agree*); and CRSi7 a seven item scale taken from The Centrality of Religiosity Scale [@huber_centrality_2012].  Participants responded to questions relating to the frequency with which they engage in religious or spiritual activity (e.g., "How often do you think about religious issues?").  Responses were recorded using a 5-point Likert scale ranging from 1 (*never*) to 5 (*very often*).  The seven item inter-religious version of the scale was selected because some non-religious activities (such as meditation) may also have a bearing on a person’s ability to reason about moral issues.   
+
+```{r reasonsS1Ttest1, include=FALSE}
+t <- t.test(x$InJu1,x$InJu2, paired = TRUE)
+td <- cohensD(x$InJu1,x$InJu2)
+df1$Sample
+t1 <- t.test(InJu1~Sample, data=x)
+t1d <- cohensD(InJu1~Sample, data=x)
+t2 <- t.test(InJu2~Sample, data=x)
+t2d <- cohensD(InJu2~Sample, data=x)
+
+
+
+custom_chi <- function(x,y){
+  a <- length(x)
+  b <- length(y)
+  c <- rep(1, a)
+  d <- rep(2, b)
+  e <- c(c,d)
+  f <- c(x, y)
+  
+  g <- data.frame(e,f)
+  h <- table(g$e,g$f)
+  suppressWarnings(chisq.test(h))
+}
+c <- custom_chi(x$Ju1_bin,x$Ju2_bin)
+custom_chi(x$Ju1_bin,x$Ju2_bin)
+
+c$data.name
+
+d <- cbind.data.frame(x$Ju1_bin[which(x$Ju1_bin!=x$Ju2_bin)],x$Ju2_bin[which(x$Ju1_bin!=x$Ju2_bin)])
+colnames(d) <- c("initial_judgement","revised_judgement")
+print(d)
+sum(d$initial_judgement=="wrong" & d$revised_judgement=="neutral")
+
+p_report(t$p.value)
+
+
+cohensD(df3$InJu1,df3$InJu2)
+cohensD(InJu1~Sample, data=x)
+descriptives(df3$InJu1)
+descriptives(df3$InJu2)
+
+sqrt((c$statistic/(220))/1)
+#cramersV(custom_chi(x$Ju1_bin,x$Ju2_bin))
+
+#View the responses of people who reported encountering the scenario before
+df3$Prv_in_S[which(df3$Prv_in=="yes")]
+
+# code for number words again - no hyphen
+# numbers2words_cap1(sum(x$Ju1_bin=="wrong"))
+# numbers2words_cap1(sum(x$Ju2_bin=="wrong"))
+
+```
+
+## 2.2 | Results and Discussion
+Eighty-seven of the total sample (*N* = `r length(x$gender)`; `r round((sum(x$Ju1_bin=="wrong")/length(x$gender))*100,digits=2)`%) initially rated the behavior of Julie and Mark as wrong; no difference in initial rating between the MTurk sample (*M* = `r round(mean(x$InJu1[which(x$Sample=="MTurk")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(x$InJu1[which(x$Sample=="MTurk")], na.rm=TRUE), digits = 2)`), and the MIC sample, (*M* = `r round(mean(x$InJu1[which(x$Sample=="college")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(x$InJu1[which(x$Sample=="college")], na.rm=TRUE), digits = 2)`), *t*(`r round(t1$parameter, digits=2)`) = `r round(t1$statistic, digits=3)`, *p* `r paste(p_report(t1$p.value))`, *d* = `r t1d`.  Eighty-six of the total sample, (*N* = `r length(x$gender)`; `r round((sum(x$Ju2_bin=="wrong")/length(x$gender))*100,digits=2)`%) rated the behavior as wrong after viewing the counter-arguments and the critical slide; no difference in revised rating between the MTurk sample, (*M* = `r round(mean(x$InJu2[which(x$Sample=="MTurk")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(x$InJu2[which(x$Sample=="MTurk")], na.rm=TRUE), digits = 2)`), and the MIC sample, (*M* = `r round(mean(x$InJu2[which(x$Sample=="college")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(x$InJu2[which(x$Sample=="college")], na.rm=TRUE), digits = 2)`), *t*(`r round(t2$parameter, digits=2)`) = `r round(t2$statistic, digits=3)`, *p* `r paste(p_report(t2$p.value))`, *d* = `r t2d`.  A paired samples t-test revealed a significant difference in rating of behavior from time one, initial rating, (*M* = `r round(mean(x$InJu1), digits = 2)`, *SD* = `r round(sd(x$InJu1), digits = 2)`), to time two, revised rating, (*M* = `r round(mean(x$InJu2), digits = 2)`, *SD* = `r round(sd(df3$InJu2), digits = 2)`), *t*(`r t$parameter`) = `r round(t$statistic, digits=3)`, *p* `r paste(p_report(t$p.value))`, *d* = `r td`.  This result may be due to changes in the severity of the judgments as opposed to changing the judgment.  Further analysis revealed that only `r numbers2words(length(d$initial_judgement))` (`r round((length(d$initial_judgement)/length(x$gender))*100,digits=2)`%) participants changed their judgment: `r numbers2words(sum(d$initial_judgement=="wrong"& d$revised_judgement=="neutral"))` participants changed their judgment from "wrong" to "neutral"; `r numbers2words(sum(d$initial_judgement=="right"& d$revised_judgement=="neutral"))` participant changed their judgment from "right" to "neutral"; `r numbers2words(sum(d$initial_judgement=="neutral"& d$revised_judgement=="right"))` changed their judgment from "neutral" to "right"; and `r numbers2words(sum(d$initial_judgement=="neutral"& d$revised_judgement=="wrong"))` participant changed their judgment from "neutral" to "wrong".  A chi-square test for independence revealed no significant association between time of judgment and valence of judgment made, &chi;^2^(`r c$parameter`, *N* = `r length(x$Ju1_bin)+length(x$Ju2_bin)`) = `r round(c$statistic, digits=3)`, *p* `r paste(p_report(c$p.value))`, *V* = `r sqrt((c$statistic/(220))/1)`.  This rate of changing judgments is lower than the 12% reported in @haidt_moral_2000, however, as noted above, social pressure appears to influence responses in the dumbfounding paradigm.  It is likely that the lower rates of changing judgments can be attributed to the reduced social pressure in a computerized task.
+
+`r numbers2words_cap1(sum(df3$Prv_in=="yes",na.rm = T))` participants (`r round(sum(df3$Prv_in=="yes",na.rm = T)/length(df3$gender)*100)`%) indicated that they had encountered the scenario before.  When asked to elaborate, participants provided anecdotes, or referred to previous readings (either fiction or philosophy).  Two participants (2%) indicated that they had encountered it in a previous survey.  The low numbers mean that any potential influence of previous experience on the results is negligible and these participants were not excluded from the analyses.
+
+```{r reasons_baseline_dumb, include=FALSE}
+table(x$InCS)
+table(x$Dumb_incl_string)
+
+sum(x$Dumb_incl_string=="It's wrong but I can't think of a reason.")-sum(x$InCS=="It's wrong but I can't think of a reason.")
+table(x$string_coded)
+sum(x$string_coded=="unsupported declaration",na.rm = TRUE)
+sum(x$string_coded=="unsupported declaration + tautological reason",na.rm = TRUE)
+sum(x$string_coded=="tautological reason",na.rm = TRUE)
+
+```
+
+
+```{r reasonsS1Endorsing, include=FALSE}
+y <- df3
+variable.names(y)
+
+#test$InCS
+
+y <- y[which(y$Roz_fully_C==TRUE),]
+table(y$InCS)
+table(y$Ju1_bin)
+table(y$Ju2_bin)
+sum(y$Ju1_bin=="wrong"&y$Ju2_bin=="wrong"&y$InCS=="It's wrong and I can provide a valid reason.")
+sum(y$Dumb_incl_string=="It's wrong and I can provide a valid reason.")
+x$critical_slide_wrong
+
+
+```
+
+### 2.2.1 | Measuring dumbfounding
+Participants who selected the admission of not having reasons on the critical slide were identified as dumbfounded.  Rates of of each response to the critical slide are for the entire sample (*N* = `r length(x$gender)`) are displayed in Figure 1.  `r numbers2words_cap1(sum(x$InCS=="It's wrong but I can't think of a reason."))` participants (`r round(sum(x$InCS=="It's wrong but I can't think of a reason.")/length(x$InCS)*100,digits=2)`%) were initially identified as dumbfounded.^[Unsupported declarations and tautological responses provided in the open-ended responses resulted in an additional  `r numbers2words(sum(x$Dumb_incl_string=="It's wrong but I can't think of a reason.")-sum(x$InCS=="It's wrong but I can't think of a reason."))` participants presenting as potentially dumbfounded; given that @royzman_curious_2015 argue that these responses are an articulation of a norm/principle, these participants are not identified as dumbfounded here.]  The exclusion criteria developed by @royzman_curious_2015 were applied, all participants who endorsed either the harm principle or the norm principle were excluded from analysis.  This left a sample of `r (length(y$gender))` participants who were eligible for analysis.  None of these `r (length(y$gender))` selected the dumbfounded response.  
+
+
+```{r reasonsS1Articulating, include=FALSE}
+x <- df3
+variable.names(x)
+
+
+x <- x[which(x$eligible==TRUE),]
+table(x$InCS)
+table(x$Ju1_bin)
+table(x$Ju2_bin)
+sum(x$Ju1_bin=="wrong"&x$Ju2_bin=="wrong"&x$InCS=="It's wrong and I can provide a valid reason.")
+sum(x$Dumb_incl_string=="It's wrong and I can provide a valid reason.")
+x$critical_slide_wrong
+
+```
+
+The purpose of the Study 1 was to assess if participants could articulate the principles identified by @royzman_curious_2015, independently of the targeted statements/questions, as these may serve as a prompt.  A revised measure of convergence is developed here.  A participant’s endorsement of either principle should lead to their exclusion from analysis, only if the participant also articulated this principle when given the opportunity.  The open-ended responses were analysed and coded for any mention of either the harm principle or the norm principle.  Participants were only excluded from analysis if they both endorsed and articulated either principle.  For the purposes of consistency with @royzman_curious_2015, unsupported declarations and tautological responses [identified as dumbfounded responses by @mchugh_searching_2017a] were coded as an articulation of the norm principle here.^[By only identifying participants who explicitly admittied to not having a reason as dumbfounded we also reduced the potential risk of "false inclusions", where people provide a dumbfounded response through laziness or inattentiveness.  While the motivations for selecting various responses cannot be known, previous research has identified the selecting of an admission of not having reasons as a conservative indicator of moral dumbfounding [@mchugh_searching_2017a, p. 16].]  As predicted, the number of participants who both articulated and endorsed either principle was much lower than the number of participants who only endorsed either principle.  `r numbers2words_cap1(length(x$gender))` participants were eligible for analysis according to the revised exclusion criteria.  `r numbers2words_cap2(sum(x$InCS=="It's wrong but I can't think of a reason."))` of these participants (`r (sum(x$InCS=="It's wrong but I can't think of a reason.")/length(x$gender))*100`%) selected the dumbfounded response, providing some evidence for moral dumbfounding.  Figure 1 shows the responses to the critical slide for the entire sample and for participants eligible for analysis according to each measure of convergence.
+
+```{r reasonsprepfig1, include=FALSE}
+
+df_r1 <- rbind.data.frame(cbind(df3$InCS,
+                                rep(1,length(length(df3$InCS)))),
+                          
+                          cbind(df3$InCS[which(df3$Roz_fully_C==TRUE)],
+                              rep(2,length(sum(df3$Roz_fully_C==TRUE,na.rm = TRUE)))),
+                        
+                        cbind(df3$InCS[which(df3$eligible==TRUE)],
+                              rep(3,length(sum(df3$eligible==TRUE,na.rm = TRUE)))))
+
+colnames(df_r1) <- c("InCS", "convergence")
+variable.names(df_r1)
+y <- table(df_r1)
+y <- as.data.frame(y)
+
+z <- as.data.frame(table(df_r1$InCS,df_r1$convergence)/length(df3$InCS))
+perc <- z$Freq
+test <- cbind(y,perc)
+test$InCS <- car::recode(test$InCS, '"1"="1nothing wrong";"2"="2no reason";"3"="3reason"')
+
+
+test$sampleN <- c(rep(length(df3$gender),3),
+             rep(sum(df3$Roz_fully_C==TRUE,na.rm = TRUE),3),
+             rep(sum(df3$eligible==TRUE,na.rm = TRUE),3))
+             
+
+
+test$sample_perc <- test$Freq/test$sampleN
+
+
+test$convergence <- car::recode(test$convergence, '"1"="1total sample";"2"="2fully convergent";"3"="3revised convergence"')
+
+test
+
+rm(z,y,df_r1,perc)
+```
+
+```{r reasonsfig1, fig.cap = "Responses to critical slide for the entire sample, and for each measure of convergence: (i) endorsing only, and (ii), endorsing and articulating; percentages of full sample displayed within plot, percentages of relevant sample displayed in parenthesis below the count.", include=TRUE}
+
+# color for Study 2 "#B4B4B4"
+# Figure\ \@ref(fig:reasonsfig1)
+
+#tiff('Figure_1.tiff', units="in", width=6, height=4, res=1200, compression = 'lzw')
+
+ggplot(test, aes(x = convergence, y = perc, fill = InCS)) +
+  scale_y_continuous(limits = c(-.1,1),
+                     labels = percent_format()
+  )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+  )+
+  geom_text(size=2.5,
+            aes( label = scales::percent(test$perc),
+                 y= perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(size=2.5,
+            aes(label = format(Freq),
+                y= -3*(..count../100)/(..count..)),
+            stat= "count",
+            position = position_dodge(0.9),
+            #vjust = -.05,
+            fontface='plain'
+            )+
+  geom_text(size=2.3,
+            aes( label = paste0("(",scales::percent(test$sample_perc),")"),
+                 y =  -.085),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  labs(y = "% of Participants providing\nEach Response on Critical Slide",
+       x = "Measure of Convergence",
+       fill = "Response to\nCritical Slide"
+       )+
+  theme_apa()+
+  scale_fill_manual(values = c("#989898", "#333333", "#E6E6E6"),
+                    labels=c("Nothing\nWrong",
+                           "Dumbfounded",
+                           "Reasons\nProvided"))+
+  # scale_fill_grey(labels=c("Study 4\nN=31",
+  #                          "Study 5\nN=72",
+  #                          "Study 3a\nN=72",
+  #                          "Study 3b\nN=101")
+  #                 )+
+  scale_x_discrete(labels = c("Full Sample\n \U1D615 = 110",
+                              "Endorsing Only\n \U1D62F = 14",
+                              "Endorsing and\nArticulating\n \U1D62F = 52")
+                   )+
+  theme_bw()+
+  theme(plot.title=element_text(#family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(#family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(#family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(#family="Times",
+                                 colour = "black",
+                                 size=8
+                                 ),
+          axis.ticks.x = element_blank(),
+          axis.title=element_text(#family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(#family = "Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right")
+
+#dev.off()
+
+#ggsave("Figure1.tiff", device = "tiff")
+
+
+
+rm(test)
+
+
+```
+
+
+```{r judgements and critical slide, include=FALSE}
+x <- df3
+table(x$InCS,x$Roz_fully_C)
+table(x$InCS,x$eligible)
+
+sum(x$InCS=="There is nothing wrong."&x$Roz_fully_C==FALSE)
+round(sum(x$InCS=="There is nothing wrong."&x$Roz_fully_C==FALSE)/sum(x$InCS=="There is nothing wrong.")*100,digits=2)
+
+sum(x$InCS=="There is nothing wrong."&x$eligible==FALSE)
+
+```
+
+### 2.2.2 | Consistency between endorsed principles and expressed judgments
+The exclusion criteria developed by @royzman_curious_2015 (endorsing only), led to a large proportion of participants who selected "There is nothing wrong" to be excluded from analysis (`r sum(x$InCS=="There is nothing wrong."&x$Roz_fully_C==FALSE)` participants; `r round(sum(x$InCS=="There is nothing wrong."&x$Roz_fully_C==FALSE)/sum(x$InCS=="There is nothing wrong.")*100,digits=2)`% of the `r sum(x$InCS=="There is nothing wrong.")` participants who selected this option).  Both the harm principle and the norm principle provide legitimate reasons for participants to judge the behavior as wrong [@royzman_curious_2015].  It follows that if a participant endorsed either principle, they would also judge the behavior as wrong.  It is surprising then that, `r sum(x$InCS=="There is nothing wrong."&x$Roz_fully_C==FALSE)` of the `r sum(x$InCS=="There is nothing wrong.")` participants who selected "There is nothing wrong" on the critical slide, also endorsed either the harm principle or the norm principle.  The endorsing of these principles meant that these participants were excluded from analysis on the grounds they had a legitimate reason to rate the behavior as wrong.  However, these participants did not rate the behavior as wrong.  This demonstrates an inconsistency between the endorsing of the principles through targeted questions and statements and the apparent use of these principles as reasons guiding the participants’ judgments.  The endorsing only measure of convergence, using the targeted questions and statements developed by @royzman_curious_2015 led to participants being falsely excluded from analysis.
+
+According to the revised criteria for exclusion, in which participants are only excluded from analysis if they were also able to articulate the principle that they endorsed, only `r numbers2words(sum(x$InCS=="There is nothing wrong."&x$eligible==FALSE))` of the `r sum(x$InCS=="There is nothing wrong.")` participants (`r (sum(x$InCS=="There is nothing wrong."&x$eligible==FALSE)/sum(x$InCS=="There is nothing wrong."))*100`%) who selected "There is nothing wrong" was excluded from analysis.  The revised measure of convergence developed in Study 1 shows a reduced incidence of false exclusion of participants who selected "There is nothing wrong".  This suggests that accounting for both the articulating and the endorsing of principles provides more accurate (though still not quite perfect) exclusion criteria.
+
+The aim of Study 1 was to extend previous research by @royzman_curious_2015.  They excluded participants from analysis based on their endorsing of either the harm principle or the norm principle through targeted questions/statements.  Using these criteria for exclusion, they found minimal dumbfounded responding (1 participant from a sample of 53 [@royzman_curious_2015, p. 309]).  It was hypothesised that their exclusion criteria were too broad, and that participants’ endorsing of either principle does imply that participants can articulate the given principle.  Revised criteria for exclusion were developed which accounted for both the endorsing and the articulation of either the harm principle or the norm principle.  Our initial analysis replicated the findings of @royzman_curious_2015.
+
+```{r setupforpercentage, include=FALSE}
+x <- df3
+variable.names(x)
+
+x <- x[which(x$eligible==TRUE),]
+
+```
+
+Further analysis, using the revised measure of convergence demonstrated considerably more consistency in the exclusion/inclusion of participants who selected "There is nothing wrong".  These revised criteria identified eight (`r round((sum(x$InCS=="It's wrong but I can't think of a reason.")/length(df3$gender))*100,digits=2)`% of the total sample of *N* = `r length(df3$gender)`) participants as dumbfounded.  Study 1 demonstrated inconsistency in the endorsing and articulation of the harm principle and the norm principle, and provided evidence for moral dumbfounding, however rates of dumbfounded responding were low, with the majority of participants (`r (sum(df3$InCS=="It's wrong and I can provide a valid reason."))`; `r (sum(df3$InCS=="It's wrong and I can provide a valid reason.")/length(df3$gender))*100`%) providing reasons for their judgments.  A second study was devised to assess the consistency in the application of the harm principle across differing contexts, along with the endorsing, and articulation of the each principle.
+
+```{r reasons set up data Study 2, include=FALSE}
+#rm(list = ls())
+
+load("loaded_data/two.RData")
+
+df6 <- study_2
+
+x <- df6
+study_2 <- df6
+
+# hypen missing here so code replaced with plain text in paragraph below
+numbers2words_cap1(length(df1$gender))
+
+```
+
+# 3 | Study 2: Applying Moral Principles Across Contexts
+In Study 1, we tested if participants could articulate the harm principle and the norm principle as identified by @royzman_curious_2015.  In Study 2, we investigated the role of the harm principle in the making of judgments.  Specifically, we examined if the harm principle can legitimately be said to be guiding the judgments of participants.  This was done by assessing whether or not the harm principle is applied consistently across different contexts
+
+Drawing on the research by @royzman_curious_2015, the harm principle may summarised as follows "it is wrong for two people to engage in an activity whereby harm may occur".  @royzman_curious_2015 do not offer clarification on specific types of harm that may fall under this principle, it is therefore assumed that this is a generalised principle concerning any form of harm.  According to the argument proposed by @royzman_curious_2015, participants’ moral judgments are grounded in this principle, such that applying this principle to the *Incest* dilemma gives people a good reason to judge the behavior of Julie and Mark as wrong.  If this general harm principle is to be considered as guiding participants’ judgments, it should be consistently applied across differing contexts.
+
+Study 2 tested if this was the case by including a set of targeted questions relating to the generalisation and application of the harm principle across different contexts (the rest of the materials were largely the same as those used in Study 1).  We hypothesised that participants’ responses to these targeted questions would reveal inconsistency in the application of the harm principle across differing contexts.  Any exclusion criteria based on the harm principle should account for the endorsing of the principle (Royzman et al., 2015), articulating the principle (Study 1), and the application of the principle (Study 2).
+
+## 3.1 | Method
+### 3.1.1 | Participants and design
+Study 2 was a frequency-based extension of Study 1.  The aim was to investigate the prevalence of moral dumbfounding when controlling for (a) the consistency with which people articulate and endorse the norm principle and the harm principle, and (b) the consistency with which people apply the norm principle principle.  A combined sample of `r length(x$gender)` (`r sum(x$gender=="Female")` female, `r sum(x$gender=="Male")` male; *M*~age~ = `r round(mean(x$age,na.rm=TRUE),digits=2)`, min = `r min(x$age,na.rm=TRUE)`, max = `r max(x$age,na.rm=TRUE)`, *SD* = `r round(sd(x$age,na.rm=TRUE),digits=2)`) took part.
+
+Sixty-one (`r sum(df1$gender=="Female")` female, `r sum(df1$gender=="Male")` male; *M*~age~ = `r round(mean(df1$age,na.rm=TRUE),digits=2)`, min = `r min(df1$age,na.rm=TRUE)`, max = `r max(df1$age,na.rm=TRUE)`, *SD* = `r round(sd(df1$age,na.rm=TRUE),digits=2)`) were recruited through MTurk.  Participation was voluntary and participants were paid 0.50 US dollars for their participation.  Participants were recruited from English speaking countries or from countries where residents generally have a high level of English (e.g., The Netherlands, Denmark, Sweden).  `r numbers2words_cap1(length(df2$gender))` (`r sum(df2$gender=="Female")` female, `r sum(df2$gender=="Male")` male; *M*~age~ = `r round(mean(df2$age,na.rm=TRUE),digits=2)`, min = `r min(df2$age,na.rm=TRUE)`, max = `r max(df2$age,na.rm=TRUE)`, *SD* = `r round(sd(df2$age,na.rm=TRUE),digits=2)`) were recruited through direct electronic correspondence.  Participants in this sample were undergraduate students, postgraduate students, and alumni from Mary Immaculate College (MIC), and University of Limerick (UL).  Participation was voluntary and participants were not reimbursed for their participation.
+
+### 3.1.2 | Procedure and materials
+Data were collected using an online questionnaire generated using Questback [@unipark_questback_2013].  The questionnaire in Study 2 was the same as that presented in Study 1, with the inclusion of three additional targeted questions which aimed to assess the consistency with which participants generalise and apply the harm principle.  The questions were: (a) "How would you rate the behavior of two people who engage in an activity that could potentially result in harmful consequences for either of them?"; (b) "Do you think boxing is wrong?"; (c) "Do you think playing contact team sports (e.g.  rugby; ice-hockey; American football) is wrong?".  Responses to (a) were recorded on a 7-point Likert scale (where, 1 = *Morally wrong*; 4 = *Neutral*; 7 = *Morally right*).  Responses to (b) and (c) were recorded using a binary "Yes/No" option.  These questions were presented sequentially, in randomised order.  The randomised sequence was grouped as Block A.  Similarly all slides and questions directly relating the moral scenario were grouped as Block B.  Block B also included the targeted questions relating to the endorsing of the harm principle.  The order of presentation of these blocks was randomised.
+
+As with Study 1, the questionnaire opened with the information sheet, and the main body of the questionnaire could not be accessed until participants consented to continue.  Once consent was given participants were asked a number of questions relating to basic demographics.  They were then presented with the two targeted statements relating to the norm principle (in randomised order) and asked to select the statement they "identify with the most".  Participants were then presented with either Block A (containing the targeted questions relating to the application of the harm principle) or Block B (containing the moral scenario, related questions, and targeted questions relating to the endorsing of the harm principle).  Following this participants were presented with the second block.  As in Study 1, the questionnaire ended with the MLQ [@steger_understanding_2008]; and CRSi7 [@huber_centrality_2012].
+
+```{r reasonsS2Ttest1, include=FALSE}
+t <- t.test(x$InJu1,x$InJu2, paired = TRUE)
+df1$Sample
+t1 <- t.test(InJu1~Sample, data=x)
+t2 <- t.test(InJu2~Sample, data=x)
+
+td <- cohensD(x$InJu1,x$InJu2)
+t1d <- cohensD(InJu1~Sample, data=x)
+t2d <- cohensD(InJu2~Sample, data=x)
+
+
+custom_chi <- function(x,y){
+  a <- length(x)
+  b <- length(y)
+  c <- rep(1, a)
+  d <- rep(2, b)
+  e <- c(c,d)
+  f <- c(x, y)
+  
+  g <- data.frame(e,f)
+  h <- table(g$e,g$f)
+  suppressWarnings(chisq.test(h))
+}
+c <- custom_chi(x$Ju1_bin,x$Ju2_bin)
+custom_chi(x$Ju1_bin,x$Ju2_bin)
+
+c$data.name
+
+d <- cbind.data.frame(x$Ju1_bin[which(x$Ju1_bin!=x$Ju2_bin)],x$Ju2_bin[which(x$Ju1_bin!=x$Ju2_bin)])
+colnames(d) <- c("initial_judgement","revised_judgement")
+print(d)
+sum(d$initial_judgement=="wrong" & d$revised_judgement=="neutral")
+
+p_report(t$p.value)
+
+variable.names(x)
+
+
+### previous experience 
+
+sum(x$Prv_in=="yes")
+x$Prv_in_S[which(x$Prv_in=="yes")]
+
+t3 <- t.test(x$InJu1~x$Prv_in)
+t3d <- cohensD(InJu1~Prv_in, data=x)
+
+c1 <- chisq.test(table(x$InCS,x$Prv_in))
+
+
+# hypen missing here so code replaced with plain text in paragraph below
+numbers2words_cap1(sum(x$Ju1_bin=="wrong"))
+
+```
+
+## 3.2 | Results and Discussion
+Seventy-nine of the total sample (*N* = `r length(x$gender)`; `r round((sum(x$Ju1_bin=="wrong")/length(x$gender))*100,digits=2)`%) initially rated the behavior of Julie and Mark as wrong.  An independent samples t-test revealed no difference in initial rating between the MTurk sample (*M* = `r round(mean(x$InJu1[which(x$Sample=="MTurk")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(x$InJu1[which(x$Sample=="MTurk")], na.rm=TRUE), digits = 2)`), and the MIC sample, (*M* = `r round(mean(x$InJu1[which(x$Sample=="college")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(x$InJu1[which(x$Sample=="college")], na.rm=TRUE), digits = 2)`), *t*(`r round(t1$parameter, digits=2)`) = `r round(t1$statistic, digits=3)`, *p* `r paste(p_report(t1$p.value))`, *d* = `r t1d`.  `r numbers2words_cap1(sum(x$Ju2_bin=="wrong"))` of the total sample, (N = `r length(x$gender)`; `r round((sum(x$Ju2_bin=="wrong")/length(x$gender))*100,digits=2)`%) rated the behavior as wrong after viewing the counter-arguments and the critical slide.  An independent samples t-test revealed a significant difference in revised rating between the MTurk sample, (*M* = `r round(mean(x$InJu2[which(x$Sample=="MTurk")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(x$InJu2[which(x$Sample=="MTurk")], na.rm=TRUE), digits = 2)`), and the MIC sample, (*M* = `r round(mean(x$InJu2[which(x$Sample=="college")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(x$InJu2[which(x$Sample=="college")], na.rm=TRUE), digits = 2)`), *t*(`r round(t2$parameter, digits=2)`) = `r round(t2$statistic, digits=3)`, *p* `r paste(p_report(t2$p.value))`, *d* = `r t2d`.  A paired samples t-test revealed a significant difference in rating of behavior from time one, initial rating, (*M* = `r round(mean(x$InJu1), digits = 2)`, *SD* = `r round(sd(x$InJu1), digits = 2)`), to time two, revised rating, (*M* = `r round(mean(x$InJu2), digits = 2)`, *SD* = `r round(sd(df3$InJu2), digits = 2)`), *t*(`r t$parameter`) = `r round(t$statistic, digits=3)`, *p* `r paste(p_report(t$p.value))`, *d* = `r td`.  Further analysis revealed that although `r length(d$initial_judgement)` participants changed their judgment, only `r numbers2words(sum(d$initial_judgement=="wrong"& d$revised_judgement=="right"))` participants changed fully the valence of their judgment, changing their judgment from "wrong" to "right".  Of the other changes in judgment, `r numbers2words(sum(d$initial_judgement=="wrong"& d$revised_judgement=="neutral"))` participants changed their judgment from "wrong" to "neutral"; `r numbers2words(sum(d$initial_judgement=="right"& d$revised_judgement=="neutral"))` participants changed their judgment from "right" to "neutral"; and `r numbers2words(sum(d$initial_judgement=="neutral"& d$revised_judgement=="right"))` changed their judgment from "neutral" to "right".  A chi-square test for independence revealed no significant association between time of judgment and valence of judgment made, &chi;^2^(`r c$parameter`, *N* = `r length(x$Ju1_bin)+length(x$Ju2_bin)`) = `r c$statistic`, *p* `r paste(p_report(c$p.value))`, *V* = `r sqrt((c$statistic/(222))/1)`.
+
+`r numbers2words_cap1(sum(x$Prv_in=="yes"))` participants (`r round((sum(x$Prv_in=="yes")/length(x$gender))*100)`%) indicated that they had encountered the scenario before.  As in Study 1, when asked to elaborate, participants provided anecdotes, or referred to previous readings/TV (either fiction or philosophy), 8 participants (7%) indicated that they had encountered it in a previous survey.  The number of participants indicating previous experience with the scenario was higher than in Study 1 and as such the possibility that it may have confounded the results was investigated.  An independent samples t-test revealed no difference in judgment between participants who had previously seen the scenario, (*M* = `r round(mean(x$InJu1[which(x$Prv_in=="yes")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(x$InJu1[which(x$Prv_in=="yes")], na.rm=TRUE), digits = 2)`), and participants who had not previously seen the scenario, (*M* = `r round(mean(x$InJu1[which(x$Prv_in=="no")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(x$InJu1[which(x$Prv_in=="no")], na.rm=TRUE), digits = 2)`), *t*(`r round(t3$parameter, digits=2)`) = `r round(t3$statistic, digits=3)`, *p* `r paste(p_report(t3$p.value))`, *d* = `r t3d`.  Furthermore, a chi-squared test for independence revealed no significant association between previous experience with the scenario and response to the critical slide, &chi;^2^(`r c1$parameter`, *N* = `r length(x$gender)`) = `r round(c1$statistic,digits=2)`, *p* `r paste(p_report(c1$p.value))`, *V* = `r sqrt((c1$statistic/(111))/1)`.  These participants were not excluded from the analyses.
+
+### 3.2.1 | Testing for order effects
+The order of the blocks had no influence on the any of the responses of interest (see supplementary materials for details of analysis).  Of the questions relating to the application of the harm principle, there were differences in responding to general question only ("How would you rate the behavior of two people who engage in an activity that could potentially result in harmful consequences for either of them?").  This question was more abstract than the two questions it appeared with, in which participants were asked to judge a named behavior (boxing or contact team sports).  The description in the general question could apply to either of the named behaviors.  Participants who responded to this question first rated the behavior as more wrong than participants who responded to it after reading one or both of the named behaviors.  It seems likely that the named behaviors provided an example of a situation in which the behavior described in the general question may be acceptable, leading participants to respond more favorably to the general question.
+
+```{r reasonsS2Endorsing, include=FALSE}
+# royzman
+
+y <- df6
+variable.names(y)
+
+#test$InCS
+
+y <- y[which(y$Roz_fully_C==TRUE),]
+table(y$InCS)
+table(y$Ju1_bin)
+table(y$Ju2_bin)
+sum(y$Ju1_bin=="wrong"&y$Ju2_bin=="wrong"&y$InCS=="It's wrong and I can provide a valid reason.")
+sum(y$Dumb_incl_string=="It's wrong and I can provide a valid reason.")
+x$critical_slide_wrong
+
+sum(y$InCS=="There is nothing wrong.")
+y_study1 <- df3[which(df3$Roz_fully_C==TRUE),]
+sum(df3$InCS=="There is nothing wrong.",na.rm = T)-sum(y_study1$InCS=="There is nothing wrong.",na.rm = T)
+
+a <- y
+
+```
+
+```{r reasonsS2Endorsingb, include=FALSE}
+x <- df6
+variable.names(x)
+
+#test$InCS
+
+#x <- x[which(x$Roz_fully_C==TRUE),]
+z <- x[which(x$eligible==TRUE),]
+
+table(z$InCS)
+table(z$Ju1_bin)
+table(z$Ju2_bin)
+sum(z$Ju1_bin=="wrong"&z$Ju2_bin=="wrong"&z$InCS=="It's wrong and I can provide a valid reason.")
+sum(z$Dumb_incl_string=="It's wrong and I can provide a valid reason.")
+z$critical_slide_wrong
+
+sum(x$InCS=="There is nothing wrong.")
+x_study1 <- df3[which(df3$Roz_fully_C==TRUE),]
+sum(df3$InCS=="There is nothing wrong.",na.rm = T)-sum(x_study1$InCS=="There is nothing wrong.",na.rm = T)
+
+a <- x
+
+```
+
+### 3.2.2 | Measuring dumbfounding
+As in Study 1, participants who selected the admission of not having reasons on the critical slide were identified as dumbfounded.  Rates of each response to the critical slide are for the entire sample (*N* = `r length(x$gender)`) are displayed in Figure 1.  `r numbers2words_cap1(sum(x$InCS=="It's wrong but I can't think of a reason."))` participants (`r round(sum(x$InCS=="It's wrong but I can't think of a reason.")/length(x$InCS)*100,digits=2)`%) were initially identified as dumbfounded.^[Unsupported declarations and tautological responses provided in the open-ended responses resulted in an additional  `r numbers2words(sum(x$Dumb_incl_string=="It's wrong but I can't think of a reason.")-sum(x$InCS=="It's wrong but I can't think of a reason."))` participants presenting as potentially dumbfounded; again, these participants are not identified as dumbfounded here.]  The exclusion criteria developed by Royzman et al. [-@royzman_curious_2015\; the endorsing of either principle] were applied, and this left a sample of `r length(y$gender)` who were eligible for analysis.  `r numbers2words_cap2(sum(y$InCS=="It's wrong but I can't think of a reason."))` of these fully convergent participants selected the dumbfounded response.  We then applied the revised criteria for exclusion (both articulating and endorsing either principle) developed in Study 1, and the number of participants eligible for analysis increased to `r length(z$gender)`.  Of these, `r numbers2words_cap1(sum(z$InCS=="It's wrong but I can't think of a reason."))` (`r round(sum(z$InCS=="It's wrong but I can't think of a reason.")/length(z$InCS)*100,digits=2)`%) selected the dumbfounded response.  Again this also led to a reduction in false exclusions, three `r sum(df6$InCS=="There is nothing wrong.")-sum(z$InCS=="There is nothing wrong.")` of the `r sum(df6$InCS=="There is nothing wrong.")` (`r round((sum(df6$InCS=="There is nothing wrong.")-sum(z$InCS=="There is nothing wrong."))/sum(df6$InCS=="There is nothing wrong.")*100,digits=2)`) participants who selected "There is nothing wrong" were excluded by this measure.
+
+
+```{r reasonsS2pot_hrmgen, include=FALSE}
+rm(a,b)
+x <- df6
+x$pot_hrm_gen <- (x$pot_hrm_bin!="wrong"|
+                    x$hrm_st=="no harm mentioned"|
+                    x$hrm_Qs=="no harm")
+
+x$pot_hrm_nrm <- (x$pot_hrm_bin!="wrong"|
+                    x$hrm_st=="no harm mentioned"|
+                    x$hrm_Qs=="no harm")&
+  (x$normQ=="Violating an established moral norm, just for fun or personal enjoyment, is wrong only in situations where someone is harmed as a result, but is acceptable otherwise."|
+     x$nrm_st=="norms not mentioned")
+
+sum(x$pot_hrm_bin=="wrong",na.rm = TRUE)
+
+table(x$pot_hrm_bin)
+sum(x$pot_hrm_gen,na.rm = TRUE)
+
+table(x$parent_order,x$pot_hrm_bin)
+c <- chisq.test(table(x$parent_order,x$pot_hrm_bin))
+
+t <- t.test(x$pot_hrm~x$parent_order)
+td <- cohensD(pot_hrm~parent_order, data=x)
+
+tapply(x$pot_hrm,x$parent_order,descriptives)
+table(x$pot_hrm_gen)
+table(x$pot_hrm_nrm)
+
+#### Potential harm generally.
+
+```
+
+
+```{r reasonsboxing, include=FALSE}
+x$box_gen <- x$box=="No"|
+      x$hrm_st=='no harm mentioned'|
+      x$hrm_Qs=='no harm'
+
+x$box_nrm <- (x$box=="No"|
+      x$hrm_st=='no harm mentioned'|
+      x$hrm_Qs=='no harm')&
+  (x$normQ=="Violating an established moral norm, just for fun or personal enjoyment, is wrong only in situations where someone is harmed as a result, but is acceptable otherwise."|
+     x$nrm_st=="norms not mentioned")
+
+table(x$box)
+
+c <- chisq.test(table(x$parent_order,x$box))
+
+t <- t.test(x$pot_hrm~x$parent_order)
+tapply(x$pot_hrm,x$parent_order,descriptives)
+table(x$box_gen)
+table(x$pot_hrm_nrm)
+
+#### Boxing.
+
+
+# number word code replaced below (hyphen)
+#numbers2words_cap1(sum(x$InCS=="It's wrong but I can't think of a reason."&x$box_gen==TRUE))
+
+```
+
+
+```{r reasonsrugb, include=FALSE}
+x$rugb_gen <- x$rugb=="No"|
+      x$hrm_st=='no harm mentioned'|
+      x$hrm_Qs=='no harm'
+
+x$rugb_nrm <- (x$rugb=="No"|
+      x$hrm_st=='no harm mentioned'|
+      x$hrm_Qs=='no harm')&
+  (x$normQ=="Violating an established moral norm, just for fun or personal enjoyment, is wrong only in situations where someone is harmed as a result, but is acceptable otherwise."|
+     x$nrm_st=="norms not mentioned")
+
+table(x$rugb)
+
+c <- chisq.test(table(x$parent_order,x$box))
+
+t <- t.test(x$pot_hrm~x$parent_order)
+tapply(x$pot_hrm,x$parent_order,descriptives)
+table(x$rugb_gen)
+table(x$pot_hrm_nrm)
+
+#### Contact team sports.
+
+# hyphen code replacement
+# numbers2words_cap1(sum(x$InCS=="It's wrong but I can't think of a reason."&x$rugb_gen==TRUE))
+
+```
+
+
+```{r reasonsapplying_all, include=FALSE}
+
+x$hrm_all_app <- x$pot_hrm_bin!="wrong"|
+  x$box=="No"|
+  x$rugb=="No"
+
+
+x$hrm_all_gen <- x$pot_hrm_bin!="wrong"|
+  x$box=="No"|
+  x$rugb=="No"|
+  x$hrm_st=='no harm mentioned'|
+  x$hrm_Qs=='no harm'
+
+x$hrm_all_gen1 <- x$pot_hrm_bin!="wrong"|
+  x$box=="No"|
+  x$hrm_st=='no harm mentioned'|
+  x$hrm_Qs=='no harm'
+
+x$hrm_all_nrm <- (x$pot_hrm_bin!="wrong"|
+                    x$box=="No"|x$rugb=="No"|
+                    x$hrm_st=='no harm mentioned'|
+                    x$hrm_Qs=='no harm')&
+  (x$normQ=="Violating an established moral norm, just for fun or personal enjoyment, is wrong only in situations where someone is harmed as a result, but is acceptable otherwise."|
+     x$nrm_st=="norms not mentioned")
+
+
+x$nrm <- x$normQ=="Violating an established moral norm, just for fun or personal enjoyment, is wrong only in situations where someone is harmed as a result, but is acceptable otherwise."|
+     x$nrm_st=="norms not mentioned"
+table(x$nrm)
+custom_chi <- function(x,y){
+  a <- length(x)
+  b <- length(y)
+  c <- rep(1, a)
+  d <- rep(2, b)
+  e <- c(c,d)
+  f <- c(x, y)
+  
+  g <- data.frame(e,f)
+  h <- table(g$e,g$f)
+  suppressWarnings(chisq.test(h))
+}
+
+c <- custom_chi(x$hrm_all_gen,x$hrm_all_gen1)
+
+#### Applying the harm principle across contexts.
+
+```
+
+The responses to the three targeted questions relating the application of the harm principle were analysed together.  Only `r numbers2words(sum(x$hrm_all_app==FALSE))` participant was consistent in their application of the harm principle across all three targeted questions and this meant that only `r numbers2words(sum(x$hrm_all_gen==FALSE))` participant was consistent in the application, articulation, and, endorsing of the harm principle (as measured by the open-ended responses and the targeted questions taken from @royzman_curious_2015).  This was combined with the exclusion criteria developed in Study 1 leaving a sample of `r sum(x$all_harm_norm)` participants who were eligible for analysis.  `r numbers2words_cap1(sum(x$InCS=="It's wrong but I can't think of a reason."&x$rugb_nrm==TRUE))` (`r round(sum(x$rugb_nrm==TRUE&x$InCS=="It's wrong but I can't think of a reason.")/length(x$gender)*100,digits=2)`% of the total sample) of these participants selected the dumbfounded response.  The responses to the critical slide across all measures of convergence used are displayed in Figure 2.
+
+```{r reasonsprepfig2, include=FALSE}
+
+df_r1 <- rbind.data.frame(cbind(df6$InCS,
+                                rep(1,length(length(df6$InCS)))),
+                          
+                          cbind(df6$InCS[which(df6$Roz_fully_C==TRUE)],
+                              rep(2,length(sum(df6$Roz_fully_C==TRUE,na.rm = TRUE)))),
+                          
+                          cbind(df6$InCS[which(df6$eligible==TRUE)],
+                                rep(3,length(sum(df6$eligible==TRUE,na.rm = TRUE)))),
+                        
+                        cbind(df6$InCS[which(df6$all_harm_norm==TRUE)],
+                              rep(4,length(sum(df6$all_harm_norm==TRUE,na.rm = TRUE)))))
+
+
+colnames(df_r1) <- c("InCS", "convergence")
+variable.names(df_r1)
+y <- table(df_r1)
+y <- as.data.frame(y)
+
+z <- as.data.frame(table(df_r1$InCS,df_r1$convergence)/length(df6$InCS))
+perc <- z$Freq
+test <- cbind(y,perc)
+test$InCS <- car::recode(test$InCS, '"1"="1nothing wrong";"2"="2no reason";"3"="3reason"')
+
+test$sampleN <- c(rep(length(df6$gender),3),
+             rep(sum(df6$Roz_fully_C==TRUE,na.rm = TRUE),3),
+             rep(sum(df6$eligible==TRUE,na.rm = TRUE),3),
+             rep(sum(df6$all_harm_norm==TRUE,na.rm = TRUE),3)
+             )
+
+
+test$sample_perc <- test$Freq/test$sampleN
+
+test$convergence <- car::recode(test$convergence, '"1"="1total sample";"2"="2fully convergent";"3"="3study1";"4"="4study2"')
+
+
+
+test
+rm(z,y,df_r1,perc)
+
+```
+
+
+```{r reasonsfig2, fig.cap = "Responses to critical slide for the entire sample, and for each measure of convergence: (i) endorsing only, (ii) endorsing and articulating, and (iii), endorsing, articulating, and applying; percentages of full sample displayed within plot, percentages of relevant sample displayed in parenthesis below the count.", include=TRUE}
+
+# color for Study 2 "#B4B4B4"
+# Figure\ \@ref(fig:reasonsfig2)
+
+#tiff('Figure_2.tiff', units="in", width=6, height=4, res=1200, compression = 'lzw')
+#tiff('Figure_2_revised.tiff', units="in", width=6, height=4, res=1200, compression = 'lzw')
+
+ggplot(test, aes(x = convergence, y = perc, fill = InCS)) +
+   scale_y_continuous(limits = c(-.085,1),
+                      labels = percent_format()
+                      )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(size=1.9,
+            aes( label = #scales::percent(test$perc),
+                   paste0(
+                   sprintf("%0.2f", 
+                                    round((test$perc*100),digits = 2)#,
+                             ),"%"       ),
+                 y= perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(size=1.5,
+            aes( label =
+                   paste0("(",
+                          #scales::percent(
+                            sprintf("%0.2f", 
+                                    round((test$sample_perc*100),digits = 2)#,
+                                    ),
+                            #),
+                          "%)"),
+                 y =  -.085),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(size=2.5,
+            aes(label = format(Freq),
+                y= -3.0*(..count../100)/(..count..)),
+            stat= "count",
+            position = position_dodge(0.9),
+            #vjust = -.05,
+            fontface='plain'
+            )+
+  labs(y = "% of Participants providing\nEach Response on Critical Slide",
+       x = "Measure of Convergence",
+       fill = "Response to\nCritical Slide"
+       )+
+  theme_apa()+
+  scale_fill_manual(values = c("#989898", "#333333", "#E6E6E6"),
+                    labels=c("Nothing\nWrong",
+                           "Dumbfounded",
+                           "Reasons\nProvided"))+
+  # scale_fill_grey(labels=c("Study 4\nN=31",
+  #                          "Study 5\nN=72",
+  #                          "Study 3a\nN=72",
+  #                          "Study 3b\nN=101")
+  #                 )+
+  scale_x_discrete(labels = c(#expression("\n Full Sample", paste(italic("N"), " = 111      ")),
+                                 "\n Full Sample\n \U1D615 = 111",
+                              # bquote("\nEndorsing\nOnly", paste(italic("n"), " = 20      ")),
+                              #"\nEndorsing\nOnly",#, expression(italic("n"), " = 20      ")),
+                                 "\n Endorsing Only\n \U1D62F = 20",
+                              #expression(paste("\nEndorsing and\nArticulating\n", italic("n"), " = 61")),
+                              #expression("\nEndorsing,\nArticulating,and\nApplying", paste(italic("n"), " = 73        "))
+                                 "\nEndorsing and\nArticulating\n \U1D62F = 61",
+                                 "Endorsing,\nArticulating,and\nApplying\n \U1D62F = 73")
+  #)
+  )+
+  # scale_x_discrete(labels = c(expression(atop("\n Full Sample", paste(italic("N"), " = 111      "))),
+  #                             #   "\n Full Sample\n*N* = 111",
+  #                              bquote(atop("\nEndorsing\nOnly", paste(italic("n"), " = 20      "))),
+  #                             #"\nEndorsing\nOnly",#, expression(italic("n"), " = 20      ")),
+  #                             #   "\n Endorsing Only\nN = 20",
+  #                             expression(atop("\nEndorsing and\nArticulating", paste(italic("n"), " = 61        "))),
+  #                             expression(atop("\nEndorsing,\nArticulating,and\nApplying", paste(italic("n"), " = 73        ")))
+  #                             #   "\nEndorsing and\nArticulating\nN = 61",
+  #                             #   "Endorsing,\nArticulating,and\nApplying\nN=73")
+  # )
+  # )+
+  theme_bw()+
+  theme(plot.title=element_text(#family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(#family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(#family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(#family="Times",
+                                 colour = "black",
+                                 size=8
+                                 ),
+          #axis.text.x = element_text(angle = 0, vjust = -5.5, hjust = .5),
+          axis.ticks.x = element_blank(),
+          #axis.title.x = element_text(vjust = -5),
+          axis.title=element_text(#family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(#family = "Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right" #,
+        #plot.margin=unit(c(.1,.1,1,.1), "cm"
+#                         ),
+ #                  panel.margin=unit(c(0,0,6,0), "cm")
+                                     )
+#dev.off()
+#rm(test)
+
+```
+
+
+### 3.2.3 | Consistency between endorsed principles and expressed judgments
+As in Study 1, the initial criteria for exclusion (endorsing only) excluded a large proportion of the participants who selected "There is nothing wrong"; `r sum(df6$InCS=="There is nothing wrong."&df6$Roz_fully_C==FALSE)` of the `r sum(df6$InCS=="There is nothing wrong.")` participants (`r round(sum(df6$InCS=="There is nothing wrong."&df6$Roz_fully_C==FALSE)/sum(df6$InCS=="There is nothing wrong.")*100,digits=2)`%) who selected "There is nothing wrong" were excluded.  When articulation of the principles was accounted for, only `r numbers2words(sum(df6$InCS=="There is nothing wrong."&df6$eligible==FALSE,na.rm=TRUE))` (`r round(sum(df6$InCS=="There is nothing wrong."&df6$eligible==FALSE,na.rm=TRUE)/sum(df6$InCS=="There is nothing wrong.")*100,digits=2)`%) of these `r sum(df6$InCS=="There is nothing wrong.")` participants were excluded.  This is higher than in Study 1 (`r numbers2words(sum(df3$InCS=="There is nothing wrong."&df3$eligible==FALSE,na.rm=TRUE))` participant, `r round(sum(df3$InCS=="There is nothing wrong."&df3$eligible==FALSE,na.rm=TRUE)/sum(df3$InCS=="There is nothing wrong.")*100,digits=2)`% of those who selected "There is nothing wrong"), however in reducing the obvious false exclusion of participants who selected "There is nothing wrong" it remains an improvement on the original criteria.  This suggests that accounting for participants’ ability to articulate the principles endorsed provides a more accurate criteria for exclusion than accounting only for the endorsing of a given principle.  Furthermore, when the applying of the harm principle was also accounted for, only `r numbers2words(sum(df6$InCS=="There is nothing wrong."&df6$all_harm_norm==FALSE))` of the `r sum(df6$InCS=="There is nothing wrong.")` participants who selected "There is nothing wrong" was excluded.  The criteria for convergence developed here lead to greater consistency between a participant’s eligibility for analysis and their judgment made than the original criteria described by @royzman_curious_2015.
+
+Study 2 investigated the consistency with which people apply, articulate, and endorse the harm principle.  Only `r  numbers2words(sum(x$hrm_all_gen=="FALSE"))` participant consistently applied, articulated, and endorsed the harm principle.  As such, the harm principle as a basis for exclusion from analysis becomes practically redundant, and it seems unlikely that there is a generalised harm principle that underlies moral judgments (though does not rule out the possibility of more focused, content specific harm principles).  The endorsing and articulation of the norm principle resulted in the exclusion of `r sum(x$nrm==FALSE)` participants.  The degree to which the articulation or the endorsing of the norm principle may render participants ineligible for consideration as dumbfounded is unclear, this is discussed in more detail below.  However, even if participants are excluded from analysis based on the norm principle, dumbfounded responding is still observed, with `r numbers2words(sum(x$InCS=="It's wrong but I can't think of a reason."&x$hrm_all_nrm==TRUE))` participants (`r round(sum(x$hrm_all_nrm==TRUE&x$InCS=="It's wrong but I can't think of a reason.")/sum(x$hrm_all_nrm)*100,digits=2)`% of sample eligible for analysis; `r round(sum(x$hrm_all_nrm==TRUE&x$InCS=="It's wrong but I can't think of a reason.")/length(x$gender)*100,digits=2)`% of the total sample) selecting the admission of having no reason on the critical slide.  As in Study 1, rates of observed dumbfounding are low, and providing reasons appears to be the preferred response, with more participants (`r (sum(df6$InCS=="It's wrong and I can provide a valid reason."))`; `r (sum(df6$InCS=="It's wrong and I can provide a valid reason.")/length(df6$gender))*100`%) providing reasons than selecting either of the other responses to the critical slide.
+
+# 4 | Study 3: Replication and Extension
+Studies 1 and 2 demonstrated that people do not consistently articulate and endorse the norm principle, or consistently articulate, endorse and apply the harm principle.  Both studies found evidence of dumbfounding, however the exclusion of participants resulted in relatively small numbers of participants being eligible for analysis. As such we conducted a third study, an attempt to replicate Study 2, with a larger sample.
+
+## 4.1 | Method
+
+```{r load_study_3, include=FALSE}
+
+load("loaded_data/three.RData")
+
+x <- study_3
+
+```
+
+
+### 4.1.1 | Participants and design
+Study 3 was a frequency-based replication of Study 2.  The aim was to investigate the prevalence of moral dumbfounding when controlling for (a) the consistency with which people articulate and endorse the norm principle and the harm principle, and (b) the consistency with which people apply the norm principle principle.  A total sample of `r length(x$gender)` (`r sum(x$gender=="Female")` female, `r sum(x$gender=="Male")` male; *M*~age~ = `r round(mean(x$age,na.rm=TRUE),digits=2)`, min = `r min(x$age,na.rm=TRUE)`, max = `r max(x$age,na.rm=TRUE)`, *SD* = `r round(sd(x$age,na.rm=TRUE),digits=2)`) took part.  All participants were recruited through MTurk.  Participation was voluntary and participants were paid 0.50 US dollars for their participation.  Participants were recruited from English speaking countries or from countries where residents generally have a high level of English (e.g., The Netherlands, Denmark, Sweden).
+
+### 4.1.2 | Procedure and materials
+
+The materials and procedure were identical to Study 2.
+
+
+```{r reasonsS3Ttest1, include=FALSE}
+t <- t.test(x$InJu1,x$InJu2, paired = TRUE)
+#df1$Sample
+#t1 <- t.test(InJu1~Sample, data=x)
+#t2 <- t.test(InJu2~Sample, data=x)
+
+td <- cohensD(x$InJu1,x$InJu2)
+#t1d <- cohensD(InJu1~Sample, data=x)
+#t2d <- cohensD(InJu2~Sample, data=x)
+
+
+custom_chi <- function(x,y){
+  a <- length(x)
+  b <- length(y)
+  c <- rep(1, a)
+  d <- rep(2, b)
+  e <- c(c,d)
+  f <- c(x, y)
+  
+  g <- data.frame(e,f)
+  h <- table(g$e,g$f)
+  suppressWarnings(chisq.test(h))
+}
+c <- custom_chi(x$Ju1_bin,x$Ju2_bin)
+custom_chi(x$Ju1_bin,x$Ju2_bin)
+
+c$data.name
+
+d <- cbind.data.frame(x$Ju1_bin[which(x$Ju1_bin!=x$Ju2_bin)],x$Ju2_bin[which(x$Ju1_bin!=x$Ju2_bin)])
+colnames(d) <- c("initial_judgement","revised_judgement")
+print(d)
+sum(d$initial_judgement=="wrong" & d$revised_judgement=="neutral")
+
+p_report(t$p.value)
+
+variable.names(x)
+
+
+### previous experience 
+
+sum(x$Prv_in=="yes")
+x$Prv_in_S[which(x$Prv_in=="yes")]
+
+t3 <- t.test(x$InJu1~x$Prv_in)
+t3d <- cohensD(InJu1~Prv_in, data=x)
+
+c1 <- chisq.test(table(x$InCS,x$Prv_in))
+
+
+# hypen missing here so code replaced with plain text in paragraph below
+numbers2words_cap1(sum(x$Ju1_bin=="wrong"))
+
+```
+
+## 4.2 | Results and Discussion
+Three-hundred-and-seventy-nine of the total sample (*N* = `r length(x$gender)`; `r round((sum(x$Ju1_bin=="wrong")/length(x$gender))*100,digits=2)`%) rated the behavior of Julie and Mark as wrong initially; and `r sum(x$Ju2_bin=="wrong")` participants, (*N* = `r length(x$gender)`; `r round((sum(x$Ju2_bin=="wrong")/length(x$gender))*100,digits=2)`%) rated the behavior as wrong after viewing the counter-arguments and the critical slide.  A paired samples t-test revealed a significant difference in rating of behavior from time one, initial rating, (*M* = `r round(mean(x$InJu1), digits = 2)`, *SD* = `r round(sd(x$InJu1), digits = 2)`), to time two, revised rating, (*M* = `r round(mean(x$InJu2), digits = 2)`, *SD* = `r round(sd(x$InJu2), digits = 2)`), *t*(`r t$parameter`) = `r round(t$statistic, digits=3)`, *p* `r paste(p_report(t$p.value))`, *d* = `r td`.  However a chi-square test for independence revealed no significant association between time of judgment and valence of judgment made, &chi;^2^(`r c$parameter`, *N* = `r length(x$Ju1_bin)+length(x$Ju2_bin)`) = `r c$statistic`, *p* `r paste(p_report(c$p.value))`, *V* = `r sqrt((c$statistic/(502))/1)`.^[Further analysis revealed that `r length(d$initial_judgement)` participants changed their judgment, only `r numbers2words(sum(d$initial_judgement=="wrong"& d$revised_judgement=="right")+sum(d$initial_judgement=="right"& d$revised_judgement=="wrong"))` participants changed fully the valence of their judgment, with `r numbers2words(sum(d$initial_judgement=="wrong"& d$revised_judgement=="right"))` changing their judgment from "wrong" to "right", and `r numbers2words(sum(d$initial_judgement=="right"& d$revised_judgement=="wrong"))` changing their judgement from "right" to "wrong".  Of the other changes in judgment, `r numbers2words(sum(d$initial_judgement=="wrong"& d$revised_judgement=="neutral"))` participants changed their judgment from "wrong" to "neutral"; `r numbers2words(sum(d$initial_judgement=="right"& d$revised_judgement=="neutral"))` participants changed their judgment from "right" to "neutral"; and `r numbers2words(sum(d$initial_judgement=="neutral"& d$revised_judgement=="right"))` changed their judgment from "neutral" to "right".]
+
+### 4.2.1 | Testing for order effects
+As in Study 2, the order of the blocks did influence on the any of the responses of interest, and the general harm question was the only question relating to the application of the harm principle that varied significantly with order (see supplementary materials for details of analysis).  Again, it is likely that encountering a behaviour where harm may be acceptable (through the content of the other two questions), led participants to respond to the general question more favourably.
+
+
+```{r S3reasonsS2Endorsing, include=FALSE}
+# royzman
+
+y <- df6
+variable.names(y)
+
+#test$InCS
+
+y <- y[which(y$Roz_fully_C==TRUE),]
+table(y$InCS)
+table(y$Ju1_bin)
+table(y$Ju2_bin)
+sum(y$Ju1_bin=="wrong"&y$Ju2_bin=="wrong"&y$InCS=="It's wrong and I can provide a valid reason.")
+sum(y$Dumb_incl_string=="It's wrong and I can provide a valid reason.")
+x$critical_slide_wrong
+
+sum(y$InCS=="There is nothing wrong.")
+y_study1 <- df3[which(df3$Roz_fully_C==TRUE),]
+sum(df3$InCS=="There is nothing wrong.",na.rm = T)-sum(y_study1$InCS=="There is nothing wrong.",na.rm = T)
+
+a <- y
+
+```
+
+```{r S3reasonsS2Endorsingb, include=FALSE}
+x <- df6
+variable.names(x)
+
+#test$InCS
+
+#x <- x[which(x$Roz_fully_C==TRUE),]
+z <- x[which(x$eligible==TRUE),]
+
+table(z$InCS)
+table(z$Ju1_bin)
+table(z$Ju2_bin)
+sum(z$Ju1_bin=="wrong"&z$Ju2_bin=="wrong"&z$InCS=="It's wrong and I can provide a valid reason.")
+sum(z$Dumb_incl_string=="It's wrong and I can provide a valid reason.")
+z$critical_slide_wrong
+
+sum(x$InCS=="There is nothing wrong.")
+x_study1 <- df3[which(df3$Roz_fully_C==TRUE),]
+sum(df3$InCS=="There is nothing wrong.",na.rm = T)-sum(x_study1$InCS=="There is nothing wrong.",na.rm = T)
+
+a <- x
+
+```
+
+
+### 4.2.2 | Measuring dumbfounding
+Participants who selected the admission of not having reasons on the critical slide were identified as dumbfounded.  This option was selected by `r sum(x$InCS=="It's wrong but I can't think of a reason.")` participants (`r round(sum(x$InCS=="It's wrong but I can't think of a reason.")/length(x$InCS)*100,digits=2)`% of the entire sample *N* = `r length(x$gender)`).^[Unsupported declarations and tautological responses provided in the open-ended responses resulted in an additional  `r sum(x$Dumb_incl_string=="It's wrong but I can't think of a reason.")-sum(x$InCS=="It's wrong but I can't think of a reason.")` participants presenting as potentially dumbfounded; again, these participants are not identified as dumbfounded here.]
+
+The exclusion criteria developed by Royzman et al. [-@royzman_curious_2015\; the endorsing of either principle] were applied, and this left a sample of `r length(y$gender)` who were eligible for analysis.  Of these, `r sum(y$InCS=="It's wrong but I can't think of a reason.")` participants selected the dumbfounded response.
+
+```{r}
+z <- x[which(x$eligible==TRUE),]
+```
+We then applied the exclusion criteria developed in Study 1 (both articulating and endorsing either principle), and the number of participants eligible for analysis increased to `r length(z$gender)`.  Of these, `r sum(z$InCS=="It's wrong but I can't think of a reason.")` (`r round(sum(z$InCS=="It's wrong but I can't think of a reason.")/length(z$InCS)*100,digits=2)`%) selected the dumbfounded response.
+
+
+
+
+```{r S3reasonsS2pot_hrmgen, include=FALSE}
+rm(a,b)
+x <- df6
+
+
+sum(x$pot_hrm_bin=="wrong",na.rm = TRUE)
+
+table(x$pot_hrm_bin)
+sum(x$pot_hrm_gen,na.rm = TRUE)
+
+table(x$parent_order,x$pot_hrm_bin)
+c <- chisq.test(table(x$parent_order,x$pot_hrm_bin))
+
+t <- t.test(x$pot_hrm~x$parent_order)
+td <- cohensD(pot_hrm~parent_order, data=x)
+
+tapply(x$pot_hrm,x$parent_order,descriptives)
+table(x$pot_hrm_gen)
+table(x$pot_hrm_nrm)
+
+#### Potential harm generally.
+
+```
+
+
+```{r S3reasonsboxing, include=FALSE}
+
+table(x$box)
+
+c <- chisq.test(table(x$parent_order,x$box))
+
+t <- t.test(x$pot_hrm~x$parent_order)
+tapply(x$pot_hrm,x$parent_order,descriptives)
+table(x$box_gen)
+table(x$pot_hrm_nrm)
+
+#### Boxing.
+
+
+# number word code replaced below (hyphen)
+#numbers2words_cap1(sum(x$InCS=="It's wrong but I can't think of a reason."&x$box_gen==TRUE))
+
+```
+
+
+```{r S3reasonsrugb, include=FALSE}
+
+
+table(x$rugb)
+
+c <- chisq.test(table(x$parent_order,x$box))
+
+t <- t.test(x$pot_hrm~x$parent_order)
+tapply(x$pot_hrm,x$parent_order,descriptives)
+table(x$rugb_gen)
+table(x$pot_hrm_nrm)
+
+#### Contact team sports.
+
+# hyphen code replacement
+# numbers2words_cap1(sum(x$InCS=="It's wrong but I can't think of a reason."&x$rugb_gen==TRUE))
+
+```
+
+
+```{r S3reasonsapplying_all, include=FALSE}
+
+
+table(x$nrm)
+custom_chi <- function(x,y){
+  a <- length(x)
+  b <- length(y)
+  c <- rep(1, a)
+  d <- rep(2, b)
+  e <- c(c,d)
+  f <- c(x, y)
+  
+  g <- data.frame(e,f)
+  h <- table(g$e,g$f)
+  suppressWarnings(chisq.test(h))
+}
+
+c <- custom_chi(x$hrm_all_gen,x$hrm_all_gen1)
+
+#### Applying the harm principle across contexts.
+
+```
+
+Finally, the exclusion criteria developed in Study 2 were applied, leaving a sample of `r sum(x$all_harm_norm)` participants who were eligible for analysis; `r numbers2words_cap1(sum(x$InCS=="It's wrong but I can't think of a reason."&x$all_harm_norm==TRUE))` of whom (`r round(sum(x$all_harm_norm==TRUE&x$InCS=="It's wrong but I can't think of a reason.")/length(x$gender)*100,digits=2)`% of the total sample) selected the dumbfounded response.  The responses to the critical slide for the entire sample, and for each measure of convergence used are displayed in Figure\ \@ref(fig:S3reasonsfig2).
+
+```{r S3reasonsprepfig2, include=FALSE}
+
+df_r1 <- rbind.data.frame(cbind(df6$InCS,
+                                rep(1,length(length(df6$InCS)))),
+                          
+                          cbind(df6$InCS[which(df6$Roz_fully_C==TRUE)],
+                              rep(2,length(sum(df6$Roz_fully_C==TRUE,na.rm = TRUE)))),
+                          
+                          cbind(df6$InCS[which(df6$eligible==TRUE)],
+                                rep(3,length(sum(df6$eligible==TRUE,na.rm = TRUE)))),
+                        
+                        cbind(df6$InCS[which(df6$all_harm_norm==TRUE)],
+                              rep(4,length(sum(df6$all_harm_norm==TRUE,na.rm = TRUE)))))
+
+
+colnames(df_r1) <- c("InCS", "convergence")
+variable.names(df_r1)
+y <- table(df_r1)
+y <- as.data.frame(y)
+
+z <- as.data.frame(table(df_r1$InCS,df_r1$convergence)/length(df6$InCS))
+perc <- z$Freq
+test <- cbind(y,perc)
+test$InCS <- car::recode(test$InCS, '"1"="1nothing wrong";"2"="2no reason";"3"="3reason"')
+
+test$sampleN <- c(rep(length(df6$gender),3),
+             rep(sum(df6$Roz_fully_C==TRUE,na.rm = TRUE),3),
+             rep(sum(df6$eligible==TRUE,na.rm = TRUE),3),
+             rep(sum(df6$all_harm_norm==TRUE,na.rm = TRUE),3)
+             )
+
+
+test$sample_perc <- test$Freq/test$sampleN
+
+test$convergence <- car::recode(test$convergence, '"1"="1total sample";"2"="2fully convergent";"3"="3study1";"4"="4study2"')
+
+
+
+test
+#rm(z,y,df_r1,perc)
+
+```
+
+
+```{r S3reasonsfig2, fig.cap = "Responses to critical slide for the entire sample, and for each measure of convergence: (i) endorsing only, (ii) endorsing and articulating, and (iii), endorsing, articulating, and applying; percentages of full sample displayed within plot, percentages of relevant sample displayed in parenthesis below the count.", include=TRUE}
+
+# color for Study 2 "#B4B4B4"
+# Figure\ \@ref(fig:reasonsfig2)
+
+#tiff('Figure_3.tiff', units="in", width=6, height=4, res=1200, compression = 'lzw')
+#tiff('Figure_3_revised.tiff', units="in", width=6, height=4, res=1200, compression = 'lzw')
+
+
+ggplot(test, aes(x = convergence, y = perc, fill = InCS)) +
+   scale_y_continuous(limits = c(-.1,1),
+                      labels = percent_format()
+                      )+ 
+  geom_col(position = "dodge",
+           color="black",
+           size=.2
+           )+
+  geom_text(size=1.9,
+            aes( label = scales::percent(test$perc),
+                 y= perc ),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(size=1.5,
+            aes( label = paste0("(",scales::percent(test$sample_perc),")"),
+                 y =  -.085),
+            stat= "identity",
+            vjust = -.5,
+            position = position_dodge(.9),
+            fontface='plain'
+            )+
+  geom_text(size=2.5,
+            aes(label = format(Freq),
+                y= -3.0*(..count../100)/(..count..)),
+            stat= "count",
+            position = position_dodge(0.9),
+            #vjust = -.05,
+            fontface='plain'
+            )+
+  labs(y = "% of Participants providing\nEach Response on Critical Slide",
+       x = "Measure of Convergence",
+       fill = "Response to\nCritical Slide"
+       )+
+  theme_apa()+
+  scale_fill_manual(values = c("#989898", "#333333", "#E6E6E6"),
+                    labels=c("Nothing\nWrong",
+                           "Dumbfounded",
+                           "Reasons\nProvided"))+
+  # scale_fill_grey(labels=c("Study 4\nN=31",
+  #                          "Study 5\nN=72",
+  #                          "Study 3a\nN=72",
+  #                          "Study 3b\nN=101")
+  #                 )+
+  scale_x_discrete(labels = c("\n Full Sample\n \U1D615 = 502",
+                              "\n Endorsing Only\n \U1D62F = 84",
+                              "\nEndorsing and\nArticulating\n \U1D62F = 294",
+                              "Endorsing,\nArticulating,and\nApplying\n \U1D62F = 345")
+                   )+
+  theme_bw()+
+  theme(plot.title=element_text(#family="Times",
+                                size=12
+                                ),
+        legend.text=element_text(#family="Times",
+                                 size=8
+                                 ),
+          legend.title=element_text(#family="Times",
+                                    size=10
+                                    ),
+          axis.text=element_text(#family="Times",
+                                 colour = "black",
+                                 size=8
+                                 ),
+          axis.ticks.x = element_blank(),
+          axis.title=element_text(#family="Times",
+                                  size=12
+                                  ),
+          strip.text=element_text(#family = "Times",
+                                  size = 12
+                                  ),
+          strip.background = element_rect(fill = "white"),
+          legend.position="right")
+
+#dev.off()
+
+#rm(test)
+
+```
+
+
+```{r S3judgements and critical slide, include=FALSE}
+x <- study_3
+table(x$InCS,x$Roz_fully_C)
+table(x$InCS,x$eligible)
+
+sum(x$InCS=="There is nothing wrong."&x$Roz_fully_C==FALSE)
+round(sum(x$InCS=="There is nothing wrong."&x$Roz_fully_C==FALSE)/sum(x$InCS=="There is nothing wrong.")*100,digits=2)
+
+sum(x$InCS=="There is nothing wrong."&x$eligible==FALSE)
+
+```
+
+### 4.2.3 | Consistency between endorsed principles and expressed judgments
+As in Studies 1 and 2, the exclusion criteria developed here resulted in fewer false exclusions.  In the current study, the exclusion criteria developed by Royzman et al. [-@royzman_curious_2015, endorsing only], led to `r sum(x$InCS=="There is nothing wrong."&x$Roz_fully_C==FALSE)` of the `r sum(x$InCS=="There is nothing wrong.")` participants who selected "There is nothing wrong" being excluded from analysis (`r round(sum(x$InCS=="There is nothing wrong."&x$Roz_fully_C==FALSE)/sum(x$InCS=="There is nothing wrong.")*100,digits=2)`%).  Conversely, applying the exclusion criteria developed in Study 1 resulted in `r numbers2words(sum(df6$InCS=="There is nothing wrong."&df6$eligible==FALSE,na.rm=TRUE))` of these `r sum(df6$InCS=="There is nothing wrong.")` participants being excluded (`r round(sum(df6$InCS=="There is nothing wrong."&df6$eligible==FALSE,na.rm=TRUE)/sum(df6$InCS=="There is nothing wrong.")*100,digits=2)`%); and the exclusion criteria from Study 2 resulted in `r numbers2words(sum(df6$InCS=="There is nothing wrong."&df6$all_harm_norm==FALSE))` of these `r sum(df6$InCS=="There is nothing wrong.")` participants being excluded (`r round(sum(df6$InCS=="There is nothing wrong."&df6$all_harm_norm==FALSE,na.rm=TRUE)/sum(df6$InCS=="There is nothing wrong.")*100,digits=2)`%).  
+
+```{r adS3setupforpercentage, include=FALSE}
+x <- study2Cr
+df3 <- study_3
+variable.names(x)
+sum(x$InCS=="It's wrong but I can't think of a reason.")
+#x <- x[which(x$eligible==TRUE),]
+
+```
+
+Further analysis, using the revised measure of convergence demonstrated considerably more consistency in the exclusion/inclusion of participants who selected "There is nothing wrong".  These revised criteria identified sixty-nine (`r round((sum(x$InCS=="It's wrong but I can't think of a reason.")/length(x$gender))*100,digits=2)`% of the total eligible sample of *N* = `r length(x$gender)`) participants as dumbfounded.  Study 1 provided evidence for moral dumbfounding and demonstrated inconsistency in the endorsing and articulation of the harm principle and the norm principle, a second study was devised to assess the consistency in the application of the harm principle across differing contexts, along with the endorsing, and articulation of the each principle.  Study 3 replicated the findings of both Studies 1 and 2 with a larger sample.  By applying our revised exclusion criteria, we found clear evidence for the existence of moral dumbfounding, though observed rates of dumbfounding were low, with the majority of participants (`r (sum(x$InCS=="It's wrong and I can provide a valid reason."))`; `r (sum(x$InCS=="It's wrong and I can provide a valid reason.")/length(x$gender))*100`%) providing reasons.
+
+```{r logit1, include = FALSE}
+#getwd()
+
+
+df3 <- study2Cr
+
+df3$InCS <- relevel(df3$InCS, ref = 1)
+
+df3a <- mlogit.data(df3, choice = "InCS", shape = "wide")
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_search+mean_presence+InJu1+age, data = df3a) #, reflevel = 2)
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_search+mean_presence+InJu1, data = df3a) #, reflevel = 1)
+
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+InJu1, data = df3a) #, reflevel = 1)
+InCSModel<-mlogit(InCS ~ 1 | InJu1, data = df3a) #, reflevel = 1)
+
+InCSModel<-mlogit(InCS ~ 1 | mean_presence, data = df3a) #, reflevel = 1)
+InCSModel<-mlogit(InCS ~ 1 | mean_search, data = df3a) #, reflevel = 1)
+InCSModel<-mlogit(InCS ~ 1 | mean_rel, data = df3a) #, reflevel = 1)
+
+summary_InCS_model <- summary(InCSModel)
+summary_InCS_model
+
+summary_InCS_model$lratio$parameter
+summary_InCS_model$lratio$statistic
+summary_InCS_model$lratio$p.value
+
+summary_InCS_model$CoefTable
+
+InCSModel$coefficients[3]
+InCSModel$coefficients[4]
+
+cox <- PseudoR2(multinom(InCS~InJu1+mean_rel,df3), "all")
+
+cox[3]
+cox[4]
+#PseudoR2(x, "all")
+#summary_InCS_model
+
+
+wald1 <- 
+  summary_InCS_model$CoefTable[3]^2 /
+  summary_InCS_model$CoefTable[7]^2
+
+wald2 <- 
+  summary_InCS_model$CoefTable[4]^2 /
+  summary_InCS_model$CoefTable[8]^2
+
+
+summary_InCS_model
+summary_InCS_model$coefficients[3]
+data.frame(exp(InCSModel$coefficients))
+
+exp(InCSModel$coefficients)[3]
+
+
+a <- exp(confint(InCSModel))
+c(a[3],a[7])
+
+residuals(InCSModel)
+fitted(InCSModel, outcome = F)
+
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$gender))
+pw <- pwr.chisq.test(w=w,N=length(df3$InCS),df=(2),sig.level = .05)
+
+pw$power
+
+revised_PseudoR2s <- function(LogModel) {
+  dev <- LogModel$deviance
+  nullDev <- LogModel$null.deviance
+  modelN <- length(LogModel$fitted.values)
+  R.l <- 1 - dev / nullDev
+  R.cs <- 1- exp ( -(nullDev - dev) / modelN)
+  R.n <- R.cs / ( 1 - ( exp (-(nullDev / modelN))))
+  
+  all <- list(hosmer_and_lemeshow = as.numeric(R.l), mcfadden = NA, cox_and_snell = as.numeric(R.cs), nagelkerke = as.numeric(R.n))
+  all
+}
+
+logits_rsquared <- glm(InCS~mean_rel,df3, family = binomial(link = "logit"))
+cox <- revised_PseudoR2s(logits_rsquared)
+
+```
+
+The analyses of the individual difference variables are reported in the Supplementary Materials (Appendix D).
+
+```{r s1i, include = FALSE, echo=FALSE, ref.label="reasons set up data Study 1"}
+```
+
+```{r s2i, include = FALSE, echo=FALSE, ref.label="reasons set up data Study 2"}
+```
+
+```{r s2i, include = FALSE, echo=FALSE, ref.label="load_study_3"}
+```
+
+
+```{r loaddfs}
+
+df3 <- study_1
+df6 <- study_2
+df9 <- study_3
+df9a <- study2Cr
+
+```
+
+```{r hrm, include = FALSE, echo=FALSE, ref.label="reasonsapplying_all"}
+```
+
+# 5 | General Discussion
+The overarching goal of Studies 1, 2, and 3 was to re-assess the occurrence of moral dumbfounding.  That is, we examined whether the judgments of dumbfounded participants can be attributed to moral principles based on their endorsing of these principles.  This was done by assessing the consistency with which participants articulate and apply these moral principles.  @royzman_curious_2015 argue that, if participants endorse a principle, their judgment can be attributed to that principle.  They claimed that by attributing participants' judgments to particular principles in this way, moral dumbfounding can be eliminated.  However, attributing judgments to reasons based on the endorsing of a related principle is problematic.  Stronger evidence that a participant's judgment may be attributed to a given principle should account for (a) the participant's ability to articulate this principle, independent of a prompt; or (b) the consistency with with the participant applies the principle across differing contexts.  Three studies were conducted to address these issues.  
+
+All three studies showed that participants do not consistently articulate principles that they may endorse.  This inconsistency between the endorsing and articulation of principles that are purported to be governing moral judgments suggests that endorsing alone provides a poor measure of whether these principles directly underpin a given judgment.  In these cases participants' judgments were not attributed to these principles, and evidence for dumbfounding was found, though rates of dumbfounding were quite low.  Studies 2 and 3 demonstrated that people do not consistently apply the harm principle across different contexts.  This poses a challenge to the argument that the judgments of dumbfounded participants can be attributed to the harm principle [e.g., @royzman_curious_2015; see also @gray_myth_2014; @jacobson_moral_2012].  Our studies showed evidence for dumbfounding.  Despite the low rates of dumbfounding observed, the consistency across all three studies provides some evidence that dumbfounded responding may indeed be indicative of a state of dumbfoundedness, rather than being entirely attributed to features of the experimental design.
+
+
+## 5.1 | The Norm Principle and Unsupported Declarations
+In all three studies, unsupported declarations were coded as an articulation of the norm principle, and therefore not taken as dumbfounded responses.  However, in previous work, we identified parallels between the providing of unsupported declarations and the providing of admissions of not having reasons [similar proportion of time spent (a) smiling/laughing, (b) in silence; see @mchugh_searching_2017a].  There is also a strong theoretical case for the inclusion of unsupported declarations as dumbfounded responses.  Propositional beliefs/deontological judgments may be viewed as habitual/model-free intuitions [e.g., @crockett_models_2013; @cushman_role_2013].  The reasons for these judgments are independent of the intuition.  Stating the content of the intuition, is not the same as providing a reason for the intuition.  @royzman_curious_2015 argue that endorsing the propositional belief is sufficient evidence of that belief playing an influential role in relevant judgments, however, this is holding participants to a different standard.  There is a difference between having a reason for an intuition/propositional belief and claiming the direct basis for a judgment is an associated propositional belief.  In view of this, it is possible that by not including unsupported declarations or tautological reasons as dumbfounded responses, the rates of dumbfounding reported here are not representative of the phenomenon, providing instead an overly conservative estimate.  However, even according to this stricter measure adopted here, evidence for dumbfounding was found.
+
+## 5.2 | Consistency Between Endorsed Principles and Expressed Judgments
+The most convincing evidence that the exclusion criteria developed in these studies are more accurate than the criteria proposed by @royzman_curious_2015 is the greater consistency between valence of judgment and eligibility for analysis.  Participants' eligibility for analysis is determined by whether or not their judgment can be attributed to either the harm principle or the norm principle.  If a participant's judgment can be attributed to a given principle, this participant is deemed to have a reason for their judgment and they cannot be identified as dumbfounded (rendering them ineligible for analysis).  In order for a judgment to legitimately be attributed to a particular principle, it is necessary that the valence of the judgment is consistent with what is predicted by the application of that principle.  In the case of both principles, applying either the harm principle or the norm principle [as described by @royzman_curious_2015] results in the behavior being judged as wrong.  This means that the judgments of participants who selected "There is nothing wrong" cannot be attributed to either principle.  Any participants who are excluded from analysis but selected "There is nothing wrong", are clearly identifiable as being falsely excluded from analysis such that this may be used as a measure of the relative accuracy of the different exclusion criteria employed.
+
+
+According to @royzman_curious_2015, a participant's judgment can be attributed to a given principle if they endorse this principle.  However, in each of the studies reported here, excluding participants based on the endorsing of a principle resulted in over half of the participants who selected "There is nothing wrong" to be falsely excluded from analysis; participants' judgments were incorrectly attributed to either the harm principle or the norm principle (`r sum(df3$InCS=="There is nothing wrong."&df3$Roz_fully_C==FALSE)` of the `r sum(df3$InCS=="There is nothing wrong.")` participants who selected "There is nothing wrong" in Study 1 were falsely excluded `r round(sum(df3$InCS=="There is nothing wrong."&df3$Roz_fully_C==FALSE)/sum(df3$InCS=="There is nothing wrong.")*100,digits=2)`%; `r sum(df6$InCS=="There is nothing wrong."&df6$Roz_fully_C==FALSE)` of the `r sum(df6$InCS=="There is nothing wrong.")` participants who selected "There is nothing wrong" in Study 2 were falsely excluded `r round(sum(df6$InCS=="There is nothing wrong."&df6$Roz_fully_C==FALSE)/sum(df6$InCS=="There is nothing wrong.")*100,digits=2)`%; and `r sum(df9$InCS=="There is nothing wrong."&df9$Roz_fully_C==FALSE)` of the `r sum(df9$InCS=="There is nothing wrong.")` participants who selected "There is nothing wrong" in Study 3 were falsely excluded `r round(sum(df9$InCS=="There is nothing wrong."&df9$Roz_fully_C==FALSE)/sum(df9$InCS=="There is nothing wrong.")*100,digits=2)`%).  This suggests that the endorsing of a principle is a flawed indicator of the degree to which the principle is guiding participants' judgments.
+
+We made two changes to the exclusion criteria that aimed to reduce the numbers of participants being falsely excluded from analysis.  We hypothesised that providing participants with an opportunity to articulate the reasons for their judgment would more accurately identify the principles that guided participants' judgments than their endorsing of particular principles.  This was found to be the case; in Study 1, only `r numbers2words(sum(df3$InCS=="There is nothing wrong."&df3$eligible==FALSE))` of the `r sum(df3$InCS=="There is nothing wrong.")` participants who selected "There is nothing wrong" was falsely excluded from analysis; in Study 2 only `r numbers2words(sum(df6$InCS=="There is nothing wrong."&df6$eligible==FALSE))` of the `r sum(df6$InCS=="There is nothing wrong.")` participants who selected "There is nothing wrong" were falsely excluded from analysis; and in Study 3 `r numbers2words(sum(df9$InCS=="There is nothing wrong."&df9$eligible==FALSE))` of the `r sum(df9$InCS=="There is nothing wrong.")` participants who selected "There is nothing wrong" were falsely excluded from analysis.  Taking participants' articulating of the reasons for their judgments into account reduced measurable rate of false exclusion from `r round(sum(df3$InCS=="There is nothing wrong."&df3$Roz_fully_C==FALSE)/sum(df3$InCS=="There is nothing wrong.")*100,digits=2)`% to `r round(sum(df3$InCS=="There is nothing wrong."&df3$eligible==FALSE,na.rm=TRUE)/sum(df3$InCS=="There is nothing wrong.")*100,digits=2)`% in Study 1; `r round(sum(df6$InCS=="There is nothing wrong."&df6$Roz_fully_C==FALSE)/sum(df6$InCS=="There is nothing wrong.")*100,digits=2)`% to `r round(sum(df6$InCS=="There is nothing wrong."&df6$eligible==FALSE,na.rm=TRUE)/sum(df6$InCS=="There is nothing wrong.")*100,digits=2)`% in Study 2; and  `r round(sum(df9$InCS=="There is nothing wrong."&df9$Roz_fully_C==FALSE)/sum(df9$InCS=="There is nothing wrong.")*100,digits=2)`% to `r round(sum(df9$InCS=="There is nothing wrong."&df9$eligible==FALSE,na.rm=TRUE)/sum(df9$InCS=="There is nothing wrong.")*100,digits=2)`% in Study 3.  Furthermore, in Studies 2 and 3, with specific reference to the harm principle, we hypothesised that assessing the degree to which people's judgments could be attributed to the harm principle would be related to whether or not they apply the harm principle across different contexts.  Again this was found to be the case, as evidenced by a further reduction in the measurable rate of false exclusion from  `r round(sum(df6$InCS=="There is nothing wrong."&df6$eligible==FALSE,na.rm=TRUE)/sum(df6$InCS=="There is nothing wrong.")*100,digits=2)`% (`r sum(df6$InCS=="There is nothing wrong."&df6$eligible==FALSE,na.rm=TRUE)`/`r sum(df6$InCS=="There is nothing wrong.")`) to `r round(((sum(df6$InCS=="There is nothing wrong."&df6$all_harm_norm==FALSE))/sum(df6$InCS=="There is nothing wrong."))*100,digits=2)`% (`r (sum(df6$InCS=="There is nothing wrong."&df6$all_harm_norm==FALSE))`/`r sum(df6$InCS=="There is nothing wrong.")`) in Study 2, and from  `r round(sum(df9$InCS=="There is nothing wrong."&df9$eligible==FALSE,na.rm=TRUE)/sum(df9$InCS=="There is nothing wrong.")*100,digits=2)`% (`r sum(df9$InCS=="There is nothing wrong."&df9$eligible==FALSE,na.rm=TRUE)`/`r sum(df9$InCS=="There is nothing wrong.")`) to `r round(((sum(df9$InCS=="There is nothing wrong."&df9$all_harm_norm==FALSE))/sum(df9$InCS=="There is nothing wrong."))*100,digits=2)`% (`r (sum(df9$InCS=="There is nothing wrong."&df9$all_harm_norm==FALSE))`/`r sum(df9$InCS=="There is nothing wrong.")`) in Study 3.
+
+## 5.3 | Implications
+The existence of moral dumbfounding and the associated support for intuitionist theories of moral judgment [e.g. @cushman_multisystem_2010; @haidt_emotional_2001; @hauser_reviving_2008; @prinz_passionate_2005; see also @crockett_models_2013; @cushman_role_2013; @greene_secret_2008; @greene_moral_2013] has been questioned in recent years.  The majority of these challenges are theoretical [e.g., @jacobson_moral_2012; @sneddon_social_2007; @wielenberg_robust_2014].  The work of @gray_myth_2014, appeared to give some empirical weight to these challenges, while @royzman_curious_2015 extended these challenges to the dumbfounding paradigm specifically.  We conducted three studies addressing specific methodological limitations associated with the work by @royzman_curious_2015.  Their criteria for exclusion were found to be overly liberal, as evidenced by the high rates of false exclusion of participants who selected "There is nothing wrong".  and evidence for dumbfounding was found.  Adopting the more rigorous exclusion criteria developed here led to a reduction in the false exclusion of participants.  In using these criteria, evidence for dumbfounding was found, and the explanation of dumbfounded responding proposed by @royzman_curious_2015 was not supported.
+
+Our findings provide further evidence that the distinction between implicit and explicit cognition [e.g., @bonner_conflict_2010; @evans_two_2003; @evans_heuristicanalytic_2006; @evans_rationality_2013; @reber_implicit_1989; @evans_dualprocessing_2008] extends to the moral domain.  It has long been known that people have poor introspective awareness of how judgments are made [e.g., @nisbett_telling_1977] and it appears that in some cases this may also be true for moral judgments. 
+
+## 5.4 | Limitations and Future Directions
+The research we present here consists of three studies with a combined sample of *N* = `r length(df6$gender) + length(df3$gender) + length(df9$gender)`, from MTurk (*N* = `r sum(df3$Sample=="MTurk") + sum(df6$Sample=="MTurk") + length(df9$gender)`) and third level institutions (*N* = `r sum(df3$Sample=="college")+sum(df6$Sample=="college")`).  Follow-up studies should investigate the phenomenon with larger and more diverse samples.  Such follow-up work may inform investigations into the influence of cultural and societal norms on the prevalence of moral dumbfounding.  Previous work by @haidt_sexual_2001 provides suggestive evidence that political orientation may influence a person's susceptibility to moral dumbfounding; furthermore, there is some evidence to indicate that cultural and socio-economic factors may also play a role [@haidt_affect_1993].  Future research should draw on the methods developed here and by both @mchugh_searching_2017a and @royzman_curious_2015 to investigate these influences further.
+
+The procedures we used were very similar across both studies.  They were also very similar to those used by @mchugh_searching_2017a and by @royzman_curious_2015.  A more rigourous test of moral dumbfounding should employ a variety of methods.  We recommend that future research develops a broader selection of "dumbfounding scenarios", and investigate the feasibility of alternative procedures that may elicit dumbfounding.
+
+The role of social pressure and conversational norms in the emergence of moral dumbfounding is not well understood. The studies described here were conducted using online surveys and therefore there was no immediate social pressure on participants to either appear consistent or to conform to conversational norms. Furthermore, the argument proposed by @royzman_curious_2015, that participants' judgment are grounded in reasons (harm-based/norm-based) and that they drop these reasons in response to social pressure is not supported by the evidence presented here; harm-based/norm based reasons were not consistently articulated or applied by participants in these studies. It is apparent then that dumbfounded responding cannot be attributed to social pressure alone.  The processes by which we make moral judgments also give rise to moral dumbfounding.  This means that isolating the underlying mechanisms that give rise to moral dumbfounding may contribute to our overall understanding of the making of moral judgments.
+
+
+# 6 | Conclusion
+Based on three studies we conclude: moral dumbfounding seems to be real, if not as widespread as initial reports might suggest [@haidt_emotional_2001; @haidt_sexual_2001; @haidt_moral_2000].  By reconsidering approaches of earlier research, our procedures found clear evidence for this phenomenon.  People are not always able to justify their moral judgments. Indeed, in our studies, between 13\% and 18\% of people showed dumbfounding.  Gaining insights into the occurrence and underlying processes equips society with the tools to confront and reduce dumbfounding. Further research in the area may inform improvements in the conduct of public debate, particularly in relation to polarizing issues. Perhaps in the future, the influence dumbfounding in public discourse and public policy [e.g., @macnab_msps_2016; @sim_msps_2016] will be reduced or even eliminated.
+
+```{r reasonsR_citations, include=FALSE}
+
+r_refs(file = "r-references.bib")
+my_citation <- cite_r(file = "r-references.bib")
+my_citation
+```
+
+# 7 | Data Accessibility Statement
+All participant data, and analysis scripts can be found on this paper’s project page on the Open Science Framework at [https://osf.io/m4ce7/](https://osf.io/m4ce7/).
+
+All statistical analysis was conducted using `r my_citation`.
+
+```{r reasonsnotes, include=FALSE}
+# unsupported declarations
+
+# rationalisations
+
+# j-p consistency
+# perhaps the strongest evidence that the revised criteria is better is the huge improvement in the judgment-principle consistency.
+```
+
+
+
+\newpage
+
+```{r clearall, include=FALSE}
+rm(list = ls())
+r_refs(file = "r-references.bib")
+library(papaja)
+render_appendices <- function (x, options = NULL, quiet = TRUE){
+  
+  target_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+  if (length(target_format) == 0) 
+    stop("render_appendix() can only be used within an R Markdown document; please include the function call in a code chunk.")
+  if (target_format == "latex") {
+    md_fragment <- knitr::knit_child(text = readLines(x), 
+                                     quiet = quiet)
+    md_file <- paste0(tools::file_path_sans_ext(x), ".md")
+    write(md_fragment, file = md_file, sep = "\n")
+    new_name <- paste0(tools::file_path_sans_ext(x), ".tex")
+    status <- rmarkdown::pandoc_convert(md_file, output = new_name, 
+                                        citeproc = TRUE, options = options)
+    tex <- readLines(new_name)
+    if (!grepl("\\\\section", tex[tex != ""][1])) 
+      tex <- c("\\section{Appendices}", tex)
+    tex <- c("\\clearpage", tex)
+    tex <- c("\\setlength{\\parindent}{0.5in}", tex)
+    tex <- c("\\setlength{\\leftskip}{0.0in}", tex)
+    #tex <- c("\\begin{appendix}", tex, "\\end{appendix}")
+    tex <- gsub("\\\\begin\\{figure\\}\\[htbp\\]", "\\\\begin{figure}", 
+                tex)
+    write(tex, file = new_name)
+    if (!is.null(status)) 
+      return(status)
+  }
+  else {
+    warning(target_format, " documents currently do not support appendices via includes.")
+  }
+  return(invisible(0))
+}
+
+
+```
+
+
+```{r render_appendices, include=TRUE}
+#render_appendices("Appendices.Rmd")
+```
+
+# Supplementary Material
+
+
+```{r, clear environment, include = FALSE}
+library(citr)
+#install.packages("sjstats")
+library(plyr)
+library(foreign)
+library(car)
+library(desnum)
+library(ggplot2)
+library(extrafont)
+#devtools::install_github("crsh/papaja")
+library(papaja)
+#library("dplyr")
+library("afex")
+library("tibble")
+library(scales)
+#install.packages("metap")
+library(metap)
+library(pwr)
+library(lsr)
+#install.packages("sjstats")
+#library(sjstats)
+library(DescTools)
+#inatall.packages("ggstatsplot")
+#library(ggstatsplot)
+library(VGAM)
+library(nnet)
+library(mlogit)
+library(reshape2)
+#install.packages("powerMediation")
+library("powerMediation")
+library(QuantPsyc)
+
+rm(list = ls())
+```
+
+```{r s1, include = FALSE, echo=FALSE}
+
+
+load("loaded_data/one.RData")
+df3 <- study_1
+
+x <- df3
+
+
+```
+
+```{r s2, include = FALSE, echo=FALSE}
+
+
+load("loaded_data/two.RData")
+
+df6 <- study_2
+
+x <- df6
+study_2 <- df6
+
+# hypen missing here so code replaced with plain text in paragraph below
+numbers2words_cap1(length(df1$gender))
+
+```
+
+
+```{r orderofevents, include=FALSE}
+
+
+to_num <- function(x){
+  levels(x) <- c(1:7)
+  x <- as.numeric(x)
+  
+}
+
+c1 <- chisq.test(table(df6$InCS,df6$parent_order))
+c2 <- chisq.test(table(df6$box,df6$parent_order))
+c3 <- chisq.test(table(df6$rugb,df6$parent_order))
+
+
+
+
+table(df6$InCS,df6$parent_order)
+df7 <- df6[which(df6$InCS!="It's wrong and I can provide a valid reason."),]
+df7$InCS <- droplevels(df7$InCS)
+chisq.test(table(df7$InCS,df7$parent_order))
+table(df7$InCS,df7$parent_order)
+
+chisq.test(table(df6$parent_order,df6$normQ))
+chisq.test(table(df6$parent_order,df6$hrm_Qs))
+
+
+tapply(df6$InJu1, df6$parent_order, descriptives)
+t1 <- t.test(df6$InJu1~df6$parent_order)
+t1d <- cohensD(df6$InJu1~df6$parent_order)
+
+
+tapply(df6$pot_hrm, df6$parent_order, descriptives)
+t1b <- t.test(df6$pot_hrm~df6$parent_order)
+t1bd <- cohensD(df6$pot_hrm~df6$parent_order)
+
+
+
+### harm qs order ###
+
+t_2$pot_hrm2 <- as.factor(t_2$pothrm)
+
+t_2$v_164 <- to_num(t_2$v_164)
+summary(aov(v_164~pot_hrm2,t_2))
+aov1 <- aov(v_164~pot_hrm2,t_2)
+aov1 <- summary(aov(t_2$v_164~t_2$pot_hrm2))
+
+eta1 <- (aov1[[1]][["Sum Sq"]][1])/((aov1[[1]][["Sum Sq"]][1])+(aov1[[1]][["Sum Sq"]][2]))
+
+
+#(aov[[1]][["Sum Sq"]][1])
+#(aov[[1]][["Sum Sq"]][1])/((aov[[1]][["Sum Sq"]][1])+(aov[[1]][["Sum Sq"]][2]))
+tuk <- TukeyHSD(aov(t_2$v_164~t_2$pot_hrm2))
+
+tapply(t_2$v_164,t_2$pothrm,descriptives)
+
+### nothing wrong effects? ###
+df9 <- df3[which(df3$Ju1_bin=="wrong"),]
+
+paste(p_report(tuk[[1]][10]))
+paste(p_report(tuk[[1]][11]))
+paste(p_report(tuk[[1]][12]))
+
+
+
+
+```
+
+## Study 2: Test for Order Effects
+Recall that the questions were blocked for randomisation.  Tests for effects of the order of the blocks revealed no difference in initial rating, *t*(`r round(t1$parameter, digits=2)`) = `r round(t1$statistic, digits=2)`, *p* `r paste(p_report(t1$p.value))`, *d* = `r t1d`; no difference in responding to the critical slide, $\chi$^2^(`r c1$parameter`, *N* = `r length(x$gender)`) = `r round(c1$statistic,digits=2)`, *p* `r paste(p_report(c1$p.value))`, *V* = `r round(sqrt((c1$statistic/(111))/1),digits=2)`; and no difference in response to the generic potential harm question ("How would you rate the behavior of two people who engage in an activity that could potentially result in harmful consequences for either of them?"), *t*(`r round(t1b$parameter, digits=2)`) = `r round(t1b$statistic, digits=2)`, *p* `r paste(p_report(t1b$p.value))`, *d* = `r t1bd`.  A chi-squared test for independence revealed no significant association between order of blocks and judgments of boxing, $\chi$^2^(`r c2$parameter`, *N* = `r length(x$gender)`) = `r round(c2$statistic,digits=2)`, *p* `r paste(p_report(c2$p.value))`, *V* = `r round(sqrt((c2$statistic/(111))/1),digits=2)`, or the question regarding contact team sports, $\chi$^2^(`r c3$parameter`, *N* = `r length(x$gender)`) = `r round(c3$statistic,digits=2)`, *p* `r paste(p_report(c3$p.value))`, *V* = `r round(sqrt((c3$statistic/(111))/1),digits=2)`.
+
+The order of the questions regarding the application of the harm principle was also randomised.  A one-way ANOVA revealed a significant difference in responses to the question "How would you rate the behavior of two people who engage in an activity that could potentially result in harmful consequences for either of them?" (1 = *Extremely wrong*; 4 = *Neutral*; 7 = *Extremely right*) depending on when it was presented *F*(`r paste(df_aov(aov1))`) = `r paste(round(F_aov(aov1),digits=3))` *p* `r paste(p_aov(aov1))`, partial $\eta$^2^ `r paste(p_report(eta1))`.  Tukey’s post-hoc pairwise revealed that, when this question was responded to first, participants ratings were significantly lower (*M* = `r round(mean(t_2$v_164[which(t_2$pot_hrm2=="1")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(t_2$v_164[which(t_2$pot_hrm2=="1")], na.rm=TRUE), digits = 2)`) than when it was responded to second (*M* = `r round(mean(t_2$v_164[which(t_2$pot_hrm2=="2")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(t_2$v_164[which(t_2$pot_hrm2=="2")], na.rm=TRUE), digits = 2)`), *p* `r paste(p_report(tuk[[1]][10]))`, or third (*M* = `r round(mean(t_2$v_164[which(t_2$pot_hrm2=="3")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(t_2$v_164[which(t_2$pot_hrm2=="3")], na.rm=TRUE), digits = 2)`) , *p* `r paste(p_report(tuk[[1]][11]))`; and there was no difference in responding to this question second (*M* = `r round(mean(t_2$v_164[which(t_2$pot_hrm2=="2")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(t_2$v_164[which(t_2$pot_hrm2=="2")], na.rm=TRUE), digits = 2)`) or third (*M* = `r round(mean(t_2$v_164[which(t_2$pot_hrm2=="3")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(t_2$v_164[which(t_2$pot_hrm2=="3")], na.rm=TRUE), digits = 2)`), *p* `r paste(p_report(tuk[[1]][12]))`.
+
+```{r moreorder, include=FALSE}
+table(t_2$v_165,t_2$box)
+c1 <- chisq.test(table(t_2$v_165,t_2$box))
+
+table(t_2$v_166,t_2$rugb)
+c2 <- chisq.test(table(t_2$v_166,t_2$rugb))
+
+# again hyphen missing
+# numbers2words_cap1(sum(x$InCS=="It's wrong but I can't think of a reason."))
+# numbers2words_cap1(sum(x$InCS=="There is nothing wrong."))
+
+```
+
+A chi-squared test for independence revealed no significant association between order these questions and responses to the question "Do you think boxing is wrong?", $\chi$^2^(`r c1$parameter`, *N* = `r length(x$gender)`) = `r round(c1$statistic,digits=2)`, *p* `r paste(p_report(c1$p.value))`, *V* = `r round(sqrt((c1$statistic/(111))/1),digits=2)`.  Similarly, a chi-squared test for independence revealed a significant association between order these questions and responses to the question "Do you think playing contact team sports (e.g.  rugby; ice-hockey; American football) is wrong?", $\chi$^2^(`r c2$parameter`, *N* = `r length(x$gender)`) = `r round(c2$statistic,digits=2)`, *p* `r paste(p_report(c2$p.value))`, *V* = `r round(sqrt((c2$statistic/(111))/1),digits=2)`.
+
+
+```{r s3, include=FALSE}
+
+load("loaded_data/three.RData")
+
+x <- study_3
+
+```
+
+
+```{r adlogit1, include = FALSE}
+
+
+df3 <- study2Cr
+
+df3$InCS <- relevel(df3$InCS, ref = 1)
+
+df3a <- mlogit.data(df3, choice = "InCS", shape = "wide")
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_search+mean_presence+InJu1+age, data = df3a) #, reflevel = 2)
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_search+mean_presence+InJu1, data = df3a) #, reflevel = 1)
+
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+InJu1, data = df3a) #, reflevel = 1)
+InCSModel<-mlogit(InCS ~ 1 | InJu1, data = df3a) #, reflevel = 1)
+
+InCSModel<-mlogit(InCS ~ 1 | mean_presence, data = df3a) #, reflevel = 1)
+InCSModel<-mlogit(InCS ~ 1 | mean_search, data = df3a) #, reflevel = 1)
+InCSModel<-mlogit(InCS ~ 1 | mean_rel, data = df3a) #, reflevel = 1)
+
+summary_InCS_model <- summary(InCSModel)
+summary_InCS_model
+
+summary_InCS_model$lratio$parameter
+summary_InCS_model$lratio$statistic
+summary_InCS_model$lratio$p.value
+
+summary_InCS_model$CoefTable
+
+InCSModel$coefficients[3]
+InCSModel$coefficients[4]
+
+cox <- PseudoR2(multinom(InCS~InJu1+mean_rel,df3), "all")
+
+cox[3]
+cox[4]
+#PseudoR2(x, "all")
+#summary_InCS_model
+
+
+wald1 <- 
+  summary_InCS_model$CoefTable[3]^2 /
+  summary_InCS_model$CoefTable[7]^2
+
+wald2 <- 
+  summary_InCS_model$CoefTable[4]^2 /
+  summary_InCS_model$CoefTable[8]^2
+
+
+summary_InCS_model
+summary_InCS_model$coefficients[3]
+data.frame(exp(InCSModel$coefficients))
+
+exp(InCSModel$coefficients)[3]
+
+
+a <- exp(confint(InCSModel))
+c(a[3],a[7])
+
+residuals(InCSModel)
+fitted(InCSModel, outcome = F)
+
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$gender))
+pw <- pwr.chisq.test(w=w,N=length(df3$InCS),df=(2),sig.level = .05)
+
+pw$power
+
+revised_PseudoR2s <- function(LogModel) {
+  dev <- LogModel$deviance
+  nullDev <- LogModel$null.deviance
+  modelN <- length(LogModel$fitted.values)
+  R.l <- 1 - dev / nullDev
+  R.cs <- 1- exp ( -(nullDev - dev) / modelN)
+  R.n <- R.cs / ( 1 - ( exp (-(nullDev / modelN))))
+  
+  all <- list(hosmer_and_lemeshow = as.numeric(R.l), mcfadden = NA, cox_and_snell = as.numeric(R.cs), nagelkerke = as.numeric(R.n))
+  all
+}
+
+logits_rsquared <- glm(InCS~mean_rel,df3, family = binomial(link = "logit"))
+cox <- revised_PseudoR2s(logits_rsquared)
+
+```
+
+
+## Study 3: Test for Order Effects
+
+
+```{r S3orderofevents, include=FALSE}
+
+df3 <- study_3
+
+to_num <- function(x){
+  levels(x) <- c(1:7)
+  x <- as.numeric(x)
+  
+}
+
+
+c1 <- chisq.test(table(df6$InCS,df6$parent_order))
+c2 <- chisq.test(table(df6$box,df6$parent_order))
+c3 <- chisq.test(table(df6$rugb,df6$parent_order))
+
+
+
+
+table(df6$InCS,df6$parent_order)
+df7 <- df6[which(df6$InCS!="It's wrong and I can provide a valid reason."),]
+df7$InCS <- droplevels(df7$InCS)
+chisq.test(table(df7$InCS,df7$parent_order))
+table(df7$InCS,df7$parent_order)
+
+chisq.test(table(df6$parent_order,df6$normQ))
+chisq.test(table(df6$parent_order,df6$hrm_Qs))
+
+
+tapply(df6$InJu1, df6$parent_order, descriptives)
+t1 <- t.test(df6$InJu1~df6$parent_order)
+t1d <- cohensD(df6$InJu1~df6$parent_order)
+
+
+tapply(df6$pot_hrm, df6$parent_order, descriptives)
+t1b <- t.test(df6$pot_hrm~df6$parent_order)
+t1bd <- cohensD(df6$pot_hrm~df6$parent_order)
+
+
+
+### harm qs order ###
+
+df3$pot_hrm2 <- as.factor(df3$pothrm_o)
+df3$pot_hrm <- as.numeric(df3$pot_hrm)
+
+#t_2$v_164 <- to_num(t_2$v_164)
+
+chisq.test(table(df3$box,df3$box_o))
+chisq.test(table(df3$rugb,df3$rugb_o))
+
+summary(aov(pot_hrm~pot_hrm2,df3))
+#summary(aov(box~box_o,df3))
+#summary(aov(pot_hrm~pothrm_o,df3))
+
+
+#summary(aov(v_164~pot_hrm2,t_2))
+#aov1 <- aov(v_164~pot_hrm2,t_2)
+aov1 <- summary(aov(pot_hrm~pot_hrm2,df3))
+
+eta1 <- (aov1[[1]][["Sum Sq"]][1])/((aov1[[1]][["Sum Sq"]][1])+(aov1[[1]][["Sum Sq"]][2]))
+
+
+#(aov[[1]][["Sum Sq"]][1])
+#(aov[[1]][["Sum Sq"]][1])/((aov[[1]][["Sum Sq"]][1])+(aov[[1]][["Sum Sq"]][2]))
+tuk <- TukeyHSD(aov(pot_hrm~pot_hrm2,df3))
+
+tapply(df3$pot_hrm,df3$pothrm_o,descriptives)
+
+### nothing wrong effects? ###
+df9 <- df3[which(df3$Ju1_bin=="wrong"),]
+
+paste(p_report(tuk[[1]][10]))
+paste(p_report(tuk[[1]][11]))
+paste(p_report(tuk[[1]][12]))
+
+
+
+
+```
+
+As in Study 2, the questions were blocked for randomisation.  Tests for effects of the order of the blocks revealed no difference in initial rating, *t*(`r round(t1$parameter, digits=2)`) = `r round(t1$statistic, digits=2)`, *p* `r paste(p_report(t1$p.value))`, *d* = `r t1d`; no difference in responding to the critical slide, $\chi$^2^(`r c1$parameter`, *N* = `r length(x$gender)`) = `r round(c1$statistic,digits=2)`, *p* `r paste(p_report(c1$p.value))`, *V* = `r round(sqrt((c1$statistic/(502))/1),digits=2)`; no difference in responses to the generic potential harm question, *t*(`r round(t1b$parameter, digits=2)`) = `r round(t1b$statistic, digits=2)`, *p* `r paste(p_report(t1b$p.value))`, *d* = `r t1bd`.  no association with judgments of boxing, $\chi$^2^(`r c2$parameter`, *N* = `r length(x$gender)`) = `r round(c2$statistic,digits=2)`, *p* `r paste(p_report(c2$p.value))`, *V* = `r round(sqrt((c2$statistic/(502))/1),digits=2)`, or the question regarding contact team sports, $\chi$^2^(`r c3$parameter`, *N* = `r length(x$gender)`) = `r round(c3$statistic,digits=2)`, *p* `r paste(p_report(c3$p.value))`, *V* = `r round(sqrt((c3$statistic/(111))/1),digits=2)`, depending on order of blocks.
+
+Regarding the three questions assessing the application of the harm principle, a one-way ANOVA revealed a significant difference in responses to the generic potential harm question depending on when it was presented *F*(`r paste(df_aov(aov1))`) = `r paste(round(F_aov(aov1),digits=3))` *p* `r paste(p_aov(aov1))`, partial $\eta$^2^ `r paste(p_report(eta1))`.  Tukey’s post-hoc pairwise revealed that, when this question was responded to first, participants ratings were significantly lower (*M* = `r round(mean(df3$pot_hrm[which(df3$pot_hrm2=="1")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(df3$pot_hrm[which(df3$pot_hrm2=="1")], na.rm=TRUE), digits = 2)`) than when it was responded to second (*M* = `r round(mean(df3$pot_hrm[which(df3$pot_hrm2=="2")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(df3$pot_hrm[which(df3$pot_hrm2=="2")], na.rm=TRUE), digits = 2)`), *p* `r paste(p_report(tuk[[1]][10]))`, or third (*M* = `r round(mean(df3$pot_hrm[which(df3$pot_hrm2=="3")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(df3$pot_hrm[which(df3$pot_hrm2=="3")], na.rm=TRUE), digits = 2)`) , *p* `r paste(p_report(tuk[[1]][11]))`; and there was no difference in responding to this question second (*M* = `r round(mean(df3$pot_hrm[which(df3$pot_hrm2=="2")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(df3$pot_hrm[which(df3$pot_hrm2=="2")], na.rm=TRUE), digits = 2)`) or third (*M* = `r round(mean(df3$pot_hrm[which(df3$pot_hrm2=="3")], na.rm=TRUE), digits = 2)`, *SD* = `r round(sd(df3$pot_hrm[which(df3$pot_hrm2=="3")], na.rm=TRUE), digits = 2)`), *p* `r paste(p_report(tuk[[1]][12]))`.  As in Study 2, it seems likely that the named behaviours in the other questions provide an example of potential harm that is acceptable, leading to a more favourable response to this more abstract question.  There was no significant association between question order and responses to the question "Do you think boxing is wrong?", $\chi$^2^(`r c1$parameter`, *N* = `r length(x$gender)`) = `r round(c1$statistic,digits=2)`, *p* `r paste(p_report(c1$p.value))`, *V* = `r round(sqrt((c1$statistic/(502))/1),digits=2)`; or "Do you think playing contact team sports (e.g.  rugby; ice-hockey; American football) is wrong?", $\chi$^2^(`r c2$parameter`, *N* = `r length(x$gender)`) = `r round(c2$statistic,digits=2)`, *p* `r paste(p_report(c2$p.value))`, *V* = `r round(sqrt((c2$statistic/(502))/1),digits=2)`.
+
+
+## Study 3: Individual Differences
+A series of logistic regressions were conducted to investigate if dumbfounded responding was related to any of the individual difference variables Religiosity (as measured by CRSi7 Huber and Huber 2012), or Meaning in Life (Presence and Search, measured using MLQ Steger et al. 2008).  We first report the results for each variable individually, followed by the combined model.
+
+```{r RE_descriptives, include = FALSE}
+
+x <- study2Cr
+descriptives(x$mean_rel)
+tapply(x$mean_rel, x$InCS, descriptives)
+summary(aov(x$mean_rel~x$InCS))
+TukeyHSD(aov(x$mean_rel~x$InCS))
+
+x$a <- x$mean_rel
+mean_a <- mean2(x$a)
+sd_a <- sd2(x$a)
+
+#x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")]
+#mean(x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")])
+mean_a1 <- mean2(x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")])
+mean_a2 <- mean2(x$a[which(x$InCS=="It's wrong but I can't think of a reason.")])
+mean_a3 <- mean2(x$a[which(x$InCS=="There is nothing wrong.")])
+
+sd_a1 <- sd2(x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")])
+sd_a2 <- sd2(x$a[which(x$InCS=="It's wrong but I can't think of a reason.")])
+sd_a3 <- sd2(x$a[which(x$InCS=="There is nothing wrong.")])
+
+
+
+
+```
+
+### Religiosity
+The overall mean Religiosity score was *M* = `r mean_a`, *SD* = `r sd_a`.  The mean religiosity scores for participants depending on response to the critical slide were as follows: *M* = `r mean_a1`, *SD* = `r sd_a1` for participants who provided reasons, *M* = `r mean_a2`, *SD* = `r sd_a2` for participants who were dumbfounded, and *M* = `r mean_a3`, *SD* = `r sd_a3` for participants who selected "There is nothing wrong".
+
+A multinomial logistic regression revealed a statistically significant association between Religiosity and response to the critical slide, $\chi$^2^(`r summary_InCS_model$lratio$parameter`, *N* = `r length(df3$gender)`) = `r round(summary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(summary_InCS_model$lratio$p.value))`, The observed power was `r round(pw$power,digits=2)`. Religiosity explained approximately `r round(summary_InCS_model$mfR2[1]*100, digits=2)`% (McFadden R square) of the variance in responses to the critical slide. Participants with higher religiosity scores were significantly more likely to provide reasons than to present as dumbfounded, Wald = `r round(wald1,digits=2)`, *p* `r paste(p_report(summary_InCS_model$CoefTable[15]))`, odds ratio = `r exp(InCSModel$coefficients)[3]`, 95% CI [`r a[3]`, `r a[7]`], or select "There is nothing wrong"  Wald = `r round(wald2,digits=2)`, *p* `r paste(p_report(summary_InCS_model$CoefTable[16]))`, odds ratio = `r exp(InCSModel$coefficients)[4]`, 95% CI [`r a[4]`, `r a[8]`].  See Figure\ \@ref(fig:adREggplotlogit1).
+
+
+```{r adREprepplottinglogit1,include=FALSE}
+
+df3 <- study2Cr
+
+cbind.data.frame(df3$InCS,as.numeric(df3$InCS))
+
+df3$NFC <- df3$mean_rel
+df3 <- df3[which(is.na(df3$NFC)==FALSE),]
+
+x <- df3$NFC
+y <- as.numeric(df3$InCS)
+
+m1 <- multinom(y ~ x)
+# summary(m1)
+newdata <- data.frame(x = seq(min(x), max(x), length.out = 100))
+p1 <- predict(m1, newdata, type = "class")
+p2 <- predict(m1, newdata, type = "probs")
+
+
+logit_plot <- cbind.data.frame(newdata,p2)
+
+#logit_plot <- `colnames<-`(logit_plot, c("x","one_l","two_l","three_l"))
+logit_plot <- `colnames<-`(logit_plot, c("x","nothing","dumb","reason"))
+logit_plot <- melt(logit_plot, id="x")
+
+```
+
+
+```{r adREggplotlogit1, fig.cap="Probability of selecting each response to the critical slide depending on Religiosity", include=TRUE}
+
+#tiff('Figure_4.tiff', units="in", width=6, height=4, res=1200, compression = 'lzw')
+
+ggplot(logit_plot,
+       aes(x=x, y=value,
+           #color=factor(variable,labels=c("dumb","reason","nothing"))
+           linetype=factor(variable
+                           ,labels=c("Nothing Wrong","Dumbfounded","Reasons")
+                           )
+           )) +
+  geom_line()+
+  xlab("Religiosity") + ylab("Predicted Probability") +
+  scale_y_continuous(limits = c(0, 1)) + 
+  #scale_color_discrete(name="Response to \nCritical Slide", labels=c("Dumbfounded","Nothing Wrong","Reasons"))+
+  scale_linetype_discrete(name="Response to \nCritical Slide"
+                          #, labels=c("Dumbfounded","Nothing Wrong","Reasons")
+                          )+
+  theme_bw() +
+  theme(plot.title=element_text(family="Times",
+                                size=12
+  ),
+  legend.text=element_text(family="Times",
+                           size=8
+  ),
+  legend.title=element_text(family="Times",
+                            size=10
+  ),
+  axis.text=element_text(family="Times",
+                         colour = "black",
+                         size=8
+  ),
+  axis.ticks.x = element_blank(),
+  axis.title=element_text(family="Times",
+                          size=12
+  ),
+  strip.text=element_text(family = "Times",
+                          size = 12
+  ),
+  strip.background = element_rect(fill = "white"),
+  legend.position="right")
+
+#dev.off()
+
+```
+
+ 
+```{r adlogit2, include = FALSE}
+
+#df3 <- study_3
+df3 <- study2Cr
+
+df3$InCS <- relevel(df3$InCS, ref = 1)
+
+df3a <- mlogit.data(df3, choice = "InCS", shape = "wide")
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_search+mean_presence+InJu1+age, data = df3a) #, reflevel = 2)
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_search+mean_presence+InJu1, data = df3a) #, reflevel = 1)
+
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+InJu1, data = df3a) #, reflevel = 1)
+InCSModel<-mlogit(InCS ~ 1 | InJu1, data = df3a) #, reflevel = 1)
+
+InCSModel<-mlogit(InCS ~ 1 | mean_presence, data = df3a) #, reflevel = 1)
+#InCSModel<-mlogit(InCS ~ 1 | mean_search, data = df3a, reflevel = 1)
+#InCSModel<-mlogit(InCS ~ 1 | mean_rel, data = df3a, reflevel = 1)
+
+summary_InCS_model <- summary(InCSModel)
+summary_InCS_model
+
+summary_InCS_model$lratio$parameter
+summary_InCS_model$lratio$statistic
+summary_InCS_model$lratio$p.value
+
+summary_InCS_model$CoefTable
+
+InCSModel$coefficients[3]
+InCSModel$coefficients[4]
+
+cox <- PseudoR2(multinom(InCS~InJu1+mean_rel,df3), "all")
+
+cox[3]
+cox[4]
+#PseudoR2(x, "all")
+#summary_InCS_model
+
+l <- summary_InCS_model$CoefTable
+l_wald <- round((l[,1]^2)/(l[,2]^2),digits=3)
+
+wald1 <- 
+  summary_InCS_model$CoefTable[3]^2 /
+  summary_InCS_model$CoefTable[7]^2
+
+wald2 <- 
+  summary_InCS_model$CoefTable[4]^2 /
+  summary_InCS_model$CoefTable[8]^2
+
+
+summary_InCS_model
+summary_InCS_model$coefficients[3]
+data.frame(exp(InCSModel$coefficients))
+
+exp(InCSModel$coefficients)[3]
+
+
+a <- exp(confint(InCSModel))
+c(a[3],a[7])
+
+#residuals(InCSModel)
+#fitted(InCSModel, outcome = F)
+
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$gender))
+pw <- pwr.chisq.test(w=w,N=length(df3$InCS),df=(2),sig.level = .05)
+
+pw$power
+
+revised_PseudoR2s <- function(LogModel) {
+  dev <- LogModel$deviance
+  nullDev <- LogModel$null.deviance
+  modelN <- length(LogModel$fitted.values)
+  R.l <- 1 - dev / nullDev
+  R.cs <- 1- exp ( -(nullDev - dev) / modelN)
+  R.n <- R.cs / ( 1 - ( exp (-(nullDev / modelN))))
+  
+  all <- list(hosmer_and_lemeshow = as.numeric(R.l), mcfadden = NA, cox_and_snell = as.numeric(R.cs), nagelkerke = as.numeric(R.n))
+  all
+}
+
+logits_rsquared <- glm(InCS~mean_presence,df3, family = binomial(link = "logit"))
+cox <- revised_PseudoR2s(logits_rsquared)
+
+```
+
+### Meaning in Life (Presence)
+
+```{r MLQP_descriptives, include = FALSE}
+
+x <- study2Cr
+# descriptives(x$mean_rel)
+# tapply(x$mean_rel, x$InCS, descriptives)
+# summary(aov(x$mean_rel~x$InCS))
+# TukeyHSD(aov(x$mean_rel~x$InCS))
+
+x$a <- x$mean_presence
+
+descriptives(x$a)
+tapply(x$a, x$InCS, descriptives)
+summary(aov(x$a~x$InCS))
+TukeyHSD(aov(x$a~x$InCS))
+
+
+mean_a <- mean2(x$a)
+sd_a <- sd2(x$a)
+
+#x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")]
+#mean(x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")])
+mean_a1 <- mean2(x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")])
+mean_a2 <- mean2(x$a[which(x$InCS=="It's wrong but I can't think of a reason.")])
+mean_a3 <- mean2(x$a[which(x$InCS=="There is nothing wrong.")])
+
+sd_a1 <- sd2(x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")])
+sd_a2 <- sd2(x$a[which(x$InCS=="It's wrong but I can't think of a reason.")])
+sd_a3 <- sd2(x$a[which(x$InCS=="There is nothing wrong.")])
+
+
+
+
+```
+
+The overall mean Meaning in Life (Presence) score was *M* = `r mean_a`, *SD* = `r sd_a`.  The mean Meaning in Life (Presence) scores for participants depending on response to the critical slide were as follows: *M* = `r mean_a1`, *SD* = `r sd_a1` for participants who provided reasons, *M* = `r mean_a2`, *SD* = `r sd_a2` for participants who were dumbfounded, and *M* = `r mean_a3`, *SD* = `r sd_a3` for participants who selected "There is nothing wrong".
+
+A multinomial logistic regression revealed a statistically significant association between Meaning in Life (Presence) and response to the critical slide, $\chi$^2^(`r summary_InCS_model$lratio$parameter`, *N* = `r length(df3$gender)`) = `r round(summary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(summary_InCS_model$lratio$p.value))`, The observed power was `r round(pw$power,digits=2)`. Meaning in Life explained approximately `r round(summary_InCS_model$mfR2[1]*100, digits=2)`% (McFadden R square) of the variance in responses to the critical slide. Participants with higher MLQ: presence scores were significantly more likely to provide reasons than to present as dumbfounded, Wald = `r round(wald1,digits=2)`, *p* `r paste(p_report(summary_InCS_model$CoefTable[15]))`, odds ratio = `r exp(InCSModel$coefficients)[3]`, 95% CI [`r a[3]`, `r a[7]`].  (Participants with higher MLQ: presence scores were marginally more likely to provide reasons than to select "There is nothing wrong"  Wald = `r round(wald2,digits=2)`, *p* `r paste(p_report(summary_InCS_model$CoefTable[16]))`, odds ratio = `r exp(InCSModel$coefficients)[4]`, 95% CI [`r a[4]`, `r a[8]`].)  See Figure\ \@ref(fig:adMLQPggplotlogit).
+
+
+```{r adMLQPprepplottinglogit,include=FALSE}
+
+df3 <- study2Cr
+
+cbind.data.frame(df3$InCS,as.numeric(df3$InCS))
+
+df3$NFC <- df3$mean_presence
+df3 <- df3[which(is.na(df3$NFC)==FALSE),]
+
+x <- df3$NFC
+y <- as.numeric(df3$InCS)
+
+m1 <- multinom(y ~ x)
+# summary(m1)
+newdata <- data.frame(x = seq(min(x), max(x), length.out = 100))
+p1 <- predict(m1, newdata, type = "class")
+p2 <- predict(m1, newdata, type = "probs")
+
+
+logit_plot <- cbind.data.frame(newdata,p2)
+
+#logit_plot <- `colnames<-`(logit_plot, c("x","one_l","two_l","three_l"))
+#logit_plot <- `colnames<-`(logit_plot, c("x","nothing","dumb","reason"))
+logit_plot <- melt(logit_plot, id="x")
+
+```
+
+
+```{r adMLQPggplotlogit, fig.cap="Probability of selecting each response to the critical slide depending on MLQ: Presence", include=TRUE}
+
+#tiff('Figure_5.tiff', units="in", width=6, height=4, res=1200, compression = 'lzw')
+
+ggplot(logit_plot,
+       aes(x=x, y=value,
+           #color=factor(variable,labels=c("dumb","reason","nothing"))
+           linetype=factor(variable
+                           ,labels=c("Nothing Wrong","Dumbfounded","Reasons")
+                           )
+           )) +
+  geom_line()+
+  xlab("MLQ: Presence") + ylab("Predicted Probability") +
+  scale_y_continuous(limits = c(0, 1)) + 
+  #scale_color_discrete(name="Response to \nCritical Slide", labels=c("Dumbfounded","Nothing Wrong","Reasons"))+
+  scale_linetype_discrete(name="Response to \nCritical Slide"
+                          #, labels=c("Dumbfounded","Nothing Wrong","Reasons")
+                          )+
+  theme_bw() +
+  theme(plot.title=element_text(family="Times",
+                                size=12
+  ),
+  legend.text=element_text(family="Times",
+                           size=8
+  ),
+  legend.title=element_text(family="Times",
+                            size=10
+  ),
+  axis.text=element_text(family="Times",
+                         colour = "black",
+                         size=8
+  ),
+  axis.ticks.x = element_blank(),
+  axis.title=element_text(family="Times",
+                          size=12
+  ),
+  strip.text=element_text(family = "Times",
+                          size = 12
+  ),
+  strip.background = element_rect(fill = "white"),
+  legend.position="right")
+
+#dev.off()
+
+```
+
+
+
+```{r adlogit3, include = FALSE}
+
+#df3 <- study_3
+df3 <- study2Cr
+
+df3$InCS <- relevel(df3$InCS, ref = 1)
+
+df3a <- mlogit.data(df3, choice = "InCS", shape = "wide")
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_search+mean_presence+InJu1+age, data = df3a) #, reflevel = 2)
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_search+mean_presence+InJu1, data = df3a) #, reflevel = 1)
+
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+InJu1, data = df3a) #, reflevel = 1)
+InCSModel<-mlogit(InCS ~ 1 | InJu1, data = df3a) #, reflevel = 1)
+
+#InCSModel<-mlogit(InCS ~ 1 | mean_presence, data = df3a, reflevel = 1)
+InCSModel<-mlogit(InCS ~ 1 | mean_search, data = df3a) #, reflevel = 1)
+#InCSModel<-mlogit(InCS ~ 1 | mean_rel, data = df3a, reflevel = 1
+                  #,control = glm.control()
+                  #)
+
+summary_InCS_model <- summary(InCSModel)
+summary_InCS_model
+
+summary_InCS_model$lratio$parameter
+summary_InCS_model$lratio$statistic
+summary_InCS_model$lratio$p.value
+
+summary_InCS_model$CoefTable
+
+InCSModel$coefficients[3]
+InCSModel$coefficients[4]
+
+cox <- PseudoR2(multinom(InCS~InJu1+mean_rel,df3), "all")
+
+cox[3]
+cox[4]
+#PseudoR2(x, "all")
+#summary_InCS_model
+summary_InCS_model$CoefTable
+
+summary_InCS_model$CoefTable[3]
+#^2
+#/
+summary_InCS_model$CoefTable[7]
+#^2
+
+wald1 <- 
+  summary_InCS_model$CoefTable[3]^2 /
+  summary_InCS_model$CoefTable[7]^2
+
+wald2 <- 
+  summary_InCS_model$CoefTable[4]^2 /
+  summary_InCS_model$CoefTable[8]^2
+
+
+summary_InCS_model
+summary_InCS_model$coefficients[3]
+data.frame(exp(InCSModel$coefficients))
+
+exp(InCSModel$coefficients)[3]
+
+
+a <- exp(confint(InCSModel))
+c(a[3],a[7])
+# 
+# residuals(InCSModel)
+# fitted(InCSModel, outcome = F)
+
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$gender))
+pw <- pwr.chisq.test(w=w,N=length(df3$InCS),df=(2),sig.level = .05)
+
+pw$power
+
+revised_PseudoR2s <- function(LogModel) {
+  dev <- LogModel$deviance
+  nullDev <- LogModel$null.deviance
+  modelN <- length(LogModel$fitted.values)
+  R.l <- 1 - dev / nullDev
+  R.cs <- 1- exp ( -(nullDev - dev) / modelN)
+  R.n <- R.cs / ( 1 - ( exp (-(nullDev / modelN))))
+  
+  all <- list(hosmer_and_lemeshow = as.numeric(R.l), mcfadden = NA, cox_and_snell = as.numeric(R.cs), nagelkerke = as.numeric(R.n))
+  all
+}
+
+logits_rsquared <- glm(InCS~mean_rel,df3, family = binomial(link = "logit"))
+cox <- revised_PseudoR2s(logits_rsquared)
+
+```
+
+### Meaning in Life (Search)
+```{r MLQS_descriptives, include = FALSE}
+
+x <- study2Cr
+
+x$a <- x$mean_search
+
+descriptives(x$a)
+tapply(x$a, x$InCS, descriptives)
+summary(aov(x$a~x$InCS))
+TukeyHSD(aov(x$a~x$InCS))
+
+
+mean_a <- mean2(x$a)
+sd_a <- sd2(x$a)
+
+#x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")]
+#mean(x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")])
+mean_a1 <- mean2(x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")])
+mean_a2 <- mean2(x$a[which(x$InCS=="It's wrong but I can't think of a reason.")])
+mean_a3 <- mean2(x$a[which(x$InCS=="There is nothing wrong.")])
+
+sd_a1 <- sd2(x$a[which(x$InCS=="It's wrong and I can provide a valid reason.")])
+sd_a2 <- sd2(x$a[which(x$InCS=="It's wrong but I can't think of a reason.")])
+sd_a3 <- sd2(x$a[which(x$InCS=="There is nothing wrong.")])
+
+
+
+
+```
+
+The overall mean Meaning in Life (Search) score was *M* = `r mean_a`, *SD* = `r sd_a`.  The mean Meaning in Life (Search) scores for participants depending on response to the critical slide were as follows: *M* = `r mean_a1`, *SD* = `r sd_a1` for participants who provided reasons, *M* = `r mean_a2`, *SD* = `r sd_a2` for participants who were dumbfounded, and *M* = `r mean_a3`, *SD* = `r sd_a3` for participants who selected "There is nothing wrong".
+
+A multinomial logistic regression revealed no statistically significant association between Search for Meaning in Life and response to the critical slide, $\chi$^2^(`r summary_InCS_model$lratio$parameter`, *N* = `r length(df3$gender)`) = `r round(summary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(summary_InCS_model$lratio$p.value))`, The observed power was `r round(pw$power,digits=2)`.  See Figure\ \@ref(fig:adMLQSggplotlogit).
+
+
+
+```{r adMLQSprepplottinglogit,include=FALSE}
+
+df3 <- study2Cr
+
+cbind.data.frame(df3$InCS,as.numeric(df3$InCS))
+
+df3$NFC <- df3$mean_search
+df3 <- df3[which(is.na(df3$NFC)==FALSE),]
+
+x <- df3$NFC
+y <- as.numeric(df3$InCS)
+
+m1 <- multinom(y ~ x)
+# summary(m1)
+newdata <- data.frame(x = seq(min(x), max(x), length.out = 100))
+p1 <- predict(m1, newdata, type = "class")
+p2 <- predict(m1, newdata, type = "probs")
+
+
+logit_plot <- cbind.data.frame(newdata,p2)
+
+#logit_plot <- `colnames<-`(logit_plot, c("x","one_l","two_l","three_l"))
+logit_plot <- `colnames<-`(logit_plot, c("x","nothing","dumb","reason"))
+logit_plot <- melt(logit_plot, id="x")
+
+```
+
+
+```{r adMLQSggplotlogit, fig.cap="Probability of selecting each response to the critical slide depending on MLQ: Search", include=TRUE}
+
+#tiff('Figure_6.tiff', units="in", width=6, height=4, res=1200, compression = 'lzw')
+
+ggplot(logit_plot,
+       aes(x=x, y=value,
+           #color=factor(variable,labels=c("dumb","reason","nothing"))
+           linetype=factor(variable
+                           ,labels=c("Nothing Wrong","Dumbfounded","Reasons")
+                           )
+           )) +
+  geom_line()+
+  xlab("MLQ: Search") + ylab("Predicted Probability") +
+  scale_y_continuous(limits = c(0, 1)) + 
+  #scale_color_discrete(name="Response to \nCritical Slide", labels=c("Dumbfounded","Nothing Wrong","Reasons"))+
+  scale_linetype_discrete(name="Response to \nCritical Slide"
+                          #, labels=c("Dumbfounded","Nothing Wrong","Reasons")
+                          )+
+  theme_bw() +
+  theme(plot.title=element_text(family="Times",
+                                size=12
+  ),
+  legend.text=element_text(family="Times",
+                           size=8
+  ),
+  legend.title=element_text(family="Times",
+                            size=10
+  ),
+  axis.text=element_text(family="Times",
+                         colour = "black",
+                         size=8
+  ),
+  axis.ticks.x = element_blank(),
+  axis.title=element_text(family="Times",
+                          size=12
+  ),
+  strip.text=element_text(family = "Times",
+                          size = 12
+  ),
+  strip.background = element_rect(fill = "white"),
+  legend.position="right")
+
+#dev.off() 
+
+```
+
+
+
+```{r adbiglogit, include=FALSE}
+
+df3 <- study2Cr
+#df3 <- study_3
+
+df3a <- mlogit.data(df3, choice = "InCS", shape = "wide")
+
+
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_search+mean_presence+InJu1, data = df3a) #, reflevel = 2)
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_presence+mean_search, data = df3a) #, reflevel = 1)
+#InCSModelb<-mlogit(InCS ~ 1 | mean_rel+mean_presence+mean_search, data = df3a, reflevel = 3)
+
+summary_InCS_model <- summary(InCSModel)
+#summary_InCS_modelb <- summary(InCSModelb)
+#summary_InCS_model
+
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$gender))
+pw <- pwr.chisq.test(w=w,N=length(df3$InCS),df=(2),sig.level = .05)
+
+
+```
+
+```{r adlogit_table_prep, include=FALSE}
+
+l <- summary_InCS_model$CoefTable
+
+colnames(l)<- NULL
+rownames(l)<- NULL
+
+
+#b <- .5899
+
+#sub('^(-)?0[.]', '\\1.', format(round(y,digits = 2), nsmall = 3))
+
+ps <- function(y){
+  if(as.numeric(sqrt( y*y) ) <.001) print(paste0("<.001**"), quote = FALSE)
+  else if(as.numeric(sqrt( y*y) ) <.05) print(paste0(sub('^(-)?0[.]', '\\1.', format(round(y,digits = 3), nsmall = 3)),"*"), quote = FALSE)
+  else print(sub('^(-)?0[.]', '\\1.', format(round(y,digits = 3), nsmall = 3)))}
+
+l_p_raw <- c((l[,4][1]),(l[,4][2]),(l[,4][3]),(l[,4][4]),(l[,4][5]),(l[,4][6]))
+
+l_p <- c(ps(l[,4][1]),ps(l[,4][2]),ps(l[,4][3]),ps(l[,4][4]),ps(l[,4][5]),ps(l[,4][6]))
+names(l_p) <- NULL
+l_p
+
+
+l_odds <- round(exp(l[,1]),digits=3)
+rownames(l_odds) <- NULL
+names(l_odds) <- NULL
+l_odds
+
+#exp(InCSModel$coefficients)
+
+#exp(confint(InCSModel))[]
+
+l_conf <- round(exp(confint(InCSModel)),digits=3)
+names(l_conf) <- NULL
+rownames(l_conf)<-NULL
+l_conf
+
+
+l_df <- rep(summary_InCS_model$lratio$parameter,6)
+names(l_df)<-NULL
+
+ps(l[,4][6])
+
+l_wald <- round((l[,1]^2)/(l[,2]^2),digits=3)
+names(l_wald) <- NULL
+
+l_table <-
+  cbind(c("","", "Religiosity","","MLQ: Presence","","MLQ: Search","")
+      ,c("Dumbfounded","Nothing wrong","Dumbfounded","Nothing wrong","Dumbfounded","Nothing wrong")
+      ,round(l[,1],digits=3)
+      ,round(l[,2],digits=3)
+      ,l_wald
+      ,l_df
+      ,l_p
+      ,l_odds
+      ,l_conf)
+
+colnames(l_table) <- c("Variable","Response   " ,"\\emph{B}","S.E.","Wald","\\emph{df}","\\emph{p}","O.R.","Lower","Upper")
+l_table
+l_table <- l_table[-1:-2,]
+# 
+# x <- `colnames<-`(
+#   cbind.data.frame(c(ps(x[1]),ps(x[2]),ps(x[3])),
+#                    c(ps(x[4]),ps(x[5]),ps(x[6]))),
+#   c("cog_load","control")
+# )
+
+
+```
+
+
+```{r adlogittable,results = 'asis', include=TRUE}
+
+
+apa_table(
+   l_table
+   , align = c("l", "l", "c", "c", "c", "c", "c", "c", "c", "c")
+   , caption = "Multinomial logistic regression predicting responses to the critical slide where providing reasons is the referent in each case."
+   #, added_stub_head = "Response to critical slide"
+   #, col_spanners = makespanners()
+   , font_size = "small"
+   , note = "* = sig. at \\emph{p} < .05; ** = sig. at \\emph{p} < .001"
+   , escape = FALSE
+   
+)
+```
+
+### Individual Differences
+When analysed together, a multinomial logistic regression revealed a statistically significant association between the three individual difference variables and response to the critical slide, $\chi$^2^(`r summary_InCS_model$lratio$parameter`, *N* = `r length(df3$gender)`) = `r round(summary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(summary_InCS_model$lratio$p.value))`, The observed power was `r round(pw$power,digits=2)`.  The model explained approximately `r round(summary_InCS_model$mfR2[1]*100, digits=2)`% (McFadden R square) of the variance in responses to the critical slide. Religiosity was the only significant predictor (see Table\ \@ref(tab:adlogittable)). Participants who scored higher in Religiosity were significantly more likely to provide reasons than to select "There is nothing wrong", Wald = `r round(l_wald[4],digits=3)`, *p* `r p_report(l_p_raw[4])`, odds ratio = `r l_odds[4]`, 95% CI [`r l_conf[4,1]`, `r l_conf[4,1]`].  It seems religiosity was more related to valence of judgement than to ability to provide reasons Wald = `r round(l_wald[3],digits=3)`, *p* `r p_report(l_p_raw[3])`, odds ratio = `r l_odds[3]`, 95% CI [`r l_conf[3,1]`, `r l_conf[3,1]`].
+
+```{r adcorrREInJu1,include=FALSE}
+
+cor.test(df3$InJu1,df3$mean_rel)
+cor.test(df3$mean_presence,df3$mean_rel)
+
+
+
+fit <- lm(InJu1~mean_rel+mean_presence+mean_search, data=study_3)
+#fit <- lm(InCS_ju~NFC, data=df3)
+
+apa_lm <- apa_print(fit)
+
+summary(fit)
+lm.beta(fit)
+
+# 
+# qplot(df3$InCS_rsn,df3$NFC)
+# 
+# ggplot(df3, aes(NFC,InCS_rsn))+
+#   geom_point()+
+#   #stat_summary(fun.data = mean_cl_normal)+
+#   geom_smooth(method='lm', formula=y~x)
+
+
+
+```
+
+A linear regression was conducted to assess the relationship between the individual difference variables (Religiosity, Meaning and Life Presence, Meaning in Life Search) and initial judgement.  The model significantly predicted valence of judgement, `r apa_lm$full_result$modelfit$r2`.  Religiosity the only significant predictor, `r apa_lm$full_result$mean_rel` (MLQ: presence `r apa_lm$full_result$mean_presence`; MLQ: search `r apa_lm$full_result$mean_search`).  Participants who scored higher in Religiosity were more likely to condemn the actions of Julie and Mark.
+
+
+```{r adbiglogit2, include=FALSE}
+
+df3 <- study2Cr
+#df3 <- study_3
+
+df3a <- mlogit.data(df3, choice = "InCS", shape = "wide")
+
+
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_search+mean_presence+InJu1, data = df3a) #, reflevel = 2)
+InCSModel<-mlogit(InCS ~ 1 | mean_rel+mean_presence+mean_search+InJu1, data = df3a) #, reflevel = 1)
+
+summary_InCS_model <- summary(InCSModel)
+summary_InCS_model
+
+
+c <- summary_InCS_model$lratio$statistic
+w <- sqrt(c/length(df3$gender))
+pw <- pwr.chisq.test(w=w,N=length(df3$InCS),df=(2),sig.level = .05)
+
+
+```
+
+
+```{r adlogit_table_prep2, include=FALSE}
+
+l <- summary_InCS_model$CoefTable
+
+colnames(l)<- NULL
+rownames(l)<- NULL
+
+
+ps <- function(y){
+  if(as.numeric(sqrt( y*y) ) <.001) print(paste0("<.001**"), quote = FALSE)
+  else if(as.numeric(sqrt( y*y) ) <.05) print(paste0(sub('^(-)?0[.]', '\\1.', format(round(y,digits = 3), nsmall = 3)),"*"), quote = FALSE)
+  else print(sub('^(-)?0[.]', '\\1.', format(round(y,digits = 3), nsmall = 3)))}
+
+l_p <- c(ps(l[,4][1]),ps(l[,4][2]),ps(l[,4][3]),ps(l[,4][4]),ps(l[,4][5]),ps(l[,4][6]),ps(l[,4][7]),ps(l[,4][8]),ps(l[,4][9]),ps(l[,4][10]))
+names(l_p) <- NULL
+l_p
+
+
+l_odds <- round(exp(l[,1]),digits=3)
+rownames(l_odds) <- NULL
+names(l_odds) <- NULL
+l_odds
+
+#exp(InCSModel$coefficients)
+
+#exp(confint(InCSModel))[]
+
+l_conf <- round(exp(confint(InCSModel)),digits=3)
+names(l_conf) <- NULL
+rownames(l_conf)<-NULL
+l_conf
+
+
+l_df <- rep(summary_InCS_model$lratio$parameter,10)
+names(l_df)<-NULL
+
+ps(l[,4][6])
+
+l_wald <- round((l[,1]^2)/(l[,2]^2),digits=3)
+names(l_wald) <- NULL
+
+l_table <-
+  cbind(c("","", "Religiosity","","MLQ: Presence","","MLQ: Search","","Initial Judgement","")
+      ,c("Dumbfounded","Nothing wrong","Dumbfounded","Nothing wrong","Dumbfounded","Nothing wrong","Dumbfounded","Nothing wrong","Dumbfounded","Nothing wrong")
+      ,round(l[,1],digits=3)
+      ,round(l[,2],digits=3)
+      ,l_wald
+      ,l_df
+      ,l_p
+      ,l_odds
+      ,l_conf)
+
+colnames(l_table) <- c("Variable","Response   " ,"\\emph{B}","S.E.","Wald","\\emph{df}","\\emph{p}","O.R.","Lower","Upper")
+l_table
+l_table <- l_table[-1:-2,]
+# 
+# x <- `colnames<-`(
+#   cbind.data.frame(c(ps(x[1]),ps(x[2]),ps(x[3])),
+#                    c(ps(x[4]),ps(x[5]),ps(x[6]))),
+#   c("cog_load","control")
+# )
+
+
+```
+
+```{r adlogittable2,results = 'asis', include=TRUE}
+
+
+apa_table(
+   l_table
+   , align = c("l", "l", "c", "c", "c", "c", "c", "c", "c", "c")
+   , caption = "Multinomial logistic regression predicting responses to the critical slide where providing reasons is the referent in each case."
+   #, added_stub_head = "Response to critical slide"
+   #, col_spanners = makespanners()
+   , font_size = "small"
+   , note = "* = sig. at \\emph{p} < .05; ** = sig. at \\emph{p} < .001"
+   , escape = FALSE
+   
+)
+```
+
+A final multinomial logistic regression was conducted that included Initial Judgement as a predictor variable.  The results are shown in Table\ \@ref(tab:adlogittable2).  Overall the model was a significant predictor of response to the critical slide, $\chi$^2^(`r summary_InCS_model$lratio$parameter`, *N* = `r length(df3$gender)`) = `r round(summary_InCS_model$lratio$statistic, digits=2)`, *p* `r paste(p_report(summary_InCS_model$lratio$p.value))`, The observed power was `r round(pw$power,digits=2)`.  The model explained approximately `r round(summary_InCS_model$mfR2[1]*100, digits=2)`% (McFadden R square) of the variance in responses to the critical slide.  As shown in Table\ \@ref(tab:adlogittable2), Religiosity appeared to be related only to valence of judgement on the critical slide, initial judgement appeared to predict valence of judgement and ability to provide reasons, with more extreme judgements of "wrong" most strongly predicting the providing of reasons.  The relative probabilities of selecting each response to the critical slide depending on initial judgement are displayed in Figure\ \@ref(fig:adggplotlogit1).
+
+
+```{r adprepplottinglogit1,include=FALSE}
+
+df3 <- study2Cr
+
+cbind.data.frame(df3$InCS,as.numeric(df3$InCS))
+
+df3$NFC <- df3$InJu1
+df3 <- df3[which(is.na(df3$NFC)==FALSE),]
+
+x <- df3$NFC
+y <- as.numeric(df3$InCS)
+
+m1 <- multinom(y ~ x)
+# summary(m1)
+newdata <- data.frame(x = seq(min(x), max(x), length.out = 100))
+p1 <- predict(m1, newdata, type = "class")
+p2 <- predict(m1, newdata, type = "probs")
+
+
+logit_plot <- cbind.data.frame(newdata,p2)
+
+#logit_plot <- `colnames<-`(logit_plot, c("x","one_l","two_l","three_l"))
+#logit_plot <- `colnames<-`(logit_plot, c("x","nothing","dumb","reason"))
+logit_plot <- melt(logit_plot, id="x")
+
+```
+
+
+```{r adggplotlogit1, fig.cap="Probability of selecting each response to the critical slide depending on Initial Judgement.", include=TRUE}
+
+#tiff('Figure_7.tiff', units="in", width=6, height=4, res=1200, compression = 'lzw')
+
+ggplot(logit_plot,
+       aes(x=x, y=value,
+           #color=factor(variable,labels=c("dumb","reason","nothing"))
+           linetype=factor(variable
+                           ,labels=c("Nothing Wrong","Dumbfounded","Reasons")
+                           )
+           )) +
+  geom_line()+
+  xlab("Initial Judgement \n(1 = Extremely wrong, 7 = Extremely right)") + ylab("Predicted Probability") +
+  scale_y_continuous(limits = c(0, 1)) + 
+  #scale_color_discrete(name="Response to \nCritical Slide", labels=c("Dumbfounded","Nothing Wrong","Reasons"))+
+  scale_linetype_discrete(name="Response to \nCritical Slide"
+                          #, labels=c("Dumbfounded","Nothing Wrong","Reasons")
+                          )+
+  scale_x_continuous(limits = c(1,7),breaks = c(1:7))+
+  #scale_x_discrete(labels=c(1,2,3,4,5,6,7))+
+  theme_bw() +
+  theme(plot.title=element_text(family="Times",
+                                size=12
+  ),
+  legend.text=element_text(family="Times",
+                           size=8
+  ),
+  legend.title=element_text(family="Times",
+                            size=10
+  ),
+  axis.text=element_text(family="Times",
+                         colour = "black",
+                         size=8
+  ),
+  axis.ticks.x = element_blank(),
+  axis.title=element_text(family="Times",
+                          size=12
+  ),
+  strip.text=element_text(family = "Times",
+                          size = 12
+  ),
+  strip.background = element_rect(fill = "white"),
+  legend.position="right")
+
+#dev.off()
+
+```
+
+
+
+
+
+```{r adREInJu1,include=TRUE,include=FALSE}
+
+ggplot(df3,aes(mean_rel,InJu1))+
+  stat_summary(fun.data=mean_cl_normal) + 
+  #geom_point()+
+  geom_jitter(width = 0.05, height = 0.05,size=.5)+
+  geom_smooth(method='lm',formula=y~x)
+
+
+```
+
+
+
+
+# References
+
+```{r create_r-references}
+r_refs(file = "r-references.bib")
+```
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+

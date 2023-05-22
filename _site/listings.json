@@ -2,7 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
-      "/publications/moral-judgment-as-categorization/index.html"
+      "/publications/pubs/moral-judgment-as-categorization/index.html"
     ]
   },
   {
@@ -16,17 +16,20 @@
   {
     "listing": "/publications.html",
     "items": [
-      "/publications/cognitive-load/index.html",
-      "/publications/just-wrong-or-just-weird/index.html",
-      "/publications/predicting-attitudinal/index.html",
-      "/publications/moral-identity-and-covid-19/index.html",
-      "/publications/pandemic-threat/index.html",
-      "/publications/national-identity/index.html",
-      "/publications/moral-judgment-as-categorization/index.html",
-      "/publications/the-political-psychology-of-covid19/index.html",
-      "/publications/solidarity-matters/index.html",
-      "/publications/reasons-or-rationalizations/index.html",
-      "/publications/searching-for-moral-dumbfounding/index.html"
+      "/publications/pubs/cognitive-load/index.html",
+      "/publications/pubs/just-wrong-or-just-weird/index.html",
+      "/publications/pubs/predicting-attitudinal/index.html",
+      "/publications/pubs/moral-identity-and-covid-19/index.html",
+      "/publications/pubs/pandemic-threat/index.html",
+      "/publications/pubs/national-identity/index.html",
+      "/publications/pubs/moral-judgment-as-categorization/index.html",
+      "/publications/pubs/the-political-psychology-of-covid19/index.html",
+      "/publications/pubs/solidarity-matters/index.html",
+      "/publications/pubs/reasons-or-rationalizations/index.html",
+      "/publications/pubs/searching-for-moral-dumbfounding/index.html",
+      "/publications/presentations/complexity/complexity.html",
+      "/publications/presentations/complexity/index.html",
+      "/publications/presentations/ICT2021/index.html"
     ]
   },
   {
@@ -63,6 +66,10 @@
   },
   {
     "listing": "/shiny.html",
+    "items": []
+  },
+  {
+    "listing": "/presentations.html",
     "items": []
   }
 ]

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.cillianmchugh.com/index.html</loc>
-    <lastmod>2023-04-12T19:46:43.387Z</lastmod>
+    <lastmod>2023-05-22T09:43:02.097Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/posts.html</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/publications.html</loc>
-    <lastmod>2023-04-12T19:46:42.037Z</lastmod>
+    <lastmod>2023-05-22T09:43:00.752Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/posts/searching/index.html</loc>
@@ -70,11 +70,11 @@
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/music.html</loc>
-    <lastmod>2023-03-30T08:35:44.622Z</lastmod>
+    <lastmod>2023-05-22T00:08:53.690Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/music/albums/back-to-the-drawing-board/index.html</loc>
-    <lastmod>2023-03-30T08:35:34.555Z</lastmod>
+    <lastmod>2023-05-21T23:34:09.766Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/music/albums/it-will-pass/index.html</loc>
@@ -142,6 +142,86 @@
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/publications/cognitive-load/index.html</loc>
-    <lastmod>2023-04-12T19:46:39.936Z</lastmod>
+    <lastmod>2023-05-21T23:27:35.302Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/presentations/department-seminar/index.html</loc>
+    <lastmod>2023-05-22T00:37:29.576Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/publications/solidarity-matters/index.html</loc>
+    <lastmod>2023-05-21T23:55:25.234Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/publications/cognitive-load/index.html</loc>
+    <lastmod>2023-05-22T00:11:28.206Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/publications/reasons-or-rationalizations/index.html</loc>
+    <lastmod>2023-05-22T00:02:16.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/publications/the-political-psychology-of-covid19/index.html</loc>
+    <lastmod>2023-05-22T00:05:00.501Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/presentations.html</loc>
+    <lastmod>2023-05-22T00:17:27.594Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/cognitive-load/index.html</loc>
+    <lastmod>2023-05-22T00:21:03.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/moral-judgment-as-categorization/index.html</loc>
+    <lastmod>2023-05-22T00:21:14.211Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/just-wrong-or-just-weird/index.html</loc>
+    <lastmod>2023-05-22T00:21:41.094Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/moral-identity-and-covid-19/index.html</loc>
+    <lastmod>2023-05-22T00:21:43.388Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/reasons-or-rationalizations/index.html</loc>
+    <lastmod>2023-05-22T00:22:10.630Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/searching-for-moral-dumbfounding/index.html</loc>
+    <lastmod>2023-05-22T00:22:29.195Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/national-identity/index.html</loc>
+    <lastmod>2023-05-22T00:22:30.951Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/pandemic-threat/index.html</loc>
+    <lastmod>2023-05-22T00:22:32.749Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/predicting-attitudinal/index.html</loc>
+    <lastmod>2023-05-22T00:22:34.341Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/solidarity-matters/index.html</loc>
+    <lastmod>2023-05-22T00:22:35.848Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/the-political-psychology-of-covid19/index.html</loc>
+    <lastmod>2023-05-22T00:22:37.436Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/presentations/complexity/index.html</loc>
+    <lastmod>2023-05-22T09:46:40.643Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/presentations/ICT2021/index.html</loc>
+    <lastmod>2023-05-22T09:42:58.784Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/presentations/complexity/complexity.html</loc>
+    <lastmod>2023-05-22T09:44:07.171Z</lastmod>
   </url>
 </urlset>

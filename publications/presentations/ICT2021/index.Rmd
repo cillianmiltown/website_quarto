@@ -1,0 +1,37 @@
+---
+title: "*It’s wrong…but I cannot explain why!*"
+author: "Cillian McHugh"
+subtitle: "Demystifying moral dumbfounding"
+description: "International Conference on Thinking (June 2021)"
+date: '2021-06-24'
+bibliography: "../../../bib/My Library.bib"
+csl: "../../../bib/apa.csl"
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Abstract
+
+> Moral dumbfounding occurs when people defend a moral judgement even though they cannot provide a reason in support of this judgement. The phenomenon has been widely discussed in the morality literature for almost 2 decades. Until recently the empirical evidence for the phenomenon was limited to a single study (with a total sample of N =  30) unpublished in peer-review form. Furthermore, no specific measure of dumbfounding is reported in this study, and the phenomenon remains poorly understood.  Across a series of studies (N = 1422 ), we develop methods for measuring dumbfounded responding. We address specific challenges to the dumbfounding paradigm, and demonstrate that it can be reliably elicited.  Having established the dumbfounding effect, we test a dual-processes explanation of moral dumbfounding.  We identify specific experimental manipulations and individual difference variables that appear to be related to dumbfounded responding. Our results show some evidence for a dual-processes explanation of moral dumbfounding, however, it is also clear that the phenomenon is more complex than predicted.
+
+
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/solidarity-matters/solidarity-matters.pdf');" data-inline="true" >Slides</button>
+
+
+```{=html}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">McHugh, C., (2021).  <i>It’s wrong…but I cannot explain why! Demystifying moral dumbfounding </i>, International Conference on Thinking, Paris (online).
+</div></body>
+</html>
+
+```
