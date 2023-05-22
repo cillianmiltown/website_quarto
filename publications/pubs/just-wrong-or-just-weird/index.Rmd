@@ -34,7 +34,7 @@ categories:
 
 
 
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/just-wrong-or-just-weird/WEIRD.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/just-wrong-or-just-weird/WEIRD.pdf');" data-inline="true" >PDF</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://link.springer.com/article/10.3758/s13421-022-01386-z');" data-inline="true" >Source Document</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/2h3k7/');" data-inline="true" >OSF</button>
 

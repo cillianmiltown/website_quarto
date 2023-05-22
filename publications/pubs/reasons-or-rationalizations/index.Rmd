@@ -29,7 +29,7 @@ categories:
 
 
 
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/reasons-or-rationalizations/reasons-or-rationalizations.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/reasons-or-rationalizations/reasons-or-rationalizations.pdf');" data-inline="true" >PDF</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://onlinelibrary.wiley.com/doi/abs/10.1002/bdm.2167')" >Source Document</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/m4ce7/')" >OSF</button>
 

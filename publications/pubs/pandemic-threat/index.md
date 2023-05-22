@@ -43,7 +43,7 @@ categories:
 
 
 
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pandemic-threat/pandemic-threat.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/pandemic-threat/pandemic-threat.pdf');" data-inline="true" >PDF</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://www.tandfonline.com/doi/full/10.1080/00224545.2021.2024122')" >Source Document</button>
 
 

@@ -28,7 +28,7 @@ categories:
 
 
 
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/national-identity/national-identity.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/national-identity/national-identity.pdf');" data-inline="true" >PDF</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://www.nature.com/articles/s41467-021-27668-9')" >Source Document</button>
 
 

@@ -39,7 +39,7 @@ categories:
 
 
 
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/moral-identity-and-COVID-19/moral-identity.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/moral-identity-and-COVID-19/moral-identity.pdf');" data-inline="true" >PDF</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://onlinelibrary.wiley.com/doi/full/10.1111/pops.12838')" >Source Document</button>
 
 

@@ -30,7 +30,7 @@ categories:
 
 
 
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/predicting-attitudinal/predicting-attitudinal.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/predicting-attitudinal/predicting-attitudinal.pdf');" data-inline="true" >PDF</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://academic.oup.com/pnasnexus/article/1/3/pgac093/6631580?login=false')" >Source Document</button>
 
 

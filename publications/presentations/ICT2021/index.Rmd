@@ -18,7 +18,7 @@ editor_options:
 
 
 
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/solidarity-matters/solidarity-matters.pdf');" data-inline="true" >Slides</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://cillianmiltown.github.io/website_quarto/publications/presentations/ICT2021/ICT_moral_dumbfounding.html');" data-inline="true" >Slides</button>
 
 
 ```{=html}

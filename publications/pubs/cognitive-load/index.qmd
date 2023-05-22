@@ -31,7 +31,7 @@ categories:
 >Moral dumbfounding occurs when people defend a moral judgment, without reasons in support of this judgment. The phenomenon has been influential in moral psychology, however, despite its influence, it remains poorly understood. Based on the notion that cognitive load enhances biases and shortcomings in human judgment when elaboration is beneficial, we hypothesized that under cognitive load, people would be less likely to provide reasons for a judgment and more likely to be dumbfounded (or to change their judgment). In a pre-registered study (N = 1686) we tested this prediction. Our findings suggest that cognitive load reduces reason-giving, and increases dumbfounding (but does not lead to changes in judgments). Our results provide new insights into the phenomenon of moral dumbfounding while also advancing theory in moral psychology.
 
 
-<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/cognitive-load/cognitive-load.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/cognitive-load/cognitive-load.pdf');" data-inline="true" >PDF</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://online.ucpress.edu/collabra/article/9/1/73818/195829/Cognitive-Load-Can-Reduce-Reason-Giving-in-a-Moral');" data-inline="true" >Source Document</button>
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/fcd5r/');" >OSF</button>
 
