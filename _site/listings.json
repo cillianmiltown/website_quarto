@@ -17,8 +17,8 @@
     "listing": "/publications.html",
     "items": [
       "/publications/pubs/cognitive-load/index.html",
-      "/publications/pubs/social-and-moral/index.html",
       "/publications/pubs/just-wrong-or-just-weird/index.html",
+      "/publications/pubs/social-and-moral/index.html",
       "/publications/pubs/predicting-attitudinal/index.html",
       "/publications/pubs/moral-identity-and-covid-19/index.html",
       "/publications/pubs/pandemic-threat/index.html",
@@ -34,7 +34,10 @@
   },
   {
     "listing": "/projects.html",
-    "items": []
+    "items": [
+      "/registered-reports/beckon/index.html",
+      "/registered-reports/triplett/index.html"
+    ]
   },
   {
     "listing": "/music.html",

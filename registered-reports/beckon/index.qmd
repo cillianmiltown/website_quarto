@@ -1,0 +1,31 @@
+---
+title: "To Beckon or Not to Beckon: Testing a Causal-Evaluative Modelling Approach to Moral Judgment"
+description: "Journal of Experimental Social Psychology (Stage 1 Accepted)"
+author: 
+  - name          : "Cillian McHugh"
+    affiliation   : University of Limerick
+    corresponding : yes    # Define only one corresponding author
+    address       : "University of Limerick, Limerick, Ireland"
+    email         : "cillian.mchugh@ul.ie"
+  - name          : "Kathryn B. Francis"
+    affiliation   : Keele Univesity
+  - name          : "Jim A. C. Everett"
+    affiliation   : University of Kent
+  - name          : "Shane Timmons"
+    affiliation   : Economic and Social Research Institute
+date: '2022-11-21'
+aliases:   
+  - ../beckon/
+image: featured.png
+categories: 
+  - Moral Judgment
+  - morality
+  - trolley
+---
+
+> Moral judgments are increasingly being understood as showing context dependent variability. A growing literature has identified a range of specific contextual factors (e.g., emotions, intentions) that can influence moral judgments in predictable ways. Integrating these diverse influences into a unified approach to understanding moral judgments remains a challenge. Recent work by Railton (2017) attempted to address this with a causal-evaluative modelling approach to moral judgment. In support of this model Railton presents evidence from novel variations of classic trolley type dilemmas. We present results from a pilot study that highlight a significant confound and demonstrate that it likely influenced Railton’s results. Building on this, we propose a pre-registered attempted replication-extension of Railton’s study, using larger more diverse samples, and more rigorous methods and materials, specifically controlling for potential confounds. 
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/59quk/?view_only=18414ad4433a4145a718f7015c012e36');" data-inline="true" >OSF</button>
+
+

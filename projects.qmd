@@ -1,21 +1,26 @@
 ---
 title: "Projects"
 listing:
-  contents: projects
-  sort: "title"
-  type: grid
-  image-height: 260px
-  categories: true
-  sort-ui: true
-  filter-ui: true
+  - id: registered-reports
+    contents: registered-reports
+    sort: "title"
+    type: default
+    categories: true
+    sort-ui: true
+    filter-ui: true
 page-layout: full
 title-block-banner: true
 comments: false
 ---
 
-Click on any of the Projects below to participate in my current research:
 
 
+# Registered Reports
+
+:::{#registered-reports}
+:::
+
+# On-Going Projects
 
 ```{=html}
 

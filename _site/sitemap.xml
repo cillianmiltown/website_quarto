@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.cillianmchugh.com/index.html</loc>
-    <lastmod>2023-05-24T21:22:20.153Z</lastmod>
+    <lastmod>2023-05-24T21:49:19.288Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/posts.html</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/publications.html</loc>
-    <lastmod>2023-05-24T21:22:18.782Z</lastmod>
+    <lastmod>2023-05-24T21:24:05.194Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/posts/searching/index.html</loc>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/projects.html</loc>
-    <lastmod>2023-03-27T10:53:47.862Z</lastmod>
+    <lastmod>2023-05-24T22:41:43.548Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/music.html</loc>
@@ -230,6 +230,18 @@
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/publications/pubs/social-and-moral/index.html</loc>
-    <lastmod>2023-05-24T21:22:16.462Z</lastmod>
+    <lastmod>2023-05-24T21:24:03.018Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/project/triplett/index.html</loc>
+    <lastmod>2023-05-24T21:51:05.172Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/registered-reports/triplett/index.html</loc>
+    <lastmod>2023-05-24T22:41:42.817Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/registered-reports/beckon/index.html</loc>
+    <lastmod>2023-05-24T22:42:07.863Z</lastmod>
   </url>
 </urlset>

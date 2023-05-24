@@ -1,0 +1,37 @@
+---
+title: "Triplett’s Social Facilitation Experiment: A Registered Replication Report"
+description: "Nature Scientific Reports (Stage 1 Accepted)"
+author: 
+  - name          : "Cillian McHugh"
+    affiliation   : University of Limerick
+  - name          : "Siobhán M. Griffin"
+    affiliation   : University of Limerick
+    corresponding : yes    # Define only one corresponding author
+    address       : "University of Limerick, Limerick, Ireland"
+    email         : "siobhan.griffin@ul.ie"
+  - name          : "Elaine L. Kinsella"
+    affiliation   : University of Limerick
+  - name          : "Michael Quayle"
+    affiliation   : University of Limerick
+  - name          : "Bob Strunz"
+    affiliation   : University of Limerick
+  - name          : "Orla T. Muldoon"
+    affiliation   : University of Limerick
+date: '2022-08-10'
+aliases:   
+  - ../triplett/
+image: featured.png
+categories: 
+  - social facilitation
+  - replication
+---
+
+Cillian McHugh and Siobhán M. Griffin share joint first authorship on this manuscript.
+
+
+> A seminal study by Triplett provided initial evidence for the social facilitation effect, and over the last century research has demonstrated this effect across a range of settings. However, despite the importance of Triplett’s study no research has replicated the original study paradigm. Furthermore, in the context of research advances and methodological rigour, some elements of the original study weaken the validity of the observed findings. We address these critical limitations and replicate the original study, employing a standardized study protocol to minimise potential confounds, such as practice effects. A minimum of 400 school-aged children will be recruited. Using a purpose-built apparatus, participants will complete each trial twice — once alone and once in competition with another participant. Trial order will be standardized. The results of this study will extend research on social facilitation by replicating the original study paradigm and exploring potential age and gender effects.
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/6brq9/');" data-inline="true" >OSF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/vsgpq');" data-inline="true" >Source Registration</button>
+
