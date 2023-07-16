@@ -67,7 +67,7 @@ My empirical work has largely focused on the phenomenon of [moral dumbfounding](
 My interests extend beyond the moral domain to include learning and knowledge acquisition, categorisation, skill/expertise, meaning, motivation, and memory. My theoretical interests include Ecological Psychology, Embodiment, and Dynamical Systems.
 
 <a rel="me" href="https://mastodon.ie/@cillianmchugh"></a>
-
+<a rel="me" href="https://sciences.social/@cillianmchugh"></a>
 
 ## Featured Paper
 
@@ -100,7 +100,7 @@ Moral Judgment as Categorization (MJAC): presentation to IMP seminar series 31st
 
 <p align="center" style="fontsize: 40px">
 
-<a href="https://mastodon.ie/@cillianmchugh" target="_blank"><i class="fa-brands fa-mastodon fa-2x" title="Mastodon" aria-hidden="true"></i></a>
+<a href="https://sciences.social/@cillianmchugh" target="_blank"><i class="fa-brands fa-mastodon fa-2x" title="Mastodon" aria-hidden="true"></i></a>
 <a href="https://twitter.com/CillianMacAodh" target="_blank"><i class="fa-brands fa-twitter fa-2x" title="Twitter" aria-hidden="true"></i></a>
 <a href="https://github.com/cillianmiltown" target="_blank"><i class="fa-brands fa-github fa-2x" title="GitHub" aria-hidden="true"></i></a>
 <a href="https://www.researchgate.net/profile/Cillian_Mchugh2" target="_blank"><i class="ai ai-researchgate ai-2x" title="ResearchGate" aria-hidden="true"></i></a>
