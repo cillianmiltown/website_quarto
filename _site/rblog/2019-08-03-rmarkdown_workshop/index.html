@@ -86,6 +86,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../..//files/icon1.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -120,13 +122,29 @@ div.csl-indent {
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HN11FG1NGL"></script>
 
-<script type="text/javascript">
+<script type="text/plain" cookie-consent="tracking">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-HN11FG1NGL', { 'anonymize_ip': true});
 </script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
 
 
 <link rel="stylesheet" href="../../customstyle.css">
@@ -501,13 +519,8 @@ X-squared = 0.34754, df = 1, p-value = 0.5555</code></pre>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>   </span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-(#tab:simpletable)
-
-<div data-custom-style="Table Caption">
-<em>Engine type and number of gears</em>
-</div>
 <table class="table">
+<caption>(#tab:simpletable) Engine type and number of gears</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Engine Type</th>
@@ -537,7 +550,7 @@ X-squared = 0.34754, df = 1, p-value = 0.5555</code></pre>
 <section id="using-citations" class="level1">
 <h1>Using Citations</h1>
 <p>The <code>citr</code> can be used to cite while you write much like using endnote with Word. I have exported my Zotero Library (using BetterBibTex) to a .bib “My Library.bib” file in the directory I am working in. To cite I simply use @ and the citation key e.g., <code>@haidt_emotional_2001</code> returns <span class="citation" data-cites="haidt_emotional_2001">Haidt (<a href="#ref-haidt_emotional_2001" role="doc-biblioref">2001</a>)</span>. To enclose the entire citation in parenthesis use square brackets <code>[@haidt_emotional_2001]</code> gives: <span class="citation" data-cites="haidt_emotional_2001">(<a href="#ref-haidt_emotional_2001" role="doc-biblioref">Haidt 2001</a>)</span>. The full reference is automatically added to the reference list (see below).</p>
-<p>It is also generally good practice to cite R and the R packages you have used in your analyses. In the current post I used R <span class="citation" data-cites="R-base">(Version 4.1.2; <a href="#ref-R-base" role="doc-biblioref">R Core Team 2021</a>)</span> and the R-packages <em>blogdown</em> <span class="citation" data-cites="R-blogdown">(Version 1.16; <a href="#ref-R-blogdown" role="doc-biblioref">Xie, Hill, and Thomas 2017</a>)</span>, <em>bookdown</em> <span class="citation" data-cites="R-bookdown">(Version 0.32; <a href="#ref-R-bookdown" role="doc-biblioref">Xie 2016</a>)</span>, <em>citr</em> <span class="citation" data-cites="R-citr">(Version 0.3.2; <a href="#ref-R-citr" role="doc-biblioref">Aust 2019</a>)</span>, <em>desnum</em> <span class="citation" data-cites="R-desnum">(Version 0.1.1; <a href="#ref-R-desnum" role="doc-biblioref">McHugh 2017</a>)</span>, <em>extrafont</em> <span class="citation" data-cites="R-extrafont">(Version 0.19; <a href="#ref-R-extrafont" role="doc-biblioref">Winston Chang 2014</a>)</span>, <em>ggplot2</em> <span class="citation" data-cites="R-ggplot2">(Version 3.4.1; <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span>, <em>knitr</em> <span class="citation" data-cites="R-knitr">(Version 1.42; <a href="#ref-R-knitr" role="doc-biblioref">Xie 2015</a>)</span>, <em>lsr</em> <span class="citation" data-cites="R-lsr">(Version 0.5.2; <a href="#ref-R-lsr" role="doc-biblioref">Navarro 2015</a>)</span>, <em>MASS</em> <span class="citation" data-cites="R-MASS">(Version 7.3.55; <a href="#ref-R-MASS" role="doc-biblioref"><strong>R-MASS?</strong></a>)</span>, <em>papaja</em> <span class="citation" data-cites="R-papaja">(Version 0.1.1.9001; <a href="#ref-R-papaja" role="doc-biblioref">Aust and Barth 2020</a>)</span>, <em>pwr</em> <span class="citation" data-cites="R-pwr">(Version 1.3.0; <a href="#ref-R-pwr" role="doc-biblioref">Champely 2020</a>)</span>, <em>scales</em> <span class="citation" data-cites="R-scales">(Version 1.2.1; <a href="#ref-R-scales" role="doc-biblioref">Wickham and Seidel 2020</a>)</span>, and <em>tinylabels</em> <span class="citation" data-cites="R-tinylabels">(Version 0.2.3; <a href="#ref-R-tinylabels" role="doc-biblioref"><strong>R-tinylabels?</strong></a>)</span>.</p>
+<p>It is also generally good practice to cite R and the R packages you have used in your analyses. In the current post I used R <span class="citation" data-cites="R-base">(Version 4.3.1; <a href="#ref-R-base" role="doc-biblioref">R Core Team 2017</a>)</span> and the R-packages <em>blogdown</em> <span class="citation" data-cites="R-blogdown">(Version 1.18; <a href="#ref-R-blogdown" role="doc-biblioref">Xie, Hill, and Thomas 2017</a>)</span>, <em>bookdown</em> <span class="citation" data-cites="R-bookdown">(Version 0.35; <a href="#ref-R-bookdown" role="doc-biblioref">Xie 2016</a>)</span>, <em>citr</em> <span class="citation" data-cites="R-citr">(Version 0.3.2; <a href="#ref-R-citr" role="doc-biblioref">Aust 2019</a>)</span>, <em>desnum</em> <span class="citation" data-cites="R-desnum">(Version 0.1.1; <a href="#ref-R-desnum" role="doc-biblioref">McHugh 2017</a>)</span>, <em>extrafont</em> <span class="citation" data-cites="R-extrafont">(Version 0.19; <a href="#ref-R-extrafont" role="doc-biblioref">Winston Chang 2014</a>)</span>, <em>ggplot2</em> <span class="citation" data-cites="R-ggplot2">(Version 3.4.3; <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span>, <em>knitr</em> <span class="citation" data-cites="R-knitr">(Version 1.44; <a href="#ref-R-knitr" role="doc-biblioref">Xie 2015</a>)</span>, <em>lsr</em> <span class="citation" data-cites="R-lsr">(Version 0.5.2; <a href="#ref-R-lsr" role="doc-biblioref">Navarro 2015</a>)</span>, <em>MASS</em> <span class="citation" data-cites="R-MASS">(Version 7.3.60; <a href="#ref-R-MASS" role="doc-biblioref"><strong>R-MASS?</strong></a>)</span>, <em>papaja</em> <span class="citation" data-cites="R-papaja">(Version 0.1.2; <a href="#ref-R-papaja" role="doc-biblioref">Aust and Barth 2020</a>)</span>, <em>pwr</em> <span class="citation" data-cites="R-pwr">(Version 1.3.0; <a href="#ref-R-pwr" role="doc-biblioref">Champely 2020</a>)</span>, <em>scales</em> <span class="citation" data-cites="R-scales">(Version 1.2.1; <a href="#ref-R-scales" role="doc-biblioref">Wickham and Seidel 2020</a>)</span>, and <em>tinylabels</em> <span class="citation" data-cites="R-tinylabels">(Version 0.2.4; <a href="#ref-R-tinylabels" role="doc-biblioref"><strong>R-tinylabels?</strong></a>)</span>.</p>
 <section id="references" class="level3">
 
 
@@ -570,7 +583,7 @@ McHugh, Cillian. 2017. <em>Desnum: <span>Creates</span> Some Useful Functions</e
 Navarro, Danielle. 2015. <em>Learning Statistics with <span>R</span>: <span>A</span> Tutorial for Psychology Students and Other Beginners. (<span>Version</span> 0.6)</em>. Manual. <span>Sydney, Australia</span>: <span>University of New South Wales</span>.
 </div>
 <div id="ref-R-base" class="csl-entry" role="listitem">
-R Core Team. 2021. <em>R: <span>A</span> Language and Environment for Statistical Computing</em>. Manual. <span>Vienna, Austria</span>: <span>R Foundation for Statistical Computing</span>.
+R Core Team. 2017. <span>“R: <span>A Language</span> and <span>Environment</span> for <span>Statistical Computing</span>.”</span> <span>Vienna, Austria</span>: <span>R Foundation for Statistical Computing</span>.
 </div>
 <div id="ref-R-ggplot2" class="csl-entry" role="listitem">
 Wickham, Hadley. 2016. <em>Ggplot2: <span>Elegant</span> Graphics for Data Analysis</em>. <span>Springer-Verlag New York</span>.
@@ -951,9 +964,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left"><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
   </div>
 </footer>

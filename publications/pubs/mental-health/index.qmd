@@ -1,0 +1,66 @@
+---
+title: "Mental health hygiene during a health crisis: Exploring factors associated with media-induced secondary trauma in relation to the COVID-19 pandemic"
+description: "Health Psychology Open"
+author: 
+  - name          : "Nishtha Lamba"
+    affiliation   : Middlesex University Dubai
+    corresponding : yes    # Define only one corresponding author
+    address       : "Department of Psychology, Middlesex University Dubai, Dubai, UAE"
+    email         : "nishthalamba@hotmail.com"
+  - name          : "Olga Khokhlova"
+    affiliation   : "Middlesex University Dubai"
+  - name          : "Aditi Bhatia"
+    affiliation   : "Middlesex University Dubai"
+  - name          : "Cillian McHugh"
+    affiliation   : "University of Limerick"
+date: '2023-09-22'
+aliases:   
+  - ../moral-judgment/
+bibliography      : ["../../../bib/My Library.bib"]
+image: featured.png
+categories: 
+  - pandemic
+  - paranoia
+  - media trauma
+  - conspiracy theories
+  - public health measures
+  - compliance
+  - news media
+---
+
+
+
+>**Aims**: Given the risk of developing vicarious trauma through news media has increased during the pandemic, we explored
+risk factors associated with media induced secondary trauma, and its behavioral and psychological implications.
+**Methods**: An international study (N = 1066), with a diverse sample, was administered in July 2020. We used standardized
+and validated questionnaires to measure news consumption, media-related trauma, compliance, and paranoia.
+**Results**: Greater frequency of news consumption, accessing news via social media and WHO, and believing in conspiracy
+theories increased likelihood of developing media-induced secondary trauma. News related trauma was associated with
+greater compliance with safety measures and increased paranoid ideation. Media-trauma however exhibited a greater
+association with paranoia than compliance.
+**Conclusion**: Findings highlight the need to facilitate a collaborative intervention, with public, media houses, health safety
+officials, and social scientists to have a deeper understanding of potential psychological costs of news consumption patterns
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/mental-health/mental-health.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://journals.sagepub.com/doi/full/10.1177/20551029231199578');" data-inline="true" >Source Document</button>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">Lamba, N., Khokhlova, O., Bhatia, A., &amp; McHugh, C. (2023). Mental health hygiene during a health crisis: Exploring factors associated with media-induced secondary trauma in relation to the COVID-19 pandemic. <i>Health Psychology Open</i>, <i>10</i>(2), 20551029231199578. <a href="https://doi.org/10.1177/20551029231199578">https://doi.org/10.1177/20551029231199578</a></div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1177%2F20551029231199578&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Mental%20health%20hygiene%20during%20a%20health%20crisis%3A%20Exploring%20factors%20associated%20with%20media-induced%20secondary%20trauma%20in%20relation%20to%20the%20COVID-19%20pandemic&amp;rft.jtitle=Health%20Psychology%20Open&amp;rft.volume=10&amp;rft.issue=2&amp;rft.aufirst=Nishtha&amp;rft.aulast=Lamba&amp;rft.au=Nishtha%20Lamba&amp;rft.au=Olga%20Khokhlova&amp;rft.au=Aditi%20Bhatia&amp;rft.au=Cillian%20McHugh&amp;rft.date=2023-07-01&amp;rft.pages=20551029231199578&amp;rft.issn=2055-1029&amp;rft.language=en"></span>
+</div></body>
+</html>
+
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.0/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: '#3f51b5',
+  textColor: '#fff'
+})</script>

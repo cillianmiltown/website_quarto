@@ -52,6 +52,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../..//files/icon1.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -86,13 +88,29 @@ div.csl-indent {
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HN11FG1NGL"></script>
 
-<script type="text/javascript">
+<script type="text/plain" cookie-consent="tracking">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-HN11FG1NGL', { 'anonymize_ip': true});
 </script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
 
 
 <link rel="stylesheet" href="../../customstyle.css">
@@ -214,7 +232,7 @@ gtag('config', 'G-HN11FG1NGL', { 'anonymize_ip': true});
 <p>(This post originally appeared on my <a href="https://cillianmacaodh.blogspot.com/2017/07/writing-functions-part-one-codewhite.html">R blog</a>)</p>
 <section id="writing-functions" class="level2">
 <h2 class="anchored" data-anchor-id="writing-functions">Writing functions</h2>
-<p>This post outlines the writing of a basic function. Writing functions in R <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2021</a>)</span> is fairly simple, and the usefulness of function writing cannot be conveyed in a single post. I have included “Part one” in the title, and I will add follow-up posts in time.</p>
+<p>This post outlines the writing of a basic function. Writing functions in R <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2017</a>)</span> is fairly simple, and the usefulness of function writing cannot be conveyed in a single post. I have included “Part one” in the title, and I will add follow-up posts in time.</p>
 <p>The basic code to write a function looks like this:</p>
 <pre><code>function_name &lt;- function(){}</code></pre>
 <p>The code for the task you want your function to perform goes inside the curly brackets <code>{}</code>, and the object you wish the function to work on goes inside the parenthesis<code>()</code>.</p>
@@ -286,7 +304,7 @@ gtag('config', 'G-HN11FG1NGL', { 'anonymize_ip': true});
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-R-base" class="csl-entry" role="listitem">
-R Core Team. 2021. <em>R: <span>A</span> Language and Environment for Statistical Computing</em>. Manual. <span>Vienna, Austria</span>: <span>R Foundation for Statistical Computing</span>.
+R Core Team. 2017. <span>“R: <span>A Language</span> and <span>Environment</span> for <span>Statistical Computing</span>.”</span> <span>Vienna, Austria</span>: <span>R Foundation for Statistical Computing</span>.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
@@ -646,9 +664,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left"><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
   </div>
 </footer>

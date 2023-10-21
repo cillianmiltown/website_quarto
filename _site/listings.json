@@ -6,40 +6,6 @@
     ]
   },
   {
-    "listing": "/posts.html",
-    "items": [
-      "/posts/mjac/index.html",
-      "/posts/reasons/index.html",
-      "/posts/searching/index.html"
-    ]
-  },
-  {
-    "listing": "/publications.html",
-    "items": [
-      "/publications/pubs/cognitive-load/index.html",
-      "/publications/pubs/just-wrong-or-just-weird/index.html",
-      "/publications/pubs/social-and-moral/index.html",
-      "/publications/pubs/predicting-attitudinal/index.html",
-      "/publications/pubs/moral-identity-and-covid-19/index.html",
-      "/publications/pubs/pandemic-threat/index.html",
-      "/publications/pubs/national-identity/index.html",
-      "/publications/pubs/moral-judgment-as-categorization/index.html",
-      "/publications/pubs/the-political-psychology-of-covid19/index.html",
-      "/publications/pubs/solidarity-matters/index.html",
-      "/publications/pubs/reasons-or-rationalizations/index.html",
-      "/publications/pubs/searching-for-moral-dumbfounding/index.html",
-      "/publications/presentations/complexity/index.html",
-      "/publications/presentations/ICT2021/index.html"
-    ]
-  },
-  {
-    "listing": "/projects.html",
-    "items": [
-      "/registered-reports/beckon/index.html",
-      "/registered-reports/triplett/index.html"
-    ]
-  },
-  {
     "listing": "/music.html",
     "items": [
       "/music/albums/it-will-pass/index.html",
@@ -58,6 +24,46 @@
     ]
   },
   {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/mjac/index.html",
+      "/posts/reasons/index.html",
+      "/posts/searching/index.html"
+    ]
+  },
+  {
+    "listing": "/presentations.html",
+    "items": []
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/registered-reports/beckon/index.html",
+      "/registered-reports/triplett/index.html"
+    ]
+  },
+  {
+    "listing": "/publications.html",
+    "items": [
+      "/publications/pubs/moral-judgment/index.html",
+      "/publications/pubs/mental-health/index.html",
+      "/publications/pubs/cognitive-load/index.html",
+      "/publications/pubs/just-wrong-or-just-weird/index.html",
+      "/publications/pubs/social-and-moral/index.html",
+      "/publications/pubs/predicting-attitudinal/index.html",
+      "/publications/pubs/moral-identity-and-covid-19/index.html",
+      "/publications/pubs/pandemic-threat/index.html",
+      "/publications/pubs/national-identity/index.html",
+      "/publications/pubs/moral-judgment-as-categorization/index.html",
+      "/publications/pubs/the-political-psychology-of-covid19/index.html",
+      "/publications/pubs/solidarity-matters/index.html",
+      "/publications/pubs/reasons-or-rationalizations/index.html",
+      "/publications/pubs/searching-for-moral-dumbfounding/index.html",
+      "/publications/presentations/complexity/index.html",
+      "/publications/presentations/ICT2021/index.html"
+    ]
+  },
+  {
     "listing": "/rblog.html",
     "items": [
       "/rblog/2019-08-11-js_mediation/index.html",
@@ -69,10 +75,6 @@
   },
   {
     "listing": "/shiny.html",
-    "items": []
-  },
-  {
-    "listing": "/presentations.html",
     "items": []
   }
 ]

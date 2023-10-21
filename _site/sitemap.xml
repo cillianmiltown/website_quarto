@@ -1,247 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.cillianmchugh.com/about.html</loc>
+    <lastmod>2023-10-21T23:11:54.076Z</lastmod>
+  </url>
+  <url>
     <loc>https://www.cillianmchugh.com/index.html</loc>
-    <lastmod>2023-07-16T15:24:11.415Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/posts.html</loc>
-    <lastmod>2023-03-27T10:45:12.915Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/posts/mjac/index.html</loc>
-    <lastmod>2023-03-27T10:44:15.525Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/posts/reasons/index.html</loc>
-    <lastmod>2023-03-27T10:44:43.501Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications.html</loc>
-    <lastmod>2023-05-24T21:24:05.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/posts/searching/index.html</loc>
-    <lastmod>2023-03-27T10:45:09.966Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/just-wrong-or-just-weird/index.html</loc>
-    <lastmod>2023-03-27T10:47:52.813Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/moral-identity-and-covid-19/index.html</loc>
-    <lastmod>2023-03-27T10:48:26.079Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/moral-judgment-as-categorization/index.html</loc>
-    <lastmod>2023-03-27T10:49:20.547Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/national-identity/index.html</loc>
-    <lastmod>2023-03-27T10:49:50.353Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/pandemic-threat/index.html</loc>
-    <lastmod>2023-03-27T10:50:09.049Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/predicting-attitudinal/index.html</loc>
-    <lastmod>2023-03-27T10:50:46.345Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/reasons-or-rationalizations/index.html</loc>
-    <lastmod>2023-03-27T10:51:27.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/searching-for-moral-dumbfounding/index.html</loc>
-    <lastmod>2023-03-27T18:19:46.707Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/solidarity-matters/index.html</loc>
-    <lastmod>2023-03-27T10:52:40.238Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/the-political-psychology-of-covid19/index.html</loc>
-    <lastmod>2023-03-27T10:53:11.180Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/projects.html</loc>
-    <lastmod>2023-05-24T22:41:43.548Z</lastmod>
+    <lastmod>2023-10-21T23:11:55.958Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/music.html</loc>
-    <lastmod>2023-05-22T00:08:53.690Z</lastmod>
+    <lastmod>2023-10-21T23:11:56.957Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/music/albums/back-to-the-drawing-board/index.html</loc>
-    <lastmod>2023-05-21T23:34:09.766Z</lastmod>
+    <lastmod>2023-10-21T23:11:57.978Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/music/albums/it-will-pass/index.html</loc>
-    <lastmod>2023-03-30T08:35:43.734Z</lastmod>
+    <lastmod>2023-10-21T23:11:58.913Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/music/albums/spectrum/index.html</loc>
-    <lastmod>2023-03-27T10:58:48.690Z</lastmod>
+    <lastmod>2023-10-21T23:11:59.945Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/music/other_music/launch-gig-photos/index.html</loc>
-    <lastmod>2023-03-27T11:01:40.599Z</lastmod>
+    <lastmod>2023-10-21T23:12:00.724Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/music/other_music/videos/index.html</loc>
-    <lastmod>2023-03-27T11:02:33.955Z</lastmod>
+    <lastmod>2023-10-21T23:12:01.195Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/other.html</loc>
-    <lastmod>2023-03-27T11:08:52.498Z</lastmod>
+    <lastmod>2023-10-21T23:12:01.874Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cillianmchugh.com/other/chess/index.html</loc>
-    <lastmod>2023-03-27T11:03:35.803Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/other/2019-05-15-js-mediation-shinyapp/index.html</loc>
-    <lastmod>2023-03-27T11:08:42.859Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/other/2019-12-10-moral-networks-shinyapp/index.html</loc>
-    <lastmod>2023-03-27T11:05:21.964Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/rblog.html</loc>
-    <lastmod>2023-03-27T11:10:47.143Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/rblog/2017-07-27-writing_functions_1/index.html</loc>
-    <lastmod>2023-03-27T11:09:39.543Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/rblog/2017-08-27-writing_functions_2/index.html</loc>
-    <lastmod>2023-03-27T11:09:57.803Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/rblog/2018-10-20-a_lazy_function/index.html</loc>
-    <lastmod>2023-03-27T11:10:12.589Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/rblog/2019-08-03-rmarkdown_workshop/index.html</loc>
-    <lastmod>2023-03-27T11:10:30.227Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/rblog/2019-08-11-js_mediation/index.html</loc>
-    <lastmod>2023-03-27T11:10:46.160Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/about.html</loc>
-    <lastmod>2023-03-27T18:19:57.090Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/shiny.html</loc>
-    <lastmod>2023-03-27T18:19:57.629Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/cognitive-load/index.html</loc>
-    <lastmod>2023-05-21T23:27:35.302Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/presentations/department-seminar/index.html</loc>
-    <lastmod>2023-05-22T00:37:29.576Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/publications/solidarity-matters/index.html</loc>
-    <lastmod>2023-05-21T23:55:25.234Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/publications/cognitive-load/index.html</loc>
-    <lastmod>2023-05-22T00:11:28.206Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/publications/reasons-or-rationalizations/index.html</loc>
-    <lastmod>2023-05-22T00:02:16.881Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/publications/the-political-psychology-of-covid19/index.html</loc>
-    <lastmod>2023-05-22T00:05:00.501Z</lastmod>
+    <loc>https://www.cillianmchugh.com/posts.html</loc>
+    <lastmod>2023-10-21T23:12:02.619Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/presentations.html</loc>
-    <lastmod>2023-05-22T00:17:27.594Z</lastmod>
+    <lastmod>2023-10-21T23:12:03.114Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/cognitive-load/index.html</loc>
-    <lastmod>2023-05-22T11:02:26.966Z</lastmod>
+    <loc>https://www.cillianmchugh.com/projects.html</loc>
+    <lastmod>2023-10-21T23:12:03.833Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/moral-judgment-as-categorization/index.html</loc>
-    <lastmod>2023-05-22T11:02:50.487Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/just-wrong-or-just-weird/index.html</loc>
-    <lastmod>2023-05-22T11:03:27.481Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/moral-identity-and-covid-19/index.html</loc>
-    <lastmod>2023-05-22T11:03:31.805Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/reasons-or-rationalizations/index.html</loc>
-    <lastmod>2023-05-22T11:03:56.614Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/searching-for-moral-dumbfounding/index.html</loc>
-    <lastmod>2023-05-22T11:04:15.714Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/national-identity/index.html</loc>
-    <lastmod>2023-05-22T11:04:17.215Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/pandemic-threat/index.html</loc>
-    <lastmod>2023-05-22T11:04:18.816Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/predicting-attitudinal/index.html</loc>
-    <lastmod>2023-05-22T11:04:20.462Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/solidarity-matters/index.html</loc>
-    <lastmod>2023-05-22T10:41:46.368Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/the-political-psychology-of-covid19/index.html</loc>
-    <lastmod>2023-05-22T11:04:22.423Z</lastmod>
+    <loc>https://www.cillianmchugh.com/publications.html</loc>
+    <lastmod>2023-10-21T23:12:06.214Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/publications/presentations/complexity/index.html</loc>
-    <lastmod>2023-05-22T10:42:43.803Z</lastmod>
+    <lastmod>2023-10-21T23:12:07.907Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cillianmchugh.com/publications/presentations/ICT2021/index.html</loc>
-    <lastmod>2023-05-22T11:02:53.443Z</lastmod>
+    <loc>https://www.cillianmchugh.com/publications/pubs/cognitive-load/index.html</loc>
+    <lastmod>2023-10-21T23:12:35.785Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cillianmchugh.com/publications/presentations/complexity/complexity.html</loc>
-    <lastmod>2023-05-22T09:56:27.323Z</lastmod>
+    <loc>https://www.cillianmchugh.com/publications/pubs/mental-health/index.html</loc>
+    <lastmod>2023-10-21T23:12:37.804Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cillianmchugh.com/publications/presentations/complexity/complexity/complexity.html</loc>
-    <lastmod>2023-05-22T09:59:16.651Z</lastmod>
+    <loc>https://www.cillianmchugh.com/publications/pubs/moral-judgment-as-categorization/index.html</loc>
+    <lastmod>2023-10-21T23:12:50.062Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cillianmchugh.com/publications/pubs/social-and-moral/index.html</loc>
-    <lastmod>2023-05-24T21:24:03.018Z</lastmod>
+    <loc>https://www.cillianmchugh.com/publications/pubs/moral-judgment/index.html</loc>
+    <lastmod>2023-10-21T23:12:51.854Z</lastmod>
   </url>
   <url>
-    <loc>https://www.cillianmchugh.com/project/triplett/index.html</loc>
-    <lastmod>2023-05-24T21:51:05.172Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cillianmchugh.com/registered-reports/triplett/index.html</loc>
-    <lastmod>2023-05-24T22:41:42.817Z</lastmod>
+    <loc>https://www.cillianmchugh.com/rblog.html</loc>
+    <lastmod>2023-10-21T23:12:52.658Z</lastmod>
   </url>
   <url>
     <loc>https://www.cillianmchugh.com/registered-reports/beckon/index.html</loc>
-    <lastmod>2023-05-24T22:42:07.863Z</lastmod>
+    <lastmod>2023-10-21T23:12:53.187Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/registered-reports/triplett/index.html</loc>
+    <lastmod>2023-10-21T23:12:53.770Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/shiny.html</loc>
+    <lastmod>2023-10-21T23:12:54.298Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/posts/mjac/index.html</loc>
+    <lastmod>2023-10-21T23:12:58.074Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/posts/reasons/index.html</loc>
+    <lastmod>2023-10-21T23:13:09.533Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/posts/searching/index.html</loc>
+    <lastmod>2023-10-21T23:13:22.628Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/presentations/ICT2021/index.html</loc>
+    <lastmod>2023-10-21T23:13:25.055Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/just-wrong-or-just-weird/index.html</loc>
+    <lastmod>2023-10-21T23:13:54.148Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/moral-identity-and-covid-19/index.html</loc>
+    <lastmod>2023-10-21T23:13:56.428Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/reasons-or-rationalizations/index.html</loc>
+    <lastmod>2023-10-21T23:14:17.423Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/searching-for-moral-dumbfounding/index.html</loc>
+    <lastmod>2023-10-21T23:14:32.656Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/rblog/2017-07-27-writing_functions_1/index.html</loc>
+    <lastmod>2023-10-21T23:14:35.112Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/rblog/2017-08-27-writing_functions_2/index.html</loc>
+    <lastmod>2023-10-21T23:14:38.124Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/rblog/2018-10-20-a_lazy_function/index.html</loc>
+    <lastmod>2023-10-21T23:14:41.153Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/rblog/2019-08-03-rmarkdown_workshop/index.html</loc>
+    <lastmod>2023-10-21T23:14:46.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/rblog/2019-08-11-js_mediation/index.html</loc>
+    <lastmod>2023-10-21T23:14:52.049Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/other/2019-05-15-js-mediation-shinyapp/index.html</loc>
+    <lastmod>2023-10-21T23:14:52.550Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/other/2019-12-10-moral-networks-shinyapp/index.html</loc>
+    <lastmod>2023-10-21T23:14:53.215Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/other/chess/index.html</loc>
+    <lastmod>2023-10-21T23:14:53.981Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/national-identity/index.html</loc>
+    <lastmod>2023-10-21T23:14:56.076Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/pandemic-threat/index.html</loc>
+    <lastmod>2023-10-21T23:14:57.711Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/predicting-attitudinal/index.html</loc>
+    <lastmod>2023-10-21T23:14:59.429Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/social-and-moral/index.html</loc>
+    <lastmod>2023-10-21T23:15:01.101Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/solidarity-matters/index.html</loc>
+    <lastmod>2023-10-21T23:15:02.743Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cillianmchugh.com/publications/pubs/the-political-psychology-of-covid19/index.html</loc>
+    <lastmod>2023-10-21T23:15:04.492Z</lastmod>
   </url>
 </urlset>

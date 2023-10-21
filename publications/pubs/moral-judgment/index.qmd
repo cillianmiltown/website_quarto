@@ -1,0 +1,54 @@
+---
+title: Moral Judgment
+description: "Encyclopedia of Heroism Studies"
+author: 
+  - name          : "Cillian McHugh"
+    affiliation   : University of Limerick
+    corresponding : yes    # Define only one corresponding author
+    address       : "University of Limerick, Limerick, Ireland"
+    email         : "cillian.mchugh@ul.ie"
+  - name          : "Jordan Wylie"
+    affiliation   : "Boston College, Chestnut Hill, MA, USA"
+date: '2023-10-21'
+aliases:   
+  - ../moral-judgment/
+bibliography      : ["../../../bib/My Library.bib"]
+image: featured.png
+categories: 
+  - morality
+  - moral judgment
+  - categorization
+  - dual-processes
+  - moral dumbfounding
+  - Heroes
+  - Heroism
+---
+
+
+
+>There is little consensus in the literature on a single definition of moral judgment (see Malle 2020). Here we define moral judgment as catego- rizing a target (event, behavior, people, etc.) as morally right or morally wrong (or not morally relevant). This may include evaluations, norm judgments, wrongness judgments, and blame judgments.
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/moral-judgment/moral-judgment.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://link.springer.com/referenceworkentry/10.1007/978-3-031-17125-3_488-1');" data-inline="true" >Source Document</button>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">McHugh, C., &amp; Wylie, J. (2023). Moral Judgment. In G. R. Goethals, A. Kohen, B. Riches, C. Comerford, E. L. Kinsella, J. K. Beggan, &amp; S. T. Allison (Eds.), <i>Encyclopedia of Heroism Studies</i> (pp. 1–7). Springer. <a href="https://doi.org/10.1007/978-3-031-17125-3_488-1">https://doi.org/10.1007/978-3-031-17125-3_488-1</a></div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=urn%3Aisbn%3A978-3-031-17125-3&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Moral%20Judgment&amp;rft.place=Cham&amp;rft.publisher=Springer&amp;rft.aufirst=Cillian&amp;rft.aulast=McHugh&amp;rft.au=Cillian%20McHugh&amp;rft.au=Jordan%20Wylie&amp;rft.au=George%20R.%20Goethals&amp;rft.au=Ari%20Kohen&amp;rft.au=Brian%20Riches&amp;rft.au=Chris%20Comerford&amp;rft.au=Elaine%20L.%20Kinsella&amp;rft.au=James%20K.%20Beggan&amp;rft.au=Scott%20T.%20Allison&amp;rft.date=2023&amp;rft.pages=1-7&amp;rft.spage=1&amp;rft.epage=7&amp;rft.isbn=978-3-031-17125-3&amp;rft.language=en"></span>
+</div></body>
+</html>
+
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.0/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: '#3f51b5',
+  textColor: '#fff'
+})</script>
