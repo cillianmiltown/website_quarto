@@ -1,0 +1,49 @@
+---
+title: "To beckon or not to beckon: Testing a causal-evaluative modelling approach to moral judgment: A registered report"
+description: "Journal of Experimental Social Psychology (2024)"
+author: 
+  - name          : "Cillian McHugh"
+    affiliation   : "Department of Psychology, University of Limerick Ireland"
+    corresponding : yes    # Define only one corresponding author
+    address       : "University of Limerick, Limerick, Ireland"
+    email         : "cillian.mchugh@ul.ie"
+  - name          : "Kathryn B. Francis"
+    affiliation   : "School of Psychology, Faculty of Natural Sciences, Keele University, UK"
+  - name          : "Jim A. C. Everett"
+    affiliation   : "School of Psychology, Keynes College, University of Kent, UK"
+  - name          : "Shane Timmons"
+    affiliation   : "Economic & Social Research Institute, Ireland"
+date: '2024-04-03'
+aliases:   
+  - ../to-beckon/
+bibliography      : ["../../../bib/My Library.bib"]
+image: featured.png
+categories: 
+  - morality
+  - moral judgment
+  - categorization
+  - dual-processes
+  - causal evaluative modelling
+---
+
+
+
+>Moral judgments are increasingly being understood as showing context dependent variability. A growing literature has identified a range of specific contextual factors (e.g., emotions, intentions) that can influence moral judgments in predictable ways. Integrating these diverse influences into a unified approach to understanding moral judgments remains a challenge. Recent work by Railton (2017) attempted to address this with a causal-evaluative modelling approach to moral judgment. In support of this model Railton presents evidence from novel variations of classic trolley type dilemmas. We present results from a pre-registered pilot study that highlight a significant confound and demonstrate that it likely influenced Railton’s results. Building on this, our registered report presents a replication-extension of Railton’s study, using larger more diverse samples, and more rigorous methods and materials, specifically controlling for potential confounds. We found that participants’ judgments in sacrificial dilemmas are influenced by both direct personal force, and by whether harm occurs as a means or as a side-effect of action. We also show the relationship between a range of individual difference variables and responses to sacrificial moral dilemmas. Our results provide novel insights into the factors that influence people’s moral judgments, and contribute to ongoing theoretical debates in moral psychology.
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/to-beckon/to-beckon.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://online.ucpress.edu/collabra/article/9/1/73818/195829/Cognitive-Load-Can-Reduce-Reason-Giving-in-a-Moral');" data-inline="true" >Source Document</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/fcd5r/');" >OSF</button>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">McHugh, C., Francis, K. B., Everett, J. A. C., &amp; Timmons, S. (2024). To beckon or not to beckon: Testing a causal-evaluative modelling approach to moral judgment: A registered report. <i>Journal of Experimental Social Psychology</i>, <i>113</i>(C).</div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=To%20beckon%20or%20not%20to%20beckon%3A%20Testing%20a%20causal-evaluative%20modelling%20approach%20to%20moral%20judgment%3A%20A%20registered%20report&amp;rft.jtitle=Journal%20of%20Experimental%20Social%20Psychology&amp;rft.volume=113&amp;rft.issue=C&amp;rft.aufirst=Cillian&amp;rft.aulast=McHugh&amp;rft.au=Cillian%20McHugh&amp;rft.au=Kathryn%20B.%20Francis&amp;rft.au=Jim%20A.%20C.%20Everett&amp;rft.au=Shane%20Timmons&amp;rft.date=2024"></span>
+</div></body>
+
