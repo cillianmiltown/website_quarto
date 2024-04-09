@@ -28,4 +28,4 @@ categories:
 
 <button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/59quk/?view_only=18414ad4433a4145a718f7015c012e36');" data-inline="true" >OSF</button>
 
-
+This is now published see [here](https://www.cillianmchugh.com/publications/pubs/to-beckon/), or [here](https://www.sciencedirect.com/science/article/pii/S0022103124000283)
