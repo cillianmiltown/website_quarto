@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.287">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -27,6 +27,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -73,7 +74,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -82,8 +89,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HN11FG1NGL"></script>
@@ -107,6 +116,8 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
@@ -115,11 +126,10 @@ cookieconsent.run({
 
 <link rel="stylesheet" href="../../customstyle.css">
 <meta property="og:title" content="Cillian McHugh - Moral Judgment as Categorization (MJAC) - Explanation and Development">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://www.cillianmchugh.com/img/suitcase.jpg">
-<meta property="og:site-name" content="Cillian McHugh">
+<meta property="og:description" content="Homepage for Cillian McHugh">
+<meta property="og:site_name" content="Cillian McHugh">
 <meta name="twitter:title" content="Cillian McHugh - Moral Judgment as Categorization (MJAC) - Explanation and Development">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Homepage for Cillian McHugh">
 <meta name="twitter:image" content="https://www.cillianmchugh.com/posts/mjac/featured.png">
 <meta name="twitter:creator" content="@CillianMacAodh">
 <meta name="twitter:card" content="summary_large_image">
@@ -129,9 +139,9 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Cillian McHugh</span>
     </a>
@@ -143,38 +153,38 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html" rel="" target="">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html" rel="" target="">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../music.html" rel="" target="">
- <span class="menu-text">Music</span></a>
+    <a class="nav-link" href="../../music.html"> 
+<span class="menu-text">Music</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../other.html" rel="" target="">
- <span class="menu-text">Other</span></a>
+    <a class="nav-link" href="../../other.html"> 
+<span class="menu-text">Other</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../rblog.html" rel="" target="">
- <span class="menu-text">R Blog</span></a>
+    <a class="nav-link" href="../../rblog.html"> 
+<span class="menu-text">R Blog</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -246,7 +256,9 @@ cookieconsent.run({
   </div>
   
 
+
 </header>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <p>In what follows I will attempt to provide an overview of my <a href="https://journals.sagepub.com/doi/full/10.1177/1745691621990636">recently published theoretical work</a>, covering the main ideas behind the theory, while also describing the process of its development, from initial conception to final publication.</p>
@@ -261,7 +273,7 @@ cookieconsent.run({
 <h1>Background</h1>
 <p>I never intended to develop a new theory of moral judgement, it just sort of happened. When I started my PhD I wanted to understand <strong><em>how</em></strong> people make moral judgements, and when I studied the available approaches they didn’t quite provide the answers I was looking for. For example <span class="citation" data-cites="prinz_passionate_2005">Prinz (<a href="#ref-prinz_passionate_2005" role="doc-biblioref">2005</a>)</span> over-stated the role of emotion in moral judgements: <em>‘Emotions, I will suggest are perceptions of our bodily states. To recognise the moral value of an event is, thus, to perceive the perturbation that it causes’</em> <span class="citation" data-cites="prinz_passionate_2005">(<a href="#ref-prinz_passionate_2005" role="doc-biblioref">Prinz 2005, 99</a>)</span>. <span class="citation" data-cites="haidt_emotional_2001">Haidt (<a href="#ref-haidt_emotional_2001" role="doc-biblioref">2001</a>)</span> draws on analogy rather than providing an account for the underlying cognitive mechanisms, e.g., describing intuitions as phonemes <span class="citation" data-cites="haidt_emotional_2001">(<a href="#ref-haidt_emotional_2001" role="doc-biblioref">Haidt 2001, 827</a>)</span>, <em>‘brain has a kind of gauge’</em>, a <em>‘like-ometer’</em> <span class="citation" data-cites="haidt_social_2008">(<a href="#ref-haidt_social_2008" role="doc-biblioref">Haidt and Björklund 2008, 187</a>)</span>. <span class="citation" data-cites="greene_secret_2008">Greene (<a href="#ref-greene_secret_2008" role="doc-biblioref">2008</a>)</span> distinguishes between <em>cognition</em> and <em>emotion</em>, though these are not well defined. The Theory of Dyadic Morality <span class="citation" data-cites="gray_mind_2012 schein_theory_2018">(<a href="#ref-gray_mind_2012" role="doc-biblioref">Gray, Young, and Waytz 2012</a>; <a href="#ref-schein_theory_2018" role="doc-biblioref">Schein and Gray 2018</a>)</span> provides an account that is based on the content of moral judgements, rather than the underlying cognitive mechanisms.</p>
 <p>So having failed to find the answers I was looking for in the morality literature, I broadened my reading, looking at the emotion literature, and research on learning and knowledge acquisition. This led me to the works of Lisa Feldman Barrett, and Lawrence Barsalou <span class="citation" data-cites="barrett_psychological_2014 barsalou_situated_2003">(<a href="#ref-barrett_psychological_2014" role="doc-biblioref">Barrett, Wilson-Mendenhall, and Barsalou 2014</a>; <a href="#ref-barsalou_situated_2003" role="doc-biblioref">Barsalou 2003</a>)</span>. Initially I thought this provided a potential framework for understanding the role of emotions in moral judgement, however when I attempted to apply this framework, it became apparent that it also provided a framework for understanding moral judgment more generally. This realization came from an extensive survey of both the categorization and morality literatures. <span class="citation" data-cites="barsalou_situated_2003">Barsalou (<a href="#ref-barsalou_situated_2003" role="doc-biblioref">2003</a>)</span> defended his theory of categorization by highlighting the dynamic and context dependent nature of categorization, the same kinds of variability and context dependency were present in the morality literature, these parallels are shown in Table 1.</p>
-<table class="table">
+<table class="caption-top table">
 <caption>Table 1: Parallels between Morality and Categorization<br> <em>Note:</em><br> *At the time of development we had only hypothesized that typicality in moral judgments would be observed, but more recent work has confirmed this hypothesis <span class="citation" data-cites="gray_impure_2015 schein_theory_2018">(<a href="#ref-gray_impure_2015" role="doc-biblioref">Gray and Keeney 2015</a>; <a href="#ref-schein_theory_2018" role="doc-biblioref">Schein and Gray 2018</a>)</span>.<br> ** While not directly referred to as <em>dumbfounding</em>, a similiar phenomenon has been observed in non-moral contexts <span class="citation" data-cites="boyd_what_1989 boyd_realism_1991 keil_concepts_1989 keil_what_2004">(<a href="#ref-boyd_what_1989" role="doc-biblioref">Boyd 1989</a>, <a href="#ref-boyd_realism_1991" role="doc-biblioref">1991</a>; <a href="#ref-keil_concepts_1989" role="doc-biblioref">Keil 1989</a>; <a href="#ref-keil_what_2004" role="doc-biblioref">Keil, Rozenblit, and Mills 2004</a>)</span>.</caption>
 <colgroup>
 <col style="width: 21%">
@@ -373,8 +385,8 @@ cookieconsent.run({
 <p>Consider the formation of the category <em>Things to Pack Into a Suitcase</em> <span class="citation" data-cites="barsalou_deriving_1991">(<a href="#ref-barsalou_deriving_1991" role="doc-biblioref">Barsalou 1991</a>)</span>. Items that fall into this category (toothbrush, spare clothes, etc.) are not generally categorized as such on a day-to-day basis. The category emerges as required: when a person needs to pack things into a suitcase. A person who travels frequently will be able to form the category things to pack into a suitcase more readily because of repetition and the emerging skill. <span class="citation" data-cites="barsalou_situated_2003">Barsalou (<a href="#ref-barsalou_situated_2003" role="doc-biblioref">2003</a>)</span> argued that categorization more generally occurs through the same process. What we think of as <em>‘Stable’</em> categories, are categorizations that have become habitualized or skilled, as part of goal-directed activity.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../img/suitcase.jpg" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure 1: <em>Things to Pack Into a Suitcase</em></figcaption><p></p>
+<p><img src="../../img/suitcase.jpg" class="img-fluid figure-img"></p>
+<figcaption>Figure 1: <em>Things to Pack Into a Suitcase</em></figcaption>
 </figure>
 </div>
 </section>
@@ -384,7 +396,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../img/fruit.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure 2: <em>Fruit</em></figcaption><p></p>
+<figcaption>Figure 2: <em>Fruit</em></figcaption>
 </figure>
 </div>
 <p>We extend this basic process to moral categories. When people encounter a behavior in certain circumstances, they may learn that it is <em>morally wrong</em>, and this behavior becomes associated with the category <em>morally wrong</em>. Each subsequent time this behavior is encountered in a context in which its moral value is relevant or it is identified as a member of the category <em>morally wrong</em> (either explicitly or implicitly), the person’s skill in deploying this category is strengthened. This same process holds for <em>morally right</em>. With the increasing frequency of such categorizations, they become increasingly habitual and automatic <span class="citation" data-cites="barsalou_situated_2003">(see <a href="#ref-barsalou_situated_2003" role="doc-biblioref">Barsalou 2003</a>)</span>.</p>
@@ -420,18 +432,18 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../img/context7.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure 3: <em>A sketch of dual-process approaches (contextual influences not directly addressed by these approaches highlighted in green)</em></figcaption><p></p>
+<figcaption>Figure 3: <em>A sketch of dual-process approaches (contextual influences not directly addressed by these approaches highlighted in green)</em></figcaption>
 </figure>
 </div>
 <p>MJAC does not make assumptions based on the <em>content</em> of moral judgements. However, MJAC predicts a distinction between <em>habitual</em> (or skilled, or <em>intuitive</em>) responses, and <em>deliberative</em> (or controlled) responses. This distinction does not make assumptions about specific content of moral judgments. However, thinking about the contexts in which deontological vs utilitarian judgements are generally made, it makes sense that deontological rules might become more habitual (think <em>It’s wrong to hurt people</em>, <em>Thou shalt not kill</em>, <em>You shouldn’t hit your sister</em>), while utilitarian judgements may require more deliberation (e.g., <em>how should we divide these resources in the fairest manner?</em>). MJAC therefore integrates the insights of dual-process accounts, while also allowing for greater variability, and a more diverse range of context effects. Figure 4 outlines the various influences on moral judgement according to MJAC.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../img/mjac13.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure 4: <em>Influences on moral judgements according to MJAC</em></figcaption><p></p>
+<figcaption>Figure 4: <em>Influences on moral judgements according to MJAC</em></figcaption>
 </figure>
 </div>
 <p>These differences in assumptions between MJAC and other approaches lead to differences in explanations and predictions. Above I have outlined moral dumbfounding as an example of such an explanation. The differences in assumptions and explanations are listed in Table 2. To avoid making this post too long and drawn out, I will not go into detail on these differences, however I point you to the <a href="https://journals.sagepub.com/doi/full/10.1177/1745691621990636#_i11">relevant section</a> in the main article for more detailed discussion on this.</p>
-<table class="table">
+<table class="caption-top table">
 <caption>Table 2: Contrasting MJAC with other approaches</caption>
 <colgroup>
 <col style="width: 16%">
@@ -598,7 +610,7 @@ And revised manuscript submitted! 12,037 in the end!<br><br>That was exhausting!
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../img/buffy.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption"><span class="citation" data-cites="whedon_lie_1997">(<a href="#ref-whedon_lie_1997" role="doc-biblioref">Whedon 1997</a>)</span></figcaption><p></p>
+<figcaption><span class="citation" data-cites="whedon_lie_1997">(<a href="#ref-whedon_lie_1997" role="doc-biblioref">Whedon 1997</a>)</span></figcaption>
 </figure>
 </div>
 </section>
@@ -629,7 +641,7 @@ And revised manuscript submitted! 12,037 in the end!<br><br>That was exhausting!
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-barrett_psychological_2014" class="csl-entry" role="listitem">
 Barrett, Lisa Feldman, Christine D. Wilson-Mendenhall, and Lawrence W. Barsalou. 2014. <span>“A <span>Psychological Construction Account</span> of <span>Emotion Regulation</span> and <span>Dysregulation</span>: <span>The Role</span> of <span>Situated Conceptualizations</span>.”</span> In <em>Handbook of <span>Emotion Regulation</span></em>, edited by James J. Gross, 447–65. <span>New York</span>: <span>Guilford Press</span>.
 </div>
@@ -820,6 +832,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -886,13 +925,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -971,10 +1012,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.cillianmchugh\.com\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -984,8 +1042,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -997,7 +1064,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1041,6 +1231,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1066,6 +1257,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1128,11 +1345,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left"><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
-    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+    <div class="nav-footer-left">
+<p><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></p>
+</div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+<p>Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

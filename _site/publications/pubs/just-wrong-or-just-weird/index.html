@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.287">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -77,7 +78,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -86,8 +93,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HN11FG1NGL"></script>
@@ -111,6 +120,8 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
@@ -119,13 +130,37 @@ cookieconsent.run({
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../../../customstyle.css">
 <meta property="og:title" content="Cillian McHugh - Just wrong? Or just WEIRD?">
 <meta property="og:description" content="Memory &amp; Cognition (2023)">
-<meta property="og:image" content="https://www.cillianmchugh.com/publications/pubs/just-wrong-or-just-weird/index_files/figure-html/chinesefig-1.png">
-<meta property="og:site-name" content="Cillian McHugh">
-<meta property="og:image:height" content="960">
-<meta property="og:image:width" content="1344">
+<meta property="og:site_name" content="Cillian McHugh">
 <meta name="twitter:title" content="Cillian McHugh - Just wrong? Or just WEIRD?">
 <meta name="twitter:description" content="Memory &amp; Cognition (2023)">
 <meta name="twitter:image" content="https://www.cillianmchugh.com/publications/pubs/just-wrong-or-just-weird/featured.png">
@@ -137,9 +172,9 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Cillian McHugh</span>
     </a>
@@ -151,38 +186,38 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../posts.html" rel="" target="">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="../../../posts.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../projects.html" rel="" target="">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../../../projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../music.html" rel="" target="">
- <span class="menu-text">Music</span></a>
+    <a class="nav-link" href="../../../music.html"> 
+<span class="menu-text">Music</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../other.html" rel="" target="">
- <span class="menu-text">Other</span></a>
+    <a class="nav-link" href="../../../other.html"> 
+<span class="menu-text">Other</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../rblog.html" rel="" target="">
- <span class="menu-text">R Blog</span></a>
+    <a class="nav-link" href="../../../rblog.html"> 
+<span class="menu-text">R Blog</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -280,46 +315,46 @@ cookieconsent.run({
   <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Cillian McHugh </p>
+    <p class="author">Cillian McHugh <a href="mailto:cillian.mchugh@ul.ie" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             University of Limerick
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author">Run Zhang </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             University of Limerick
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author">Tanuja Karnatak </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             University of Limerick
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author">Nishtha Lamba </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Middlesex University Dubai
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author">Olga Khokhlova </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Middlesex University Dubai
           </p>
       </div>
-    </div>
+  </div>
 
 <div class="quarto-title-meta">
 
@@ -335,7 +370,9 @@ cookieconsent.run({
   </div>
   
 
+
 </header>
+
 
 <blockquote class="blockquote">
 <p>Moral dumbfounding occurs when people maintain a moral judgment even though they cannot provide a reason for this judgment. Dumbfounded responding may include admitting to not having reasons, or the use of unsupported declarations (“It’s just wrong”) as justification for a judgment. Published evidence for dumbfounding has drawn exclusively on samples of WEIRD backgrounds (Western, educated, industrialized, rich, and democratic), and it remains unclear to what extent the phenomenon is generalizable to other populations. Furthermore, the theoretical implications of moral dumbfounding have been disputed in recent years. In three studies we apply a standardized moral dumbfounding task, and show evidence for moral dumbfounding in a Chinese sample (Study 1, N = 165), an Indian sample (Study 2, N = 181), and a mixed sample primarily (but not exclusively) from North Africa and the Middle East (MENA region, Study 3, N = 264). These findings are consistent with a categorization theories of moral judgment.”</p>
@@ -420,8 +457,7 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 <section id="judgements-of-the-scenarios" class="level3">
 <h3 class="anchored" data-anchor-id="judgements-of-the-scenarios">Judgements of the scenarios</h3>
 <p>The mean initial ratings for each scenario are as follows: <em>M<sub>Heinz</sub></em> = 4.76, <em>SD<sub>Heinz</sub></em> = 2.07; <em>M<sub>Cannibal</sub></em> = 1.52, <em>SD<sub>Cannibal</sub></em> = 1.13; <em>M<sub>Incest</sub></em> = 2.88, <em>SD<sub>Incest</sub></em> = 2.23; <em>M<sub>Trolley</sub></em> = 3.29, <em>SD<sub>Trolley</sub></em> = 1.95. The mean revised ratings for each scenario are as follows: <em>M<sub>Heinz</sub></em> = 4.74, <em>SD<sub>Heinz</sub></em> = 2.04; <em>M<sub>Cannibal</sub></em> = 1.6, <em>SD<sub>Cannibal</sub></em> = 1.08; <em>M<sub>Incest</sub></em> = 2.9, <em>SD<sub>Incest</sub></em> = 2.13; <em>M<sub>Trolley</sub></em> = 3.36, <em>SD<sub>Trolley</sub></em> = 2.03. The proportion of wrong, neutral, and ok, judgements for each scenario are displayed in Table&nbsp;@ref(tab:tab2judge).</p>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:tab2judge) Valence of initial and revised judgements for each scenarion for each study</caption>
 <thead>
 <tr class="header">
@@ -728,15 +764,13 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 </tr>
 </tbody>
 </table>
-</div>
 <p>A paired samples t-test revealed no differences in the ratings of behaviours from time one to time two, <em>Heinz</em>, <em>t</em>(81.979254) = 0.053, <em>p</em> = .958, <em>d</em> = 0.0115954; <em>Cannibal</em>, <em>t</em>(81.8464504) = -0.296, <em>p</em> = .768, <em>d</em> = 0.0644897; <em>Incest</em>, <em>t</em>(81.8102068) = -0.05, <em>p</em> = .960, <em>d</em> = 0.0109172; <em>Trolley</em>, <em>t</em>(81.868551) = -0.164, <em>p</em> = .870, <em>d</em> = 0.0358119.</p>
 <p>A one-way ANOVA revealed significant differences in initial judgements depending on scenario, <em>F</em>(3, ,, , 164) = 20.77, <em>p</em> &lt; .001, partial <span class="math inline">\(\eta\)</span><sup>2</sup> = .275. Tukey’s post-hoc pairwise comparison revealed that judgements in the <em>Heinz</em> dilemma were significantly more favourable than for each of the other scenarios: <em>Cannibal</em>, <em>p</em> &lt; .001, <em>Incest</em>, <em>p</em> &lt; .001, <em>Trolley</em>, <em>p</em> = .003; while judgements of <em>Cannibal</em> were significantly more harsh than all other scenarios: <em>Heinz</em>, <em>p</em> &lt; .001, <em>Incest</em>, <em>p</em> = .007. <em>Trolley</em>, <em>p</em> &lt; .001; there was no significant difference between judgements of <em>Incest</em> and of <em>Trolley</em>, <em>p</em> = .762.</p>
 <p>A one-way ANOVA revealed the same pattern of differences in revised judgements depending on scenario, <em>F</em>(3, ,, , 164) = 20.19, <em>p</em> &lt; .001, partial <span class="math inline">\(\eta\)</span><sup>2</sup> = .270. Again, Tukey’s post-hoc pairwise comparison revealed that judgements in the <em>Heinz</em> dilemma were significantly more favourable than for each of the other scenarios: <em>Cannibal</em>, <em>p</em> &lt; .001, <em>Incest</em>, <em>p</em> &lt; .001, <em>Trolley</em>, <em>p</em> = .005; while judgements of <em>Cannibal</em> were significantly more harsh than all other scenarios: <em>Heinz</em>, <em>p</em> &lt; .001, <em>Incest</em>, <em>p</em> = .009. <em>Trolley</em>, <em>p</em> &lt; .001; there was no significant difference between judgements of <em>Incest</em> and of <em>Trolley</em>, <em>p</em> = .685.</p>
 </section>
 <section id="tables-of-other-responses" class="level3">
 <h3 class="anchored" data-anchor-id="tables-of-other-responses">Tables of other Responses</h3>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:tab2other) Means and Standard Deviations for initial and revised confidence ratings, and for self-reported changed mind for each scenario for each study</caption>
 <thead>
 <tr class="header">
@@ -899,10 +933,8 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 </tr>
 </tbody>
 </table>
-</div>
 <div style="page-break-after: always;"></div>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:tabPostQs) Means and Standard Deviations for responses to the post-discussion questionnaire for each scenario for each study</caption>
 <thead>
 <tr class="header">
@@ -1113,14 +1145,12 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 </tr>
 </tbody>
 </table>
-</div>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="measuring-dumbfounding" class="level3">
 <h3 class="anchored" data-anchor-id="measuring-dumbfounding">Measuring dumbfounding</h3>
 <p>Participants who selected the admission of not having reasons were identified as dumbfounded. Across the four scenarios (Study 1a), 21 participants (50%) provided a dumbfounded response at least once. In Study 1b, 47 participants, (38.2113821%) provided a dumbfounded response for the <em>Cannibal</em> scenario. Table&nbsp;@ref(tab:tab2dumb) shows the number and percentage of participants who selected each response for each scenario across Studies 1a and 1b. Figure&nbsp;@ref(fig:chinesefig) shows this information for Study 1a, while Figure&nbsp;@ref(fig:chinesefig2) additionally includes the responses for Study1b. Crucially for the current study, rates of dumbfounded responding for each scenario in Study 1a were significantly greater than zero, <em>Heinz</em>: <em>z</em> = 2.97, <em>p</em> = .003; <em>Trolley</em>: <em>z</em> = 3.17, <em>p</em> = .001; <em>Incest</em>: <em>z</em> = 2.76, <em>p</em> = .006; <em>Cannibal</em>: <em>z</em> = 3.92, <em>p</em> &lt; .001. Similarly rates of dumbfounded responding in Study 1b were significantly greater than zero for the <em>Cannibal</em> scenario, <em>z</em> = 7.62, <em>p</em> &lt; .001.</p>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:tab2dumb) Observed frequency and percentage of each of the responses: dumbfounded, nothing wrong, and reasons provided for each scenario for each study</caption>
 <thead>
 <tr class="header">
@@ -1283,13 +1313,12 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 </tr>
 </tbody>
 </table>
-</div>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/chinesefig-1.png" class="quarto-discovered-preview-image img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Rates of each type of response for each scenario in the Chinese Sample ( = 42)</figcaption><p></p>
+<p><img src="index_files/figure-html/chinesefig-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Rates of each type of response for each scenario in the Chinese Sample ( = 42)</figcaption>
 </figure>
 </div>
 </div>
@@ -1299,7 +1328,7 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/chinesefig2-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Rates of each type of response for each scenario in the Chinese Sample (including additional data on Cannibal scenario)</figcaption><p></p>
+<figcaption>Rates of each type of response for each scenario in the Chinese Sample (including additional data on Cannibal scenario)</figcaption>
 </figure>
 </div>
 </div>
@@ -1351,15 +1380,14 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/indiafig-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Rates of each type of response for each scenario in the Indian Sample ( = 181)</figcaption><p></p>
+<figcaption>Rates of each type of response for each scenario in the Indian Sample ( = 181)</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>A chi-square test for independence revealed significant differences in responses to the critical slide depending on which scenario was being discussed, <span class="math inline">\(\chi\)</span><sup>2</sup>(6, <em>N</em> = 183) = 36.86, <em>p</em> &lt; .001. Table&nbsp;@ref(tab:tabchisq1) shows the observed counts, expected counts and standardised residuals for each response for each scenario. For <em>Heinz</em>, people were significantly better at providing reasons, and significantly less likely to present as dumbfounded; while people were significantly more likely to be dumbfounded by <em>Trolley</em> than expected; for <em>Incest</em>, people were significantly less likely to provide reasons, and significantly more likely to select “There is nothing wrong” than expected; finally for <em>Cannibal</em> significantly fewer than expected selected “There is nothing wrong”.</p>
 <p>The observed variability was not related to the type of scenario (intuition vs reasoning), with no relationship between type of scenario and response to the critical slide being observed, <span class="math inline">\(\chi\)</span><sup>2</sup>(2, <em>N</em> = 183) = 3.63, <em>p</em> = .163.</p>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:tabchisq1) Observed counts, expected counts, and standardised residuals for each response to the critical slide depending on Scenario</caption>
 <thead>
 <tr class="header">
@@ -1450,14 +1478,12 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 <p><em>Note.</em> * = sig. at &lt; .05; ** = sig. at &lt; .001</p>
 </div>
 <p>&nbsp;</p>
-</div>
 <p>Study 2 provided evidence that dumbfounded responding can be elicited in an Indian sample. Interestingly, the <em>Cannibal</em> appeared to be of more concern to the participants in this sample than the <em>Incest</em> scenario. Indeed, the proportion of participants selecting “there is nothing wrong” for the <em>Incest</em> scenario was significantly higher (75 participants; 40.7055631%) than for the other scenarios. This also appears to be higher than reported in previous studies involving WEIRD samples, however there is notable fluctuation in the selecting of this response for the <em>Incest</em> scenario, ranging from 16.7% <span class="citation" data-cites="mchugh_searching_2017a">(<a href="#ref-mchugh_searching_2017a" role="doc-biblioref">McHugh et al. 2017</a>, Study 3a)</span> to 32.4% <span class="citation" data-cites="mchugh_reasons_2020">(<a href="#ref-mchugh_reasons_2020" role="doc-biblioref">McHugh et al. 2020</a>, Study 2)</span>. Regarding the <em>Cannibal</em> scenario, it appears the relative importance of death observed in Study 1 is similarly present in our Study 2 sample, pointing towards potentially important cultural differences that should be considered in future studies.</p>
 </section>
 <section id="individual-differences" class="level3">
 <h3 class="anchored" data-anchor-id="individual-differences">Individual differences</h3>
 <p>A hierarchical linear regression was conducted to test the possible relationship between ICS <span class="citation" data-cites="renzhi_key_2013">(<a href="#ref-renzhi_key_2013" role="doc-biblioref">Renzhi et al. 2013</a>)</span>, MLQ <span class="citation" data-cites="steger_understanding_2008">(<a href="#ref-steger_understanding_2008" role="doc-biblioref">Steger et al. 2008</a>)</span>, and susceptibility to dumbfounding. As in Study 1a, we created a new variable by calculating the number of times each participant provided a dumbfounded response, and used this variable as a measure of participants’ susceptibility to dumbfounding. This measure was our outcome variable, and the four sub-scales of ICS, along with both sub-scales of the MLQ, were included as predictor variables. The overall model was a significant predictor of susceptibility to dumbfounding <span class="math inline">\(R^2 = .08\)</span>, <span class="math inline">\(F(6, 176) = 2.42\)</span>, <span class="math inline">\(p = .029\)</span>, with Vertical Individualism as the only variable making a significant contribution to the model, <span class="math inline">\(b = -0.02\)</span>, 95% CI <span class="math inline">\([-0.05, 0.00]\)</span>, <span class="math inline">\(t(176) = -2.03\)</span>, <span class="math inline">\(p = .044\)</span>, see Table&nbsp;@ref(tab:regressiontable).</p>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:regressiontable) Study 2: Predictors of susceptibility to moral dumbfounding</caption>
 <thead>
 <tr class="header">
@@ -1528,7 +1554,6 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 </tr>
 </tbody>
 </table>
-</div>
 <p>We conducted a series of logistic regressions to investigate the possible relationship between ICS <span class="citation" data-cites="renzhi_key_2013">(<a href="#ref-renzhi_key_2013" role="doc-biblioref">Renzhi et al. 2013</a>)</span> and responding to each of the scenarios individually. Response to the critical slide scenario was the dependent variable for each scenario, and the four sub-scales of the ICS were included as predictor variables.</p>
 <p>The overall model did not significantly predict responses for the <em>Heinz</em> dilemma, <span class="math inline">\(\chi\)</span><sup>2</sup>(12, <em>N</em> = 183) = 13.68, <em>p</em> = .322, the observed power was 0.67; neither did the model significantly predict responses for the <em>Trolley</em> scenario, <span class="math inline">\(\chi\)</span><sup>2</sup>(12, <em>N</em> = 183) = 14.43, <em>p</em> = .274, the observed power was 0.7.</p>
 <p>Interestingly, the overall model significantly predicted responses for the <em>Incest</em> scenario, <span class="math inline">\(\chi\)</span><sup>2</sup>(12, <em>N</em> = 183) = 26.33, <em>p</em> = .010, the observed power was 0.95. The overall model explained between 10.68% (Cox and Snell R square) and 14.43% (Nadelkerke R squared) of the variance in responses to the critical slide. The only significant predictors in the model were Horizontal Individualism, and Vertical Collectivism. As HI increased, participants were significantly more likely to select “there is nothing wrong” than to provide reasons for their judgement, Wald = 7.44, <em>p</em> = .006, odds ratio = 1.1097603, 95% CI [1.0297624, 1.1959729]. As VC increased, participants were significantly more likely to present as dumbfounded than to provide reasons, Wald = 5.01, <em>p</em> = .025, odds ratio = 0.9151576, 95% CI [0.8467967, 1.0036718].</p>
@@ -1545,8 +1570,7 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 <h3 class="anchored" data-anchor-id="participants-and-design-2">Participants and design</h3>
 <p>Study 3 was a frequency based attempted replication of <span class="citation" data-cites="mchugh_searching_2017a">McHugh et al. (<a href="#ref-mchugh_searching_2017a" role="doc-biblioref">2017</a>)</span>. The aim of Study 3 was to identify if dumbfounded responding could be evoked in a mixed sample of participants from a selection of non-WEIRD countries, primarily North Africa and the Middle East.</p>
 <p>An initial sample of four-hundred-and-sixty-three participants were recruited for Study 3. Some participants did not provide full responses for all four scenarios (the total number of participants who completed the Critial Slide for all four scenarios was <em>n</em> = 203. In removing participants with missing data, we retained all participants who completed the Critical Slide for at least one scenario. Following this, we were left with a total sample of <em>N</em> = 282 (171 female, 103 male, 3 other, 5 declined to report their gender; <em>M<sub>age</sub></em> = 27.71, min = 18, max = 68, <em>SD</em> = 12.46).</p>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:tabcountries) Participants by Country</caption>
 <thead>
 <tr class="header">
@@ -1673,7 +1697,6 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 </tr>
 </tbody>
 </table>
-</div>
 <p>Our target sample was participants from non-WEIRD countries. As such we removed 11 participants who reported being from the UK (<em>n</em> = 3), USA (<em>n</em> = 1), Canada (<em>n</em> = 2), Germany (<em>n</em> = 1), Portugal (<em>n</em> = 1), Netherlands (<em>n</em> = 1), and participants who did not provide a country of origin (<em>n</em> = 2). This left a total sample of <em>N</em> = 271 (165 female, 98 male, 3 other, 5 declined to report their gender; <em>M<sub>age</sub></em> = 27.75, min = 18, max = 68, <em>SD</em> = 12.32). The breakdown of participants’ nationalities is displayed in Table&nbsp;@ref(tab:tabcountries). The breakdown of participants’ religions is as follows, Islam: <em>n</em> = 176, Christianity: <em>n</em> = 49, Hinduism: <em>n</em> = 10, other: <em>n</em> = 21, and 15 participants declined to provide their religion.</p>
 </section>
 <section id="procedure-and-materials-2" class="level3">
@@ -1699,14 +1722,13 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/study3fig-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Rates of each type of response for each scenario in the Mixed Sample</figcaption><p></p>
+<figcaption>Rates of each type of response for each scenario in the Mixed Sample</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>A chi-square test for independence revealed significant differences in responses to the critical slide depending on which scenario was being discussed, <span class="math inline">\(\chi\)</span><sup>2</sup>(6, <em>N</em> = 271) = 205.55, <em>p</em> &lt; .001. Table&nbsp;@ref(tab:tabchisq1b) shows the observed counts, expected counts and standardised residuals for each response for each scenario. For <em>Heinz</em>, <em>Dog</em>, and <em>Trolley</em>, people were significantly more likely to provide reasons than to select “there is nothing wrong”. In contrast, for <em>Promise</em> participants were more likely to select “there is nothing wrong” than to present as dumbfounded, or to present as dumbfounded or provide reasons. We note that this finding may have been confounded by the responses to <em>Promise</em>, however the result holds when <em>Promise</em> is excluded from the analysis, <span class="math inline">\(\chi\)</span><sup>2</sup>(4, <em>N</em> = 271) = 11.48, <em>p</em> &lt; .001. Study 3 provided further evidence that dumbfounded responding can be elicited in a non-WEIRD sample. Furthermore, the use of alternative scenarios provide evidence that moral dumbfounding can be elicited by a broader range of scenarios than normally demonstrated in the existing literature.</p>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:tabchisq1b) Observed counts, expected counts, and standardised residuals for each response to the critical slide depending on Scenario</caption>
 <thead>
 <tr class="header">
@@ -1797,7 +1819,6 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 <p><em>Note.</em> * = sig. at &lt; .05; ** = sig. at &lt; .001</p>
 </div>
 <p>&nbsp;</p>
-</div>
 </section>
 <section id="individual-differences-1" class="level3">
 <h3 class="anchored" data-anchor-id="individual-differences-1">Individual differences</h3>
@@ -1835,7 +1856,7 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 <section id="data-accessibility-statement" class="level1">
 <h1>Data Accessibility Statement</h1>
 <p>All participant data, and analysis scripts can be found on this paper’s project page on the Open Science Framework at <a href="https://osf.io/2h3k7/">https://osf.io/2h3k7/</a>.</p>
-<p>We used R <span class="citation" data-cites="R-base">(Version 4.3.3; <a href="#ref-R-base" role="doc-biblioref">R Core Team 2017</a>)</span> and the R-packages <em>corrplot2021</em> <span class="citation" data-cites="R-corrplot2021">(<a href="#ref-R-corrplot2021" role="doc-biblioref"><strong>R-corrplot2021?</strong></a>)</span>, <em>DescTools</em> <span class="citation" data-cites="R-DescTools">(Version 0.99.50; <a href="#ref-R-DescTools" role="doc-biblioref">Andri et mult. al. 2021</a>)</span>, <em>desnum</em> <span class="citation" data-cites="R-desnum">(Version 0.1.1; <a href="#ref-R-desnum" role="doc-biblioref">McHugh 2017</a>)</span>, <em>dfidx</em> <span class="citation" data-cites="R-dfidx">(Version 0.0.5; <a href="#ref-R-dfidx" role="doc-biblioref">Croissant 2021</a>)</span>, <em>dplyr</em> <span class="citation" data-cites="R-dplyr">(Version 1.1.3; <a href="#ref-R-dplyr" role="doc-biblioref">Wickham et al. 2020</a>)</span>, <em>forcats</em> <span class="citation" data-cites="R-forcats">(Version 1.0.0; <a href="#ref-R-forcats" role="doc-biblioref">Wickham 2020</a>)</span>, <em>foreign</em> <span class="citation" data-cites="R-foreign">(Version 0.8.86; <a href="#ref-R-foreign" role="doc-biblioref">R Core Team 2020</a>)</span>, <em>ggplot2</em> <span class="citation" data-cites="R-ggplot2">(Version 3.4.3; <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span>, <em>ggtext</em> <span class="citation" data-cites="R-ggtext">(Version 0.1.2; <a href="#ref-R-ggtext" role="doc-biblioref"><strong>R-ggtext?</strong></a>)</span>, <em>glue</em> <span class="citation" data-cites="R-glue">(Version 1.7.0; <a href="#ref-R-glue" role="doc-biblioref"><strong>R-glue?</strong></a>)</span>, <em>haven</em> <span class="citation" data-cites="R-haven">(Version 2.5.3; <a href="#ref-R-haven" role="doc-biblioref">Wickham and Miller 2020</a>)</span>, <em>lme4</em> <span class="citation" data-cites="R-lme4">(Version 1.1.34; <a href="#ref-R-lme4" role="doc-biblioref">Bates et al. 2015</a>)</span>, <em>lmerTest</em> <span class="citation" data-cites="R-lmerTest">(Version 3.1.3; <a href="#ref-R-lmerTest" role="doc-biblioref"><strong>R-lmerTest?</strong></a>)</span>, <em>lsr</em> <span class="citation" data-cites="R-lsr">(Version 0.5.2; <a href="#ref-R-lsr" role="doc-biblioref">Navarro 2015</a>)</span>, <em>lubridate</em> <span class="citation" data-cites="R-lubridate">(Version 1.9.2; <a href="#ref-R-lubridate" role="doc-biblioref"><strong>R-lubridate?</strong></a>)</span>, <em>Matrix</em> <span class="citation" data-cites="R-Matrix">(Version 1.6.1; <a href="#ref-R-Matrix" role="doc-biblioref">Bates and Maechler 2021</a>)</span>, <em>mlogit</em> <span class="citation" data-cites="R-mlogit">(Version 1.1.1; <a href="#ref-R-mlogit" role="doc-biblioref">Croissant 2020</a>)</span>, <em>nnet</em> <span class="citation" data-cites="R-nnet">(Version 7.3.19; <a href="#ref-R-nnet" role="doc-biblioref">Venables and Ripley 2002</a>)</span>, <em>papaja</em> <span class="citation" data-cites="R-papaja">(Version 0.1.2.9000; <a href="#ref-R-papaja" role="doc-biblioref">Aust and Barth 2020</a>)</span>, <em>psych</em> <span class="citation" data-cites="R-psych">(Version 2.3.9; <a href="#ref-R-psych" role="doc-biblioref">Revelle 2021</a>)</span>, <em>purrr</em> <span class="citation" data-cites="R-purrr">(Version 1.0.2; <a href="#ref-R-purrr" role="doc-biblioref">Henry and Wickham 2020</a>)</span>, <em>pwr</em> <span class="citation" data-cites="R-pwr">(Version 1.3.0; <a href="#ref-R-pwr" role="doc-biblioref">Champely 2020</a>)</span>, <em>readr</em> <span class="citation" data-cites="R-readr">(Version 2.1.4; <a href="#ref-R-readr" role="doc-biblioref">Wickham and Hester 2021</a>)</span>, <em>readxl</em> <span class="citation" data-cites="R-readxl">(Version 1.4.3; <a href="#ref-R-readxl" role="doc-biblioref">Wickham and Bryan 2019</a>)</span>, <em>reshape2</em> <span class="citation" data-cites="R-reshape2">(Version 1.4.4; <a href="#ref-R-reshape2" role="doc-biblioref">Wickham 2007</a>)</span>, <em>rstatix</em> <span class="citation" data-cites="R-rstatix">(Version 0.7.2; <a href="#ref-R-rstatix" role="doc-biblioref">Kassambara 2020</a>)</span>, <em>scales</em> <span class="citation" data-cites="R-scales">(Version 1.2.1; <a href="#ref-R-scales" role="doc-biblioref">Wickham and Seidel 2020</a>)</span>, <em>stringr</em> <span class="citation" data-cites="R-stringr">(Version 1.5.0; <a href="#ref-R-stringr" role="doc-biblioref">Wickham 2019</a>)</span>, <em>tibble</em> <span class="citation" data-cites="R-tibble">(Version 3.2.1; <a href="#ref-R-tibble" role="doc-biblioref">Müller and Wickham 2021</a>)</span>, <em>tidyr</em> <span class="citation" data-cites="R-tidyr">(Version 1.3.0; <a href="#ref-R-tidyr" role="doc-biblioref">Wickham and Henry 2020</a>)</span>, <em>tidyverse</em> <span class="citation" data-cites="R-tidyverse">(Version 2.0.0; <a href="#ref-R-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span>, and <em>tinylabels</em> <span class="citation" data-cites="R-tinylabels">(Version 0.2.4; <a href="#ref-R-tinylabels" role="doc-biblioref"><strong>R-tinylabels?</strong></a>)</span> for all our analyses.</p>
+<p>We used R <span class="citation" data-cites="R-base">(Version 4.4.1; <a href="#ref-R-base" role="doc-biblioref">R Core Team 2017</a>)</span> and the R-packages <em>corrplot2021</em> <span class="citation" data-cites="R-corrplot2021">(<a href="#ref-R-corrplot2021" role="doc-biblioref"><strong>R-corrplot2021?</strong></a>)</span>, <em>DescTools</em> <span class="citation" data-cites="R-DescTools">(Version 0.99.54; <a href="#ref-R-DescTools" role="doc-biblioref">Andri et mult. al. 2021</a>)</span>, <em>desnum</em> <span class="citation" data-cites="R-desnum">(Version 0.1.1; <a href="#ref-R-desnum" role="doc-biblioref">McHugh 2017</a>)</span>, <em>dfidx</em> <span class="citation" data-cites="R-dfidx">(Version 0.0.5; <a href="#ref-R-dfidx" role="doc-biblioref">Croissant 2021</a>)</span>, <em>dplyr</em> <span class="citation" data-cites="R-dplyr">(Version 1.1.4; <a href="#ref-R-dplyr" role="doc-biblioref">Wickham et al. 2020</a>)</span>, <em>forcats</em> <span class="citation" data-cites="R-forcats">(Version 1.0.0; <a href="#ref-R-forcats" role="doc-biblioref">Wickham 2020</a>)</span>, <em>foreign</em> <span class="citation" data-cites="R-foreign">(Version 0.8.87; <a href="#ref-R-foreign" role="doc-biblioref">R Core Team 2020</a>)</span>, <em>ggplot2</em> <span class="citation" data-cites="R-ggplot2">(Version 3.5.1; <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span>, <em>ggtext</em> <span class="citation" data-cites="R-ggtext">(Version 0.1.2; <a href="#ref-R-ggtext" role="doc-biblioref"><strong>R-ggtext?</strong></a>)</span>, <em>glue</em> <span class="citation" data-cites="R-glue">(Version 1.7.0; <a href="#ref-R-glue" role="doc-biblioref"><strong>R-glue?</strong></a>)</span>, <em>haven</em> <span class="citation" data-cites="R-haven">(Version 2.5.4; <a href="#ref-R-haven" role="doc-biblioref">Wickham and Miller 2020</a>)</span>, <em>lme4</em> <span class="citation" data-cites="R-lme4">(Version 1.1.35.5; <a href="#ref-R-lme4" role="doc-biblioref">Bates et al. 2015</a>)</span>, <em>lmerTest</em> <span class="citation" data-cites="R-lmerTest">(Version 3.1.3; <a href="#ref-R-lmerTest" role="doc-biblioref"><strong>R-lmerTest?</strong></a>)</span>, <em>lsr</em> <span class="citation" data-cites="R-lsr">(Version 0.5.2; <a href="#ref-R-lsr" role="doc-biblioref">Navarro 2015</a>)</span>, <em>lubridate</em> <span class="citation" data-cites="R-lubridate">(Version 1.9.3; <a href="#ref-R-lubridate" role="doc-biblioref"><strong>R-lubridate?</strong></a>)</span>, <em>Matrix</em> <span class="citation" data-cites="R-Matrix">(Version 1.7.0; <a href="#ref-R-Matrix" role="doc-biblioref">Bates and Maechler 2021</a>)</span>, <em>mlogit</em> <span class="citation" data-cites="R-mlogit">(Version 1.1.1; <a href="#ref-R-mlogit" role="doc-biblioref">Croissant 2020</a>)</span>, <em>nnet</em> <span class="citation" data-cites="R-nnet">(Version 7.3.19; <a href="#ref-R-nnet" role="doc-biblioref">Venables and Ripley 2002</a>)</span>, <em>papaja</em> <span class="citation" data-cites="R-papaja">(Version 0.1.2.9000; <a href="#ref-R-papaja" role="doc-biblioref">Aust and Barth 2020</a>)</span>, <em>psych</em> <span class="citation" data-cites="R-psych">(Version 2.4.6.26; <a href="#ref-R-psych" role="doc-biblioref">Revelle 2021</a>)</span>, <em>purrr</em> <span class="citation" data-cites="R-purrr">(Version 1.0.2; <a href="#ref-R-purrr" role="doc-biblioref">Henry and Wickham 2020</a>)</span>, <em>pwr</em> <span class="citation" data-cites="R-pwr">(Version 1.3.0; <a href="#ref-R-pwr" role="doc-biblioref">Champely 2020</a>)</span>, <em>readr</em> <span class="citation" data-cites="R-readr">(Version 2.1.5; <a href="#ref-R-readr" role="doc-biblioref">Wickham and Hester 2021</a>)</span>, <em>readxl</em> <span class="citation" data-cites="R-readxl">(Version 1.4.3; <a href="#ref-R-readxl" role="doc-biblioref">Wickham and Bryan 2019</a>)</span>, <em>reshape2</em> <span class="citation" data-cites="R-reshape2">(Version 1.4.4; <a href="#ref-R-reshape2" role="doc-biblioref">Wickham 2007</a>)</span>, <em>rstatix</em> <span class="citation" data-cites="R-rstatix">(Version 0.7.2; <a href="#ref-R-rstatix" role="doc-biblioref">Kassambara 2020</a>)</span>, <em>scales</em> <span class="citation" data-cites="R-scales">(Version 1.3.0; <a href="#ref-R-scales" role="doc-biblioref">Wickham and Seidel 2020</a>)</span>, <em>stringr</em> <span class="citation" data-cites="R-stringr">(Version 1.5.1; <a href="#ref-R-stringr" role="doc-biblioref">Wickham 2019</a>)</span>, <em>tibble</em> <span class="citation" data-cites="R-tibble">(Version 3.2.1; <a href="#ref-R-tibble" role="doc-biblioref">Müller and Wickham 2021</a>)</span>, <em>tidyr</em> <span class="citation" data-cites="R-tidyr">(Version 1.3.1; <a href="#ref-R-tidyr" role="doc-biblioref">Wickham and Henry 2020</a>)</span>, <em>tidyverse</em> <span class="citation" data-cites="R-tidyverse">(Version 2.0.0; <a href="#ref-R-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span>, and <em>tinylabels</em> <span class="citation" data-cites="R-tinylabels">(Version 0.2.4; <a href="#ref-R-tinylabels" role="doc-biblioref"><strong>R-tinylabels?</strong></a>)</span> for all our analyses.</p>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="references" class="level1">
@@ -1846,7 +1867,7 @@ McHugh, C., Zhang, R., Karnatak, T., Lamba, N., &amp; Khokhlova, O. (2023). Just
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-R-DescTools" class="csl-entry" role="listitem">
 Andri et mult. al., Signorell. 2021. <em><span>DescTools</span>: <span>Tools</span> for Descriptive Statistics</em>. Manual.
 </div>
@@ -2082,6 +2103,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -2148,13 +2196,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -2233,10 +2283,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.cillianmchugh\.com\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2246,8 +2313,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2259,7 +2335,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2303,6 +2502,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2328,6 +2528,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2390,11 +2616,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left"><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
-    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+    <div class="nav-footer-left">
+<p><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></p>
+</div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+<p>Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

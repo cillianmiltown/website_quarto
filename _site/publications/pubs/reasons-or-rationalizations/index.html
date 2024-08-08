@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.287">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -76,7 +77,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -85,8 +92,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HN11FG1NGL"></script>
@@ -110,6 +119,8 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
@@ -118,13 +129,37 @@ cookieconsent.run({
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../../../customstyle.css">
 <meta property="og:title" content="Cillian McHugh - Reasons or Rationalisations:">
 <meta property="og:description" content="Journal of Behavioral Decision Making (2020)">
-<meta property="og:image" content="https://www.cillianmchugh.com/publications/pubs/reasons-or-rationalizations/index_files/figure-html/reasonsfig1-1.png">
-<meta property="og:site-name" content="Cillian McHugh">
-<meta property="og:image:height" content="960">
-<meta property="og:image:width" content="1344">
+<meta property="og:site_name" content="Cillian McHugh">
 <meta name="twitter:title" content="Cillian McHugh - Reasons or Rationalisations:">
 <meta name="twitter:description" content="Journal of Behavioral Decision Making (2020)">
 <meta name="twitter:image" content="https://www.cillianmchugh.com/publications/pubs/reasons-or-rationalizations/featured.png">
@@ -136,9 +171,9 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Cillian McHugh</span>
     </a>
@@ -150,38 +185,38 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../posts.html" rel="" target="">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="../../../posts.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../projects.html" rel="" target="">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../../../projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../music.html" rel="" target="">
- <span class="menu-text">Music</span></a>
+    <a class="nav-link" href="../../../music.html"> 
+<span class="menu-text">Music</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../other.html" rel="" target="">
- <span class="menu-text">Other</span></a>
+    <a class="nav-link" href="../../../other.html"> 
+<span class="menu-text">Other</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../rblog.html" rel="" target="">
- <span class="menu-text">R Blog</span></a>
+    <a class="nav-link" href="../../../rblog.html"> 
+<span class="menu-text">R Blog</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -294,38 +329,38 @@ cookieconsent.run({
   <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Cillian McHugh </p>
+    <p class="author">Cillian McHugh <a href="mailto:cillian.mchugh@ul.ie" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             University of Limerick
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author">Marek McGann </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Mary Immaculate College
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author">Eric R. Igou </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             University of Limerick
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author">Elaine L. Kinsella </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             University of Limerick
           </p>
       </div>
-    </div>
+  </div>
 
 <div class="quarto-title-meta">
 
@@ -341,7 +376,9 @@ cookieconsent.run({
   </div>
   
 
+
 </header>
+
 
 <blockquote class="blockquote">
 <p>Moral dumbfounding occurs when people maintain a moral judgment even though they cannot provide reasons for it. Recently, questions have been raised about whether dumbfounding is a real phenomenon. Two reasons have been proposed as guiding the judgments of dumbfounded participants: harm-based reasons (believing an action may cause harm) or norm-based reasons (breaking a moral norm is inherently wrong). Participants who endorsed either reason were excluded from analysis, and instances of moral dumbfounding seemingly reduced to non-significance. We argue that endorsing a reason is not sufficient evidence that a judgment is grounded in that reason. Stronger evidence should additionally account for (a) articulating a given reason, and (b) consistently applying the reason in different situations. Building on this, we develop revised exclusion criteria across 2 studies. Study 1 included an open-ended response option immediately after the presentation of a moral scenario. Responses were coded for mention of harm-based or norm-based reasons. Participants were excluded from analysis if they both articulated and endorsed a given reason. Using these revised criteria for exclusion, we found evidence for dumbfounding, as measured by the selecting of an admission of not having reasons. Study 2 included a further three questions relating to harm-based reasons specifically, assessing the consistency with which people apply harm-based reasons across differing contexts. As predicted, few participants consistently applied, articulated, and endorsed harm-based reasons, and evidence for dumbfounding was found.</p>
@@ -462,8 +499,8 @@ OSF
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/reasonsfig1-1.png" class="quarto-discovered-preview-image img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Responses to critical slide for the entire sample, and for each measure of convergence: (i) endorsing only, and (ii), endorsing and articulating; percentages of full sample displayed within plot, percentages of relevant sample displayed in parenthesis below the count.</figcaption><p></p>
+<p><img src="index_files/figure-html/reasonsfig1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Responses to critical slide for the entire sample, and for each measure of convergence: (i) endorsing only, and (ii), endorsing and articulating; percentages of full sample displayed within plot, percentages of relevant sample displayed in parenthesis below the count.</figcaption>
 </figure>
 </div>
 </div>
@@ -521,7 +558,7 @@ OSF
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/reasonsfig2-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Responses to critical slide for the entire sample, and for each measure of convergence: (i) endorsing only, (ii) endorsing and articulating, and (iii), endorsing, articulating, and applying; percentages of full sample displayed within plot, percentages of relevant sample displayed in parenthesis below the count.</figcaption><p></p>
+<figcaption>Responses to critical slide for the entire sample, and for each measure of convergence: (i) endorsing only, (ii) endorsing and articulating, and (iii), endorsing, articulating, and applying; percentages of full sample displayed within plot, percentages of relevant sample displayed in parenthesis below the count.</figcaption>
 </figure>
 </div>
 </div>
@@ -574,7 +611,7 @@ OSF
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/S3reasonsfig2-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Responses to critical slide for the entire sample, and for each measure of convergence: (i) endorsing only, (ii) endorsing and articulating, and (iii), endorsing, articulating, and applying; percentages of full sample displayed within plot, percentages of relevant sample displayed in parenthesis below the count.</figcaption><p></p>
+<figcaption>Responses to critical slide for the entire sample, and for each measure of convergence: (i) endorsing only, (ii) endorsing and articulating, and (iii), endorsing, articulating, and applying; percentages of full sample displayed within plot, percentages of relevant sample displayed in parenthesis below the count.</figcaption>
 </figure>
 </div>
 </div>
@@ -621,7 +658,7 @@ OSF
 <section id="data-accessibility-statement" class="level1">
 <h1>7 | Data Accessibility Statement</h1>
 <p>All participant data, and analysis scripts can be found on this paper’s project page on the Open Science Framework at <a href="https://osf.io/m4ce7/">https://osf.io/m4ce7/</a>.</p>
-<p>All statistical analysis was conducted using R <span class="citation" data-cites="R-base">(Version 4.3.3; <a href="#ref-R-base" role="doc-biblioref">R Core Team 2017</a>)</span> and the R-packages <em>afex</em> <span class="citation" data-cites="R-afex">(Version 1.3.0; <a href="#ref-R-afex" role="doc-biblioref">Singmann et al. 2021</a>)</span>, <em>boot</em> <span class="citation" data-cites="R-boot">(Version 1.3.30; <a href="#ref-R-boot" role="doc-biblioref">Davison and Hinkley 1997</a>)</span>, <em>car</em> <span class="citation" data-cites="R-car R-carData">(Version 3.1.2; <a href="#ref-R-car" role="doc-biblioref">Fox and Weisberg 2019</a>; <a href="#ref-R-carData" role="doc-biblioref">Fox, Weisberg, and Price 2020</a>)</span>, <em>carData</em> <span class="citation" data-cites="R-carData">(Version 3.0.5; <a href="#ref-R-carData" role="doc-biblioref">Fox, Weisberg, and Price 2020</a>)</span>, <em>citr</em> <span class="citation" data-cites="R-citr">(Version 0.3.2; <a href="#ref-R-citr" role="doc-biblioref">Aust 2019</a>)</span>, <em>DescTools</em> <span class="citation" data-cites="R-DescTools">(Version 0.99.50; <a href="#ref-R-DescTools" role="doc-biblioref">Andri et mult. al. 2021</a>)</span>, <em>desnum</em> <span class="citation" data-cites="R-desnum">(Version 0.1.1; <a href="#ref-R-desnum" role="doc-biblioref">McHugh 2017</a>)</span>, <em>dfidx</em> <span class="citation" data-cites="R-dfidx">(Version 0.0.5; <a href="#ref-R-dfidx" role="doc-biblioref">Croissant 2021</a>)</span>, <em>dplyr</em> <span class="citation" data-cites="R-dplyr">(Version 1.1.3; <a href="#ref-R-dplyr" role="doc-biblioref">Wickham et al. 2020</a>)</span>, <em>extrafont</em> <span class="citation" data-cites="R-extrafont">(Version 0.19; <a href="#ref-R-extrafont" role="doc-biblioref">Winston Chang 2014</a>)</span>, <em>foreign</em> <span class="citation" data-cites="R-foreign">(Version 0.8.86; <a href="#ref-R-foreign" role="doc-biblioref">R Core Team 2020</a>)</span>, <em>ggplot2</em> <span class="citation" data-cites="R-ggplot2">(Version 3.4.3; <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span>, <em>lme4</em> <span class="citation" data-cites="R-lme4">(Version 1.1.34; <a href="#ref-R-lme4" role="doc-biblioref">Bates et al. 2015</a>)</span>, <em>lsr</em> <span class="citation" data-cites="R-lsr">(Version 0.5.2; <a href="#ref-R-lsr" role="doc-biblioref">Navarro 2015</a>)</span>, <em>MASS</em> <span class="citation" data-cites="R-MASS">(Version 7.3.60; <a href="#ref-R-nnet" role="doc-biblioref">Venables and Ripley 2002</a>)</span>, <em>Matrix</em> <span class="citation" data-cites="R-Matrix">(Version 1.6.1; <a href="#ref-R-Matrix" role="doc-biblioref">Bates and Maechler 2021</a>)</span>, <em>metap</em> <span class="citation" data-cites="R-metap">(Version 1.8; <a href="#ref-R-metap" role="doc-biblioref">Dewey 2021</a>)</span>, <em>mlogit</em> <span class="citation" data-cites="R-mlogit">(Version 1.1.1; <a href="#ref-R-mlogit" role="doc-biblioref">Croissant 2020</a>)</span>, <em>nnet</em> <span class="citation" data-cites="R-nnet">(Version 7.3.19; <a href="#ref-R-nnet" role="doc-biblioref">Venables and Ripley 2002</a>)</span>, <em>papaja</em> <span class="citation" data-cites="R-papaja">(Version 0.1.2.9000; <a href="#ref-R-papaja" role="doc-biblioref">Aust and Barth 2020</a>)</span>, <em>plyr</em> <span class="citation" data-cites="R-dplyr R-plyr">(Version 1.8.8; <a href="#ref-R-dplyr" role="doc-biblioref">Wickham et al. 2020</a>; <a href="#ref-R-plyr" role="doc-biblioref">Wickham 2011</a>)</span>, <em>powerMediation</em> <span class="citation" data-cites="R-powerMediation">(Version 0.3.4; <a href="#ref-R-powerMediation" role="doc-biblioref">Qiu 2021</a>)</span>, <em>purrr</em> <span class="citation" data-cites="R-purrr">(Version 1.0.2; <a href="#ref-R-purrr" role="doc-biblioref">Henry and Wickham 2020</a>)</span>, <em>pwr</em> <span class="citation" data-cites="R-pwr">(Version 1.3.0; <a href="#ref-R-pwr" role="doc-biblioref">Champely 2020</a>)</span>, <em>QuantPsyc</em> <span class="citation" data-cites="R-QuantPsyc">(Version 1.6; <a href="#ref-R-QuantPsyc" role="doc-biblioref">Fletcher 2012</a>)</span>, <em>reshape2</em> <span class="citation" data-cites="R-reshape2">(Version 1.4.4; <a href="#ref-R-reshape2" role="doc-biblioref">Wickham 2007</a>)</span>, <em>scales</em> <span class="citation" data-cites="R-scales">(Version 1.2.1; <a href="#ref-R-scales" role="doc-biblioref">Wickham and Seidel 2020</a>)</span>, <em>tibble</em> <span class="citation" data-cites="R-tibble">(Version 3.2.1; <a href="#ref-R-tibble" role="doc-biblioref">Müller and Wickham 2021</a>)</span>, <em>tinylabels</em> <span class="citation" data-cites="R-tinylabels">(Version 0.2.4; <a href="#ref-R-tinylabels" role="doc-biblioref"><strong>R-tinylabels?</strong></a>)</span>, and <em>VGAM</em> <span class="citation" data-cites="R-VGAM_a R-VGAM_b R-VGAM_c R-VGAM_d R-VGAM_e R-VGAM_f">(Version 1.1.8; <a href="#ref-R-VGAM_a" role="doc-biblioref">Yee and Wild 1996</a>; <a href="#ref-R-VGAM_b" role="doc-biblioref">Yee 2010</a>, <a href="#ref-R-VGAM_d" role="doc-biblioref">2013</a>, <a href="#ref-R-VGAM_f" role="doc-biblioref">2020</a>; <a href="#ref-R-VGAM_c" role="doc-biblioref">Yee and Hadi 2014</a>; <a href="#ref-R-VGAM_e" role="doc-biblioref">Yee, Stoklosa, and Huggins 2015</a>)</span>.</p>
+<p>All statistical analysis was conducted using R <span class="citation" data-cites="R-base">(Version 4.4.1; <a href="#ref-R-base" role="doc-biblioref">R Core Team 2017</a>)</span> and the R-packages <em>afex</em> <span class="citation" data-cites="R-afex">(Version 1.3.1; <a href="#ref-R-afex" role="doc-biblioref">Singmann et al. 2021</a>)</span>, <em>boot</em> <span class="citation" data-cites="R-boot">(Version 1.3.30; <a href="#ref-R-boot" role="doc-biblioref">Davison and Hinkley 1997</a>)</span>, <em>car</em> <span class="citation" data-cites="R-car R-carData">(Version 3.1.2; <a href="#ref-R-car" role="doc-biblioref">Fox and Weisberg 2019</a>; <a href="#ref-R-carData" role="doc-biblioref">Fox, Weisberg, and Price 2020</a>)</span>, <em>carData</em> <span class="citation" data-cites="R-carData">(Version 3.0.5; <a href="#ref-R-carData" role="doc-biblioref">Fox, Weisberg, and Price 2020</a>)</span>, <em>citr</em> <span class="citation" data-cites="R-citr">(Version 0.3.2; <a href="#ref-R-citr" role="doc-biblioref">Aust 2019</a>)</span>, <em>DescTools</em> <span class="citation" data-cites="R-DescTools">(Version 0.99.54; <a href="#ref-R-DescTools" role="doc-biblioref">Andri et mult. al. 2021</a>)</span>, <em>desnum</em> <span class="citation" data-cites="R-desnum">(Version 0.1.1; <a href="#ref-R-desnum" role="doc-biblioref">McHugh 2017</a>)</span>, <em>dfidx</em> <span class="citation" data-cites="R-dfidx">(Version 0.0.5; <a href="#ref-R-dfidx" role="doc-biblioref">Croissant 2021</a>)</span>, <em>dplyr</em> <span class="citation" data-cites="R-dplyr">(Version 1.1.4; <a href="#ref-R-dplyr" role="doc-biblioref">Wickham et al. 2020</a>)</span>, <em>extrafont</em> <span class="citation" data-cites="R-extrafont">(Version 0.19; <a href="#ref-R-extrafont" role="doc-biblioref">Winston Chang 2014</a>)</span>, <em>foreign</em> <span class="citation" data-cites="R-foreign">(Version 0.8.87; <a href="#ref-R-foreign" role="doc-biblioref">R Core Team 2020</a>)</span>, <em>ggplot2</em> <span class="citation" data-cites="R-ggplot2">(Version 3.5.1; <a href="#ref-R-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span>, <em>lme4</em> <span class="citation" data-cites="R-lme4">(Version 1.1.35.5; <a href="#ref-R-lme4" role="doc-biblioref">Bates et al. 2015</a>)</span>, <em>lsr</em> <span class="citation" data-cites="R-lsr">(Version 0.5.2; <a href="#ref-R-lsr" role="doc-biblioref">Navarro 2015</a>)</span>, <em>MASS</em> <span class="citation" data-cites="R-MASS">(Version 7.3.61; <a href="#ref-R-nnet" role="doc-biblioref">Venables and Ripley 2002</a>)</span>, <em>Matrix</em> <span class="citation" data-cites="R-Matrix">(Version 1.7.0; <a href="#ref-R-Matrix" role="doc-biblioref">Bates and Maechler 2021</a>)</span>, <em>metap</em> <span class="citation" data-cites="R-metap">(Version 1.11; <a href="#ref-R-metap" role="doc-biblioref">Dewey 2021</a>)</span>, <em>mlogit</em> <span class="citation" data-cites="R-mlogit">(Version 1.1.1; <a href="#ref-R-mlogit" role="doc-biblioref">Croissant 2020</a>)</span>, <em>nnet</em> <span class="citation" data-cites="R-nnet">(Version 7.3.19; <a href="#ref-R-nnet" role="doc-biblioref">Venables and Ripley 2002</a>)</span>, <em>papaja</em> <span class="citation" data-cites="R-papaja">(Version 0.1.2.9000; <a href="#ref-R-papaja" role="doc-biblioref">Aust and Barth 2020</a>)</span>, <em>plyr</em> <span class="citation" data-cites="R-dplyr R-plyr">(Version 1.8.9; <a href="#ref-R-dplyr" role="doc-biblioref">Wickham et al. 2020</a>; <a href="#ref-R-plyr" role="doc-biblioref">Wickham 2011</a>)</span>, <em>powerMediation</em> <span class="citation" data-cites="R-powerMediation">(Version 0.3.4; <a href="#ref-R-powerMediation" role="doc-biblioref">Qiu 2021</a>)</span>, <em>purrr</em> <span class="citation" data-cites="R-purrr">(Version 1.0.2; <a href="#ref-R-purrr" role="doc-biblioref">Henry and Wickham 2020</a>)</span>, <em>pwr</em> <span class="citation" data-cites="R-pwr">(Version 1.3.0; <a href="#ref-R-pwr" role="doc-biblioref">Champely 2020</a>)</span>, <em>QuantPsyc</em> <span class="citation" data-cites="R-QuantPsyc">(Version 1.6; <a href="#ref-R-QuantPsyc" role="doc-biblioref">Fletcher 2012</a>)</span>, <em>reshape2</em> <span class="citation" data-cites="R-reshape2">(Version 1.4.4; <a href="#ref-R-reshape2" role="doc-biblioref">Wickham 2007</a>)</span>, <em>scales</em> <span class="citation" data-cites="R-scales">(Version 1.3.0; <a href="#ref-R-scales" role="doc-biblioref">Wickham and Seidel 2020</a>)</span>, <em>tibble</em> <span class="citation" data-cites="R-tibble">(Version 3.2.1; <a href="#ref-R-tibble" role="doc-biblioref">Müller and Wickham 2021</a>)</span>, <em>tinylabels</em> <span class="citation" data-cites="R-tinylabels">(Version 0.2.4; <a href="#ref-R-tinylabels" role="doc-biblioref"><strong>R-tinylabels?</strong></a>)</span>, and <em>VGAM</em> <span class="citation" data-cites="R-VGAM_a R-VGAM_b R-VGAM_c R-VGAM_d R-VGAM_e R-VGAM_f">(Version 1.1.11; <a href="#ref-R-VGAM_a" role="doc-biblioref">Yee and Wild 1996</a>; <a href="#ref-R-VGAM_b" role="doc-biblioref">Yee 2010</a>, <a href="#ref-R-VGAM_d" role="doc-biblioref">2013</a>, <a href="#ref-R-VGAM_f" role="doc-biblioref">2020</a>; <a href="#ref-R-VGAM_c" role="doc-biblioref">Yee and Hadi 2014</a>; <a href="#ref-R-VGAM_e" role="doc-biblioref">Yee, Stoklosa, and Huggins 2015</a>)</span>.</p>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="supplementary-material" class="level1">
@@ -649,7 +686,7 @@ OSF
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/adREggplotlogit1-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Probability of selecting each response to the critical slide depending on Religiosity</figcaption><p></p>
+<figcaption>Probability of selecting each response to the critical slide depending on Religiosity</figcaption>
 </figure>
 </div>
 </div>
@@ -664,7 +701,7 @@ OSF
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/adMLQPggplotlogit-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Probability of selecting each response to the critical slide depending on MLQ: Presence</figcaption><p></p>
+<figcaption>Probability of selecting each response to the critical slide depending on MLQ: Presence</figcaption>
 </figure>
 </div>
 </div>
@@ -679,13 +716,12 @@ OSF
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/adMLQSggplotlogit-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Probability of selecting each response to the critical slide depending on MLQ: Search</figcaption><p></p>
+<figcaption>Probability of selecting each response to the critical slide depending on MLQ: Search</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:adlogittable) Multinomial logistic regression predicting responses to the critical slide where providing reasons is the referent in each case.</caption>
 <thead>
 <tr class="header">
@@ -780,14 +816,12 @@ OSF
 <p><em>Note.</em> * = sig. at &lt; .05; ** = sig. at &lt; .001</p>
 </div>
 <p>&nbsp;</p>
-</div>
 </section>
 <section id="individual-differences" class="level3">
 <h3 class="anchored" data-anchor-id="individual-differences">Individual Differences</h3>
 <p>When analysed together, a multinomial logistic regression revealed a statistically significant association between the three individual difference variables and response to the critical slide, <span class="math inline">\(\chi\)</span><sup>2</sup>(6, <em>N</em> = 345) = 22.15, <em>p</em> = .001, The observed power was 0.99. The model explained approximately 3.07% (McFadden R square) of the variance in responses to the critical slide. Religiosity was the only significant predictor (see Table&nbsp;@ref(tab:adlogittable)). Participants who scored higher in Religiosity were significantly more likely to provide reasons than to select “There is nothing wrong”, Wald = 12.899, <em>p</em> , odds ratio = 0.653, 95% CI [0.518, 0.518]. It seems religiosity was more related to valence of judgement than to ability to provide reasons Wald = 3.045, <em>p</em> , odds ratio = 0.781, 95% CI [0.592, 0.592].</p>
 <p>A linear regression was conducted to assess the relationship between the individual difference variables (Religiosity, Meaning and Life Presence, Meaning in Life Search) and initial judgement. The model significantly predicted valence of judgement, <span class="math inline">\(R^2 = .04\)</span>, <span class="math inline">\(F(3, 497) = 6.22\)</span>, <span class="math inline">\(p &lt; .001\)</span>. Religiosity the only significant predictor, <span class="math inline">\(b = -0.21\)</span>, 95% CI <span class="math inline">\([-0.35, -0.07]\)</span>, <span class="math inline">\(t(497) = -3.01\)</span>, <span class="math inline">\(p = .003\)</span> (MLQ: presence <span class="math inline">\(b = -0.08\)</span>, 95% CI <span class="math inline">\([-0.18, 0.03]\)</span>, <span class="math inline">\(t(497) = -1.44\)</span>, <span class="math inline">\(p = .152\)</span>; MLQ: search <span class="math inline">\(b = 0.06\)</span>, 95% CI <span class="math inline">\([-0.03, 0.15]\)</span>, <span class="math inline">\(t(497) = 1.25\)</span>, <span class="math inline">\(p = .212\)</span>). Participants who scored higher in Religiosity were more likely to condemn the actions of Julie and Mark.</p>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:adlogittable2) Multinomial logistic regression predicting responses to the critical slide where providing reasons is the referent in each case.</caption>
 <thead>
 <tr class="header">
@@ -906,14 +940,13 @@ OSF
 <p><em>Note.</em> * = sig. at &lt; .05; ** = sig. at &lt; .001</p>
 </div>
 <p>&nbsp;</p>
-</div>
 <p>A final multinomial logistic regression was conducted that included Initial Judgement as a predictor variable. The results are shown in Table&nbsp;@ref(tab:adlogittable2). Overall the model was a significant predictor of response to the critical slide, <span class="math inline">\(\chi\)</span><sup>2</sup>(8, <em>N</em> = 345) = 292.33, <em>p</em> &lt; .001, The observed power was 1. The model explained approximately 40.54% (McFadden R square) of the variance in responses to the critical slide. As shown in Table&nbsp;@ref(tab:adlogittable2), Religiosity appeared to be related only to valence of judgement on the critical slide, initial judgement appeared to predict valence of judgement and ability to provide reasons, with more extreme judgements of “wrong” most strongly predicting the providing of reasons. The relative probabilities of selecting each response to the critical slide depending on initial judgement are displayed in Figure&nbsp;@ref(fig:adggplotlogit1).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/adggplotlogit1-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Probability of selecting each response to the critical slide depending on Initial Judgement.</figcaption><p></p>
+<figcaption>Probability of selecting each response to the critical slide depending on Initial Judgement.</figcaption>
 </figure>
 </div>
 </div>
@@ -929,7 +962,7 @@ OSF
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-R-DescTools" class="csl-entry" role="listitem">
 Andri et mult. al., Signorell. 2021. <em><span>DescTools</span>: <span>Tools</span> for Descriptive Statistics</em>. Manual.
 </div>
@@ -1262,6 +1295,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -1328,13 +1388,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1413,10 +1475,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.cillianmchugh\.com\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1426,8 +1505,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1439,7 +1527,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1483,6 +1694,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1508,6 +1720,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1570,11 +1808,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left"><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
-    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+    <div class="nav-footer-left">
+<p><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></p>
+</div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+<p>Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

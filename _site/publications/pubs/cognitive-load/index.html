@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.287">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -76,7 +77,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -85,8 +92,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HN11FG1NGL"></script>
@@ -110,6 +119,8 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
@@ -118,11 +129,38 @@ cookieconsent.run({
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../../../customstyle.css">
 <meta property="og:title" content="Cillian McHugh - Cognitive Load Can Reduce Reason-Giving in a Moral Dumbfounding Task">
 <meta property="og:description" content="Collabra: Psycholgy (2023)">
 <meta property="og:image" content="https://www.cillianmchugh.com/publications/pubs/cognitive-load/featured.png">
-<meta property="og:site-name" content="Cillian McHugh">
+<meta property="og:site_name" content="Cillian McHugh">
 <meta property="og:image:height" content="2700">
 <meta property="og:image:width" content="3600">
 <meta name="twitter:title" content="Cillian McHugh - Cognitive Load Can Reduce Reason-Giving in a Moral Dumbfounding Task">
@@ -138,9 +176,9 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Cillian McHugh</span>
     </a>
@@ -152,38 +190,38 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../posts.html" rel="" target="">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="../../../posts.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../projects.html" rel="" target="">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../../../projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../music.html" rel="" target="">
- <span class="menu-text">Music</span></a>
+    <a class="nav-link" href="../../../music.html"> 
+<span class="menu-text">Music</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../other.html" rel="" target="">
- <span class="menu-text">Other</span></a>
+    <a class="nav-link" href="../../../other.html"> 
+<span class="menu-text">Other</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../rblog.html" rel="" target="">
- <span class="menu-text">R Blog</span></a>
+    <a class="nav-link" href="../../../rblog.html"> 
+<span class="menu-text">R Blog</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -241,38 +279,38 @@ cookieconsent.run({
   <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Cillian McHugh </p>
+    <p class="author">Cillian McHugh <a href="mailto:cillian.mchugh@ul.ie" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             University of Limerick
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author">Marek McGann </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Mary Immaculate College
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author">Eric R. Igou </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             University of Limerick
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author">Elaine L. Kinsella </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             University of Limerick
           </p>
       </div>
-    </div>
+  </div>
 
 <div class="quarto-title-meta">
 
@@ -288,7 +326,9 @@ cookieconsent.run({
   </div>
   
 
+
 </header>
+
 
 <blockquote class="blockquote">
 <p>Moral dumbfounding occurs when people defend a moral judgment, without reasons in support of this judgment. The phenomenon has been influential in moral psychology, however, despite its influence, it remains poorly understood. Based on the notion that cognitive load enhances biases and shortcomings in human judgment when elaboration is beneficial, we hypothesized that under cognitive load, people would be less likely to provide reasons for a judgment and more likely to be dumbfounded (or to change their judgment). In a pre-registered study (N = 1686) we tested this prediction. Our findings suggest that cognitive load reduces reason-giving, and increases dumbfounding (but does not lead to changes in judgments). Our results provide new insights into the phenomenon of moral dumbfounding while also advancing theory in moral psychology.</p>
@@ -325,8 +365,8 @@ McHugh, C., McGann, M., Igou, E. R., &amp; Kinsella, E. L. (2023). Cognitive Loa
 <p>Drawing on existing theorizing <span class="citation" data-cites="cushman_action_2013 haidt_emotional_2001 mchugh_moral_2022">(<a href="#ref-cushman_action_2013" role="doc-biblioref">Cushman 2013</a>; <a href="#ref-haidt_emotional_2001" role="doc-biblioref">Haidt 2001</a>; McHugh et al., <a href="#ref-mchugh_moral_2022" role="doc-biblioref">2022</a>)</span>, we assume that making a moral judgment is an intuitive/habitual response involving relatively little deliberation, while reason-giving requires greater deliberation (a deliberative response). In this view, conflict occurs when deliberation fails to identify reasons for a judgment, and its resolution depends on the availability of cognitive resources for deliberation – further deliberation may identify relevant reasons. Alternatively, participants may resolve the conflict by accepting the arguments presented and changing their judgment (nothing-wrong). We propose that dumbfounding is observed when this conflict cannot be resolved. We hypothesize that nothing-wrong involves more deliberation than dumbfounding but less deliberation than reason-giving. The hypothesized relative amounts of deliberation for each response are outlined in Figure 1. We note that this explanation is not unique to dual-process approaches, but is also consistent with a unimodal <span class="citation" data-cites="kruglanski_intuitive_2011">(<a href="#ref-kruglanski_intuitive_2011" role="doc-biblioref">Kruglanski and Gigerenzer 2011</a>)</span> or categorization <span class="citation" data-cites="mchugh_moral_2022">(<a href="#ref-mchugh_moral_2022" role="doc-biblioref">McHugh et al. 2022</a>)</span> approaches, both of which predict that lower processing capacity reduces reason-giving, and increases dumbfounding.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/responses_figure4.jpg" class="quarto-discovered-preview-image img-fluid figure-img" data-margin="auto" width="250"></p>
-<p></p><figcaption class="figure-caption">Hypothesized relationship between deliberation and responses in the dumbfounding paradigm</figcaption><p></p>
+<p><img src="img/responses_figure4.jpg" class="img-fluid figure-img" data-margin="auto" width="250"></p>
+<figcaption>Hypothesized relationship between deliberation and responses in the dumbfounding paradigm</figcaption>
 </figure>
 </div>
 <p>This account of moral dumbfounding affords a clear testable hypothesis: under manipulations that affect the availability of resources for deliberation, responses in the moral dumbfounding paradigm should evidence variation in frequency of deliberative versus habitual responses. Cognitive load manipulations – such as completing an attention/memory task simultaneously with a primary task – have been shown to inhibit deliberative responding <span class="citation" data-cites="deneys_conflict_2008 evans_rapid_2005 evans_dualprocess_2013 schmidt_effects_2016">(<a href="#ref-deneys_conflict_2008" role="doc-biblioref">De Neys and Glumicic 2008</a>; <a href="#ref-evans_rapid_2005" role="doc-biblioref">Evans and Curtis-Holmes 2005</a>; <a href="#ref-evans_dualprocess_2013" role="doc-biblioref">Evans and Stanovich 2013</a>; <a href="#ref-schmidt_effects_2016" role="doc-biblioref">Schmidt 2016</a>)</span>. We have identified reason-giving as involving more deliberation than alternative responses in the dumbfounding paradigm. Thus, we predict that a cognitive load manipulation should inhibit reason-giving in a moral dumbfounding task, leading to an increase in habitual responding, such as dumbfounding or nothing-wrong.</p>
@@ -368,11 +408,10 @@ McHugh, C., McGann, M., Igou, E. R., &amp; Kinsella, E. L. (2023). Cognitive Loa
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/overall.png" class="img-fluid figure-img" data-margin="auto" width="600"></p>
-<p></p><figcaption class="figure-caption">Responses to critical slide depending on cognitive load</figcaption><p></p>
+<figcaption>Responses to critical slide depending on cognitive load</figcaption>
 </figure>
 </div>
-<div class="cell-output-display">
-<table class="table">
+<table class="caption-top table">
 <caption>(#tab:S6tab1dumb) Observed counts, expected counts, and standardised residuals for each response to the critical slide depending on cognitive load (full sample)</caption>
 <thead>
 <tr class="header">
@@ -443,7 +482,6 @@ McHugh, C., McGann, M., Igou, E. R., &amp; Kinsella, E. L. (2023). Cognitive Loa
 <p><em>Note.</em> * = sig. at &lt; .05; ** = sig. at &lt; .001</p>
 </div>
 <p>&nbsp;</p>
-</div>
 <div style="page-break-after: always;"></div>
 <p>This pattern was observed for all scenarios individually with the exception of <em>Julie and Mark</em>, which showed no association between experimental condition and cognitive load, <span class="math inline">\(\chi\)</span><sup>2</sup>(2, <em>N</em> = 412) = 0.489, <em>p</em> = .783, <em>V</em> = 0.0344471, power = 0.089. The association was significant for <em>Jennifer</em> <span class="math inline">\(\chi\)</span><sup>2</sup>(2, <em>N</em> = 432) = 17.329, <em>p</em> &lt; .001, <em>V</em> = 0.2002813, power = 0.969, <em>Trolley</em> <span class="math inline">\(\chi\)</span><sup>2</sup>(2, <em>N</em> = 424) = 10.953, <em>p</em> = .004, <em>V</em> = 0.1607228, power = 0.851, and Heinz, <span class="math inline">\(\chi\)</span><sup>2</sup>(2, <em>N</em> = 418) = 7.158, <em>p</em> = .028, <em>V</em> = 0.1308616, power = 0.666, see Figure&nbsp;@ref(fig:S6ch5S6fig2criticalconditionb). Supplementary Tables 20-23 show the direction of the effect for each scenario. Under cognitive load, fewer participants provided reasons and more participants provided a dumbfounded response for <em>Jennifer</em>, <em>Trolley</em>, and <em>Heinz</em></p>
 <p>Given the null result for <em>Julie and Mark</em>, we conducted an exploratory follow-up (not-preregistered) equivalence test, to investigate if our results provided evidence for the absence of an effect for cognitive load. Our key dependent variable was reason-giving, operationalized by participants response to the critical slide. As such, our equivalence test focused specifically on reason-giving, we recoded responses to the critical slide as 1 = <em>reason given</em>, 0 = <em>reason not given</em>. Our sub sample who responded to the <em>Julie and Mark</em> scenario contained a total of <em>n</em> = 412 participants. With this sample we can detect equivalence at the level of <em>d</em> = .204 with 80% power.</p>
@@ -451,7 +489,7 @@ McHugh, C., McGann, M., Igou, E. R., &amp; Kinsella, E. L. (2023). Cognitive Loa
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/all_scenarios.png" class="img-fluid figure-img" data-margin="auto" width="600"></p>
-<p></p><figcaption class="figure-caption">Responses to critical slide and for the experimental group and the control group for each scenario</figcaption><p></p>
+<figcaption>Responses to critical slide and for the experimental group and the control group for each scenario</figcaption>
 </figure>
 </div>
 <p>A chi-squared test for independence revealed a significant association between scenario and response to the critical slide, <span class="math inline">\(\chi\)</span><sup>2</sup>(6, <em>N</em> = 1686) = 61.341, <em>p</em> &lt; .001, <em>V</em> = 0.1907417, the observed power was 1. Participants were significantly more likely to select “There is nothing wrong” for <em>Julie and Mark</em> (<em>p</em> = .002), more likely to provide reasons (<em>p</em> = .002) and less likely to select “There is nothing wrong” (<em>p</em> &lt; .001) for Jennifer, and more likely to be dumbfounded by <em>Trolley</em> (<em>p</em> = .031).</p>
@@ -494,7 +532,7 @@ McHugh, C., McGann, M., Igou, E. R., &amp; Kinsella, E. L. (2023). Cognitive Loa
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-bago_intuitive_2019" class="csl-entry" role="listitem">
 Bago, Bence, and Wim De Neys. 2019. <span>“The Intuitive Greater Good: <span>Testing</span> the Corrective Dual Process Model of Moral Cognition.”</span> <em>Journal of Experimental Psychology: General</em> 148 (10): 1782–1801. <a href="https://doi.org/10.1037/xge0000533">https://doi.org/10.1037/xge0000533</a>.
 </div>
@@ -638,6 +676,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -704,13 +769,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -789,10 +856,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.cillianmchugh\.com\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -802,8 +886,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -815,7 +908,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -859,6 +1075,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -884,6 +1101,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -946,11 +1189,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left"><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
-    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+    <div class="nav-footer-left">
+<p><i class="fa-regular fa-copyright" aria-hidden="true"></i> Cillian McHugh, 2023<br> All content licensed under <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-sa" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></p>
+</div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+<p>Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> Inspiration and code snippets taken from <a href="https://github.com/andreashandel/andreashandelwebsite">this site.</a><br> <a href="https://github.com/cillianmiltown/website_quarto">Source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

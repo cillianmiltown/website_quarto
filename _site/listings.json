@@ -1,5 +1,20 @@
 [
   {
+    "listing": "/projects.html",
+    "items": [
+      "/registered-reports/beckon/index.html",
+      "/registered-reports/triplett/index.html"
+    ]
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/mjac/index.html",
+      "/posts/reasons/index.html",
+      "/posts/searching/index.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/publications/pubs/moral-judgment-as-categorization/index.html"
@@ -24,27 +39,13 @@
     ]
   },
   {
-    "listing": "/posts.html",
-    "items": [
-      "/posts/mjac/index.html",
-      "/posts/reasons/index.html",
-      "/posts/searching/index.html"
-    ]
-  },
-  {
     "listing": "/presentations.html",
     "items": []
   },
   {
-    "listing": "/projects.html",
-    "items": [
-      "/registered-reports/beckon/index.html",
-      "/registered-reports/triplett/index.html"
-    ]
-  },
-  {
     "listing": "/publications.html",
     "items": [
+      "/publications/pubs/people-places/index.html",
       "/publications/pubs/to-beckon/index.html",
       "/publications/pubs/climate-change/index.html",
       "/publications/pubs/moral-judgment/index.html",
@@ -74,9 +75,5 @@
       "/rblog/2017-08-27-writing_functions_2/index.html",
       "/rblog/2017-07-27-writing_functions_1/index.html"
     ]
-  },
-  {
-    "listing": "/shiny.html",
-    "items": []
   }
 ]
