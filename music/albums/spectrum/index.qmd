@@ -18,6 +18,19 @@ Spectrum is a collection of the earliest songs I wrote. The shorter songs were l
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/64266587&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/cillianmchugh" title="cillianmchugh" target="_blank" style="color: #cccccc; text-decoration: none;">cillianmchugh</a> · <a href="https://soundcloud.com/cillianmchugh/thoughtcrime" title="Thoughtcrime" target="_blank" style="color: #cccccc; text-decoration: none;">Thoughtcrime</a></div>
 
+Now on [Youtube](https://youtu.be/DP4VwMHvnpU?si=kao7v0zJiGV3K2jL) and [Youtube Music](https://music.youtube.com/watch?v=DP4VwMHvnpU&si=Nlj70ezBL_TV3FSL)
+
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/DP4VwMHvnpU?si=5AQVUT67NMm36Oar" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
+
+<br>
+```
+
 ## (i) Dust
 
 > *"war is peace, freedom is slavery, ignorance is strength"*
@@ -69,7 +82,7 @@ She put something into his hand<br>
 
 
 Could it be true?<br>
-On the flat piece of paper when he flattened it out<br>
+On the scrap piece of paper when he flattened it out<br>
 Were the words “I love you”<br>
 
 They couldn’t meet<br>
