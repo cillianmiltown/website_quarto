@@ -230,13 +230,27 @@ Inside she died alone…she couldn’t find the light<br>
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/64267599&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/cillianmchugh" title="cillianmchugh" target="_blank" style="color: #cccccc; text-decoration: none;">cillianmchugh</a> · <a href="https://soundcloud.com/cillianmchugh/riding-out" title="Riding Out" target="_blank" style="color: #cccccc; text-decoration: none;">Riding Out</a></div>
 
+
+Now on [Youtube](https://youtu.be/ZF9pRaTnW0Q?si=-y_bQHDEtkTauNcV) and [Youtube Music](https://music.youtube.com/watch?v=ZF9pRaTnW0Q&si=dNA0nyNMuyLyIfAV)
+
+```{=html}
+<div style="width:25%;height:25%;">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe src="https://www.youtube.com/embed/ZF9pRaTnW0Q?si=MM7I7O_KeigDcpzk" frameborder="0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
+
+<br>
+```
+
 ## (i) Natural Selection
 
 We grow…Prosperity is unlimited<br>
 We grow…Exponentially we’re unlimited
 
 
-Iron bronze and steel, farming and the wheel<br>
+Iron, bronze, and steel, farming and the wheel<br>
 Farms and walls and towns, we settled down<br>
 Tools by human hand, we exploit the land<br>
 Fishing in empty seas, we’re running out of trees<br>
@@ -250,7 +264,7 @@ The earth has limits and we’re no exception<br>
 
 
 Roads spread near and far for lorry truck and car<br>
-Factories industry and trade, an easy life was made<br>
+Factories industry and trade, the easy life was made<br>
 We can do anything if we try, we even learned to fly<br>
 New medicines heal the sick, lives saved by a pin prick<br>
 
@@ -259,8 +273,8 @@ New medicines heal the sick, lives saved by a pin prick<br>
 
 ## (ii) Final Generation
 
-Got a job, a car, a home and family<br>
-A happy life it’s trouble free<br>
+Got happy life it’s trouble free<br>
+Home, and a car, a job, and family<br>
 Famine and wars and deaths on TV<br>
 Don’t worry about it; it’s not you or me<br>
 
