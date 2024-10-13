@@ -1,20 +1,5 @@
 [
   {
-    "listing": "/projects.html",
-    "items": [
-      "/registered-reports/beckon/index.html",
-      "/registered-reports/triplett/index.html"
-    ]
-  },
-  {
-    "listing": "/posts.html",
-    "items": [
-      "/posts/mjac/index.html",
-      "/posts/reasons/index.html",
-      "/posts/searching/index.html"
-    ]
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/publications/pubs/moral-judgment-as-categorization/index.html"
@@ -31,20 +16,9 @@
     ]
   },
   {
-    "listing": "/other.html",
-    "items": [
-      "/other/2019-12-10-moral-networks-shinyapp/index.html",
-      "/other/2019-05-15-js-mediation-shinyapp/index.html",
-      "/other/chess/index.html"
-    ]
-  },
-  {
-    "listing": "/presentations.html",
-    "items": []
-  },
-  {
     "listing": "/publications.html",
     "items": [
+      "/publications/pubs/climate-data/index.html",
       "/publications/pubs/people-places/index.html",
       "/publications/pubs/to-beckon/index.html",
       "/publications/pubs/climate-change/index.html",
@@ -67,6 +41,26 @@
     ]
   },
   {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/mjac/index.html",
+      "/posts/reasons/index.html",
+      "/posts/searching/index.html"
+    ]
+  },
+  {
+    "listing": "/other.html",
+    "items": [
+      "/other/2019-12-10-moral-networks-shinyapp/index.html",
+      "/other/2019-05-15-js-mediation-shinyapp/index.html",
+      "/other/chess/index.html"
+    ]
+  },
+  {
+    "listing": "/presentations.html",
+    "items": []
+  },
+  {
     "listing": "/rblog.html",
     "items": [
       "/rblog/2019-08-11-js_mediation/index.html",
@@ -74,6 +68,13 @@
       "/rblog/2018-10-20-a_lazy_function/index.html",
       "/rblog/2017-08-27-writing_functions_2/index.html",
       "/rblog/2017-07-27-writing_functions_1/index.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/registered-reports/beckon/index.html",
+      "/registered-reports/triplett/index.html"
     ]
   }
 ]
