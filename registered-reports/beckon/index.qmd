@@ -1,6 +1,6 @@
 ---
 title: "To Beckon or Not to Beckon: Testing a Causal-Evaluative Modelling Approach to Moral Judgment"
-description: "Journal of Experimental Social Psychology (Stage 1 Accepted)"
+description: "Journal of Experimental Social Psychology (now published)"
 author: 
   - name          : "Cillian McHugh"
     affiliation   : University of Limerick
