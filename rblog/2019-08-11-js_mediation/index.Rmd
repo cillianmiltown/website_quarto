@@ -43,6 +43,7 @@ library(desnum)
 # library(ggplot2)
 # library(scales)
 # library(extrafont)
+# install.packages("JSmediation")
 library(JSmediation)
 
 library("papaja")

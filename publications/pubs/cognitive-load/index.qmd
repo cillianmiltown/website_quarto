@@ -807,7 +807,7 @@ y <- rbind(
           ,x[which(x$condition=="cog_load"),])
 )
 
-y1 <- y %>% select("InCS","condition","pbar","se")
+y1 <- y %>% dplyr::select("InCS","condition","pbar","se")
 
 
 test1 <- dplyr::left_join(test,y1, by = c("condition","InCS") )
@@ -1208,7 +1208,7 @@ y <- rbind(
           ,x[which(x$condition=="cog_load"),])
 )
 
-y1 <- y %>% select("InCS","condition","pbar","se")
+y1 <- y %>% dplyr::select("InCS","condition","pbar","se")
 test2 <- dplyr::left_join(test1,y1, by = c("condition","InCS") )
 incest <- test2
 
@@ -1234,7 +1234,7 @@ y <- rbind(
           ,x[which(x$condition=="cog_load"),])
 )
 
-y1 <- y %>% select("InCS","condition","pbar","se")
+y1 <- y %>% dplyr::select("InCS","condition","pbar","se")
 test2 <- dplyr::left_join(test1,y1, by = c("condition","InCS") )
 cannibal <- test2
 
@@ -1260,7 +1260,7 @@ y <- rbind(
           ,x[which(x$condition=="cog_load"),])
 )
 
-y1 <- y %>% select("InCS","condition","pbar","se")
+y1 <- y %>% dplyr::select("InCS","condition","pbar","se")
 test2 <- dplyr::left_join(test1,y1, by = c("condition","InCS") )
 trolley <- test2
 
@@ -1286,7 +1286,7 @@ y <- rbind(
           ,x[which(x$condition=="cog_load"),])
 )
 
-y1 <- y %>% select("InCS","condition","pbar","se")
+y1 <- y %>% dplyr::select("InCS","condition","pbar","se")
 test2 <- dplyr::left_join(test1,y1, by = c("condition","InCS") )
 heinz <- test2
 

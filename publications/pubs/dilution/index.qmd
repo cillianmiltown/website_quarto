@@ -1,0 +1,47 @@
+---
+title: "The Moral Dilution Effect: Irrelevant Information Influences Judgments of Moral Character"
+description: "Journal of Behavioral Decision Making"
+author: 
+  - name          : "Cillian McHugh"
+    affiliation   : "Department of Psychology, University of Limerick Ireland"
+    corresponding : yes    # Define only one corresponding author
+    address       : "University of Limerick, Limerick, Ireland"
+    email         : "cillian.mchugh@ul.ie"
+  - name          : "Eric R. Igou"
+    affiliation   : "Department of Psychology, University of Limerick Ireland"
+date: '2025-08-03'
+aliases:   
+  - ../dilution/
+bibliography      : ["../../../bib/My Library.bib"]
+image: featured.png
+categories: 
+  - dilution effect
+  - MJAC
+  - moral categorization
+  - moral judgment
+  - representativeness heuristic
+  - typicality
+---
+
+
+
+>It is reasonable to expect that when making a judgment, we only consider the relevant (or diagnostic) information and that nonrelevant (nondiagnostic) information should not, and thus does not, influence our judgments. Previous research has shown that this is not always the case and that the inclusion of nondiagnostic information can reduce the impact of diagnostic information in judgments. This phenomenon is known as the dilution effect, and it has been observed for a range of judgments, including product evaluations, probability judgments, and predictions relating to people's behavior. The dilution effect has been explained as a consequence of the representativeness heuristic, such that the inclusion of nondiagnostic information reduces the match between the target and a typical member of the category. Consistent with this notion and recent approaches to moral decision making, we predict that the dilution effect should be observed for judgments about morality. Across four studies (total N = 2535), we tested for the dilution effect on judgments of morally bad actors and morally good actors. Overall, our results showed a dilution effect for judgments of both good and bad actors. People's moral evaluations of both good and bad actors were less extreme when the descriptions included nondiagnostic information. We showed that this effect is not the result of humanization, and we found that the robustness of the effect appears to be moderated by valence, with a more robust effect for bad actors. Our results highlight avenues for future research.
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/dilution/dilution.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://onlinelibrary.wiley.com/doi/10.1002/bdm.70034');" data-inline="true" >Source Document</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://osf.io/mdnpv/');" >OSF</button>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">McHugh, C., &amp; Igou, E. R. (2025). The Moral Dilution Effect: Irrelevant Information Influences Judgments of Moral Character. <i>Journal of Behavioral Decision Making</i>, <i>38</i>(4), e70034. <a href="https://doi.org/10.1002/bdm.70034">https://doi.org/10.1002/bdm.70034</a></div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1002%2Fbdm.70034&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=The%20Moral%20Dilution%20Effect%3A%20Irrelevant%20Information%20Influences%20Judgments%20of%20Moral%20Character&amp;rft.jtitle=Journal%20of%20Behavioral%20Decision%20Making&amp;rft.volume=38&amp;rft.issue=4&amp;rft.aufirst=Cillian&amp;rft.aulast=McHugh&amp;rft.au=Cillian%20McHugh&amp;rft.au=Eric%20R.%20Igou&amp;rft.date=2025&amp;rft.pages=e70034&amp;rft.issn=1099-0771&amp;rft.language=en"></span>
+</div></body>
+</html>
+

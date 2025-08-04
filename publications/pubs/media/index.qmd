@@ -1,0 +1,48 @@
+---
+title: "Negative media representations of young people during COVID related national lockdown increases young people's perceived stress"
+description: "Analysis of Social Issues and Public Policy (2025)"
+author: 
+  - name          : "Daragh Bradshaw"
+    affiliation   : "Department of Psychology, University of Limerick Ireland"
+    corresponding : yes    # Define only one corresponding author
+    address       : "University of Limerick, Limerick, Ireland"
+    email         : "daragh.bradshaw@ul.ie"
+  - name          : "Kate Barry"
+    affiliation   : "Department of Psychology, University of Limerick Ireland"
+  - name          : "Siobhán Griffin"
+    affiliation   : "Department of Psychology, University of Limerick Ireland"
+  - name          : "Sarah Jay"
+    affiliation   : "Department of Psychology, University of Limerick Ireland"
+  - name          : "Cillian McHugh"
+    affiliation   : "Department of Psychology, University of Limerick Ireland"
+date: '2025-04-01'
+aliases:   
+  - ../to-beckon/
+bibliography      : ["../../../bib/My Library.bib"]
+image: featured.png
+categories: 
+  - Media
+---
+
+
+
+>Severe acute respiratory syndrome coronavirus is a destructive respiratory disease that has affected the lives of billions of people around the world. Researchers argue that a group-based approach drawing on our membership of specific social groups, rather than appealing to our individual self-interest, is necessary to combat the disease. Social groups who are perceived to be not adhering to national mitigation measures aimed at reducing the spread of the virus, are often portrayed negatively by the media. The current study examines the impact of negative media constructions of young peoples’ behavior during the COVID-19 pandemic, specifically focusing on when these constructions have been contested by young people involved. A total of 789 young people were randomly assigned to read either a positive or negative description of young people's behavior during COVID-19 restrictions. Results indicate that the type of article had no impact on behavioral outcomes or perceived stress. However, an interaction effect was noted where reading a negative article and disagreeing with the content increased individuals’ levels of perceived stress. Findings indicate that negative group-based media constructions of behavior do not increase behavioral conformity but does undermine the mental health of those involved.
+
+
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://raw.githubusercontent.com/cillianmiltown/website_quarto/main/publications/pubs/media/media.pdf');" data-inline="true" >PDF</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="window.open('https://spssi.onlinelibrary.wiley.com/doi/full/10.1111/asap.12437');" data-inline="true" >Source Document</button>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Bibliography</title>
+</head>
+<body>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">Bradshaw, D., Barry, K., Griffin, S., Jay, S., &amp; McHugh, C. (2025). Negative media representations of young people during COVID related national lockdown increases young people’s perceived stress. <i>Analyses of Social Issues and Public Policy</i>, <i>25</i>(1), e12437. <a href="https://doi.org/10.1111/asap.12437">https://doi.org/10.1111/asap.12437</a></div>
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1111%2Fasap.12437&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Negative%20media%20representations%20of%20young%20people%20during%20COVID%20related%20national%20lockdown%20increases%20young%20people's%20perceived%20stress&amp;rft.jtitle=Analyses%20of%20Social%20Issues%20and%20Public%20Policy&amp;rft.volume=25&amp;rft.issue=1&amp;rft.aufirst=Daragh&amp;rft.aulast=Bradshaw&amp;rft.au=Daragh%20Bradshaw&amp;rft.au=Kate%20Barry&amp;rft.au=Siobhan%20Griffin&amp;rft.au=Sarah%20Jay&amp;rft.au=Cillian%20McHugh&amp;rft.date=2025&amp;rft.pages=e12437&amp;rft.issn=1530-2415&amp;rft.language=en"></span>
+</div></body>
+</html>
+

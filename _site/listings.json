@@ -18,6 +18,8 @@
   {
     "listing": "/publications.html",
     "items": [
+      "/publications/pubs/dilution/index.html",
+      "/publications/pubs/media/index.html",
       "/publications/pubs/climate-data/index.html",
       "/publications/pubs/people-places/index.html",
       "/publications/pubs/to-beckon/index.html",
