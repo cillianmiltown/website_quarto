@@ -16,8 +16,29 @@
     ]
   },
   {
+    "listing": "/presentations.html",
+    "items": []
+  },
+  {
+    "listing": "/other.html",
+    "items": [
+      "/other/2019-12-10-moral-networks-shinyapp/index.html",
+      "/other/2019-05-15-js-mediation-shinyapp/index.html",
+      "/other/chess/index.html"
+    ]
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/mjac/index.html",
+      "/posts/reasons/index.html",
+      "/posts/searching/index.html"
+    ]
+  },
+  {
     "listing": "/publications.html",
     "items": [
+      "/publications/pubs/triplett/index.html",
       "/publications/pubs/dilution/index.html",
       "/publications/pubs/media/index.html",
       "/publications/pubs/climate-data/index.html",
@@ -41,26 +62,6 @@
       "/publications/presentations/complexity/index.html",
       "/publications/presentations/ICT2021/index.html"
     ]
-  },
-  {
-    "listing": "/posts.html",
-    "items": [
-      "/posts/mjac/index.html",
-      "/posts/reasons/index.html",
-      "/posts/searching/index.html"
-    ]
-  },
-  {
-    "listing": "/other.html",
-    "items": [
-      "/other/2019-12-10-moral-networks-shinyapp/index.html",
-      "/other/2019-05-15-js-mediation-shinyapp/index.html",
-      "/other/chess/index.html"
-    ]
-  },
-  {
-    "listing": "/presentations.html",
-    "items": []
   },
   {
     "listing": "/rblog.html",
